@@ -5,7 +5,6 @@ print({10 : 'Hyd' , 20 : 'Sec'} |  {30 : 'Cyb' , 20 : 'Vja'}) # duplicate keys w
 #print(range(4) | range(5)) # prints : {0,1,2,3,4}
 
 
-
 #and  operator  demo  program
 print(True  and  False)    #  False
 print(False  and  True)  #  False
@@ -21,7 +20,6 @@ print('Hyd'   and  10.8) # 10.8
 print(10  and  20  and  30) # 30
 
 
-
 #  or  operator  demo program
 print(True  or  False)   #   True
 print(False  or  True)   #  True
@@ -33,7 +31,6 @@ print(-25  or  0) # -25
 print(''  or  35) # 35
 print(0.0  or  3 + 4j) # (3+4j)
 print('Hyd'   or   10.8) # 'Hyd'
-
 
 
 # not  operator  demo  program
