@@ -1,4 +1,4 @@
-
+#*19_2_25_HW*
 # Gift
 # How  to  print  dictionary  in  different  ways
 a  =  {10 : 'Ramesh' ,  20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
@@ -71,13 +71,14 @@ print(type(_))      #<class 'int>
 a , _ , c = 10 , 20 , 30
 print(a)            #prints value of a i.e. 10
 print(_)            #prints value of _ i.e. 20
-print(c)            #prints value of c i.e. 10
+print(c)            #prints value of c i.e. 30
 for  _  in  range(5):
 	print(_ , 'Hello')   # prints range from 0 to 4 with Hello
 	                     # 0 Hello
-                         # 1 Hello
-                         # 2 Hello
-                         # 3 Hello
+                             # 1 Hello
+                             # 2 Hello
+                             # 3 Hello
+                             # 4 Hello
         
 #  Find  outputs
 a = 25
@@ -198,8 +199,8 @@ print(10 ** -2) # 10^-2 = 0.01
 print(4 * 3 * 2) # 4^3^2 = 262144
 print(3 + 4 * 5 - 32 / 2 ** 3)  # 3+4*5-32/8
                                 #3+20-32/8
-								#3+20-4.0
-								#23-4.0 = 19.0
+			        #3+20-4.0
+			        #23-4.0 = 19.0
 
 
 #  Relational  operators  demo  program (Home  work)
@@ -218,7 +219,6 @@ print(3 + 4j != 5 + 6j) # true- condition is satisfied
 print(10 == 10.0)       # true- 10 and 10.0 are same
 print(3 + 4j >  3 + 4j) # error becoz complex objects cannot compare using '>'
 
-
 #  Find  outputs  (Home  work)
 print('Rama'   >  'Rajesh')   #   True  becoz  'm' > 'j'
 print('Rama'  <  'Sita')      #   true- 'R' < 'S'
@@ -227,29 +227,6 @@ print('Rama'  <=   'Ramana')  #   true- 'empty string'< 'n'
 print('Rama  Rao'  >=  'Rama') #  true-  'space'(unicode value 36) > 'empty string'
 print('Hyd'  != 'Sec')         #  true- both are not same
 print('HYD'  <   'hyd')        # true-  unicode values of A to Z (65 to 90) <  unicode values of a to z (97 to 122)
-
-
-
-
-1) Can  strings  be  compared  with  > ,  < , == ,  >= , <=  and  != ?  --->  Yes  only  in  python  but  not  in  other  languages
-
-2) What  are  compared  internally  when  strings  are  compared ? ---> 1st  non-matching  characters
-
-3) Are  characters  compared  (or)  their  unicode  values ?  --->  Unicode  values
-
-4) How  many  unicode  values  exist ?  --->  512
-
-5) What  is  the  range  of  unicode  values ?  --->  0  to  511
-
-6) What  are  the  unicode  values  of  'A'  to  'Z'  ?  --->  65  to  90
-    What  are  the  unicode  values  of  'a'  to   'z'  ?  ---> 97  to  122
-    What  are  the  unicode  values  of   '0'  to  '9' ?  --->48  to  57
-    What  is  the  unicode  value  of   '$' ?  --->  36
-    What  is  the  unicode  value  of  space ?  --->32
-
-7) What  is  another  name  of  unicode ?  --->  Extended  Ascii (American  standard  code  for  information  and  interchange)
-
-
 
 # Chaining  relational  opeartors  (Home work)
 print(10 < 20 < 30)    #   True  becoz  both  are  satisfied
