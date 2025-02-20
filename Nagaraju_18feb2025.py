@@ -7,11 +7,11 @@ print(a[20])
 print(a[15])
 print(a[18])
 print([19])
-print(a[0])
-print(a['Amar'])
+# print(a[0])
+# print(a['Amar'])
 a[15]='krishna'
 del a[20]
 a[25]='vamshi'
 print(a)
 print(len(a))
-print(a*2)
+# print(a*2)
