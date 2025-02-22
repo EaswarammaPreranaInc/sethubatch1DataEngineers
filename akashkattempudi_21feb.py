@@ -6,7 +6,7 @@ print(b) # 25
 print(a  is  b) # True
 x = 4 # x ref points to obj 4
 y = 5 # y ref points to obj 5
-z = x + y * 6 # z ref points to obj x+y*6
+z = x + y * 6 # z ref points to obj x+y*6 
 print(z) #34
 25 = a # error int cannot be a reference
 a + b = x + y # we cant assign operation to another operation
