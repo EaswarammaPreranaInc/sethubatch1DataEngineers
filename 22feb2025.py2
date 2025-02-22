@@ -1,0 +1,5 @@
+#How to import keyword module
+import keyword
+print(keyword.kwlist)
+print(len(keyword.kwlist))
+print(type(keyword.kwlist))
