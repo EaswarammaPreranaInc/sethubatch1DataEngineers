@@ -225,6 +225,4 @@ print(F'{{{{{{{{x}}}}}}}}') #{{{{x}}}}
 
 3) How  many  braces  are  printed  in  the  output ?  --->  Number  of  braces  //  2
 '''
-a = int(input('Enter any postive integer: '))
-res = 'Even number' if a%2==0 else 'odd number'
-print(res)
+
