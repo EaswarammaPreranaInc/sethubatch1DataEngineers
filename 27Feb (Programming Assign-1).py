@@ -47,15 +47,39 @@ except:
 	print('Input should be a number')
  
 -------------------------------------------------------------------------------------------------------
-#5. Swap two numbers without using 3rd object.type(1) 
+#5. Swap two numbers without using 3rd object.(type1) 
 ----------------------------------------------------------------------------------------------------------
-try:
+X=int(input("enter the 1st value: ")) --->10
+Y=int(input("enter the 2nd value: ")) --->25
+print(f"before swap :a : {a} \t b :{b}") --->10,25
+c=X
+X=Y
+Y=c
+print(f"after swap :a :{a}\t b :{b}") --->25.10
 ------------------------------------------------------------------------------------------------------------
-#6. Swap two numbers without using 3rd object.type(2) 
+#6. Swap two numbers without using 3rd object.(type2) 
 --------------------------------------------------------------------------------------------------------------
-try:
+X=int(input("enter the 1st value: ")) 
+Y=int(input("enter the 2nd value: ")) 
+print(f"before swap :X : {X} \t Y :{Y}")
+X= X + Y
+Y = X - Y
+X = X - Y
+print(f'after swap :X: {X} \t Y : {Y}')
+
 -------------------------------------------------------------------------------------------------------------
-#7. WAP to add,substract,multiply and divide two complex numbers. 
+#7. Swap two numbers without using 3rd object (type 3)
+-------------------------------------------------------------------------------------------------------------
+X=int(input("enter the 1st value: ")) --->25
+Y=int(input("enter the 2nd value: ")) --->10
+print(f"before swap :X : {X} \t Y :{Y}")
+X= X * Y
+Y = X // Y
+X = X // Y
+print(f'after swap :X: {X} \t Y : {Y}') --->X:10 Y:25
+
+-------------------------------------------------------------------------------------------------------------
+#8. WAP to add,substract,multiply and divide two complex numbers. 
 ---------------------------------------------------------------------------------------------------------------(
 try:
     A = complex(input('Enter first complex number: '))
@@ -71,7 +95,7 @@ try:
 except ValueError:
     print('The value entered is not a valid complex number.')
 ---------------------------------------------------------------------------------------------------------------------
-#8.WAP to determine sum,difference,product,quotient,largest and smallest of 2 numbers.
+#9.WAP to determine sum,difference,product,quotient,largest,smallest,sqrt,pow,GCD,factorial of 2 numbers.
 ---------------------------------------------------------------------------------------------------------------------
 import math
 A = int(input('Enter first integer number: ')) --->10
@@ -99,7 +123,37 @@ print(F'sqrt(10): {Square:}') --->3.162277660168375
 print(F'gcd(10 ,7): {Commondivisor:}') --->1
 print(F'fact(10): {fact:}') --->3628800
 
------------------------------------------------------------------------------------------------------------------------
-#9. swap values of objects without using 3rd object
------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+Gift
+#10.Write  a  program  to  swap  values  of  any  two  objects  in  a  single  statement  without  using  3rd  object
+----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+#11.Write  a  program  to  determine  largest  of  two  inputs  without  using  max()  function
+----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+#12.Write  a  program  to  determine  largest  of  three  inputs  without  using  max()  function
+----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+#13.Write  a  program  to  print   '>'  if  1st  input  >  2nd  input is '<'  if  1st  input  <  2nd  input  and
+'='  if  inputs  are  same
+---------------------------------------------------------------------------------------------------------------------
+A = eval(input('Enter first integer number: ')) --->Enter any value int,float,string,list,.......
+B = eval(input('Enter second integer number: ')) --->Enter any value int,float,string,list,........
+if A>B:
+	print('>')
+elif A<B:
+	print('<')
+else:
+ 	print('=')
+	
+---------------------------------------------------------------------------------------------------------------------
+#14.Write  a  program  to  test  input  is  even  number  or  odd  number
+----------------------------------------------------------------------------------------------------------------------
+A = int(input('Enter the number: ')) --->26
+if A%2==0:
+    print('The numbers even')
+else:
+    print('The number is odd')
+					# output : The number is even
+
 
