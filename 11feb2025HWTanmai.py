@@ -1,14 +1,3 @@
-1.	Install Python  select all check boxes  including Add python.exe to path and install python 
-Download edit plus 
-Edit plus latest version 
-Under tools – >configure tools –> user tools ->add tools->programs
-Under menu- python 
-Command - py
-Argument -filename 
-Initial- file directory
-
-Short cut tools select python directly execute ur code.
-Edit plus gives different colors and also easy to execute.
 
 Assignment 1:
 # complex object demo program
