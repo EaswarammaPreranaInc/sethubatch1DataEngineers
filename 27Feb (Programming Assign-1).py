@@ -130,12 +130,25 @@ Gift
 ---------------------------------------------------------------------------------------------------------------------
 #11.Write  a  program  to  determine  largest  of  two  inputs  without  using  max()  function
 ----------------------------------------------------------------------------------------------------------------------
+A =  eval(input("Enter  1st input:")) --->enter any value int string,float,int,....... 10
+B = eval(input("Enter 2nd input:")) --->enter any value int string,float,int,...........20
+if A>B:
+	print("Largest input:", A)
+elif A<B:
+    print("lagest input:", B)
+else:
+    print()
+    			#output is displays largest of A and B o/p-->largest input is 20.
 ---------------------------------------------------------------------------------------------------------------------
 #12.Write  a  program  to  determine  largest  of  three  inputs  without  using  max()  function
 ----------------------------------------------------------------------------------------------------------------------
+A = evla(input("enter first input:" )
+B = evla(input("enter second input:" )
+C = evla(input("enter third input:" )
+
 ---------------------------------------------------------------------------------------------------------------------
 #13.Write  a  program  to  print   '>'  if  1st  input  >  2nd  input is '<'  if  1st  input  <  2nd  input  and
-'='  if  inputs  are  same
+'=' inputs  are  same
 ---------------------------------------------------------------------------------------------------------------------
 A = eval(input('Enter first integer number: ')) --->Enter any value int,float,string,list,.......
 B = eval(input('Enter second integer number: ')) --->Enter any value int,float,string,list,........
