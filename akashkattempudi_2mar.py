@@ -156,7 +156,6 @@ What  is  the  bill  amount ? --->  100 * 3.00 + 100 * 3.50 + 200 * 4.00 + 300 *
 
 Hint:  Use  match  ...  case   but  not  if ... else
 '''
-from idlelib.help import copy_strip
 
 units = int(input('Enter  units : '))  #  175
 match  units // 100:
