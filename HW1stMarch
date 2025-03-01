@@ -113,9 +113,9 @@ for  x  in  {10 : 20 , 30 : 40 , 50 : 60}:
 a = {10 : 20 , 30 : 40 , 50 : 60}
 for  x , y  in   a . items():
 	print(x , y , sep = '...')
-#for  x,y  in   a:
+#for  x,y  in   a: #unpack non-iterable int object
 	#print(x , y)
-#for  x , y  in  {10 : 20 , 30 : 40 , 50 : 60}:
+#for  x , y  in  {10 : 20 , 30 : 40 , 50 : 60}: #unpack non-iterable int object
 	#print(x , y , sep = '...')
 '''
 
