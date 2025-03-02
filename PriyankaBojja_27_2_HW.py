@@ -95,11 +95,11 @@ After  swap :  x=25       y=10
 try:
  x = float(input('Enter 1st input : '))
  y = float(input('Enter 2nd input : '))
- print('Before swap : ',x,y)
+ print(f'Before swap : {x=} \t {y=}')
  temp = x
  x = y
  y = temp
- print('After swap : ',x,y)
+ print(f'After swap : {x=} \t {y=}')
 except:
  print('Input must be int or float')
 
@@ -124,11 +124,11 @@ After  swap :  x=-200.0           y=100.0
 try:
  x = float(input('Enter 1st input : '))
  y = float(input('Enter 2nd input : '))
- print('Before swap : ',x,y)
+ print(f'Before swap : {x=} \t {y=}')
  x =x+y
  y=x-y
  x =x-y
- print('After swap : ',x,y)
+ print(f'After swap : {x=} \t {y=}')
 except:
  print('Input must be int or float')
 
@@ -149,11 +149,11 @@ y =  10
 try:
  x = float(input('Enter 1st input : '))
  y = float(input('Enter 2nd input : '))
- print('Before swap : ',x,y)
+ print(f'Before swap :  {x=} \t {y=}')
  x =x*y
  y=x/y
  x =x/y
- print('After swap : ',x,y)
+ print(f'After swap :  {x=} \t {y=}')
 except:
  print('Input must be int or float')
 
@@ -253,9 +253,9 @@ After  swap :  x='Hyd'            y='25'
 
 x = input('Enter 1st input : ')
 y = input('Enter 2nd input : ')
-print('Before swap : ',x,y)
+print(f'Before swap :  {x=} \t {y=}')
 x,y = y,x
-print('After swap : ',x,y)
+print(f'After swap : {x=} \t {y=}')
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -310,7 +310,7 @@ Largest  Input  :  [10, 20, 32, 19]
 a = input('Enter 1st input: ')
 b = input('Enter 2nd input: ')
 c = input('Enter 3rd input: ')
-Max = a if a>b else (b if b>c else c)
+Max = a if a>b and a>c else (b if b>c else c)
 print('Max is: ',Max)
 
 
