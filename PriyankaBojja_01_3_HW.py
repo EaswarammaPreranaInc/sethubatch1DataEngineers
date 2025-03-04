@@ -1,4 +1,3 @@
-'''	
 # Find  outputs  (Home  work)
 #How  to  print  each  element  of  list  [10 , 20 , 15 , 18]  using  for  loop
 l=[10 , 20 , 15 , 18]
@@ -66,4 +65,21 @@ for  i  in  range(1 , 4):
 		print(i ,  j)             
 	print('Hello')
 print('Bye')
-'''
+
+OP-
+1 1
+1 2
+1 3
+1 4
+Hello
+2 1
+2 2
+2 3
+2 4
+Hello
+3 1
+3 2
+3 3
+3 4
+Hello
+Bye
