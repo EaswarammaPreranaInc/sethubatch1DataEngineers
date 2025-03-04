@@ -8,45 +8,31 @@ for i in a:
 	print(a.index(i),i)
 
 #print elements in reverse order without slice
-try:
-	a=eval(input('Enter list of elements :'))
-	print('Indexed for loop')
-	for i in range(-1,-len(a)-1,-1):
-		print(a[i])
-	print('For each loop')
-	for i in reversed(a):
-		print(i)
-except:
-	print('Enter String in quotes')
+a=eval(input('Enter list of elements :'))
+print('Indexed for loop')
+for i in range(-1,-len(a)-1,-1):
+	print(a[i])
+print('For each loop')
+print('We cannot reverse a string without using slice')
 
 #program to add two lists and store in 3rd list
 a=eval(input('Enter 1st list :'))
 b=eval(input('Enter 2nd list :'))
 c=[]
-if len(a)==len(b):
-	print('Indexed for loop')
-	for i in range(len(a)):
-		c.append(a[i]+b[i])
-	print('3rd list :',c)
-	print('For each loop')
-	d=[]
-	for i,j in zip(a,b):
-		d.append(i+j)
-	print('3rd list :',d)
-else:
-	print('Lists are of different lengths')
+print('Indexed for loop')
+for i in range(len(a)):
+	c.append(a[i]+b[i])
+print('3rd list :',c)
+print('For each loop')
+print('We cannot iterate through two lists simultaneously')
 
 #print list elements from indexes 2 to 4 without slice
 a=[25,10.8,'Hyd',True,3+4j,None,'Sec']
 print('Indexed for loop')
 for i in range(2,5):
 	print(a[i])
-c=0
 print('For each loop')
-for i in a:
-	if(c>=2 and c<=4):
-		print(i)
-	c+=1
+print('We can not traverse through a part of list')
 
 #Gift
 a=[10,20,15,18]
@@ -172,9 +158,9 @@ print('Sum:',sum)
 for i in range(1,8):
 	print(i)                
 	if i%3==0:
-				continue
+		continue
 	else:
-				print('Sec')
+		print('Sec')
 	print('Hello')
 #End of loop
 print('Outside loop')
@@ -202,20 +188,78 @@ Outside loop
 #Identify error
 if():
 		print('Hyd')
-		continue      #Error
+		continue      #Error(Continue can only be in for and while loop)
 		print('Sec')
+
+#Find outputs
+for i in range(1,8):
+	print(i)                
+	if i%3==0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+#End of loop
+print('Outside loop')
+#Output
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Outside loop
+
+#Identify error
+if():
+	print('Hyd')
+	break      #Error(break can only be in for and while loop)
+	print('Sec')
 
 #Find outputs
 for i in range(1,8):
 	print(i)
 	if i%3==0:
-			exit()
+		pass
+		print('Hyd')
 	else:
-			print('Sec')
+		print('Sec')
 	print('Hello')
 #End of the loop
 print('Outside loop')
+#Outputs
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Hyd
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Hyd
+7
+Sec
+Hello
+Outside loop
 
+#Find outputs
+for i in range(1,8):
+	print(i)
+	if i%3==0:
+		exit()
+	else:
+		print('Sec')
+	print('Hello')
+#End of the loop
+print('Outside loop')
 #Find outputs
 1
 Sec
