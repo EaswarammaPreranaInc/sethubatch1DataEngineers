@@ -4,7 +4,7 @@ a=[25, 10.8, 'Hyd', True]
 print('Indexed for loop')
 for i in range(4):
 	print(i, a[i])
-print('For each loop')
+print('For each loop') #not possible if we are using only for each loop without using slice and another varaible
 for i in a:
 	print(a.index(i), i)
 '''
@@ -16,8 +16,8 @@ try:
 	print('Indexed for loop')
 	for i in range(-1,-len(a)-1,-1):
 		print(a[i])
-	print('For each loop')
-	for i in reversed(a):
+	print('For each loop') 
+	for i in reversed(a): #  not possible if we are using only for each loop without using slice and another varaibl
 		print(i)
 except: 
 	print('Enter string in quotes')
@@ -49,7 +49,7 @@ print('Indexed for loop')
 for i in range(2,5):
 	print(a[i])
 c=0
-print('for each loop')
+print('for each loop') # not possible if we are using only for each loop without using slice and another varaible
 for i in a:
 	if(c>=2 and c<=4):
 		print(i)
@@ -64,7 +64,7 @@ for i in range(len(a)):
 	print('a:', a) #[11,21,16,19]
 b=[10,20,15,18]
 for x in b:
-	x+=1    # Increment each element of 'a' by 1
+	x+=1    # Increment of x is done not list b
 print('b:', b)  #[11,21,16,19]
 '''
 
@@ -217,7 +217,7 @@ print('Outside loop')
 '''
 if ():
 	print('Hyd')
-	continue #
+	continue # there is no keyword continue  without for loop
 	print('Sec')
 '''
 
@@ -238,7 +238,7 @@ print('Outside loop')
 '''
 if(10 , 20 , 30):
 	print('Hyd')
-	break
+	break # there is no keyword continue  without for loop
 	print('Sec')
 '''
 
