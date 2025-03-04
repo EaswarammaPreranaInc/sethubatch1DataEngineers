@@ -1,0 +1,45 @@
+#complex object demo
+
+#program 1
+a = 3 + 4j # ref 'a' points to obj class complex
+print(a) # value of obj 'a' (3+4j)
+print(type(a)) # type of obj 'a' <class complex>
+print(id(a)) # print address of comple obj 'a'
+print(a . real) # 3.0
+print(a . imag) # 4.0
+print(type(a . real)) # typeof real obj <class float>
+print(type(a . imag)) # typeof imag obj <class float>
+
+#program 2
+a = 6j # ref 'a' points to complex obj 
+print(a) # value of obj 'a' 6j
+print(type(a)) # typeof obj 'a' <class complex>
+print(a . real) # 0.0
+print(a . imag) # 6.0
+print(5 + j6) # error because 'j' is before the number
+print(3 + 4i) # error because 'i' is not use to complex obj
+print(4+j) # error because imag value is missing
+print(4 + 1j) # value of complex obj i.e 4+1j
+print(4 + 0j) # vlue of complex obj i.e 4+0j
+
+# bool object demo program
+
+#program 3
+a = True  # ref 'a' points to bool object
+print(a) # value of onj 'a' i.e True
+print(type(a)) #prints typeof bool obj  <class bool>
+print(id(a)) # address of obj 'a' 
+b = False  # ref 'b' points to bool obj
+print(b) # value of obj 'b' i.e False
+print(type(b)) #address of obj 'b'
+print(True + True) # perform + operation  1+1=2
+print(True + False) # perform + operation  1+0=1
+print(False + True) # perform + operation 0+1=1
+print(False + False) # perform + operation 0+0=0
+print(True + True + True) # perform + operation 1+1+1=3
+print(25 + 10.8 + True) # 25+10.8+1=36.8
+print(True > False) # 1>0 (True)
+print(True) # True
+print(False) # False
+print(true) # error due to 't'
+print(false) # error due to 'f'
