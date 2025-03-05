@@ -1,30 +1,25 @@
-'''
+1
 Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator
-
-List :   [10 , 20 , 15 , 12 , 18 , 15 , 19 , 14 , 15 , 14]
-
-Search  for  15
-
-Outputs :  15 is  found  at  index  2
-                 15 is  found  at  index  5
-                 15 is  found  at  index  8
-                 15 is  found   3  times
 
 a=[10 , 20 , 15 , 12 , 18 , 15 , 19 , 14 , 15 , 14]
 x=eval(input('Enter value to be searched: '))
 ctr=0
 for i in range(len(a)):
 		if a[i]==x:
-			print(f' {x} Found at index ',i)	
+			print(f' {x} is found at index ',i)	
 			ctr+=1
 if ctr!=0:
 	print(f'{x} is found {ctr} times)
 else:
 	print('Not found')
-			
-	
-		
 
+ OP-
+15 is  found  at  index  2
+15 is  found  at  index  5
+15 is  found  at  index  8
+15 is  found   3  times
+-------------------------------------------------------------------------------------------------------------------------------------
+2
 Write  a  program to  determine  average  of  inputs  which  are  terminated  with  -1 with walrus operator
 
 try:
@@ -40,28 +35,18 @@ except  ZeroDivisionError:
 except  (NameError , TypeError):
 	print('Input  can  not  be string')
 
+ OP-
+Enter input  (-1  to  stop)  :  3
+Enter input  (-1  to  stop)  :  4.3
+Enter input  (-1  to  stop)  :  2
+Enter input  (-1  to  stop)  :  True
+Enter input  (-1  to  stop)  :  1
+Enter input  (-1  to  stop)  :  6
+Enter input  (-1  to  stop)  :  -1
+Average :   2.8600000000000003
+---------------------------------------------------------------------------------------------------------------------------
+3
 Write  a  program  to  determine  largest  command  line  input
-
-1) py   prog2.py   10     20     30.8    7   40    35.6
-    What  is  the  largest  command  line  input ?  --->	40
-    What  is  argv ?  ---> ['prog2.py' , '10' , '20' , '30.8' , '7' , '40' , '35.6']
-    What  is  list  'a' ?  --->  [10 , 20 , 30.8 , 7 , 40 , 35.6]
-    How  to  determine  largest  element  of  list  'a' ?  ---> max(a)  i.e.  40
-    What  is  the  result  of  max(argv[1:]) ?  --->  '7'
-    What  is  the  issue  with  max(argv[1:])) ?  --->  Largest  string  is  obtained  but  not  largest  number
-
-2) py  prog2.py
-    What  is  the  output ?  --->	Pls  send  inputs
-
-3) py   prog2.py   'Rama'   'Sita'   'Rajesh'   'Manohar'   'Vamsi'   'Amar'
-    What  is  the  largest  command  line  input ?  --->	'Vamsi'
-
-4) py   prog2.py   25   'Ten'
-    What  is  the  output ?  ---> Inputs  can  not  be  number  and  string
-
-5) Hint1: Use  for  loop
-
-6) Hint2: Use  try  and  except
 
 from sys import argv
 try:
@@ -75,24 +60,15 @@ except ValueError:
 	print('please send inputs')
 except TypeError:
 	print('Inputs cannot be number and string')
-
-
+ 
+OP-
+C:\PYTHON SSSDP>py PriyankaBojja_05_03_HW.py 2 4 12 7 34 True
+['PriyankaBojja_05_03_HW.py', '2', '4', '12', '7', '34', 'True']
+[2, 4, 12, 7, 34, True]
+max element is:  34
+---------------------------------------------------------------------------------------------------------------
+4
 Write  a  program  to  determine  command  line  input  is  even  number  or  odd  number
-
-1) py  prog3.py  26
-    What  is  the  output ?  ---> Even  number
-
-2) py  prog3.py  45
-    What  is  the  output ?  --->  Odd  number
-
-3) py  prog3.py
-    What  is  the  output  ?  --->  Pls  send  an  integer  input
-
-4) py  prog3.py  10.8
-    What  is  the  output ?  --->  Pls  send   an  integer  input
-
-5) py  prog3.py  Ten
-    What  is  the  output  ?  --->   Pls  send   an  integer  input
 
 from sys import argv
 try:
@@ -109,21 +85,15 @@ try:
 except ValueError:
 	print('please send valid inputs')
 
-
+ OP-
+C:\PYTHON SSSDP>py PriyankaBojja_05_03_HW.py 1 2
+['PriyankaBojja_05_03_HW.py', '1', '2']
+[1, 2]
+1 is an Odd number
+2 is an Even number
+------------------------------------------------------------------------------------------------------------
+5
 Write  a  program  to  determine  average  of  command  line  inputs
-
-1) py   prog4.py   10.8   25   True   14.6   19   False   7.4
-    What  is  argv ?  --->  ['prog4.py' , '10.8' , '25' , 'True' , '14.6' , '19' , 'False' , '7.4']
-    What  is  list  'a'  ?  ---> 	[10.8 , 25 , True , 14.6 , 19 , False , 7.4]
-	How  to  determine  sum  of  list  elements ?  ---> sum(a)
-    How  to  determine  number  of  list  elements ?  --->	len(a)
-
-2) py   prog4.py
-    What  is  the  output ?  --->  Pls  send  number  inputs
-
-3) py   prog4.py  25   'Ten'
-    What  is  the  output  ?  ---> Pls  send  number  inputs
-
 
 from sys import argv
 try:
@@ -140,16 +110,16 @@ except ValueError:
 except ZeroDivisionError:
 	print('List cannot be empty')
 
-
+ OP-
+C:\PYTHON SSSDP>py PriyankaBojja_05_03_HW.py True 4 2 5.6 False
+['PriyankaBojja_05_03_HW.py', 'True', '4', '2', '5.6', 'False']
+list:  [True, 4, 2, 5.6, False]
+sum of list elements:  12.6
+length of list:  5
+Average of list elements : 2.52
+--------------------------------------------------------------------------------------------------------------------
+6
 Write  a  program  to  sort  command  line  inputs  in  ascending  order  and  descending  order
-
-1) py  prog5.py  10   20    15.8   5   12.6
-    What  is  argv ?  --->  ['prog5.py' , '10' , '20' , '15.8' , '5' , '12.6']
-    What  is  list  'a' ?  --->  [10 , 20 , 15.8 , 5 , 12.6]
-    How  to  sort  list  'a' ?  ---> a . sort()
-    How  to  sort  list  'a'  in  descending  order  ?  --->  a . sort(reverse = True)
-2) py  prog5.py   25   'Ten'
-    What  is  the  output ?  --->  Pls  don't  send  number  and  string  inputs  together
 
 from sys import argv
 try:
@@ -164,4 +134,10 @@ try:
 	print('Descending Order: ',a)
 except (ValueError,NameError):
 	print('Please enter valid input')
-'''
+
+OP-
+C:\PYTHON SSSDP>py PriyankaBojja_05_03_HW.py 5.2 True 41 8 False
+['PriyankaBojja_05_03_HW.py', '5.2', 'True', '41', '8', 'False']
+Original list [5.2, True, 41, 8, False]
+Ascending order:  [False, True, 5.2, 8, 41]
+Descending Order:  [41, 8, 5.2, True, False]
