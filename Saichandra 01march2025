@@ -1,0 +1,33 @@
+# python program to display numbers from a list using a for loop
+numbers = [20, 30, 40, 50, 60, 70]
+for num in numbers:
+	print(num)
+
+
+
+# python program to count the total number of digits in a number
+n = int(input("Enter a number:"))
+count = 0
+while n > 0:
+    n //= 10
+    count += 1
+print("The total number of digits is:", count)
+
+
+
+# python program to checkn if the given string is a palindrome
+s = input("Enter a string: ")
+if s == s[::-1]:
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+
+
+
+
+# python program that accepts a word from the user and reverses it
+word = input("Enter a word: ")
+reversed_word = word[::-1]
+print("The reversed word is:", reversed_word)
+
+
