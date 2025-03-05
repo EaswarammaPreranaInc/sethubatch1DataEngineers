@@ -1,0 +1,45 @@
+'''
+(Home  work)
+Write  a  program to  determine  average  of  inputs  which  are  terminated  with  -1
+(without  walrus  operator)
+
+Let  inputs  be  25 , 10.8 , True ,  46 , 34.8 , False , 95 , -1
+
+sum = 0 + 25 + 10.8 + True + 46 + 34.8 + False + 95
+
+ctr = 0  + 1 + 1 + 1 + 1 + 1 + 1 + 1
+'''
+sum , ctr = 0
+while True:
+    num = input("Enter a number (-1 to terminate): ")
+    if num == '-1':
+        break
+    if num.lower() == 'true':
+        num = 1
+    elif num.lower() == 'false':
+        num = 0
+    else:
+        num = float(num)
+    sum += num
+    ctr += 1
+if ctr == 0:
+    print("No numbers entered.")
+else:
+    average = sum / ctr
+    print("Average:", average)
+
+
+'''
+Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator  and
+print  Found  or  Not  Found  message  (Assume  that  there  are  no  duplicates)
+
+Note:  Do  not  use  index()  method
+'''
+a=eval(input('enter any list:'))
+x=eval(input('Enter the element to be searched :'))
+for i in range(len(a)):
+	if a[i] == x:
+		print('Fount at index : 'i)
+		break
+else:
+print('Not Found')
