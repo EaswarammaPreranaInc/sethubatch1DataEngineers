@@ -1,0 +1,74 @@
+#1
+a = 'Rama Rao'
+print(a [ : 7 : 2])
+print(a [ : 7])
+print(a [2 : 4])
+print(a [2 : ])
+print(a [ : 4 ])
+print(a [ : : 2])
+print(a [-6 : -1])
+print(a [-6 : ])
+print(a [: -4 : -1])
+print(a [-3 : -1])
+print(a [-3 : ])
+print(a [ : : ])
+print(a [ : ])
+print(a [ : : -1])
+print(a [ : : -2]) #  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oRaa
+print(a [ -2 : : -2])
+print(a [2 : 8])
+print(a [2 : 8 : -1])
+print(a [ : -6 : -1])
+print(a [2 : -3])
+print(a [1 : 6 : 2])
+print(a [ : -5 : -5])
+print(a [2 : -5])
+print(a [2 : -5 : 2])
+print(a [ : 0 : -1])
+print(a [-5 : 0 : -2])
+
+#2
+s1=str(input('Enter string 1 :'))
+s2=str(input('Enter string 2 :'))
+s3=s2[0:1]+s1[1:]+' ' +s1[0:1]+s2[1:]
+print(s3)
+
+#3
+s=str(input('Enter a string : '))
+if len(s)< 4 :
+	print('String should have minimum 4 letters')
+else:
+	print(s[0:2] + s[len(s)-2:])
+
+#4
+s=str(input('Enter a string : '))
+print('Characters of the string in forward direction :')
+for x in s:
+	print(f'Character at index {s.index(x)}: {x}')
+print('Characters of the string in reverse direction :')
+for x in reversed(s):
+	print(f'Character at index  {s.index(x)}: {x}')
+
+#5
+s=str(input('Enter a string : '))
+print('Characters in even index : ',end='')
+for x in s:
+	if s.index(x)%2==0 :
+		print(x,end='')
+print()
+print('Characters in odd index : ',end='')
+for x in s:
+	if s.index(x)%2 !=0:
+		print(x,end='')
+print()
+
+#6
+s = input("Enter any string with alternate characters and digits: ")
+for i in s:
+	if i.isdigit():  
+		num = int(i) 
+		index = s.index(i)  
+		if index > 0: 
+			k = s[index - 1] * num
+			print(k,end='')
+print()
