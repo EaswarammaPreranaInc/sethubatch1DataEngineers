@@ -120,7 +120,7 @@ print(a)  #  'Hyd'
 # Formatting
 a = [10 , 20 , 30 , 40]
 print('%s'  %a)  #'[10, 20, 30, 40]'
-print('%s' %a)  # '%[10, 20, 30, 40]'
+print('%s' %a)  # '[10, 20, 30, 40]'
 #print('%s'  a)  # invalid syntax due to missing comma between 2 operators
 #print('%s' ,%a)  #  invalid syntaxerror due to  %a
 #print('%l'  %a)  # error due to unsupport format character %l
