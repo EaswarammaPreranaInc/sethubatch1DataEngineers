@@ -9,7 +9,7 @@ print(eval('[10 , 20 , 15 , 18]'))# [10 , 20 , 15 , 18]
 print(eval('{10,20,15,18,20,12,18}')) #{10,20,15,18,12,}
 print(eval('(10 , 20 , 30)')) # (10 , 20 , 30)
 print(eval("{10 : 'Hyd' , 10 : 'Sec'}"))# {10 : 'Sec'}
-#print(eval(4 + 5)) #error 
+#print(eval(4 + 5)) #Type error : print(eval(4 + 5)) #error
 
 print(eval("    'hyd'   ")) #hyd
 hyd = 'Sec'
@@ -19,17 +19,17 @@ print(eval('sec')) # 25
 print(eval(sec)) # 25
 cyb = 10.8
 print(eval('cyb'))#10.8
-#print(eval(cyb)) #error
+#print(eval(cyb)) #error due to cyb not defined 
 
 print(bool('False'))# True
 print(eval('False'))#False
 print(bool(''))#False
 print(eval('  ""  '))# empty
-#print(eval('')) # error
-print(eval('  " "   ')) # empty 
+#print(eval('')) # invalid syntax due to empty 
+print(eval('  " "   ')) # ''(a space) 
 #print(eval(' '))
-# What  is  the  advantage  of  eval(input()) ?
-x = eval(input('Enter  any  input  :  '))
+
+x = input('Enter  any  input  :  ')
 print(type(x))# <class 'str'>
 print(x)# ganga
 
@@ -48,7 +48,7 @@ print(a , b , c , sep = '\t')  #  25    10.8    Hyd
 print(a , b , c , sep = '---')#  25---10.8---Hyd
 print(a , b , c , sep = '\n')#  25<next line>10.8<next line>Hyd
 print(a , b , c) #25 10.8 hyd
-#print(a , b , c , separator = ':')# error
+#print(a , b , c , separator = ':')# error due to invaild 'separator' argument instead of sep
 
 # Assigning a,b,c to 25,10.8,'hyd'
 a , b , c = 25 , 10.8 , 'Hyd'
@@ -112,16 +112,16 @@ print('%7s'  %a)  # '    Hyd' (4 spaces  'Hyd')
 print('%-7s'  %a)  #'Hyd    ' ('Hyd'  4 spaces)
 print('%2s'  %a)  # 'Hyd' 
 print('%s'  %a)  # 'Hyd'
-print('%s' , a)  #'%s Hyd' 
-#print('%s' a)  # error 
-#print('%s' ,%a)  # error
+print('%s' %a)  # 'Hyd' 
+#print('%s' a)  # invalid syntax due to missing comma between 2 operators
+#print('%s' ,%a)  # invalid syntax error  due to %a
 print(a)  #  'Hyd'
 
 # Formatting
 a = [10 , 20 , 30 , 40]
 print('%s'  %a)  #'[10, 20, 30, 40]'
-print('%s' , a)  # '%s [10, 20, 30, 40]'
-#print('%s'  a)  # error
-#print('%s' , %a)  #  error
-#print('%l'  %a)  # error
+print('%s' %a)  # '%[10, 20, 30, 40]'
+#print('%s'  a)  # invalid syntax due to missing comma between 2 operators
+#print('%s' ,%a)  #  invalid syntaxerror due to  %a
+#print('%l'  %a)  # error due to unsupport format character %l
 print(a)  #'[10, 20, 30, 40]'
