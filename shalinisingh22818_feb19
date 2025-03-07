@@ -1,0 +1,240 @@
+#Dictonary
+#program 1
+# How  to  print  dictionary  in  different  ways
+a  =  {10 : 'Ramesh' ,  20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
+print('Dictionary  with  print  function')
+print(a)
+print('Keys  of  dictionary')
+for x in a.keys():
+	print(x)
+print('Values  of  dictionary')
+for x in a.values():
+	print(x)
+print('All  the  tuples  of  dict_items   object')
+for x in a.items():
+	print(x)
+print('Elements  of  each   tuple')
+for x,y in a.items():
+	print(x,y,sep='...')
+print('Keys  and  values  of  dictionary')
+for x in a.keys():
+	print(x,a[x],sep=':')
+for x in a.items():
+	print(*x)
+ Output:
+ Keys  of  dictionary
+10
+20
+15
+18
+Values  of  dictionary
+Ramesh
+Kiran
+Amar
+Sita
+All  the  tuples  of  dict_items   object
+(10, 'Ramesh')
+(20, 'Kiran')
+(15, 'Amar')
+(18, 'Sita')
+Elements  of  each   tuple
+10...Ramesh
+20...Kiran
+15...Amar
+18...Sita
+Keys  and  values  of  dictionary
+10:Ramesh
+20:Kiran
+15:Amar
+18:Sita
+10 Ramesh
+20 Kiran
+15 Amar
+18 Sita
+
+#program 2
+#  Find  outputs (Home  work)
+a = {
+		print('Hyd') ,  #Hyd
+		print('Sec') ,  #Sec
+		print('Cyb')    #Cyb
+     }
+print(type(a))      #<class 'set')
+print(a)            # {None}
+print(len(a))       #1
+
+#program 3
+#  Anonymous  object  demo  program
+_ = 25
+print(_)          #25
+print(type(_))    #<class 'int')
+a , _ , c = 10 , 20 , 30
+print(a)          #10
+print(_)          #20
+print(c)          #30
+for  _  in  range(5):
+	print(_ , 'Hello')
+                    #0 Hello
+                    #1 Hello
+                    #2 Hello
+                    #3 Hello
+                    #4 Hello
+
+#program 4
+#  Find  outputs
+a = 25
+print(id(a))    #some address of id a
+a = 35
+print(id(a))    #holds different address of id a as int take new refernces to new objects
+
+#program 5
+# Find  outputs 
+a = 25.7
+print(id(a))   #some address of id a
+print(a)       #25.7
+a = 35.6
+print(id(a))   #different address of id a
+print(a)       #35.6
+b = True
+print(id(b))   #some address of id b
+b = False
+print(id(b))   #different address of id b
+c = None
+print(id(c))   #some address of id c i.e 140713426190832
+c = None
+print(id(c))  #same address of id c ie 140713426190832
+
+#program 6
+#  Find  outputs (Home  work)
+a = 'Hyd'
+print(id(a))        #some address of id a
+a[1] = 'e'#string cant support item assignment
+a = 'Sec'
+print(id(a))       #some address of id a
+b = (10 , 20 , 15 , 18)
+print(id(b))       #some address of id b
+b[2] = 19 #item assignment is not possible
+b = (30 , 40 , 35 , 32)
+print(id(b))       #some address of id b
+c = range(5)
+print(id(c))       #some address of id c
+c[3] = 10 #item assignment is not possible for range object
+c = range(5)
+print(id(c))   #some address of id c
+
+#program 7
+# Find  outputs 
+a = 25
+b = 25
+print(a  is  b)   #True
+c = 'Hyd'
+d = 'Hyd'
+print(c  is  d)   #True
+e = False
+f = False
+print(e  is  f)   #True
+g = range(10)
+h = range(10)
+print(g  is  h)   #False range object cant be reusable
+
+#program 8
+#Find  outputs(Home  work)
+a = [10 , 20 , 15 , 18]
+b = [10 , 20 , 15 , 18]
+print(a  is  b)        #False list object is mutable
+c =  {10 : 20, 30 : 40}
+d =  {10 : 20, 30 : 40}
+print(c  is  d)        #False dict object is mutable 
+e = (10 , 20 , 15 , 18)
+f = (10 , 20 , 15 , 18)
+print(e  is  f)       #True tuple is immutable and reusable
+g = {10 , 20 , 15 , 18}
+h = {10 , 20 , 15 , 18}
+print(g  is  h)       #False sets points to differnt sets
+
+#program 9
+# Find outputs 
+print(10 + 20)                          #30
+print(10.8 + 20.6)                      #31.400000000000002
+print(3 + 4j + 5 + 6j)                  #(8+10j)
+print(True + False)                     #1
+print('Hyder' + 'abad')                 #Hyderabad
+print('Sankar' + 'Dayal' + 'Sarma')     #SankarDayalSarma
+print('10' + '20')                      #1020
+print([10 , 20 , 30] + [1 , 2 , 3])     #[10, 20, 30, 1, 2, 3]
+print((25 , 10.8 , 'Hyd') + (3 + 4j , True , None))  #(25, 10.8, 'Hyd', (3+4j), True, None)
+print({10 , 20} + {30 , 40})            #error set cant be added
+print({10 : 'Hyd'} + {20 : 'Sec'})      #error dict objects canr be added
+print(range(4) + range(5))              #range objects cant be added
+print(10 + '20')                        #error int and string cant be added
+print([10 , 20 , 30] + 5)               #list and int cant be added
+print([10 , 20 , 30] + (40 , 50 , 60))  #list and tuple cant be added
+
+#program 10
+# Find outputs 
+print(25 * 3)      #75
+print(10.8 * 25.6)  #276.48
+print(True * False)  #0
+print((3 + 4j) * (5 + 6j)) #(-9+38j)
+print(3 + 4j * 5 + 6j) #(3+26j)
+print('25' * 3)  #252525
+print(3 * '25') #252525
+print('Hyd' * 4) #HydHydHydHyd
+print([10 , 20 , 15] * 2) #[10, 20, 15, 10, 20, 15]
+print((25, 10.8, 'Hyd', True) * 3)  #(25, 10.8, 'Hyd', True, 25, 10.8, 'Hyd', True, 25, 10.8, 'Hyd', True)
+print([10 , 20 , 15] * 3.0) # error float value cant be used for repetition or multiplication
+print({10 , 20 , 15} * 2) #error set duplicates are ignored
+print({10 : 20 , 30 : 40} * 2) #error dict dont allow duplicate keys
+print([10] * [20]) #error  cant be mulitplied by non int types 
+
+#program 11
+# Find outputs
+print(7 / 0)  #division by zero error
+print(7 // 0) #error
+print(7 % 0) #error 0 cant be divided
+
+#program 12
+# ** operator demo program
+print(3 ** 4)   #  3 ^ 4 = 81
+print(10 ** -2) #10^-2=0.01
+print(4 * 3 * 2) #24
+print(3 + 4 * 5 - 32 / 2 ** 3) 19.0
+
+#program 13
+#  Relational  operators  demo  program (Home  work)
+print(9 >= 5)  #  True  becoz  >  is  satisfied
+print(9 >= 9)   #  True  becoz  =  is  satisfied
+print(9 >= 12)   #  False  becoz    both  are  not  satisfied
+print(6 <= 8)  #True
+print(6 <= 6) # True  becoz  =  is  satisfied
+print(6 <= 4) # False  becoz  <=  is  not satisfied
+print(9 != 7)  # True  becoz   !=  is  satisfied
+print(6 == 8)  # False  becoz  ==  is  not satisfied
+print(True  >  False)  # True  becoz  >  is  satisfied
+print(3 + 4j == 3 + 4j)  # True  becoz  =  is  satisfied
+print(3 + 4j == 5 + 6j) # False  becoz  ==  is  not satisfied
+print(3 + 4j != 5 + 6j) # False
+print(10 == 10.0)  # True
+print(3 + 4j >  3 + 4j) #error because it is complex comparision 
+
+#program 14
+#  Find  outputs  (Home  work)
+print('Rama'   >  'Rajesh')   #   True  becoz  'm' > 'j'
+print('Rama'  <  'Sita')  #   True  becoz  'm' < 'j'
+print('Hyd'  ==  'Hyd') #   True  becoz  'm' == 'j'
+print('Rama'  <=   'Ramana') #   True  becoz  'm'  < 'j'
+print('Rama  Rao'  >=  'Rama') #   True  becoz  'm' > 'j'
+print('Hyd'  != 'Sec') #   True  becoz  'm' != 'j'
+print('HYD'  <   'hyd') #   True  becoz  'm' < 'j'
+
+#program 15
+# Chaining  relational  opeartors  (Home work)
+print(10 < 20 < 30)    #   True  becoz  both  are  satisfied
+print(10 >= 20 < 30)   #  False  becoz  1st  cond  is  not  satisfied
+print(10 < 20 > 30)    #False  
+print(1 < 2 < 3 < 4)   #True 
+print(1 < 2 > 3 > 1)   #False 
+print(4 > 3 >= 3 > 2)  #True
+
+
+    
