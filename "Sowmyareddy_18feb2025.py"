@@ -1,0 +1,8 @@
+a = {} #empty dictionary
+print(type(a)) # <class 'dict'>
+print(len(a)) #0
+print(a) #prints empty dictionary {}
+b = dict() #empty dictionary
+print(type(b)) #<class 'dict'>
+print(len(b)) #prints empty dictionary i.e: 0
+print(b) #prints {}
