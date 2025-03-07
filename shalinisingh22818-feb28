@@ -1,0 +1,544 @@
+#program 1
+#Identify  error
+else 1:
+		print('else  suite')
+print('Outside')
+#we cant give else without if 
+
+#program 2
+#Identify  error
+ if  9 > 5 #no colon after condition in if statement 
+	print('Hello')
+print('Bye')
+
+#program 3
+#Identify  error
+if  9 > 12:
+	print('Hyd')	
+else  #no colon after else in statement 
+  print('Sec')
+
+#program 4
+#Identify  error
+if (10,20,15):
+print('Hyd')    #indentation error becoz spacebar and tab key missing
+else:
+print('Sec')    #indentation error becoz spacebar and tab key missing
+
+#program 5
+#Identify  error
+if  (): #empty tuple false
+     print('Hyd')
+else:
+     print('Sec')
+print('Bye')
+#irregular indentation error
+
+#program 6
+#Identify  error
+if  { }:
+{    #error
+	print('One')
+	print('Two')
+	print('Three')
+}      #error
+else:
+{      #error
+	print('Four')
+	print('Five')
+	print('Six')
+}     # error
+print('Bye')
+#the flower braces should be indented as they resemble set the print statements should have comma seperation
+
+#program 7
+#Identify  error
+if  ():
+	print('One')
+	print('Two')
+	print('Three')
+else:
+if  []:
+	print('Four')
+	print('Five')
+	print('Six')
+else:
+if  {}:
+	print('Seven')
+	print('Eight')
+	print('Nine')
+else:
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+print('Bye')
+#the if statement is not indented after given else at every step and improper if else formation
+
+#program 8
+# Write  a  program  to  determine  a  number  is  even  or  odd  with   if  statement
+try:
+  a=int(input("Enter +ve number : "))
+  if a%2==0:
+    print("Even Number")
+  else:
+    print("Odd Number")
+except:
+    print("Input should be +ve integer number only ")
+
+output:
+Enter +ve number: 3
+Odd Number
+
+# program 9
+if():
+        print('Hyd')
+        print('Sec')
+        print('Cyb')
+else:
+        print('One') #One
+        print('Two') #Two
+        print('Three') #Three
+print('Bye') #bye
+output :
+One
+Two
+Three
+Bye
+
+#program 10
+if{10 : 20 , 30 : 40}:
+        print('Hyd')
+        print('Sec')
+        print('Cyb')
+print('Bye')
+output 10
+Hyd
+Sec
+Cyb
+Bye
+
+# program 11
+if { }:
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+print('Bye')
+output :
+Bye
+-----------------------------------------------------------------------------------------------------------
+# program 12
+#program  to  print  month  name  for  input  month  number  by  using  if  and  elif 
+try:
+	month=int(input("Enter month number (1-12) : "))
+	if 0<month<=1:
+		print("January")
+	elif 1<month<=2:
+		print("February")
+	elif 2<month<=3:
+		print("march")
+	elif 3<month<=4:
+		print("April")
+	elif 4<month<=5:
+		print("May")
+	elif 5<month<=6:
+		print("June")
+	elif 6<month<=7:
+		print("July")
+	elif 7<month<=8:
+		print("Augest")
+	elif 8<month<=9:
+		print("September")
+	elif 9<month<=10:
+		print("October")
+	elif 10<month<=11:
+		print("November")
+	elif 11<month<=12:
+		print("December")
+	else:
+		print("Input  should  be  between  1  and   12")
+except:
+	print("Input should be an integer")
+output 12
+Enter month number(1-12) : 7
+july
+Enter month number(1-12)  : 13
+Input should be between 1 and 12
+--------------------------------------------------------------------------------------------------------------------------
+# program 13
+#Write  a  program  to  test  year  is  leap  year  or  not
+try:
+    y=int(input("Enter 4-digit year: "))
+    if len(y)==4:
+        if (y % 4==0 and y % 100!=0) or y % 400==0 :
+            print("Leap year")
+        else:
+            print("Not a Leap year")
+except:
+    print("Input  should  be a 4 digit integer ")
+output 13
+Enter 4-digit year: 24
+leap year
+Enter 4-digit year:1900
+not aleap year
+Enter 4-digit year:2009
+not a leap year
+-------------------------------------------------------------------------------------------------------------------------------------------
+# program 14
+#Write  a  program  to  determine  largest  of  three  numbers  with  if  and  else
+try:
+    a = int(input("Enter 1st input : "))
+    b = int(input("Enter 2nd input : "))
+    c = int(input("Enter 3rd input : "))
+    if a>b and a>c:
+        print("Largest  Input  :",a)
+    if b>c:
+        print("Largest  Input  :",b)
+    else:
+        print("Largest  Input  :",c)
+except:
+    print("Input  should  be  an  integer")
+output 14
+Enter 1st input :10 
+Enter 2nd input : 20
+Enter 3rd input :30
+Largest Input  :30
+--------------------------------------------------------------------------------------------------------------------------------------------
+#program 15
+# Write  a  program  to  convert  celsius  temperature  to  farenheit  and  vice-versa
+try:
+	a=int(input("Enter  1  to  convert  celsius  to  farenheit  and  2  to  convert  fahrenheit  to  celsius :"))
+	if a==1:
+		ct=float(input("Enter  celsius  temperature : "))
+		farenheit=1.8*ct+32
+		print(f"Farenheit Equivalent : {farenheit:.2f}")
+	elif a==2:
+		ft=float(input("Enter farenheit temperature : "))
+		celsius=(ft-32)/1.8
+		print(f"Celsius Equivalent : {celsius:.2f}")
+	else:
+		print("Invalid input")
+except:
+	print("Input value is 1 or 2 only")
+
+ output:
+ Enter  1  to  convert  celsius  to  farenheit  and  2  to  convert  fahrenheit  to  celsius :2
+ Enter farenheit temperature :100
+ Celsius Equivalent :37.78
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ #program 16
+#program  to  test  a  point  (x , y)  lies  in  1st  quadrant , 2nd  quadrant , 3rd  quadrant ,4th  quadrant , x - axis , y - axis   or  origin
+try:
+	x=float(input("Enter  value  of  x  co-ordinate : "))
+	y=float(input("Enter  value  of  y  co-ordinate : "))
+	if x>0 and y>0:
+		print("1st quadrant")
+	elif x<0 and y>0:
+		print("2nd quadrant")
+	elif x<0 and y<0:
+		print("3rd quadrant")
+	elif x>0 and y<0:
+		print("4th quadrant")
+	elif x!=0 and y==0:
+		print("x-axis")
+	elif x==0 and y!=0:
+		print("y-axis")
+	elif x==0 and y==0:
+		print("origin")
+	else:
+		print("Invalid values")
+except:
+	print("Input should numbers only")
+ -------------------------------------------------------------------------------------------------------------------------------------------
+ 
+
+#program 17
+#program  to  determine  largest , smallest  and  middle  of  three  numbers
+try:
+  a=float(input("enter first input : "))
+  b=float(input("enter the second input : "))
+  c=float(input("enter the third input : "))
+  max=a
+  if max<b:
+  	max=b
+  if max <c:
+  	max=c
+  min=a
+  if min>b:
+  	min=b
+  if min > c:
+  	min=c
+  middle=(a+b+c)-(max+min)
+  print(f'Largest number : {max}')
+  print(f'Smallest number : {min}')
+  print(f'Middle number : {middle}')
+except:
+  print("Input should be a numbers only")
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#program 18
+Write  a   program  to  print  day  of  the  week
+1  - Monday  2  - Tuesday 3  - Wednesday
+Hint:  Use  match ... case '''
+try:
+    x = int(input('Enter any number: '))
+    match x:
+        case 1:
+            print('Monday')
+        case 2:
+            print('Tuesday')
+        case 3:
+            print('Wednesday')
+        case 4:
+            print('Thursday')
+        case 5:
+            print('Friday')
+        case 6:
+            print('Saturday')
+        case 7:
+            print('Sunday')
+        case _:
+            print('Invalid')
+    # End of match
+    print('Bye')
+except ValueError:
+    print("Input should be an integer")
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#program 19
+#Write  a  program  to  determine  three  sides  form  a  triangle  or  not
+try:
+    from math import *
+    a = int(input("Enter 1st side : "))
+    b = int(input("Enter 2nd side : "))
+    c = int(input("Enter 3rd side : "))
+    if (a+b>c) and (b+c>a) and (a+c>b):
+        if a==b and b==c:
+            print("equilateral triangle")
+            Area= (sqrt(3))/4*(pow(a,2))
+            print(f"Area: {Area:.2f}")
+        elif a==b or b==c or c==a:
+            print("isoscles triangle")
+            s=(a+b+c)/2
+            Area= sqrt(s * (s - a) * (s - b) * (s - c))
+            print(f"Area: {Area:.2f}")
+        else:
+            print("scalene triangle")
+            s=(a+b+c)/2
+            Area= sqrt(s * (s - a) * (s - b) * (s - c))
+            print(f"Area: {Area:.2f}")
+        print("perimeter: ",a+b+c)
+    else:
+        print("Not  a  triangle, Sum  of  every  two  sides  should  be  >  3rd  side")
+except:
+    print("Input  should  be  an  integer")
+output 19
+enter 1st side 3
+enter 2nd side 4
+enter  3rd side 5
+Scalene Triangle
+Area = 6.00
+perimeter = 12.0
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+#program 20
+#Write  a  program  to  print  digit in  words
+0  -   Zero
+1  -   One'''
+try:
+    x = int(input('Enter any number: '))
+    match x:
+        case 0:
+            print('Zero')
+        case 1:
+            print('One')
+        case 2:
+            print('Two')
+        case 3:
+            print('Three')
+        case 4:
+            print('Four')
+        case 5:
+            print('Five')
+        case 6:
+            print('Six')
+        case 7:
+            print('Seven')
+        case 8:
+            print('Eight')
+        case 9:
+            print('Nine')
+        case 10:
+            print('Not a digit')
+        case _:
+            print("Not a valid input, input should be in 0-9")
+except ValueError:
+    print("Input should be an integer")
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+#program 21
+#Write  a  program  to  determine  bill  amount  and  input  is  units
+try:
+    u = float(input("Enter units of power used: "))
+    
+    match u // 100:  # Corrected match statement
+        case 0:
+            b = u * 3.00
+        case 1:
+            b = 300 + (u - 100) * 3.50
+        case 2 | 3:
+            b = 650 + (u - 200) * 4.00
+        case 4 | 5 | 6:
+            b = 1450 + (u - 400) * 4.50
+        case _:
+            b = 2800 + (u - 700) * 5.00
+    
+    print(f"Bill amount: {b:.2f}")  # Print outside of match
+except ValueError:
+    print("Input should be a number")
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+#program 22
+#Write  a  program  to  print  fibonacci  series  upto   x
+n = int(input("Enter a value up to which you want to print Fibonacci series: "))
+a=0
+b = 1  
+print("Fibonacci series:")
+while a <= n: 
+    print(a) 
+    a=b
+    b=a+b
+
+#program 23
+# Identify  Error
+i = 2
+match  i:
+	case  1:
+		print('One')
+	#case  _:  #_ case should be given at last
+		print('None of   the  above')
+	case  2:
+		print('Two')
+print('Bye')
+-----------------------------------------------------------------------------------------------------------------------------------------
+#program 24
+# Find  outputs  
+m = 2
+match  m:
+	case  1:
+		print('One')
+	case  _:
+		print('Hello')
+	case  _:
+		print('Bye')
+print('End')
+#error there cannot be 2 _ anonymous cases
+--------------------------------------------------------------------------------------------------------------------------------------
+#program 25
+#  Find  outputs  
+m = 1
+match  m:
+	case  1:
+		print('Hyd')
+	case  1:
+		print('Sec')
+	case  1:
+		print('Cyb')
+print('Bye')
+output 25
+'Hyd'
+'bye'
+-------------------------------------------------------------------------------------------------------------------------------------------
+#program 26
+# Find  outputs  
+ch = 'B'
+match  ch:
+	case   'A':
+		print('Apple')
+	case  'B':
+		print('Book')
+	case  'C':
+		print('Cafe')
+	case  _:
+		print('None of  the  above')
+print('Bye')
+output 26
+Book
+Bye
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#program 27
+#practice bitwise or (pipe operator)
+try:
+    x = eval(input('Enter any  number :  '))
+    match  x:
+    	case  7 |  -6  |  0:
+    		print('Hyd')
+    		print('Sec')
+    		print('Cyb')
+    	case  -10 | 15:
+    		print('One')
+    		print('Two')
+    		print('Three')
+    	case  _:
+    		print('India')
+    		print('China')
+    		print('Usa')
+# End  of  match
+    print('Bye')
+except:
+    print("Input  should  be  an  integer")
+output 27
+enter input 15 one two three bye
+enter input 7
+Hyd 
+sec
+cyb
+Bye
+----------------------------------------------------------------------------------------------------------------------------------------------
+#program 28
+#Write  a  program  to  determine  roots  of  a  quadtratic  equation  a * x ^ 2 + b * x + c = 0  where  a  ! = 0
+try :
+    from math import *
+    print("enter values of quadtratic  equation  respectively a * x ^ 2 + b * x + c = 0")
+    a = float(input("Enter value of a: "))
+    if a == 0:
+        print("Value of a cannot be 0")
+    else:
+        b = float(input("Enter value of b: "))
+        c = float(input("Enter value of c: "))
+        disc=(b**2-4*a*c)
+        if disc>0:
+            print("Real  and  distinct roots")
+            root1=(-b+(sqrt(b**2-4*a*c)))/(2*a)
+            root2=(-b-(sqrt(b**2-4*a*c)))/(2*a)
+            print(f"root 1:{root1:.2f}")
+            print(f"root 2: {root2:.2f}")
+        elif disc<0:
+            print("Complex  (or)  Imaginary  roots")
+            real=-(b/(2*a))
+            imag=sqrt(-(disc))/(2*a)
+            print(f"root 1:{real:.2f} + {imag:.2f}j")
+            print(f"root 2:{real:.2f} - {imag:.2f}j")
+        else:
+            print("Real  and  equal")
+            print("root 1 & 2:",-(b)/(2*a))
+except:
+    print("Input  should  be  an  integer")
+--------------------------------------------------------------------------------------------------------------------------------------------
+#program 29
+##Write  a  program   to  determine  a  point (x , y)  lies  inside , outside  or  on  the  circle.
+#Center  is  origin  and  radius  is  'r'
+  try:
+    from math import *
+    x = int(input("Enter value  of  x: "))
+    y = int(input("Enter value  of  y: "))
+    r = int(input("Enter radius of circle : "))
+    dist= sqrt(x**2+y**2)
+    if dist==r:
+        print("Point is on the circle")
+    elif dist<r:
+        print("Inside the circle")
+    elif dist>r:
+        print("Outside the circle")
+except:
+    print("Input  should  be  an  integer")
+--------------------------------------------------------------------------------------------------------------------------------------------------
+#program 30
+#  Find  outputs
+while  True:
+	print('Hello')  #  Hello  infinite  times
+print('Bye') #  Not  executed  due to  infinite loop
