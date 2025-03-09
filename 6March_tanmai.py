@@ -20,27 +20,27 @@ print(a [ : 7])# a[0:7:1] --> string from indexes 0 to 6 in steps of 1 --> Rama 
 print(a [2 : 4])# a[2:4:1] --. string from indexes 2 to 3 in steps of 1 --> ma
 print(a [2 : ])# a[2:8:1] --> string from indexes 2 to 7 in steps of 1--> ma Rao
 print(a [ : 4 ])#a[0:4:1] --> string from indexes 0 to 3 in steps of 1 --> Rama
-print(a [ : : 2])# a[0:8:2] --> string from indexes 0 to 7 in stteps of 2 --> Rm Ro
-print(a [-6 : -1])# a[-6:-1:1] --. string from indexes -6 to 0 in steps of 1 --> Empty string
-print(a [-6 : ])# a[-6:-9:1] --> string from indexes -6 to -10 in steps of 1 --> Empty String
-print(a [: -4 : -1])# a[-1:-4:-1] --> string from indexes -1 to -3 in steps of -1  --> 0aR a
-print(a [-3 : -1])# a[-3:-1: 1] --> string from indexes -3 to 0 in steps of 1 --> Rao
+print(a [ : : 2])# a[0:8:2] --> string from indexes 0 to 7 in stteps of 2 --> Rm a
+print(a [-6 : -1])# a[-6:-1:1] --. string from indexes -6 to 0 in steps of 1 --> ma Ra
+print(a [-6 : ])# a[-6:8:1] --> string from indexes -6 to 7 in steps of 1 --> ma Rao
+print(a [: -4 : -1])# a[-1:-4:-1] --> string from indexes -1 to -3 in steps of -1  --> oaR 
+print(a [-3 : -1])# a[-3:-1: 1] --> string from indexes -3 to -2 in steps of 1 --> Ra
 print(a [-3 : ])# a[-3:8:1] --> string from indexes -3 to 7 in steps of 1 -->Rao
 print(a [ : : ])#a[0:8:1] --> string from indexes 0 to 7   in steps of 1   -->Rama Rao
 print(a [ : ])#a[0:8:1] --> string from indexes 0 to 7   in steps of  1 -->Rama Rao
 print(a [ : : -1])#a[-1:-9:-1] --> string from indexes -1 to  -8   in steps of -1  --> oaR amaR
 print(a [ : : -2]) #  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oRaa
-print(a [ -2 : : -2])#a[-2:-9:-2] --> string from indexes -2 to -8   in steps of  -2 --> a aa
+print(a [ -2 : : -2])#a[-2:-9:-2] --> string from indexes -2 to -8   in steps of  -2 --> a mR
 print(a [2 : 8])#a[2:8:1] --> string from indexes  2 to 7  in steps of 1  --> ma Rao
-print(a [2 : 8 : -1])# --> string from indexes  2 to 9  in steps of   --> ma Rao
+print(a [2 : 8 : -1])# --> string from indexes  2 to 9  in steps of   --> Empty string
 print(a [ : -6 : -1])#a[-1:-6:-1] --> string from indexes -1 to -5   in steps of -1  --> oaR a
 print(a [2 : -3])#a[2:-3:1] --> string from indexes  2 to -4  in steps of 1  --> ma(space)
-print(a [1 : 6 : 2])#a[1:6:2] --> string from indexes 1 to 5    in steps of 2  --> aaRo
-print(a [ : -5 : -5])#a[-1:-5:-5] --> string from indexes -1 to -5    in steps of -5  -->a
+print(a [1 : 6 : 2])#a[1:6:2] --> string from indexes 1 to 5    in steps of 2  --> aaR
+print(a [ : -5 : -5])#a[-1:-5:-5] --> string from indexes -1 to -5    in steps of -5  -->o
 print(a [2 : -5])#a[2:-5:1] --> string from indexes 2 to -6   in steps of 1  --> m
-print(a [2 : -5 : 2])# --> string from indexes  2 to -6  in steps of 2  --> Empty string
+print(a [2 : -5 : 2])# --> string from indexes  2 to -6  in steps of 2  --> m
 print(a [ : 0 : -1])#a[-1:0:-1 --> string from indexes -1 to  1   in steps of -1  -->oaR ama
-print(a [-5 : 0 : -2])#--> string from indexes -5 to 1   in steps of  -2 --> a
+print(a [-5 : 0 : -2])#--> string from indexes -5 to 1   in steps of  -2 --> aa
 
 '''
 Write  a  program  to  concatenate  two  strings  separated  by  space  but  swap  the  first  two  characters  of each string.
