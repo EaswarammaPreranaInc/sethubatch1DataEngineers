@@ -127,8 +127,8 @@ Given word is not present in the string
 
 #count() demo program
 a='Hyd is green city. Hyd is hitec city. Hyd is his city'
-print(a.count('is'))       #3 ('is' at indexes 4,23,42,46)
-print(a.count('is',19,48)) #2('is' at indexes 23,42,46)
+print(a.count('is'))       #4('is' at indexes 4,23,42,46)
+print(a.count('is',19,48)) #3('is' at indexes 23,42,46)
 print(a.count('was'))      #0
 
 
@@ -240,10 +240,8 @@ else:
 #Output
 Enter any string: Hi
 Hi
-
 Enter any string: Interesting
 Interestingly
-
 Enter any string: interest
 interesting
 
