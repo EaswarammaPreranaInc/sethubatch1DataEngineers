@@ -1,0 +1,50 @@
+#program 1
+# Find  outputs
+How  to  import   kw  list
+print(How  to  print  kwlist)
+print(How  to  print  number  of  keywords)
+print(How  to  print  type  of kwlist)
+print(keyword . kwlist)
+------program------
+from keyword import kwlist
+print(kwlist)
+print(len(kwlist))
+print(type(kwlist))
+print(keyword.kwlist) 
+
+output:
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del',
+'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not',
+'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+35
+<class 'list'>
+
+
+#program 2
+#  Find  outputs  (Home  work)
+How  to  import   keyword  module
+print(How  to  print  kwlist)
+print(How  to  print  number  of  keywords)
+print(How  to  print  type  of kwlist)
+print(kwlist)
+--------program--------
+from keyword import kwlist
+import keyword
+print(keyword.kwlist)
+print(len(keyword.kwlist))
+print(type(keyword.kwlist))
+print(kwlist)
+
+output:
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 
+'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+35
+<class 'list'>
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 
+'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+
+
