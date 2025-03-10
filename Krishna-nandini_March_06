@@ -1,0 +1,77 @@
+Program-1
+# Write  a  program  to  concatenate  two  strings  separated  by  space  but  swap  the  first  two  characters  of each string. Assume  that  each  string  contains  a   minimum  of  two  characters
+# Hint:  Use  slice.
+str1 = input('Enter first string: ')  # Enter first string: Java
+str2 = input('Enter second string: ')  # Enter second string: Python
+result = str2[:2] + str1[2:] + " " + str1[:2] + str2[2:]  # Py + va + " " + Ja + thon
+print('Result: ' , result)  # Result:  Pyva Jathon
+if len(str1) < 2 or len(str2) < 2:
+	print('Input should be minimum of 2 character string')
+
+
+Program-2
+# Write  a  program  to  print  first  two  and  the  last  two  characters  of  the  string. Print  an  empty  string  if  string  contains  less  than  four  characters.
+str = input('Enter first string: ')  # Enter first string: Python
+result = ''
+if len(str) >= 4:
+    result = str[:2] + str[-2:]
+print('Result: ' , result)  # Result:  Pyon
+
+
+Program-3
+# Write  a  program  to  print  characters  of  the  string  in  forward  and  reverse  directions  without  slice.
+# Hint:  Use  two  for  loops.
+x = eval(input('Enter the string: ' ))  # Enter the string: "KRISHNA"
+print('String in forward:')  # String in forward:
+for i in range(len(x)):
+	 print(F'Characters at index {i} : {x[i]}')
+print('String in Reverse:')  # String in Reverse:
+for i in range(1,len(x)+1):
+	 print(F'Characters at index {-i} : {x[-i]}')
+	 
+'''
+Output:
+Enter the string: "KRISHNA"
+String in forward:
+Characters at index 0 : K
+Characters at index 1 : R
+Characters at index 2 : I
+Characters at index 3 : S
+Characters at index 4 : H
+Characters at index 5 : N
+Characters at index 6 : A
+String in Reverse:
+Characters at index -1 : A
+Characters at index -2 : N
+Characters at index -3 : H
+Characters at index -4 : S
+Characters at index -5 : I
+Characters at index -6 : R
+Characters at index -7 : K
+'''
+
+
+Program-4
+# Write  a  program  to  print  characters  at  even  and  odd  indexes  without  slice.
+# Hint: Use  single  for  loop.
+x = eval(input('Enter any string: ' ))  # Enter any string: 'Rama Rao'
+even_chars = odd_chars = ''
+
+for i in range(len(x)):
+	if i % 2 == 0:
+		even_chars += x[i]
+	else:
+		odd_chars += x[i]
+print("Characters  at  even  indexes :", even_chars)  # Characters  at  even  indexes : Rm a
+print("Characters  at  odd  indexes :", odd_chars)  # Characters  at  odd  indexes : aaRo
+
+
+Program-5
+# try:
+	a = input('Enter any string with alternate character & digit: ')  # Enter any string with alternate character & digit: A4B3C2$5
+	s = ''
+	for i in range(0 , len(a) , 2):
+		s += a[i] * int(a[i + 1])
+	print('Result: ' , s)  # Result:  AAAABBBCC$$$$$
+except:
+	print('String should have alternate character & digit')
