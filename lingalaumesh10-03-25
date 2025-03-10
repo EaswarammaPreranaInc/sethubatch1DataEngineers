@@ -1,0 +1,65 @@
+#Write  a  program  to  print  distinct  vowels  of  the  string  without  using  set
+a=input("Enter a string : ")
+b=a.upper()
+d=["A","E","I","O","U"]
+c=''
+for i in b:
+    if i in d and i not in c:
+        c+=i
+print(c)   
+
+
+'''
+Write  a  program  to  replace  every  occurance  of  first  character  in  the  string  with  '*'  except  first  character
+Let  input  be  'babble'
+What  is  the  output ?  --->  ba**le
+'''
+a=input("Enter a string")
+b=a.replace(a[0],"*")
+a=a[0]+b[1:]
+print(a)
+
+
+'''
+Write  a  program  to  evaluate  an  expression  which  contains  only  +  symbols
+Let  input  be  3+2+4+5+6+21+4+5+8+12.....
+Print  the  sum  result
+Hint:  Use  split()  method
+'''
+try:
+    a=input("Enter any string")
+    b=a.split("+")
+    c=0
+    for i in b:
+        c+=int(i)
+    print(c)
+except ValueError:
+    print("Enter only numbers and + operater")
+
+
+'''
+Write  a  program  to  append  'ing'  to  input  string.
+Append  'ly'  to  the  string  if  the  string  already  ends  with  'ing'.
+Leave  the  string  unchanged  if  string  has  lessthan  three  characters
+'''
+a=input("Enter any string : ")
+if len(a)<3:
+    print(a)
+elif a.endswith("ing"):
+    print(a+"ly")
+else:
+    print(a+"ing")
+
+
+'''
+index()--> it prints the index of character if it not present result is error
+find()-->it prints the index of character if it not present result is -1
+'''
+a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+try:
+    index = a .index('is')
+    while  index<=len(a):
+    	print(index)
+    	index = a .index('is' , index + 1)
+except ValueError:
+    print('End')
