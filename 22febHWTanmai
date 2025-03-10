@@ -1,0 +1,23 @@
+# Find  outputs
+#How  to  import   kw  list # 
+from keyword import kwlist
+#(How  to  print  kwlist)#
+print(kwlist)
+#print(How  to  print  number  of  keywords)
+print(len(kwlist))
+#print(How  to  print  type  of kwlist)
+print(type(kwlist))
+
+import keyword
+print(keyword.kwlist) 
+
+#  Find  outputs  (Home  work)
+#How  to  import   keyword  module
+import keyword 
+#print(How  to  print  kwlist)
+print(keyword.kwlist)
+#print(How  to  print  number  of  keywords)
+print(len(keyword.kwlist))
+#print(How  to  print  type  of kwlist)
+print(type(keyword.kwlist))
+#print(kwlist) # error keyword module is not imported

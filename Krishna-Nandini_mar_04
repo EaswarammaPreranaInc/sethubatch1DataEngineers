@@ -1,0 +1,26 @@
+'''
+Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator  and
+print  Found  or  Not  Found  message  (Assume  that  there  are  no  duplicates)
+
+Note:  Do  not  use  index()  method
+'''
+
+list = [10, 20, 15, 12, 18]
+x = int(input('Enter the element to be searched : '))
+for i in range(len(list)):
+	if list [i] == x:
+		print(F'Found at index {i}')
+		break
+else:
+	print('Not Found')
+	
+	
+'''
+Output:
+Enter the element to be searched : 15
+Found at index 2
+
+Enter the element to be searched : 19
+Not Found
+
+'''
