@@ -2,15 +2,18 @@
 a=str(input('Enter string 1 : '))
 b=str(input('Enter string 2 : '))
 c=''
-l1,l2=len(a),len(b)
-for i in range(min(l1,l2)):
+i=0
+while (i<len(a) and i<len(b)):
 	c+=a[i]+b[i]
-if l1 > l2:
-	c+=a[l2:]
+	i+=1
+if len(a) > len(b):
+	print(c+a[i:])
 else:
-	c+=b[l1:]
-
-print('Merged string : ',c)
+	print('Merged string : ',c+b[i:])
+# Output:
+#Enter string 1 : abcde
+#Enter string 2 : 12345
+#Merged string :  a1b2c3d4e5
 
 #2Write  a  program  to  remove  duplicate  characters  of  the  string  without  using  set
 a=str(input('Enter a string : '))
@@ -18,7 +21,10 @@ b=''
 for x in a:
 	if x not in b:
 		b+=x
-print(b)
+print('String without duplicates : ',b)
+#Output:
+#Enter a string : aaabbbcccddd
+#String without duplicates :  abcd
 
 #3
 try:
@@ -30,7 +36,10 @@ try:
 		c+=char
 		t=chr(ord(char)+int(num))
 		c+=t
-	print(c)
+	print('Result : ',c)
 
 except ValueError:
 	print('Enter  any  string  with  alternate  character  and  digit')
+#Output:
+#Enter  any  string  with  alternate  character  and  digit  :  A2B6H2C8
+#Result :  ACBHHJCK
