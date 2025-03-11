@@ -1,0 +1,71 @@
+#1
+a = [10 , 20 , 15 , 12 , 18]
+x=eval(input("Enter value to be searched:"))
+for i in range(len(a)):
+	if x==a[i]:
+		print("Found at index",i)
+		break
+else:
+	print("Not found")
+
+#2
+s=0
+ctr=0
+while True:
+	a=eval(input("Enter input  (-1  to  stop)  :"))
+	if a==-1:
+		break	
+	s=s+a       
+	ctr=ctr+1
+average=s/ctr
+print("Average",average)
+
+
+#3
+for  i  in  range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		continue
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+print('Outside  loop')
+
+
+#4
+for  i  in  range(1 , 8):
+	print(i)
+	if  i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+print('Outside  loop')
+
+
+#5
+for  i  in  range(1 , 8):
+	print(i)
+	if  i == 8:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+print('Outside loop')
+
+
+#6
+print(a := 25)       # 25
+#print(a = 25)       # Error
+print(a)             # 25
+print(a := 6 + 7)    # 13
+print(a)             # 13
+print((a := 6) + 7)  # 13
+print(a)             # 6
+#print((a = 6) + 7)  # Error
