@@ -39,7 +39,8 @@ print('End')
 print()
 '''
 a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
-while  (index := a.find('is',index+1 if 'index' in locals() else 0))!=-1:
+index=-1
+while  (index := a.find('is',index+1))!=-1:
 	print(index)
 print('End')
 
@@ -89,11 +90,14 @@ a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
 index = a . rfind('is')
 while  index != -1:
 	print(index)
-	index = a . rfind('is' , index + 1)
+	index = a . rfind('is' ,0, index )
 print('End')
 
 OUTPUT:
 46
+42
+23
+4
 End
 
 #5TH PROGRAM
@@ -192,15 +196,15 @@ Print  the  sum  result
 Hint:  Use  split()  method
 '''
 CODE:
-a = input()
+a = input("enter a string:")
 b = a.split('+')          
-c = [int(num) for num in b]  
-print(sum(c))  
-print()
-print(sum(map(int, a.split('+'))))
+sum=0
+for i in b:
+	sum+=eval(i)
+print(sum)
 
 OUTPUT:
-3+2+4+5+6+21+4+5+8+12
+enter a string: 3+2+4+5+6+21+4+5+8+12
 70
 
 #9TH PROGRAM
