@@ -77,7 +77,7 @@ try:
 	for i in range(len(a)):
 		if i%2==0:
 			c=ord(a[i])+int(a[i+1])
-			b+=a[i]+str(chr(c))
+			b+=a[i]+(chr(c))
 	print(b)
 except ValueError:
 	print('Pls  enter  string  with  alternate  char  and  digit')
