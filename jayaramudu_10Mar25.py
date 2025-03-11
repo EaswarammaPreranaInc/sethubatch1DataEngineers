@@ -78,13 +78,17 @@ Hint: Use   try  and  except
 '''
 try:
     a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
-    index = a . rindex('is')
-    while  index != -1:
-        print(index)
-        index = a . rindex('is' , index + 1)
+    index = a.rindex('is')  
+    while True:
+        print(index)  
+        try:
+            index = a.rindex('is', 0, index)  
+        except ValueError:
+            break  
     print('End')
 except ValueError:
     print('substring not found')
+
 
 Ex-6:-
 #  count()  method  demo  program (Home  work)
