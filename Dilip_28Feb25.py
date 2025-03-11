@@ -262,4 +262,20 @@ match  int(units/100):
 		cost=100*3+100*3.5+100*4+100*4.5+(units-400)*5
 print('Bill  amount  :  ',cost)
 
-
+#14
+try:
+	x=int(input("Enter value of x :"))
+	print("Fibonacci Series")
+	a,b=0,1
+	if x==0:
+		print(x)
+	else:
+		print(a)
+		print(b)
+	c=a+b
+	while(c<=x):
+		print(c)
+		a,b=b,c
+		c=a+b
+except:
+	print("Enter integer number....")
