@@ -109,25 +109,25 @@ print('End')
 try:
 	a='Hyd is green city. Hyd is hitec city. Hyd is his city'
 	index=a.rindex('is')
-	while index!=-1:
+	while True:
 		print(index)
-		index=a.rindex('is',0,index-1)
+		index=a.rindex('is',0,index)
 	print('End')
 except:
-	print('Given word is not present in the string')
+	print('End')
 
 #Output
 46
 42
 23
 4
-Given word is not present in the string
+End
 
 
 #count() demo program
 a='Hyd is green city. Hyd is hitec city. Hyd is his city'
-print(a.count('is'))       #3 ('is' at indexes 4,23,42,46)
-print(a.count('is',19,48)) #2('is' at indexes 23,42,46)
+print(a.count('is'))       #4 ('is' at indexes 4,23,42,46)
+print(a.count('is',19,48)) #3('is' at indexes 23,42,46)
 print(a.count('was'))      #0
 
 
@@ -157,21 +157,21 @@ print(a)            #15:36:48
 
 #Find outputs
 a='Hyd\nisgreen\tcity'
-print(a.split(' '))    #['Hyd\nisgreen\tcity']
-print(a.split())       #['Hyd', 'isgreen', 'city']
-print(a.split('green'))#['Hyd\nis', '\tcity']
-#print(a.split(''))    #Error
+print(a.split(' '))    #['Hyd\nis','green\tcity']
+print(a.split())       #['Hyd','is','green','city']
+print(a.split('green'))#['Hyd\nis','\tcity']
+#print(a.split(''))    #Error becoz emty string delimeter
 
 
 #Find outputs
-a='Hydis	green	city' #There is tab between the words
-print(a.split('\t'))    #['Hydis', 'green', 'city']
-print(a.split())        #['Hydis', 'green', 'city']
-print(a.split(' '))     #['Hydis\tgreen\tcity']
+a='Hyd is green	city' #There is tab between the words
+print(a.split('\t'))    #['Hyd','is','green','city']
+print(a.split())        #['Hyd','is','green','city']
+print(a.split(' '))     #['Hyd\tis\tgreen\tcity']
 
 
 #Find outputs
-a='Hyd   is   green   city'
+a='Hyd   is   green   city' #there are 3 spaces b/w the words
 print(a.split())     #['Hyd','is','green','city']
 print(a.split(' '))  #['Hyd',' ',' ','green',' ',' ','city']
 
@@ -193,8 +193,8 @@ except:
 	print('Give a integer sequence')
 
 #Output
-Enter the expression: 18+12+56+14
-Result: 100
+Enter the expression: 100+25+50+5
+Result: 180
 
 
 #Find outputs
@@ -207,11 +207,11 @@ print(','.join(c))         #10,20,15,25,52
 d=['www','gmail','com']
 print('.'.join(d))         #www.gmail.com
 e=[15,36,48]
-print(':'.join(e))         #Error
+print(':'.join(e))         #Error(seq of integers can't join)
 f=['Sanskar','Dayal','Sarma']
-print(''.join(f))          #Error
+print(''.join(f))          #SankarDayalSarma
 g=range(5)
-print('-'.join(g))         #Error
+print('-'.join(g))         #Error due to range of integers
 
 
 #endswith() method demo program
@@ -220,7 +220,7 @@ print(a.endswith('city'))       #True
 print(a.endswith('town'))       #False
 print(a.endswith('green',3,12)) #True
 print(a.endswith('green',3,13)) #False
-print(a.endswith(' '.3,13))     #Error
+print(a.endswith(' '.3,13))     #True
 
 
 '''
