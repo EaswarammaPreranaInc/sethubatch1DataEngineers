@@ -112,7 +112,6 @@ try:
 	while True:
 		print(index)
 		index=a.rindex('is',0,index)
-	print('End')
 except:
 	print('End')
 
