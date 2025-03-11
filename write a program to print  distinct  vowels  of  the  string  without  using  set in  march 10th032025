@@ -1,0 +1,17 @@
+'''
+
+'''
+s=input("Enter any string: ").upper()
+
+S=''
+
+for i in s:
+    if i in "AEIOU" and i not in S:
+        S+=i 
+        
+print(S)
+
+'''
+
+
+'''
