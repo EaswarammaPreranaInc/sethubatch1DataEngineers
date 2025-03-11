@@ -156,7 +156,7 @@ Print  the  sum  result
 Hint:  Use  split()method
 
 try:
-    a = (input('Entera Enter the expression: '))
+    a = (input('Enter a expression: '))
     b = a.split('+')
     sum = 0
     for x in b:
