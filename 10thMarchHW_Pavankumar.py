@@ -79,8 +79,7 @@ Let  input  be  'babble'
 What  is  the  output ?  --->  ba**le
 '''
 a=input("enter input string : ")
-b=a.replace("b","*")
-print(b)
+print(a[0]+a[1:].replace("b","*"))
 
 '''
 OUTPUT:
