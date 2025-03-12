@@ -33,7 +33,7 @@ if a.isalnum():
 			print('Lower case Alphabet')
 	elif a.isdigit():
 		print('digit character')
-elif a.isspace():
+elif a.isspace() or a=='':
 	print('White space')
 else:
 	print('Special character')
