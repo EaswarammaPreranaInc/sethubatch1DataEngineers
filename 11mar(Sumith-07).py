@@ -259,7 +259,7 @@ list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
 a , *b , c , *d , e  = list 
 #The * should be assigned to only one or remove both to remove error.
 '''
-
+''''
 # max()  and  min()  functions  demo  program  (Home  work)
 a = [10 , 20 , 15 , 18 , 30, 5 , 12]
 print(max(a)) #30
@@ -273,6 +273,24 @@ d = [25 , '35']
 #print(max(d)) #error btw int and str
 #print(max([])) #max function has empty input
 print(min([])) #'35'
+''''
+'''
+#  Find  outputs (Home  work)
+a = range(4 , 10 , 2)
+b = list(a) 
+print(b) #  [4,6,8]
+print(type(b)) #<class 'list'>
+a = list('Vamsi')
+print(a)
+a = list() #['V', 'A' ,'M', 'S', 'I']
+print(a) #['V', 'A' ,'M', 'S', 'I']
+print(list(25)) # error for 25
+print(list(10.8)) # error for 10.8
+print(list(True)) # error for True
+print(list(None)) # error for None
+'''
+
+
 
 
 
