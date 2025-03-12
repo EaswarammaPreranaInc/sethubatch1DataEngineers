@@ -116,7 +116,7 @@ Result : achkv12389
 
 #program9 :What  are  the  outputs  if  input  is   [25 , 10.8 , 'Hyd' , True] #
 a = input('Enter  list  :  ')  # [25 , 10.8 , 'Hyd' , True]
-print(type(a))       # <class 'string'>
+print(type(a))       # <class 'str'>
 print(a)        # [25 , 10.8 , 'Hyd' , True]
 b = eval(a)    
 print(b)       #  [25 , 10.8 , 'Hyd' , True]
@@ -128,7 +128,7 @@ b = a        # [10, 20, 15, 18]
 print(a  is  b)  # True
 print(a  ==  b)  # True
 b[2] = 12        
-print(a)        # [10, 20, 15, 18] 
+print(a)        # [10, 20, 12, 18] 
 
 #  Find  outputs  
 a = [10 , 20 , 15 , 18]
