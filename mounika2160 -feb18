@@ -1,0 +1,55 @@
+#program 1
+# Find  outputs
+a = {10 : 'Ramesh' , 20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
+print(a)        #{10 : 'Ramesh' , 20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
+print(type(a))   #<class 'dict'>
+print(a[10])     #Ramesh
+print(a[20])     #Kiran
+print(a[15])     #Amar
+print(a[18])     #Sita
+print(a[19])     #error no key 19
+print(a[0])      # error no key 0
+print(a['Amar']) #error value can't take value as a valid key
+a[15] = 'Krishna' #modified value of 15 (Amar to krishna)
+del   a[20]       # a[20] removed
+a[25] = 'Vamsi'   #appends new key:value pair of 25
+print(a)          #{10: 'Ramesh', 15: 'Krishna', 18: 'Sita', 25: 'Vamsi'}
+print(len(a))    #4
+print(a * 2)     #dict doesnot support repetiton 
+
+#program 2
+# Find  outputs  (Home  work)
+a = {10 : 'Hyd' , 10 : 'Sec'} #replaces 'HYD'with 'sec' becoz key 10 is duplicate
+print(a)          #{10: 'Sec'}
+print(len(a))     #1
+b = {'R' : 'Red' , 'G' : 'Green' , 'B' : 'Blue' , 'Y' : 'Yellow' , 'G' : 'Gray' , 'B' : 'Black'}
+print(b)          #{'R': 'Red', 'G': 'Gray', 'B': 'Black', 'Y': 'Yellow'}
+print(len(b))     # 4
+
+#program 3
+# Find output
+a = {True : 'Yes' , 1 : 'No' , 1.0 : 'May  be'}
+print(a)      #{True: 'May  be'}
+print(len(a)) #1
+
+#program 4
+# Find  outputs
+a = { [ ] : 25}  #error becoz list is not a immutuble object
+b = { ( ) : 25}
+print(b)       # unhashable tuple and list error
+c = { { } : 25}
+d = {'Ramesh' : [9948250500, 9848565090, 9440250404]}
+print(d)       #{'Ramesh' : [9948250500, 9848565090, 9440250404]}
+print(len(d))  #1
+e = {set() : 10.8} #unhashable set
+
+#program5
+# Find  outputs
+a = {}            # empty dictionary
+print(type(a))    #<class 'dict'>
+print(len(a))     #0
+print(a)          #{}
+b = dict()        #returns as empty dictionary
+print(type(b))    #<class 'dict'>
+print(len(b))     #0
+print(b)          #{}
