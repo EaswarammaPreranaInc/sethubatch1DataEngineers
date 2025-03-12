@@ -1,0 +1,239 @@
+Program-1
+# Write  a  program  to  print  distinct  vowels  of  the  string  without  using  set.
+# Hint  1:  Same  as   prog3e  with  minor  changes
+a= input('Enter the string: ')  # Enter the string: Nandini
+vowels='AEIOU'
+c=''
+for i in a:
+    i = i.upper()
+    if i in vowels and i not in c:
+        c = c+i
+print('Result: ' , c)  # Result:  AI
+
+
+Program-2
+# walrus  operator
+#Hint:  Combine  lines  7 , 8  and  10  to  a  single  line  with  walrus  operator
+a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+index = 0
+while (index := a . find('is' , index + 1)) != -1:
+	print(index)
+print('End')
+
+
+Program-3
+# index()  method 
+#Hint: Use   try  and  except
+try:
+	a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+	index = a . index('is')
+	while  index != -1:
+		print(index)
+		index = a .index('is' , index + 1)
+	print('End')
+except ValueError:
+	print("substring not found")
+
+
+Program-4
+# rfind() method
+a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+index = a.rfind('is')
+while  index != -1:
+	print(index)
+	index = a.rfind('is',0,index)
+print('End')
+
+
+Program-5
+# rindex() method 
+# Hint: Use   try  and  except
+try:
+	a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+	index = a . rindex('is')
+	while  index != -1:
+		print(index)
+		index = a . rindex('is' , 0 , index + 1)
+except:
+	print('End')
+
+
+Program-6
+# count()  method
+a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+print(a . count('is'))  # 4
+print(a . count('is' , 19 , 48))  # 3
+print(a . count('was'))  # 0
+
+
+Program-7
+# Find  outputs
+a = 'Hyd is\tgreen\ncity.Hyd is\thitec\ncity.Hyd is\this\ncity'
+print(a . count(' '))  # 3
+print(a . count('\t')) # 3
+print(a . count('\n')) # 3
+
+
+Program-8
+# Write  a  program  to  replace  every  occurance  of  first  character  in  the  string  with  '*'  except  first  character
+# Hint : Use  replace()  method
+a = input('Enter any String: ')  # Enter any String: babble
+b = a[0]
+c = ''
+result = b + a[1:] . replace(b , '*')
+print('Result: ' , result)  # Result:  ba**le
+
+
+Program-9
+#  Find  outputs 
+a = '15:36:48'
+print(a . split(':'))
+print(a)  # '15:36:48'
+
+
+Program-10
+# Find  outputs
+a = 'Hyd\nis green\tcity'
+print(a . split(' '))  # ['Hyd\nis', 'green\tcity']
+print(a . split())  # ['Hyd', 'is', 'green', 'city']
+print(a . split('green'))  # ['Hyd\nis ' , '\tcity']
+print(a . split(''))  #Empty Seperator
+
+
+Program-11
+# Find  outputs
+a = 'Hyd	is	green	city'  #  There  is  tab  between  the  words
+print(a . split('\t'))  # ['Hyd', 'is', 'green', 'city']
+print(a . split())  # ['Hyd', 'is', 'green', 'city']
+print(a . split(' '))  # ['Hyd\tis\tgreen\tcity']
+
+
+Program-12
+# Find  outputs
+a = 'Hyd   is   green   city'  #  There   are   3  spaces  between  the  words
+print(a . split())  # ['Hyd', 'is', 'green', 'city']
+print(a . split(' '))  # ['Hyd', '', '', 'is', '', '', 'green', '', '', 'city']
+
+
+Program-13
+# Find  outputs
+a = 'www.gmail.com'
+print(a . split('.'))  # ['www','gmail','com']
+
+
+Program-14
+# Write  a  program  to  evaluate  an  expression  which  contains  only  +  symbols.
+# Hint:  Use  split()  method.
+try:
+	a = input('Enter the expression:') . split('+')  # Enter the expression:40 + 286 + 20
+	sum=0
+	for i in range(len(a)):
+		sum = sum + eval(a[i])
+	print('Result: ' , sum)  # Result:  346
+except:
+	print('Invalid Expression')
+
+
+Program-15
+#  Find  outputs
+a = ['15' , '36' , '48']
+print(':' . join(a))  # 15:36:48
+b = ('Hyd' , 'is' , 'green' , 'city')
+print(' ' . join(b))  # Hyd is green city
+c = {'10' , '20' , '15' , '25' , '52'}
+print(',' . join(c))  # 25,10,52,15,20
+d = ['www' , 'gmail', 'com']
+print('.' . join(d))  # www.gmail.com
+e = [15 , 36 , 48]
+print(':' . join(e))  # Error because all are integer values
+f = ['Sankar' , 'Dayal' , 'Sarma']
+print('' . join(f))  # SankarDayalSarma
+g = range(5)
+print('-' . join(g))  # Error
+
+
+Program-16
+# endswith()  method
+a = 'Hyd is green city'
+print(a . endswith('city'))  # True
+print(a . endswith('town'))  # False
+print(a . endswith('green' , 3 , 12))  # True
+print(a . endswith('green' , 3 , 13))  # False
+print(a . endswith(' ' , 3 , 13))  # True
+
+Program-17
+# Write  a  program  to  append  'ing'  to  input  string. Append  'ly'  to  the  string  if  the  string  already  ends  with  'ing'. Leave  the  string  unchanged  if  string  has  lessthan  three  characters
+# Hint:  Use  endswith()  method
+a = input('Enter the input: ')  # Enter the input: Interest 
+if len(a) < 3:
+    print(a)
+elif a.endswith('ing'):
+    result = a + 'ly'
+    print(result)  # Interesting
+else:
+    result = a + 'ing'
+    print(result)  # Interestingly
+
+
+Program-18
+#  isalpha() method
+print('Hyd'  . isalpha())  # True
+print('Rama  Rao'  . isalpha()) # False  due  to  space
+print('Hyd4'  . isalpha())  # False due to '4'
+print('Hyd$'  . isalpha())  # False due to special character '$'
+print('9247'  .  isalpha())  # Flase due to '9'
+print('+-$'    .  isalpha()) # False due to '+'
+print('A2#'  .   isalpha())  # False due to '2'
+print(''  .  isalpha())  # False because there are no alphabets
+print(' '  .  isalpha()) # False due to space
+
+
+Program-19
+# isdigit()  method
+print('9247' . isdigit())  #   True
+print('92a47' . isdigit())  #  False  due  to  'a'
+print('92$47' . isdigit())#False due to '$'
+print('Hyd' . isdigit())#False due to 'H'
+print('+-$' . isdigit())#False due to '+'
+print('A2#' . isdigit())#False due to 'A'
+print('' . isdigit())#flase due to no digits
+print(' ' . isdigit())#False due to space
+#print(9247 . isdigit())#Error
+
+
+Program-20
+# isupper()  method
+print('HYd' . isupper())  #  False  due  to  'd'
+print('HYD' . isupper())  # True  becoz  there  are  no  lowercase  alphabets
+print('9247' . isupper())  # False becoz  there  are  no  uppercase  alphabets
+print('RAMA  RAO' . isupper())  # True becoz  there  are  no  lowercase  alphabets
+print('+-$' . isupper())  # False becoz  there  are  no  uppercase  alphabets
+print('HYD123' . isupper())  # True becoz  there  are  no  lowercase  alphabets
+print('HYD+-$' . isupper())  # True becoz  there  are  no  lowercase  alphabets
+print('' . isupper())  # False becoz  there  are  no  uppercase  alphabets
+print('A2#' . isupper())  # True becoz  there  are  no  lowercase  alphabets
+
+
+Program-21
+# islower()  method
+print('hyD' . islower())  # False  due  to  'D'
+print('hyd' . islower())  # True  becoz  there  are  no  uppercase  alphabets
+print('9247' . islower()) # False becoz  there  are  no  lowercase  alphabets
+print('rama  rao' . islower())  # True becoz  there  are  no  uppercase  alphabets
+print('+-$' . islower())  # False becoz  there  are  no  lowercase  alphabets
+print('hyd+-$' . islower())  # True becoz  there  are  no  uppercase  alphabets
+print('abc123' . islower())  # True becoz  there  are  no  uppercase  alphabets
+print('' . islower())  # False becoz  there  are  no  lowercase  alphabets
+print('a2#' . islower())  # True becoz  there  are  no  uppercase  alphabets
+
+
+Program-22
+# isalnum()  method
+print('A7$g'  . isalnum())  # False  due  to   '$'
+print('HYD' . isalnum())  # True  becoz  there are  no  special  chars
+print('+-$' . isalnum())  # False due to '+'
+print('hyd' . isalnum())  # True becoz  there are  no  special  chars
+print('hYd' . isalnum())  # True becoz  there are  no  special  chars
+print('9247' . isalnum() ) True becoz  there are  no  special  chars
+print('' . isalnum())  # False because there is no alphabet nor digit
+print('A7g9'  . isalnum())  # True becoz  there are  no  special  chars
