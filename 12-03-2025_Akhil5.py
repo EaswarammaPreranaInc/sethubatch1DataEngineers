@@ -35,14 +35,18 @@ a = [10 , 20 , 30]
 a . append('Hyd')
 print(a)
 print(len(a))
-#print(How  to  print  4th  element  of  list  'a')
-#print(How  to  print  'H')
-#print(How  to  print  'y')
-#print(How  to  print  'd')
+print(a[3])
+print(a[3][0])
+print(a[3][1])
+print(a[3][2])
 
 Output:
 [10, 20, 30, 'Hyd']
 4
+Hyd
+H
+y
+d
 
 #5  Find  outputs (Home  work)
 a = [10 , 20 , 30 , 40]
@@ -50,26 +54,15 @@ b = [50 , 60 , 70]
 a . insert(2 , b)
 print(a)
 print(len(a))
+print(a[2])
+print(a[2][0])
+print(a[2][1])
+print(a[2][2])
 
 Output:
 [10, 20, [50, 60, 70], 30, 40]
 5
-#print(How  to  print  inner  list)
-#print(How  to  print  50)
-#print(How  to  print  60)
-#print(How  to  print  70)
-
-#6  Find  outputs (Home  work)
-a = [10 , 20 , 30 , 40]
-b = [50 , 60 , 70]
-a . insert(2 , b)
-print(a)
-print(len(a))
-#print(How  to  print  inner  list)
-#print(How  to  print  50)
-#print(How  to  print  60)
-#print(How  to  print  70)
-
-Output:
-[10, 20, [50, 60, 70], 30, 40]
-5
+[50, 60, 70]
+50
+60
+70
