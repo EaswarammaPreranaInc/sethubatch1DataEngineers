@@ -1,0 +1,36 @@
+#swap 
+a=input("Enter  1st  input")
+b=input("Enter  2nd  input ")
+print(F"before swap={a,b}")
+temp=a
+a=b
+b=temp
+print(F"after swap={a,b}")
+'''
+#swap without 3rd object
+import math
+x=float(input("Enter  1st  input"))
+y=float(input("Enter  2nd  input "))
+print(F"before swap={x,y}")
+x=x+y
+y=x-y
+x=y-x
+print(F"after swap={x,y}")
+'''
+'''
+x=float(input("Enter  1st  input"))
+y=float(input("Enter  2nd  input "))
+print(F"before swap={x,y}")
+x=x*y
+y=x/y
+x=x/y
+print(F"after swap={x,y}")
+'''
+'''
+#max of 3 without max()
+x=(input("enter first input"))
+y=(input("enter second input"))
+z=(input("enter third input"))
+largest=x  if x > y and x>z else y if y > z else z
+print(f"result:{result}")
+'''

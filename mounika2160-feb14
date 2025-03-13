@@ -1,0 +1,227 @@
+#program 1
+
+# int()  function  demo  program
+print(int(10.8)) #  Converts  10.8  to  10
+print(int(True))  #  Converts  True  to  1
+print(int(False)) # Converts False to 0
+print(int('25'))  # Converts '25' to 25
+print(int('0075'))  # Converts '0075 to 75
+print(int(0B11010))  # Converts 0B11010 to 26
+print(0B11010)  # 0B11010 to 26
+print(int(0O6247))  # Converts 0O6247 to 3239
+print(0O6247)  # 0O6247 to 3239 
+print(int(0XA7B9))  # Converts  0XA7B9 to 42937
+print(0XA7B9)  # 0XA7B9 to 42937
+print(int(3 + 4j))  # error complex not be converted to integer
+print(int('25.4'))  # error due to string float
+print(int('Ten'))  # error becoz string 'Ten' can't be converted to integer 
+
+#program 2
+# float()  function  demo  program
+print(float(25)) #  Converts  25  to  25.0
+print(float(True)) #  Converts   True   to   1.0
+print(float(False)) # Converts   False   to   0.0
+print(float('92'))  # Converts '92'  to 92.0
+print(float('36.4'))  # Converts '36.4' to 36.4
+print(float('0075'))  # Converts '0075' to   75.0
+print(float(0B1010101))  # Converts 0B1010101 to 85.0
+print(float(0O6247))  # Converts 0O6247 to   3239.0
+print(float(0XA7B9))  # Converts   0XA7B9 to 42937.0
+print(float(3 + 4j))  # error
+print(float('Ten'))  # error
+
+#program 3
+# complex()  function  demo  program
+print(complex(3 , 4)) # 3+4j
+print(complex(0 , 4)) # 0+4j
+print(complex(3)) # 3+0j
+print(complex(3.8 , 4.6)) # 3.8+4.6j
+print(complex(3.8)) # 3.8+0j
+print(complex(3 , 4.5)) # 3+4.5j
+print(complex(True , False)) #1+0j
+print(complex(True)) # 1+0j
+print(complex(False)) # 0j
+print(complex(True , 4)) # 1+4j
+print(complex('3')) #3+0j
+print(complex('3.8')) # 3.8+0j
+print(complex(3 , '4')) # error
+print(complex('3' , 4)) # error
+print(complex('3' , '4')) # error
+print(complex('Ten')) # error
+
+#program 4
+#  bool()  function  demo  program
+print(bool(0)) # Converts  0  to  False
+print(bool(10)) # True 
+print(bool(-25)) # True
+print(bool(0.0)) # False
+print(bool(0.1))  # True
+print(bool(0 + 0j))  # False
+print(bool(10 + 20j))  # True
+print(bool(-15j))  # True
+print(bool('False'))  # True
+print(bool(''))  # False
+print(bool('Hyd'))  # True
+print(bool(' '))  # True
+print(bool('True'))  # True
+
+#program 5
+# str()  function  demo  program
+print(str(25))  #  Converts   25  to  '25'
+print(str(10.8)) #  Converts   10.8  to  '10.8'
+print(str(3 + 4j)) #  Converts 3+4j to  '3+4j'
+print(str(True)) #  Converts  True to  'True'
+print(str(False)) #  Converts False to  'False'
+print(str(None)) #  Converts None to  'None'
+
+#program 6
+# oct()  function  demo  program
+print(oct(195)) # Converts decimal to octal ---> 0o303
+print(oct(0B10101110010)) # Converts binary to octal ----> 0o2562
+print(oct(0xA7B9)) # Converts Hexadecimal to octal ----> 0o123671
+
+#program 7
+# hex()  function  demo  program
+print(hex(25)) # converts decimal to hexadecimal--->0x19
+print(hex(0B10101111010111))  # converts  binary to hexadecimal--->0x2bd7
+print(hex(0O6247))  # converts octal to hexadecimal--->0xca7
+
+#program 8
+# range function
+#*a--->unpacks and print elements
+a = range(10 , 50 , 5)
+print(type(a)) # <class 'range'>
+print(a) # range(10,50,5)
+print(*a) # unpacks the elements ---> a[10 :50 : 5] --> 10 15 20 25 30 35 40 45
+print(id(a)) # address of 'a'
+print(len(a)) # 8
+print(*a[2 : 7] , sep = ' , ') # 20,25,30,35,40
+print(*a[ : : -1]) # reverse string --> 45 40 35 30 25 20 15 10
+a[4] = 32 # error
+print(a * 2) # error
+
+#program 9
+a = range(10 , 20)
+print(*a , sep = ',') #10,11,12,13,14,15,16,17,18,19
+b = range(5)
+print(*b) # 0 1 2 3 4
+c = range(10 , 1 , -1)
+print(*c , sep = '...') # 10...9...8...7...6...5...4...3...2
+d = range(-10 , 0)
+print(*d) # -10 -9 -8 -7 -6 -5 -4 -3 -2 -1
+e = range(-10)
+print(*e) # empty obj
+f = range(2 , 2)
+print(*f) # empty obj
+g = range(10 , 11 , 0.1) # error step cant be float
+h = range('A' , 'F') #error string cant be range obj
+
+#program 10 
+# List 
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Hyd' , 25]
+print(a) #[25, 10.8, 'Hyd', True, (3+4j), None, 'Hyd', 25]
+print(*a) # 25 10.8 Hyd True (3+4j) None Hyd 25
+print(type(a)) # <class 'list'>
+print(id(a))# some address i.e 639723651456
+print(len(a))# 8
+a[2] = 'Sec'
+print(a)# [25, 10.8, 'Sec', True, (3+4j), None, 'Hyd', 25]
+print(a[2 : 5])# ['Sec', True, (3+4j)]
+
+#program 11
+# append()  and  remove()  methods  (Home  work)
+a = [ ]
+print(a) # []
+a . append(25)
+a . append(10.8)
+a . append('Hyd')
+a . append(True)
+print(a) # [25, 10.8, 'Hyd', True]
+a . remove('Hyd')
+print(a) # [25, 10.8, True]
+a . remove('25')
+print(a) # error 
+
+#program 12
+a = [25 , 10.8 , 'Hyd']
+print(a * 3) # [25, 10.8, 'Hyd', 25, 10.8, 'Hyd', 25, 10.8, 'Hyd']
+print(a * 2) # [25, 10.8, 'Hyd', 25, 10.8, 'Hyd']
+print(a * 1) # [25, 10.8, 'Hyd']
+print(a * 0) # []
+print(a * -1) # []
+print(a * 4.0) # error
+
+#program 13
+# list()  function  demo  program
+a = list('Hyd')
+print(a) #  ['H', 'y', 'd']
+print(type(a)) # <class 'list'>
+print(len(a)) # 3
+b = (10 , 20 , 15 , 18)
+print(list(b)) # [10, 20, 15, 18]
+print(list(range(5))) # [0, 1, 2, 3, 4]
+print(list(25)) # error int object is not iterable
+
+#program 14
+a = [ ]
+print(type(a)) #<class 'list'>
+print(a) # []
+print(len(a)) #0
+b = list()
+print(b) # []
+print(len(b)) # 0
+
+#program 15
+# Slice  demo  program (Home  work)
+#        0      1          2         3           4         5       6          7
+list = [25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 10.8 , 'Hyd']
+#       -8      -7       -6          -5        -4       -3      -2         -1
+print(list[2 : 7]) #[(3+4j), 'Hyd', True, None, 10.8]
+print(list[ : : ]) #[25, 10.8, (3+4j), 'Hyd', True, None, 10.8, 'Hyd']
+print(list[:])#[25, 10.8, (3+4j), 'Hyd', True, None, 10.8, 'Hyd']
+print(list[ : : -1])# ['Hyd', 10.8, None, True, 'Hyd', (3+4j), 10.8, 25]
+print(list[ : : 2])#[25, (3+4j), True, 10.8]
+print(list[1 : : 2])#[10.8, 'Hyd', None, 'Hyd']
+print(list[ : : -2])#['Hyd', None, 'Hyd', 10.8]
+print(list[-2 : : -2])#[10.8, True, (3+4j), 25]
+print(list[1 : 4])#[10.8, (3+4j), 'Hyd']
+print(list[-4 : -1])#[True, None, 10.8]
+print(list[3 : -3])  #  print(list[3 : -3 : 1])  --->  List  from  indexes  3  to  -4 in  steps of  1  i.e. ['Hyd' , True]
+print(list[2 : -5])#[(3+4j)]
+print(list[-1:-5])#[]
+
+# program 16
+#  Find  outputs  (Home  work)
+#       0     1     2        3      4      5     6        7
+list = [25 , 10.8 , 3+4j , 'Hyd' , True , None , 10.8 , 'Hyd']
+x ,  y = list[3 : 5]
+print('x : ' , x) #x :  Hyd
+print('y : ' , y) #y :  True
+for  x  in  list[2:7]:#(3+4j)
+                      Hyd
+                      True
+                      None
+                      10.8
+
+# program 17
+#    0    1   2     3     4
+a = [10 , 20 , 30 , 40 , 50]
+print(a) #[10 , 20 , 30 , 40 , 50]
+a[1 : 4] = [60 , 70 , 80]
+print(a) #[10 ,60 , 70 , 80]
+
+#program 18
+a =  [25]
+print(a[1]) #error
+print(a[1:])#[]
+
+#program 19
+list  =  [10 , 20 , 15 , 12 , 18]
+print(15   in   list) #True 
+print(19   in   list) #False
+print(14  not  in  list) #True
+print(12  not  in  list) #False
+
+
+
+  
