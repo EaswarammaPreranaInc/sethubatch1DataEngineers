@@ -1,0 +1,200 @@
+#Find outputs
+for i in range(1,8):
+	print(i)
+	if i%3==0:
+		continue
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else suite')
+print('Outside loop')
+
+#Output
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+else suite
+Outside loop
+
+
+#Find outputs
+for i in range(1,8):
+	print(i)
+	if i%3==0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else suite')
+print('Outside loop')
+
+#Output
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Outside loop
+
+
+#Find outputs
+for i in range(1,8):
+	print(i)
+	if i==8:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else suite')
+print('Outside loop')
+
+#Output
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Sec
+Hello
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Sec
+Hello
+7
+Sec
+Hello
+else suite
+Outside loop
+
+
+#search for an element in the list without using in operator and index() method
+a=[10,20,15,12,18]
+n=int(input('Enter the value to search:'))
+for x in a:
+	if(x==n):
+		print(F'Found at index {a.index(x)}')
+		break
+else:
+	print('Not Found')
+
+
+#Walrus operator (:=) demo program
+print(a:=25)    #25
+print(a=25)     #Error
+print(a)        #25
+print(a:=6+7)   #13
+print(a)        #13
+print((a:=6)+7) #13
+print(a)        #6
+print((a=6)+7)  #Error
+
+
+#Find outputs
+a=0
+if a==0:
+	print('Hyd')    #Hyd
+else:
+	print('Sec')    
+if b:=0:            #b is defined
+	print('Hyd')    
+else:
+	print('Sec:',b)  #Sec: 0
+if c==0:          #Error(c is not defined)
+	print('Hyd')
+else:
+	print('Sec')
+
+
+#Find outputs
+b=10
+a=b+=5    #Error
+print(a)
+
+
+#determine average of inputs which are terminated with -1
+sum,ctr=0,0
+while True:
+	n=eval(input('Enter input (-1 to stop) :'))
+	if(n==-1):
+		break
+	sum+=n
+	ctr+=1
+print('Average:',sum/ctr)
+
+
+#del operator demo program
+a=25
+print(a) #25
+del a    #reference a will be deleted
+#PVM automatically delete 25 as no reference is assigned to it
+print(a) #Not defined
+
+
+#Find outputs
+a=b=c=25
+print(a,b,c) #25 25 25
+del a        #a reference will be deleted
+print(b,c)   #25 25
+print(a)     #Not defined
+del b        #b reference will be deleted
+print(c)     #25
+print(b)     #Not defined
+del c        #c reference will be deleted
+print(c)     #not defined
+
+
+#Can multiple objects be deleted with same del operator
+a,b,c=25,10.8,'Hyd'
+print(a,b,c) #25 10.8 Hyd
+del a,b,c    #references a, b and c will be deleted
+print(a)     #Not defined
+print(b)     #Not defined
+print(c)     #Not defined
+
+
+Find outputs
+a=[10,20,15,18]
+print(a)    #[10,20,15,18]
+del a[2]    #a[2] will be deleted
+print(a)    #[10,20,18]
+del a       #a reference will be deleted
+#which leads to deletion of list
+print(a)    #Not defined
+print(a[0]) #a is not defined
+
+
+#find outputs
+a=(10,20,15,18)
+print(a)    #(10,20,15,18)
+print(a[0]) #10
+#del a[2]    #tuple doesn't  support del as it is immutable
+del a       #refernce a will be deleted
+#tuple will be deleted as no reference is pointing to it
+print(a)    #a is not defined
+print(a[0])  #a is not defined
