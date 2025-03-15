@@ -1,0 +1,155 @@
+'''#Find outputs 
+a=25,10.8,3+4j,'Hyd',True,None,'Hyd',25
+print(a)#(a=25,10.8,3+4j,'Hyd',True,None,'Hyd',25) tuple
+print(type(a))#<class 'tuple'>
+#a[3]='Sec' #Error tuple obj doesn't support itm assignment
+#a[3:6]=60,70,80#Error tuple obj doesn't support itm assignment'''
+
+'''s=input('Enter Tuple:')
+print(s)#12,33,11
+print(type(s))#<class 'str'>
+b=eval(s) #assign to tuple
+print(b) #(12,33,11)
+print(type(b))#<class 'tuple'>
+print(len(b)) #3'''
+
+'''a=[10,(20,30,40),50,60]
+#a[1][0]=70 #
+print(a) #[10,(70,30,40),50,60]
+a[1]=[80,90] #[10,[80,90],50,60]
+print(a) ##[10,[80,90],50,60]'''
+
+'''a=(10,[20,30,40],50,60)
+a[1][0]=70 
+print(a) #(10,[70,30,40],50,60)
+#a[1]=[80,90,100] #Error tuple obj doesn't support item assignment
+print(a)'''
+
+'''a=25
+b=10.8
+c='Hyd'
+d=True
+x=a,b,c,d
+print(x)
+print(type(x)) #<class 'tuple'>'''
+
+'''x=25,10.8,'Hyd',True
+a,b,c,d=x
+print(a)
+print(b)
+print(c)
+print(d)
+#p,q,r=x
+#a,b,c,d,e=x'''
+
+'''x=25,10.8,'Hyd',True
+a,*b,c=x
+print(a)#25
+print(b)#[10.8,'Hyd']
+print(c)#True'''
+
+'''tpl=25,10.8,'Hyd',True
+a,b,*c,d,e=tpl
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+'''
+
+'''x=25,10.8,'Hyd',True,3+4j
+a,b,_,d,_=x
+print(a)#25
+print(b)#10.8
+print(_)#'Hyd'
+print(d)#True
+print(_)#3+4j
+'''
+'''
+a=range(100,150,10)
+b=tuple(a)
+print(b)#(100,110,120,130,140)
+print(type(b))#<class 'tuple'>
+c=[10,20,15,18] 
+d=tuple(c) 
+print(d)#(10,20,15,18)
+e=tuple('Vamsi')
+print(e)#('V','a','m','s','i')
+#print(tuple(25))#Error cannot convert int non-sequence to tuple 
+print(tuple())#empty sequence()'''
+
+'''a=(10,20,15,12,14,15,18,19,15,12,25)
+try:
+	i=a.index(15)
+	while True:
+		print(f'i ={i}')
+		print('15 is found at index:',i)
+		i=a.index(15,i+1)
+except:
+		print(f'15 is found {a.count(15)} times')'''
+
+'''a=10,20,30,40,50
+#a[2]=35
+print(a)
+print(id(a))
+print(a)
+print(id(a))'''
+
+'''a=10,20,30,40,50
+#a.remove(3)
+#del a[2]
+#a.pop(2)
+print(a)
+print(id(a))'''
+
+'''a=((10,20),(30,40,50),(60,70,80,90))
+print(a)
+print(type(a))
+print(len(a))
+print(*a[0])
+print(a[1])
+print(a[2])
+print(a[0][1])
+print(a[1][2])
+print(a[2][3])'''
+
+'''a=((10,20,30),)
+print(a[0][0])
+print(a[0][1])
+print(a[0][2])
+b=((),)
+print(*b)'''
+
+'''a=((10,20,30))
+print(a)
+print(*a)
+b=(())
+print(b)
+print(*b)'''
+
+'''a='{10,20,15,18,20,12,18}'
+#b=input('Enter set: ')
+print(a)
+print(type(a))
+b=eval(a)
+print(b)
+print(type(b))'''
+
+'''print(type({(10,20,30)}))
+#print({[10,20,30]})
+#print({{10,20,30}})
+#print({{}})'''
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
