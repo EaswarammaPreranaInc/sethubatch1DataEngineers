@@ -1,0 +1,177 @@
+a = 25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 'Hyd' , 25
+print(a)
+print(type(a))
+#a[3] = 'Sec'
+#a[3 : 6] = 60 , 70 , 80
+
+#output
+
+(25, 10.8, (3+4j), 'Hyd', True, None, 'Hyd', 25)
+<class 'tuple'>
+'''
+'''
+#  What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ?   (Home  work)
+a = input('Enter  Tuple  :  ')
+print(a)
+print(type(a))
+b = eval(a)
+print(b)
+print(type(b))
+print(len(b))
+
+#output
+
+#10 , 20 , 30 , 40
+#string class
+# 10,20,30,40
+#class tuple
+# 4
+'''
+
+'''
+# Find  outputs  (Home  work)
+a = (10 , [20 , 30 , 40] , 50 , 60)
+a[1][0] = 70
+print(a)
+#a[1] = [80 , 90 , 100]
+print(a)
+
+#output
+(10 , [70 , 30 , 40] , 50 , 60)
+'''
+'''
+# Find  outputs  (Home  work)
+a = [10 , (20 , 30 , 40) , 50 , 60]
+#a[1][0] = 70
+print(a)
+a[1] = [80 , 90]
+print(a)
+
+#output
+#[10 , (20 , 30 , 40) , 50 , 60]
+#[10 ,[80,90], 50 , 60]
+
+'''
+'''
+# Find  outputs   (Home  work)
+a = 25
+b = 10.8
+c = 'Hyd'
+d = True
+x = a , b , c , d
+print(x)
+print(type(x))
+
+#output
+(25, 10.8, 'Hyd', True)
+<class 'tuple'>
+'''
+'''
+# Find  outputs   (Home  work)
+x = 25 , 10.8 , 'Hyd' , True
+a , b , c , d = x
+print(a)
+print(b)
+print(c)
+print(d)
+#p , q , r =  x
+#a , b , c , d  , e = x
+
+#output
+25
+10.8
+Hyd
+True
+'''
+'''
+# Find  outputs   (Home  work)
+x = 25 , 10.8 , 'Hyd' , True
+a , *b , c = x
+print(a)
+print(b)
+print(c)
+
+#output
+
+25
+[10.8,'hyd']
+true
+'''
+'''
+# Find  outputs   (Home  work)
+tpl = 25 , 10.8 , 'Hyd' , True
+a , b , *c , d , e = tpl
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+
+#output
+
+25
+10.8
+[]
+Hyd
+True
+'''
+'''
+# Find  outputs   (Home  work)
+x = 25 , 10.8 , 'Hyd' , True , 3 + 4j
+a , b , _ , d , _= x
+print(a)
+print(b)
+print(_)
+print(d)
+print(_)
+
+#output
+
+25
+10.8
+(3+4j)
+True
+(3+4j)
+'''
+'''
+# tuple()  function  demo  program   (Home  work)
+a = range(100 , 150 , 10)
+b = tuple(a)
+print(b)
+print(type(b))
+c = [10 , 20 , 15, 18]
+d = tuple(c)
+print(d)
+e = tuple('Vamsi')
+print(e)
+#print(tuple(25))
+print(tuple())
+
+#output
+(100, 110, 120, 130, 140)
+<class 'tuple'>
+(10, 20, 15, 18)
+('V', 'a', 'm', 's', 'i')
+()
+
+'''
+
+'''
+
+a = (10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25)
+#     0    1      2     3    4     5     6    7     8    9    10
+try:
+	i = a . index(15)
+	while  True:
+		print('15 is found at index : ' , i)
+		i = a . index(15 , i + 1)
+except:
+		print(F'15  is  found  {a . count(15)}  times')
+
+
+#output
+15 is found at index :  2
+15 is found at index :  5
+15 is found at index :  8
+15  is  found  3  times
+'''
