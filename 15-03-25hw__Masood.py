@@ -1,4 +1,4 @@
-# Find  outputs   (Home  work)
+#1 Find  outputs   (Home  work)
 a = 25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 'Hyd' , 25
 print(a)
 print(type(a))
@@ -10,7 +10,7 @@ OUTPUT:
 <class 'tuple'>
 '''
 
-#  What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ?   (Home  work)
+#2 What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ?   (Home  work)
 a = input('Enter  Tuple  :  ')
 print(a)
 print(type(a))
@@ -29,7 +29,7 @@ Enter  Tuple  :  (10 , 20 , 30 , 40)
 '''
 
 
-# Find  outputs  (Home  work)
+#3 Find  outputs  (Home  work)
 a = (10 , [20 , 30 , 40] , 50 , 60)
 a[1][0] = 70
 print(a)
@@ -43,7 +43,7 @@ OUTPUT:
 
 
 
-# Find  outputs  (Home  work)
+#4 Find  outputs  (Home  work)
 a = [10 , (20 , 30 , 40) , 50 , 60]
 #a[1][0] = 70
 print(a)
@@ -57,7 +57,7 @@ OUTPUT:
 
 
 
-# Find  outputs   (Home  work)
+#5 Find  outputs   (Home  work)
 a = 25
 b = 10.8
 c = 'Hyd'
@@ -73,7 +73,7 @@ OUTPUT:
 
 
 
-# Find  outputs   (Home  work)
+#6 Find  outputs   (Home  work)
 x = 25 , 10.8 , 'Hyd' , True
 a , b , c , d = x
 print(a)
@@ -92,7 +92,7 @@ True
 
 
 
-# Find  outputs   (Home  work)
+#7 Find  outputs   (Home  work)
 x = 25 , 10.8 , 'Hyd' , True
 a , *b , c = x
 print(a)
@@ -107,7 +107,7 @@ True
 
 
 
-# Find  outputs   (Home  work)
+#8 Find  outputs   (Home  work)
 tpl = 25 , 10.8 , 'Hyd' , True
 a , b , *c , d , e = tpl
 print(a)
@@ -127,7 +127,7 @@ True
 
 
 
-# Find  outputs   (Home  work)
+#9 Find  outputs   (Home  work)
 x = 25 , 10.8 , 'Hyd' , True , 3 + 4j
 a , b , _ , d , _= x
 print(a)
@@ -147,7 +147,7 @@ True
 
 
 
-# tuple()  function  demo  program   (Home  work)
+#10 tuple()  function  demo  program   (Home  work)
 a = range(100 , 150 , 10)
 b = tuple(a)
 print(b)
@@ -171,7 +171,7 @@ OUTPUT:
 
 
 
-#index()  and  count()  methods  demo  program   (Home  work)
+#10 index()  and  count()  methods  demo  program   (Home  work)
 a = (10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25)
 #     0    1      2     3    4     5     6    7     8    9    10
 try:
@@ -192,7 +192,7 @@ OUTPUT:
 
 
 
-#  How  to  modify  an  element  of  tuple ?    (Home  work)
+#11 How  to  modify  an  element  of  tuple ?    (Home  work)
 a  =  10 ,  20 ,  30 ,   40 ,  50
 #     0      1       2       3      4
 #a[2] = 35
@@ -218,7 +218,7 @@ OUTPUT:
 
 
 
-# How  to  delete  an  element  of  tuple ?   (Home  work)
+#12 How  to  delete  an  element  of  tuple ?   (Home  work)
 a  = 10 , 20 , 30 , 40 , 50
 #    0     1      2     3      4
 #a . remove(30)
@@ -245,7 +245,7 @@ OUTPUT:
 
 
 
-#  Nested   tuple  (Home  work)
+#13 Nested   tuple  (Home  work)
 a = ( (10 , 20)  ,  (30 , 40 , 50)  ,  (60 , 70 , 80 , 90) )
 print(a)
 print(type(a))
@@ -278,7 +278,7 @@ OUTPUT:
 
 
 
-# Find  outputs  (Home  work)
+#14 Find  outputs  (Home  work)
 a = ((10 , 20 , 30),)
 #print(How  to   print  inner  tuple)
 print(a[0])
@@ -310,7 +310,7 @@ OUTPUT:
 
 
 
-#  Find  outputs (Home  work)
+#15 Find  outputs (Home  work)
 a = ((10 , 20 , 30))
 print(a)
 print(*a)
@@ -327,7 +327,7 @@ OUTPUT:
 
 
 
-# What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+#16 What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
 a = input('Enter  Set  :  ')
 print(a)
 print(type(a))
@@ -346,7 +346,7 @@ Enter  Set  :  {10 , 20 , 15 , 18 , 20 , 12 , 18}
 
 
 
-#  Find  outputs  (Home  work)
+#17 Find  outputs  (Home  work)
 print({(10 , 20 , 30)})
 #print({[10 , 20 , 30]})
 #print({{10 , 20 , 30}})
@@ -359,7 +359,7 @@ OUTPUT:
 
 
 
-# How  to  print  set  in  differnet ways  (Home  work)
+#18 How  to  print  set  in  differnet ways  (Home  work)
 a = {25 , True , 'Hyd' , 10.8}
 print('set  with  print  function')
 print(a)
@@ -384,7 +384,7 @@ True
 
 
 
-# Find  outputs  (Home  work)
+#19 Find  outputs  (Home  work)
 a = 'Hyd'
 b = True
 c = 25
@@ -405,7 +405,7 @@ OUTPUT:
 
 
 
-# Find  outputs  (Home  work)
+#20 Find  outputs  (Home  work)
 s = {'Hyd',  25,  True,  10.8 }
 print(s)
 a , b , c , d = s
@@ -426,7 +426,7 @@ print()
 
 
 
-# Find  outputs  (Home  work)
+#21 Find  outputs  (Home  work)
 s = {'Hyd',  25,  True,  10.8 }
 print(s)
 a , *b = s
@@ -443,7 +443,7 @@ OUTPUT:
 
 
 
-# Find  outputs  (Home  work)
+#22 Find  outputs  (Home  work)
 s = {'Hyd',  25,  True,  10.8 }
 print(s)
 a , *b , c = s
@@ -460,7 +460,7 @@ Hyd
 
 
 
-# Find  outputs  (Home  work)
+#23 Find  outputs  (Home  work)
 s = {20 , 10 , 20 , 10}
 print(s)
 x , y = s
@@ -475,7 +475,7 @@ print()
 
 
 
-# set()  function  demo  program  (Home  work)
+#24 set()  function  demo  program  (Home  work)
 a = range(100 , 151 , 10)
 b = set(a)
 print(b)
@@ -492,6 +492,209 @@ OUTPUT:
 {130, 100, 140, 110, 150, 120}
 {10, 12, 15, 18, 50, 20}
 {'o', 'm', 'A', 'R', 'a', 'r', ' '}
+'''
+
+
+
+#25 add()  method  demo  program  (Home  work)
+a = set()
+a . add(True)
+a . add(25)
+a . add(10.8)
+a . add(1)
+a . add('Hyd')
+a . add(25)
+a . add(None)
+a . add('Hyd')
+a . add(1.0)
+print(a)
+a . add((10 , 20 , 30))
+#a . add([10,20,30])
+print(a)
+'''
+Output:
+{True, 10.8, 'Hyd', 25, None}
+{True, 10.8, (10, 20, 30), 'Hyd', 25, None}
+'''
+
+
+
+#26 Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a)
+print(id(a))
+a . add(tpl)
+a . add('Sec')
+print(a)
+print(id(a))
+print(len(a))
+#a . add([100 , 200 , 300])
+#a . add(set())
+#a . add({ })
+
+'''
+Output:
+{25, 10.8, 'Hyd', True}
+1657214839360
+{True, 10.8, (10, 20, 30), 'Sec', 'Hyd', 25}
+1657214839360
+6
+'''
+
+
+
+#27  Find  outputs (Home  work)
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl)
+print(s)
+print(len(s))
+
+'''
+Output:
+{(10, 20, 15, 18)}
+1
+'''
+
+
+
+#28 update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()
+s . update(tpl)
+print(len(s))
+print(s)
+#s . update(25)
+
+'''
+Output:
+4
+{10, 18, 20, 15}
+'''
+
+
+
+#29 Find  outputs  (Home  work)
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a,b,c)
+print(s)
+print(len(s))
+#s . add(a , b , c)
+
+'''
+Output:
+{50, 20, 70, 40, 10, 60, 30}
+7
+'''
+
+
+
+
+#29 Find  outputs  (Home  work)
+a = set()
+a . update('Rama Rao')
+print(a)
+print(len(a))
+#a . update(3 + 4j , 10.8 , True)
+
+'''
+Output:
+{'a', ' ', 'o', 'R', 'm'}
+5
+'''
+
+
+
+
+#30 copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)
+b = a . copy()
+print(b)
+print(a  is  b)
+print(a  ==  b)
+c = a
+print(a  is  c)
+
+'''
+Output:
+{10, 18, 20, 15}
+{10, 18, 20, 15}
+False
+True
+True
+'''
+
+
+
+
+#31 remove()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)
+a . remove('Hyd')
+print(a)
+#a . remove('Sec')
+
+'''
+Output:
+{25, 10.8, 'Hyd', True}
+{25, 10.8, True}
+'''
+
+
+
+
+#32 discard()  method  demo  program (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)
+a . discard('Hyd')
+print(a)
+a . discard('Sec')
+print(a)
+#a . remove('Sec')
+
+'''
+Output:
+{25, 10.8, 'Hyd', True}
+{25, 10.8, True}
+{25, 10.8, True}
+'''
+
+
+
+
+#33 clear()  method  demo  program (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)
+a . clear()
+print(a)
+print(len(a))
+
+'''
+Output:
+{10, 18, 20, 15}
+set()
+0
+'''
+
+
+
+
+#34 Find  outputs  (Home work)
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b))
+#print(a | b)
+#print(b . union(a))
+#print(a + b)
+
+'''
+Output:
+{40, 10, 50, 20, 60, 30}
 set()
 '''
 
