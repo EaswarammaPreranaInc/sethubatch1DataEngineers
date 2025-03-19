@@ -1,0 +1,224 @@
+'''
+#functions
+
+#  return  statement  demo  program
+def  f1():
+	print('f1  function')
+	return  25
+	print('Hello')
+# End  of  the  function
+print('Begin')
+x =  f1()
+print(x)
+print('End')
+
+output
+Begin
+f1 function
+25
+End
+'''
+
+'''
+# Find outputs  (Home  work)
+def   f1():
+	print('Hyd')
+	print('Sec')
+	print('Cyb')
+# End  of  the  function
+print('Begin')
+x = f1()
+print(x)
+print(type(x))
+print('End')
+
+#output
+Begin
+Hyd
+Sec
+Cyb
+None
+<class 'NoneType'>
+End
+'''
+'''
+#  Gift
+# Find  outputs  (Home  work)
+def  f1():
+	return  10 , 20 , 30
+# End  of  the  function
+x = f1()
+print(x)
+print(type(x))
+a , b , c =  f1()
+print(a)
+print(b)
+print(c)
+print('for  loop')
+for  k   in   f1():
+	print(k)
+
+#output
+
+#(10,20,30)
+#tuple class
+#10
+#20
+#30
+#for loop
+#10
+#20
+#30
+'''
+'''
+# Find  outputs
+def    f1():
+        return  10
+        return  20
+        return  30
+# End  of  the  function
+print('Begin')
+x = f1()
+print(x)
+print('End')
+#return   100  # out side of the return
+
+#output
+Begin
+10
+End
+'''
+'''
+#  Find  outputs
+#f1()# error due f1 not difined
+def   f1():
+        print('Hello')
+print(f1())
+print(f1)
+
+#output
+#Hello
+#none
+
+'''
+'''
+# Find  outputs  (Home  work)
+print('Hello')
+def  f1():
+        print('f1  function')
+#End  of   function
+print('Hi')
+print(f1())
+print(f1)
+print('Bye')
+
+#output
+#Hello
+#Hi
+#f1 function
+#none
+#<function f1 at 0x0000019679953E20>
+#bye
+'''
+'''
+#  Find  outputs
+def    f1():
+        print('Hyd')
+        print('Sec')
+        print('Cyb')
+#End  of  the  function
+print('Begin')
+print(type(f1))
+print(id(f1))
+print('End')
+
+#output
+#Begin
+# class function
+#address of f1
+#End
+'''
+'''
+
+# Find  outputs (Home  work)
+def  f1():
+	print('No-argument  function')
+def  f1(x):
+	print('Single  argument  function  : ' , x)
+def  f1(x , y):
+	print('Two  argument  function : ' , x , y)
+def  f1(x , y , z):
+	print('Three  argument  function : ' , x , y , z)
+f1(10 , 20 , 30)
+#f1(40 , 50)
+#f1(60)
+f1()
+
+#output
+#Three  argument  function : 20,30,40
+'''
+'''
+#  Gift
+# Find  outputs (Home  work)
+def    f1(a , b , c):
+	return  a + b * c
+#end  of  the  function
+print(f1(3 , 4 , 5))
+print(f1(*[6 , 7 , 8]))
+#print(f1([6 , 7 , 8]))
+print(f1(*{1 : 2 , 3 : 4 , 5 : 6}))
+print(f1(**{'c' : 2 , 'b' :  4 , 'a' : 6}))
+#print(f1({'c' : 2 , 'b' :  4 , 'a' : 6})) # missing argument
+print({**{'c' : 2 , 'b' :  4 , 'a' : 6}})
+#print(f1(**{'c' : 2 , 'a' : 4 , 'x' : 6}))# unexcepted keyword x
+
+#output
+23
+62
+16
+14
+{'c': 2, 'b': 4, 'a': 6}
+
+'''
+
+'''
+# Find  outputs (Home  work)
+def    disp(empno , ename , sal):
+        print(F'Emp  Number : {empno:4}  \t  Emp  Name : {ename:15}  \t  Salary : {sal}')
+# End  of  the  function
+disp(25 , 'Rama Rao' , 10000.0)
+disp(ename = 'Sita' , sal = 20000.0 , empno = 35)
+x = 'Rama  Rao'
+y = 30000.0
+z = 20
+disp(x , y , z)
+
+#output
+Emp  Number :   25        Emp  Name : Rama Rao            Salary : 10000.0
+Emp  Number :   35        Emp  Name : Sita                Salary : 20000.0
+Emp  Number : Rama  Rao           Emp  Name :         30000.0     Salary : 20
+
+'''
+'''
+def fun(b):
+    if b==1:
+        return None
+    else:
+        for i in range(2,b):
+            if b%i==0:
+                return False
+        return True
+try:
+    a = int(input("Enter Number : "))
+    fun(a)
+    if fun(a) is None:
+        print(a,"is not a Prime or Composite Number")
+    elif fun(a):
+        print(a, "is a Prime Number")
+    else:
+        print(a,"is a Composite Number")
+
+except(NameError,ValueError):
+    print("Invalid Input")
+
+'''
