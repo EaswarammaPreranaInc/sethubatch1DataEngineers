@@ -1,6 +1,6 @@
 # program 1
 #difference()   method  demo  program  
-
+a={10,20,30,40}
 b = {30 , 40 , 50 , 60}
 c = a . difference(b)
 print(c)#{10,20}
