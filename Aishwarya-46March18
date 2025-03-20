@@ -135,13 +135,14 @@ def prime(n):
 		if n%i==0:
 			return False
 	return True
-n=input('Enter an int number: ')
-if(type(eval(n))!=int):
-	print('Invalid input')
-elif prime(int(n)):
-	print('Prime number')
-else:
-	print('Composite number')
+if __name__='__main__':
+      n=input('Enter an int number: ')
+      if(type(eval(n))!=int):
+	    print('Invalid input')
+      elif prime(int(n)):
+	    print('Prime number')
+      else:
+	    print('Composite number')
 
 #Output
 Enter an int number: 2
