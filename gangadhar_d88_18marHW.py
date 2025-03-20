@@ -109,9 +109,9 @@ f1(25 , c = 10.8 , b = 'Hyd')# a  :  25 <tab> b  :  Hyd <tab> c :  10.8
 # Write   a  function  to  test  a  number  is  prime  (or)  not.
 def prime(x):
     b=x//2
-    for i in range(2,b):
+    for i in range(2,b+1):
         if x%i==0:
-            print(i-2)
+
             return False   
     return True
 
