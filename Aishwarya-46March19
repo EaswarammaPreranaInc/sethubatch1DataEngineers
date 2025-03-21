@@ -1,6 +1,6 @@
 #Generate all prime numbers between 2 and n and also print how many prime numbers are existing
 #Use prime() function defined in March18 but do not rewrite
-from March19 import prime
+from March18 import prime
 n=int(input('Enter a number: '))
 count=0
 print(F'Prime numbers between 2 to {n}')
