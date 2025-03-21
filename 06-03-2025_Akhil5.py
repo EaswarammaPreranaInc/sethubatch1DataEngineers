@@ -1,4 +1,4 @@
-#1
+#1 concatenation
 s1=str(input('Enter string 1 :'))
 s2=str(input('Enter string 2 :'))
 s3=s2[0:1]+s1[1:]+' ' +s1[0:1]+s2[1:]
