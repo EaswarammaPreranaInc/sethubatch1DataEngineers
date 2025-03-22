@@ -1,0 +1,60 @@
+#Fnd outputs
+square=lambda x=10:x*x
+print(square(5)) #25
+print(square())  #100
+
+
+#Find outputs
+add=lambda x,y : x+y #How to define lambda function to return sum of two arguments
+print(type(add))     #<class 'function'>
+print(add(10,20))    #30
+print(add(10.6,20.8))#31.4
+print(add('Hyder','abad'))#Hyderabad
+print(add(True,False)) #1
+print(add(25,10.8))  #35.8
+print(add(3+4j,5+6j))#8+10j
+print(add(10,'20'))  #Error
+print(add())         #Error
+print(add)           #<function lambda at some hexa-decimal address>
+
+
+#Find outputs
+add=lambda a=1,b=2 : a+b
+print(add(10,20)) #30
+print(add())      #3
+
+
+#Find outputs
+print((lambda x,y : x+y)(10,20))     #30
+print((lambda x,y : x+y)(10.8,20.6)) #31.4
+print((lambda x,y : x+y)('Hyder','abad')) #Hyderabad
+print((lambda x,y : x+y('Hyder','abad'))  #<class lambda at some hexa-decimal address>
+
+
+#Find outputs
+large=lambda x,y : (if x>y:x:y) #How to define lambda to determine largest of two arguments
+print(large(10,20))    #20
+print(large(10.7,5.6)) #10.7
+print(large('g','s'))  #s
+print(large('Rama','Rajesh')) #Rama
+print(large(True,False))      #True
+
+
+#Find outputs
+power=lambda a=3.5,b=2 : a**b
+print(power(2,3))    #8
+print(power(4.5,4))  #4.5 ^ 4
+print(power())       #3.5 ^ 2
+print(power(9))      #9 ^ 2
+
+
+#Find outputs
+all=lambda a,b : (a+b,a-b,a*b,a/b)
+x=all(10,7)     
+print(type(x))   #<class 'tuple'>
+print(x)         #(17,3,70,1.428571)
+p,q,r,s=all(9,2)
+print(p)         #17
+print(q)         #3
+print(r)         #70
+print(s)         #1.428571
