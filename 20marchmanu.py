@@ -1,5 +1,5 @@
 '''
-4)find  outputs (Home  work)
+1)find  outputs (Home  work)
 
 def   f1(a = 25  , *b):	
         print(F'a : {a}  \t   b  :  {b} ')
