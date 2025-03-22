@@ -1,0 +1,340 @@
+#homework 1
+#how to print dictionary in different ways
+
+a  =  {10 : 'Ramesh' ,  20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
+print('Dictionary  with  print  function')
+print(a) #Dictionary  with  print  function
+print(' keys of dictionary')
+print(a.keys()) #How  to  print  keys of dictionary
+print('values of dictionary')
+print(a.values()) #How  to  print  values of dictionary
+print('items of dictionary')
+print(a.items()) #How  to  print  items of dictionary
+print('All  the  tuples  of  dict_items   object')
+print(*(a.items())) #All  the  tuples  of  dict_items   object
+print('each  key of  dictionary  with  for  loop')
+for i in a.keys():
+    print(i) 
+print('each  value of  dictionary  with  for  loop')
+for value in a.values():
+    print(value)
+print('elements  of  tuple   in  dictionary  with  for  loop')
+for (item) in a.items():
+    print(item)
+    print(*item)
+print('Each  key of  dictionary  with  for  loop  along   with  corresponding  value')
+for key, value in a.items():
+    print(key,':',value)
+    print(f'Key: {key}, Value: {value}')
+
+#output1
+'''Dictionary  with  print  function
+{10: 'Ramesh', 20: 'Kiran', 15: 'Amar', 18: 'Sita'}
+ keys of dictionary
+dict_keys([10, 20, 15, 18])
+values of dictionary
+dict_values(['Ramesh', 'Kiran', 'Amar', 'Sita'])
+items of dictionary
+dict_items([(10, 'Ramesh'), (20, 'Kiran'), (15, 'Amar'), (18, 'Sita')])
+All  the  tuples  of  dict_items   object
+(10, 'Ramesh') (20, 'Kiran') (15, 'Amar') (18, 'Sita')
+each  key of  dictionary  with  for  loop
+10
+20
+15
+18
+each  value of  dictionary  with  for  loop
+Ramesh
+Kiran
+Amar
+Sita
+elements  of  tuple   in  dictionary  with  for  loop
+(10, 'Ramesh')
+10 Ramesh
+(20, 'Kiran')
+20 Kiran
+(15, 'Amar')
+15 Amar
+(18, 'Sita')
+18 Sita
+
+Each  key of  dictionary  with  for  loop  along   with  corresponding  value
+10 : Ramesh
+Key: 10, Value: Ramesh
+20 : Kiran
+Key: 20, Value: Kiran
+15 : Amar
+Key: 15, Value: Amar
+18 : Sita
+Key: 18, Value: Sita
+
+#homework 2
+a = {
+		print('Hyd') , #HYD
+		print('Sec') , #Sec
+		print('Cyb')   #cyb
+     }   
+print(type(a)) #<class 'set'>
+print(a)
+print(len(a))
+#output2
+Hyd
+Sec
+Cyb
+<class 'set'>
+{None}
+1
+
+#homework 3
+_= 25   #Anonymous object contain 25
+print(_) #value Anonymous object ie.25
+print(type(_))  <class 'int'>
+a , _ , c = 10 , 20 , 30  # multiple assignment
+print(a) #10
+print(_) #20
+print(c) #30
+for  _  in  range(5):
+	print(_ , 'Hello')
+#output3
+'''25
+<class 'int'>
+10
+20
+30
+0 Hello
+1 Hello
+2 Hello
+3 Hello
+4 Hello
+
+#homework 4
+a = 25 # ref 'a' point to obj 25
+print(id(a)) # address of the 'a'ie.25
+a = 35     #ref 'a' point to obj 35
+print(id(a)) # address of the object 35
+#output4
+4342800912
+4342801232
+
+#homework5
+a = 25.7  #ref 'a' point to obj ie.25.7
+print(id(a)) #address of the object 'a'
+print(a) #25.7
+a = 35.6  #ref 'a' is modified to another object ie.35.6
+print(id(a)) #address of the object 35.6
+print(a) #35.6
+b = True #ref 'b' point to obj ie.true
+print(id(b)) #address of the object 
+b = False # ref 'b' is modified to another object 
+print(id(b)) #address of the object 
+c = None #ref 'a' point to obj ie.none
+print(id(c)) #address of the object none
+c = False   # nothing is modified
+print(id(c)) # same address to c 
+#output5
+4395362896
+25.7
+4831205040
+35.6
+4342797344
+4342797312
+4342796840
+4342797312
+
+#homework 6
+a = 'Hyd' #ref 'a' point to obj ie 'HYD'
+print(id(a)) #address of the object 'hyd'
+a[1] = 'e' # error becoz string object immutuble
+a = 'Sec' # ref to modified to 'sec'
+print(id(a)) #address of the object 'sec'
+b = (10 , 20 , 15 , 18) #ref 'b' point to  tuple obj 
+print(id(b)) #address of the  tuple 
+b[2] = 19 #error becoz tuple object immutuble 
+b = (30 , 40 , 35 , 32) #ref 'b' point to  modified another tuple obj 
+print(id(b)) #address of the second  tuple 
+c = range(5) #ref 'c' point to  range obj 
+print(id(c)) #address of the  range object
+c[3] = 10 #error becoz range object immutuble so we cant replace
+c = range(5) #ref 'c' point to another  range obj 
+print(id(c))# address of the  second range object
+#output6
+4747775312
+5005633376
+5017999840
+5017507440
+5005650864
+5005649520
+
+# homework 7
+a = 25 # ref'a' points to obj 25
+b = 25 # ref 'b' points to same obj 25 becoz int is immutuble object
+print(a  is  b) #True
+c = 'Hyd' # ref'c' points to obj 'hyd'
+d = 'Hyd' # ref'd' points to  same obj 'hyd'
+print(c  is  d) #True
+e = False # ref'e' points to obj False
+f = False # ref'c' points to  same obj False
+print(e  is  f) #True
+g = range(10) # ref'g' points to rang obj 
+h = range(10) # ref'H' points to another rang obj 
+print(g  is  h) #False
+#output7
+True
+True
+True
+False
+
+# homework 8
+a = [10 , 20 , 15 , 18] # ref'a' points to list
+b = [10 , 20 , 15 , 18] # ref'e' points to  another list 
+print(a  is  b) #False becoz 'a','b' point to diffrent list
+c =  {10 : 20, 30 : 40} # ref'c' points to  dictionary
+d =  {10 : 20, 30 : 40} # ref'd' points to  another dictionary
+print(c  is  d)    # False
+e = (10 , 20 , 15 , 18) # ref'e' points to tuple
+f = (10 , 20 , 15 , 18) # ref'f' points to same tuple 
+print(e  is  f) # True
+g = {10 , 20 , 15 , 18} # ref'g' points to set
+h = {10 , 20 , 15 , 18} # ref'e' points to another set
+print(g  is  h) #False
+#output8
+False
+False
+False
+False
+ 
+# homework 9
+print(10 + 20) #  30
+print(10.8 + 20.6) # 31.4
+print(3 + 4j + 5 + 6j) #   8 + 10j
+print(True + False) # 1 + 0 = 1
+print('Hyder' + 'abad') # Hyderabad
+print('Sankar' + 'Dayal' + 'Sarma') #SankarDayalSarma
+print('10' + '20') #1020
+print([10 , 20 , 30] + [1 , 2 , 3]) #(10,20,30,1,2,3)
+print((25 , 10.8 , 'Hyd') + (3 + 4j , True , None)) #  (25 , 10.8 , 'Hyd' , 3 + 4j , True , None)
+#print({10 , 20} + {30 , 40}) #  Error  becoz sets can  not  be  concatenated  with  +  operator
+#print({10 : 'Hyd'} + {20 : 'Sec'}) # Error  becoz   dictionaries can  not  be  concatenated  with  +  operator
+#print(range(4) + range(5))  #Error  becoz   range  objects  can  not  be  concatenated
+#print(10 + '20') # Error  due  to  sequence  and  non-sequence
+#print([10 , 20 , 30] + 5)  # Error  due  to  sequence  and  non-sequence
+#print([10 , 20 , 30] + (40 , 50 , 60))  Error  becoz  list  and  tuple  can  not  be concatenated  
+#output9
+30
+31.400000000000002
+(8+10j)
+1
+Hyderabad
+SankarDayalSarma
+1020
+[10, 20, 30, 1, 2, 3]
+(25, 10.8, 'Hyd', (3+4j), True, None)
+
+# homework 10
+#Find outputs (Home work)
+print(25 * 3)  #   75
+print(10.8 * 25.6)   #  some  thing
+print(True * False)  #   1 * 0 = 0
+print((3 + 4j) * (5 + 6j))  #  15 + 18j + 20j - 24 = -9 + 38j
+print(3 + 4j * 5 + 6j) #    3 + 20j + 6j = 3 + 26j
+print('25' * 3) #   252525
+print(3 * '25') #  252525
+print('Hyd' * 4) #  HydHydHydHyd
+print([10 , 20 , 15] * 2)#   [10,20,15,10,20,15]
+print((25, 10.8, 'Hyd', True) * 3)  #  (25, 10.8, 'Hyd', True , 25, 10.8, 'Hyd', True , 25, 10.8, 'Hyd', True )
+#print([10 , 20 , 15] * 3.0)    #  Error  due  to  float  operand  3.0
+#print({10 , 20 , 15} * 2)  #  Error  becoz  set  can  not  be  repeated
+#print({10 : 20 , 30 : 40} * 2)   #  Error  becoz  dict  can  not  be  repeated
+#print([10] * [20])     #  Error  becoz  2nd  operand  can not be  non-integer  when op1  is  a  sequence
+#output10
+75
+276.48
+0
+(-9+38j)
+(3+26j)
+252525
+252525
+HydHydHydHyd
+[10, 20, 15, 10, 20, 15]
+(25, 10.8, 'Hyd', True, 25, 10.8, 'Hyd', True, 25, 10.8, 'Hyd', True)
+(2, 4, 5, 6, 7, 7)
+
+# homework 11
+# ** operator demo program
+print(3 ** 4)   #  3 ^ 4 = 81
+print(10 ** -2)  #  10 ^ -2  = 0.01
+print(4 * 3 * 2)  #  4 ^ 3 ^ 2 = 4 ^ 9
+print(3 + 4 * 5 - 32 / 2 ** 3)  #   19.0
+#output11
+81
+0.1
+24
+19.0
+
+#homework 12
+#Relational  operators  demo  program (Home  work)
+print(9 >= 5)  #  True  becoz  >  is  satisfied
+print(9 >= 9)   #  True  becoz  =  is  satisfied
+print(9 >= 12)   #  False  becoz    both  are  not  satisfied
+print(6 <= 8)  #   True  becoz   <  is  satisfied
+print(6 <= 6)   #  True  becoz  =  is  satisfied
+print(6 <= 4)   #  False  becoz    both  are  not  satisfied
+print(9 != 7)   #  True
+print(6 == 8) #  False
+print(True  >  False)  #   1 > 0 is True
+print(3 + 4j == 3 + 4j)  #   True
+print(3 + 4j == 5 + 6j)  #  False
+print(3 + 4j != 5 + 6j)  #  True
+print(10 == 10.0) #   True  becoz  10 and  10.0  are  same
+print(3 + 4j >  3 + 4j)   #  Error  becoz  complex    numbers   can  not  be  compared  with  >,<,=,!
+#output12
+True
+True
+False
+True
+True
+False
+True
+False
+True
+True
+False
+True
+True
+
+# homework 13
+print('Rama'   >  'Rajesh')   #  True  becoz 'm' >'j'
+print('Rama'  <  'Sita')      #  True  becoz  'R'  <  'S'
+print('Hyd'  ==  'Hyd')       # True   due  to same  strings   
+print('Rama'  <=   'Ramana')  # True  becoz    '' <=  'n'
+print('Rama  Rao'  >=  'Rama') #  True  becoz  ' ' >= ' '
+print('Hyd'  != 'Sec')         # True  becoz   strings  are  different
+print('HYD'  <   'hyd')        # True  becoz  'H'  <  'h'
+#output13
+True
+True
+True
+True
+True
+True
+True
+
+# homework 14
+print(10 < 20 < 30)    #   True  becoz  both  are  satisfied
+print(10 >= 20 < 30)   #  False  becoz  1st  cond  is  not  satisfied
+print(10 < 20 > 30)   #  False  becoz  20 is not greater than 30 (20>30)
+print(1 < 2 < 3 < 4)  #  True  becoz  both  are  satisfied
+print(10 < 20 > 30)   #  False  becoz  2 is not greater than 3 (2>3)
+print(4 > 3 >= 3 > 2) #True  becoz  both  are  satisfied
+#output14
+True
+False
+False
+True
+False
+True
+
+#homework 15
+print(7/0) #Error  due  to   division  by  zero
+print(7 // 0)   #   Error  due  to   division  by  zero
+print(7 % 0)   #   Error  due  to   division  by  zero
