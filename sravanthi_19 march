@@ -1,4 +1,53 @@
+
+'''
 ..........1
+Write  a  program  to  generate  all   prime  numbers  between  2  and  n   and
+also  print  how  many  prime  numbers  are  existing
+
+Hint:  Use  the  prime()  function  defined  in   prog3a(prime).py  but  do  not  rewrite
+
+What  are  the  outputs  if  input  is  10  ?  --->  Prime   numbers
+																		   2
+																		   3
+																		   5
+																		   7
+																		   Number  of   prime  numbers : 4
+'''
+'''
+How  to  read  a  number
+How  to  print  all  prime  numbers  between  2  and  user  input
+print('Number  of  prime numbers  :  ' ,  ???)
+
+''' 
+   
+def prime(n):
+        for i in range(2,n//2+1):
+                if n%i==0:
+                        return False
+        #End of the for loop
+        return True
+
+if __name__=='__main__':
+        n=int(input("Enter any number:"))
+        if n<2: #input is invalid
+                print('Invalid input')
+        elif prime(n): #input is prime number
+                print("Prime number")
+        else:
+                print("Composite number")  
+
+from prog3a import prime# import prime() function and if statement
+n=int(input("Enter value of any n:"))#How  to  read  a  number
+count=0
+for i in range(2,n+1):#How  to  print  all  prime  numbers  between  2  and  user  input
+    if prime(i):
+        print(i)# 2, 3, 5, 7
+        count+=1#4
+print('Number  of  prime numbers  :  ' ,  count)
+              
+
+
+..........2
 # Keyword  only   arguments  demo  program
 def   f1(* , a , b):
         print(F'a  :  {a}  \t  b :  {b}')
@@ -11,7 +60,7 @@ f1(b = 30 , a = 40)
 output
 a  :  10          b :  20
 a  :  40          b :  30
-.........2
+.........3
 def  f1(a , * , b , c):
         print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
 # End  of  function
@@ -25,7 +74,7 @@ output:
 a  :  10          b :  20         c  :  30
 a  :  40          b :  50         c  :  60
 a  :  80          b :  90         c  :  100
-............3
+............4
 #  Positional  only  arguments  demo  program
 def   f1(a , b , /):
         print(F'a  :  {a}  \t  b  :  {b}')
@@ -36,7 +85,7 @@ f1(50 , b = 60)
 f1(a = 70 , 80)
 output:
 a  :  10          b  :  20
-..........4
+..........5
 def  f1(a , b , / , c):
         print(F'a  :  {a}  \t  b :  {b}  \t  c  :  {c} ')
 # End  of  function
@@ -50,7 +99,7 @@ f1(190 , b = 200 , c = 210)
 output:
 a  :  10          b :  20         c  :  30
 a  :  40          b :  50         c  :  60
-..........5
+..........6
 def  f1(a , b , / , c , d , * , e  , f):
         print(F'a  :  {a}  \t  b  :  {b}  \t  c  :  {c}  \t  d  :  {d}  \t  e  :  {e}  \t  f  :  {f}')
 # End of the function
@@ -62,7 +111,7 @@ f1(10 , 20 , 30 , 40 , e = 50 , f = 60)
 output:
 a  :  10          b  :  20        c  :  30        d  :  40        e  :  50        f  :  60
 a  :  10          b  :  20        c  :  30        d  :  40        e  :  50        f  :  60
-...........6
+...........7
 def  f1(x):
 	print('1st  function : ' , x)
 def  f1(y):
@@ -74,7 +123,7 @@ f1(y = 20)
 f1(x = 30)
 output:
 3rd  function :  10
-..........7
+..........8
 def   f1(a = 10):
         print(a)
 # End  of  the  function
@@ -85,7 +134,7 @@ output:
 20
 10
 30
-..........8
+..........9
 def  add(a , b , c = 10 , d = 20):
         return  a + b + c + d
 # End  of  the  function
@@ -105,7 +154,7 @@ output:
 330
 610
 610
-........9
+........10
 def    f1(x = 25):
         return  x
 def   f2(x):
@@ -119,7 +168,7 @@ output:
 10
 25
 20
-.............10
+.............11
 def   disp(ch = '*' , n = 4):
         print(ch *  n)
 # End of the function
@@ -141,7 +190,7 @@ $$$$
 %%%%%%%
 @@@@@@@
 42
-............11
+............12
 def  power(a , b  =  2):
         return  a ** b
 #end of the function
@@ -158,7 +207,7 @@ output:
 91.125
 (-7+24j)
 1
-..........12
+..........13
 def   add(a , b):
 	print('2-argument  function')
 	return a + b
@@ -186,7 +235,7 @@ output:
 109
 4-argument  function
 10
-.........13
+.........14
 def  disp(a , b):
         print('2-argument function  :  ' , a , b)
 def  disp(a , b , c , d):
@@ -200,7 +249,7 @@ disp(80 , 90)
 output:
 3-argument  function  :   10 20 30
 3-argument  function  :   80 90 25
-..........14
+..........15
 def   add(* , a = 10 , b = 20):
         return  a + b
 # End of  the  function
@@ -214,7 +263,7 @@ output:
 30
 70
 130
-.........15
+.........16
 def   add(a = 10 , b , c):
         pass
 def   add( * , a = 10 , b , c ):
@@ -231,7 +280,7 @@ output:
 120
 140
 270
-...........16
+...........17
 def   f1(x , a = []):
 	a . append(x)
 	print('List :  ' ,  a)
@@ -256,7 +305,7 @@ List :   [3, 9]
 List :   [10, 20, 30, 40]
 List :   [3, 9, 5]
 List :   [3, 9, 5, [6, 7, 8]]
-.........17
+.........18
 def   f1(x , a = []):
         if  a  ==  []:
                 a = []
@@ -283,7 +332,7 @@ output:
 [10, 20, 30, 40]
 [5]
 [[6, 7, 8]]
-.........18
+.........19
 def     f1(x , a = []):
         if   a == []:
                 a = []
@@ -302,7 +351,7 @@ output:
 [0, 1, 4, 9, 16]
 [100, 200, 300, 0, 1, 4, 9, 16, 25]
 [0, 1, 4, 9, 16, 25]
-.........19
+.........20
 def     f1(x , a = []):
 	for  i  in  range(x):
 		a . append(i * i)
