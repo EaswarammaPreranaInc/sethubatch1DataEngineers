@@ -32,7 +32,7 @@ print((lambda x,y : x+y('Hyder','abad'))  #<class lambda at some hexa-decimal ad
 
 
 #Find outputs
-large=lambda x,y : (if x>y:x:y) #How to define lambda to determine largest of two arguments
+large=lambda x,y : max(x,y) #How to define lambda to determine largest of two arguments
 print(large(10,20))    #20
 print(large(10.7,5.6)) #10.7
 print(large('g','s'))  #s
