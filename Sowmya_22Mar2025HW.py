@@ -2185,3 +2185,1384 @@ NameError: name 'inner' is not defined
 ✔ **Fix**: If you want to call `inner()` in `other()`, you should define `inner()` globally or pass it as an argument.
 
 ----------------------------------------------------------------------------------------------------------------------------------
+Here's the corrected and well-commented version of your code with explanations:  
+
+```python
+# Defining a tuple containing a lambda function and two print statements
+a = (lambda: print('Hyd'), print('Sec'), print('Cyb'))
+
+# Printing the type of 'a', which is a tuple
+print(type(a))  
+# Output: <class 'tuple'>
+
+# Printing the tuple 'a' itself, which contains a function and two None values (because print returns None)
+print(a)  
+# Output: (<function <lambda> at 0x...>, None, None)
+
+# Iterating over the elements of the tuple and printing them
+for x in a:
+    print(x)  
+# Output:
+# <function <lambda> at 0x...>  (Reference to the lambda function)
+# None  (Result of print('Sec'))
+# None  (Result of print('Cyb'))
+
+# Attempting to call 'a' as a function, but 'a' is a tuple, not callable
+# This line will raise a TypeError
+# a()  
+
+# Accessing and calling the first element of the tuple (the lambda function)
+print(a[0]())  
+# Output:
+# Hyd  (From lambda function execution)
+# None (Because print() returns None)
+```
+
+### Expected Output:
+```
+<class 'tuple'>
+(<function <lambda> at 0x...>, None, None)
+<function <lambda> at 0x...>
+None
+None
+Hyd
+None
+```
+
+### Key Learnings:
+1. `a` is a **tuple**, not a function, because of the comma `,` after the lambda.
+2. `print()` returns `None`, so `print('Sec')` and `print('Cyb')` result in `None` inside the tuple.
+3. Trying to call `a()` causes an **error** because tuples are not callable.
+4. Accessing `a[0]` correctly retrieves the lambda function, which prints `"Hyd"`, but returns `None`.
+-------------------------------------------------------------------------------------------------------------------------
+Here's your corrected code with comments explaining each step:
+
+```python
+# Assigning the string 'Hyd' to variable s
+s = 'Hyd'
+
+# Defining a lambda function but NOT calling it. It simply prints the function reference.
+print(lambda s: print(s))  
+# Output: <function <lambda> at 0x...>
+
+# The following line has a SYNTAX ERROR:
+# print(lambda x: print(x) (s))
+# The issue is that print(x) (s) tries to call None as a function.
+# This line needs to be corrected or removed.
+
+# Corrected version of the above line:
+# print((lambda x: print(x))(s))  # This correctly calls the lambda function.
+
+# Calling the lambda function immediately with argument 's'
+print((lambda x: print(x)) (s))  
+# First, it prints: Hyd
+# Then, since print() returns None, the outer print() prints: None
+# Output:
+# Hyd
+# None
+
+# Calling the lambda function immediately, but this time without an outer print()
+(lambda x: print(x)) (s)
+# Output:
+# Hyd  (Prints 'Hyd' and doesn't return anything)
+
+```
+
+### **Expected Final Output:**
+```
+<function <lambda> at 0x...>  # From the first print statement
+Hyd  # From the lambda function execution inside the print()
+None  # Because print() returns None
+Hyd  # From the last lambda function call
+```
+
+### **Key Learnings:**
+1. **Lambdas are functions**: `lambda s: print(s)` defines a function but doesn’t execute it.
+2. **Lambdas need to be called**: `(lambda x: print(x)) (s)` executes the function immediately.
+3. **Nested function calls require careful syntax**: `print(x) (s)` is incorrect since `print(x)` returns `None`, which cannot be called.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step with explanations and expected outputs.
+
+---
+
+### **Code Analysis:**
+```python
+# Assigning the initial value of x
+x = 5
+
+# Creating a lambda function 'adder1'
+# It captures the current value of x (which is 5) as the default argument.
+adder1 = lambda y, x=x: x + y  # Here, x=5 is stored in the function's default value.
+
+# Changing the value of x to 10
+x = 10
+
+# Creating another lambda function 'adder2'
+# It captures the current value of x (which is now 10) as the default argument.
+adder2 = lambda y, x=x: x + y  # Here, x=10 is stored in the function's default value.
+
+# Changing x again to 20 (but this does not affect adder1 or adder2 because they stored earlier values of x)
+x = 20
+
+# Calling adder1 with argument 100
+print(adder1(100))  
+# x in adder1 was stored as 5, so:
+# 5 + 100 = 105
+# Output: 105
+
+# Calling adder2 with argument 200
+print(adder2(200))  
+# x in adder2 was stored as 10, so:
+# 10 + 200 = 210
+# Output: 210
+
+# Calling adder1 with two arguments (300, 400)
+print(adder1(300, 400))  
+# The lambda function is defined as: `lambda y, x=5: x + y`
+# Here, we are providing **two arguments**, so `x=400` replaces the default value (5).
+# 400 + 300 = 700
+# Output: 700
+```
+
+---
+
+### **Expected Output:**
+```
+105
+210
+700
+```
+
+---
+
+### **Key Learnings:**
+1. **Default argument values in lambdas**  
+   - When defining a lambda function with default arguments (`x=x`), Python **stores** the current value of `x` at that moment.
+   - Changing `x` later does **not** affect the stored value in previously created lambda functions.
+
+2. **Overriding default values**  
+   - In `adder1(300, 400)`, the second argument (`400`) **overrides** the default `x=5`, changing the calculation.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step and predict the output.
+
+---
+
+### **Code:**
+```python
+# Creating a list 'a' that contains three lambda functions
+a = [
+    lambda x: x * 2,  # First function: Multiplies x by 2
+    lambda x: x * 3,  # Second function: Multiplies x by 3
+    lambda x: x ** 4  # Third function: Raises x to the power of 4
+]
+
+# Looping through each function in the list and calling it with x = 5
+for fun in a:
+    print(fun(5))
+```
+
+---
+
+### **Step-by-step Execution:**
+
+1. The first function `lambda x: x * 2` is executed with `x = 5`:  
+   \[
+   5 \times 2 = 10
+   \]
+   **Output:** `10`
+
+2. The second function `lambda x: x * 3` is executed with `x = 5`:  
+   \[
+   5 \times 3 = 15
+   \]
+   **Output:** `15`
+
+3. The third function `lambda x: x ** 4` is executed with `x = 5`:  
+   \[
+   5^4 = 625
+   \]
+   **Output:** `625`
+
+---
+
+### **Final Expected Output:**
+```
+10
+15
+625
+```
+
+---
+
+### **Key Learnings:**
+1. **Lambda functions can be stored in a list** just like normal functions.
+2. **Looping through the list and calling each function** executes them with the provided argument (`x = 5`).
+3. **Each lambda function performs a different operation** based on how it was defined.
+---------------------------------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step, explaining what happens at each stage.
+
+---
+
+### **Code Analysis:**
+```python
+# Defining function f1
+def f1():
+    print('Hyd')  # Prints 'Hyd' when called
+
+# Defining function f2
+def f2():
+    print('Sec')  # Prints 'Sec' when called
+
+# Creating a list 'a' containing function references (NOT calling them)
+a = [f1, f2]  
+
+# Iterating through the list and calling each function
+for x in a:
+    x()
+```
+#### **Execution of the loop:**
+- `x = f1` → Calls `f1()`, which prints `"Hyd"`
+- `x = f2` → Calls `f2()`, which prints `"Sec"`
+
+**Output so far:**
+```
+Hyd
+Sec
+```
+
+---
+
+### **Next Part of Code:**
+```python
+a = [def f1(): print('Hyd'), def f2(): print('Sec')]
+```
+- This **causes a syntax error** ❌  
+- In Python, you **cannot define functions inside a list** this way.
+- The correct way is:
+  ```python
+  a = [lambda: print('Hyd'), lambda: print('Sec')]
+  ```
+  But this is **not** what your code does.
+
+Since the code has a syntax error, execution stops here.
+
+---
+
+### **Final Part of Code:**
+```python
+a = [f1(), f2()]
+print(a)
+```
+#### **Execution of `[f1(), f2()]`**
+- `f1()` is called, which prints `"Hyd"`
+- `f2()` is called, which prints `"Sec"`
+- Both function calls return `None` (because they don't use `return`)
+- The list `a = [None, None]`
+- `print(a)` prints the list `[None, None]`
+
+**Final Output:**
+```
+Hyd
+Sec
+SyntaxError  # Due to invalid function definition in a list
+Hyd
+Sec
+[None, None]
+```
+
+---
+
+### **Key Takeaways:**
+1. **Functions can be stored in lists as references**  
+   ✅ `a = [f1, f2]` works fine because `f1` and `f2` are stored without executing them.
+
+2. **Functions must be called properly in lists**  
+   ✅ `a = [f1(), f2()]` **executes** the functions immediately and stores their results (`None`).
+
+3. **Syntax Error for defining functions inside a list**  
+   ❌ `a = [def f1(): print('Hyd'), def f2(): print('Sec')]` is **invalid** in Python.
+------------------------------------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step with explanations and expected output.
+
+---
+
+### **Code Analysis:**
+```python
+# Creating a dictionary 'a' where:
+# - Keys are strings ('power_2', 'power_3', 'power_4')
+# - Values are lambda functions that compute powers of a number
+
+a = {
+    'power_2': lambda x: x ** 2,  # Squares the input
+    'power_3': lambda x: x ** 3,  # Cubes the input
+    'power_4': lambda x: x ** 4   # Raises input to the power of 4
+}
+
+# Assigning the key 'power_3' to the variable 'key'
+key = 'power_3'
+
+# Printing the dictionary value associated with key = 'power_3'
+print(a[key])  
+# Output: <function <lambda> at 0x...>
+# This prints the function object, NOT its execution.
+
+# Calling the lambda function stored at a['power_3'] with x = 5
+print(a )  
+# The function executes: 5 ** 3 = 125
+# Output: 125
+```
+
+---
+
+### **Expected Output:**
+```
+<function <lambda> at 0x...>  # Function object memory address
+125  # Result of 5^3
+```
+
+---
+
+### **Key Takeaways:**
+1. **Dictionaries can store functions as values**  
+   - `a['power_3']` stores a lambda function, NOT a number.
+   
+2. **Printing a function reference does NOT execute it**  
+   - `print(a[key])` just prints the memory location of the lambda function.
+   
+3. **To execute a stored function, use `()` with an argument**  
+   - `print(a )` correctly calls the function and prints `125`.
+-------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step and predict the output.
+
+---
+
+### **Code Analysis:**
+```python
+# Defining function f1, which takes x as an argument
+def f1(x):
+    # It returns a lambda function that takes n and computes x^n
+    return lambda n: x ** n
+
+# Calling f1 with x = 3 and storing the returned lambda function in 'lamb'
+lamb = f1(3)
+
+# Printing the type of f1 (which is a normal function)
+print(type(f1))  # Output: <class 'function'>
+
+# Printing the type of lamb (which is a lambda function)
+print(type(lamb))  # Output: <class 'function'>
+
+# Calling lamb with n = 2
+print(lamb(2))  # 3^2 = 9, Output: 9
+
+# Calling lamb with n = 5
+print(lamb(5))  # 3^5 = 243, Output: 243
+
+# Printing lamb itself (which is a function object)
+print(lamb)  # Output: <function <lambda> at 0x...> (memory address)
+
+# Calling lamb() without an argument (this will cause an error)
+print(lamb())  # ❌ TypeError: <lambda>() missing 1 required positional argument: 'n'
+```
+
+---
+
+### **Expected Output:**
+```
+<class 'function'>
+<class 'function'>
+9
+243
+<function <lambda> at 0x...>  # Memory address of the lambda function
+TypeError: <lambda>() missing 1 required positional argument: 'n'
+```
+
+---
+
+### **Key Takeaways:**
+1. **Functions can return lambda functions**  
+   - `f1(3)` returns `lambda n: 3 ** n`, which is stored in `lamb`.
+
+2. **Lambda functions are still functions**  
+   - Both `f1` and `lamb` are of type `<class 'function'>`.
+
+3. **Calling `lamb(n)` executes the lambda function**  
+   - `lamb(2) → 3^2 = 9`
+   - `lamb(5) → 3^5 = 243`
+
+4. **Calling `lamb()` without an argument causes an error**  
+   - The lambda function expects a value for `n`, so calling it without an argument results in a `TypeError`.
+-----------------------------------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step with detailed explanations and expected output.
+
+---
+
+### **Code Analysis:**
+```python
+# Defining a function 'eval' that takes three parameters a, b, and c
+def eval(a, b, c):
+    # Returns a lambda function that represents a quadratic equation: ax^2 + bx + c
+    return lambda x: a * x ** 2 + b * x + c
+
+# Calling eval(3, 4, 5), which returns a lambda function for the quadratic equation:
+# f(x) = 3x^2 + 4x + 5
+lam = eval(3, 4, 5)
+
+# Evaluating the function at x = 2
+print(lam(2))  
+# Calculation: 3*(2^2) + 4*(2) + 5 = 3*4 + 8 + 5 = 12 + 8 + 5 = 25
+# Output: 25
+
+# Evaluating the function at x = 2.5
+print(lam(2.5))  
+# Calculation: 3*(2.5^2) + 4*(2.5) + 5 = 3*(6.25) + 10 + 5 = 18.75 + 10 + 5 = 33.75
+# Output: 33.75
+
+# Evaluating the function at x = 4
+print(lam(4))  
+# Calculation: 3*(4^2) + 4*(4) + 5 = 3*(16) + 16 + 5 = 48 + 16 + 5 = 69
+# Output: 69
+```
+
+---
+
+### **Expected Output:**
+```
+25
+33.75
+69
+```
+
+---
+
+### **Key Takeaways:**
+1. **Functions can return lambda functions**  
+   - `eval(3, 4, 5)` returns a quadratic function: `lambda x: 3x² + 4x + 5`
+
+2. **The returned lambda function behaves like a normal function**  
+   - `lam(2)` evaluates `3(2²) + 4(2) + 5` correctly.
+
+3. **Works with both integers and floats**  
+   - `lam(2.5)` computes correctly without any issues.
+-----------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step, explaining the behavior of the **nested lambda function** and predicting its output.
+
+---
+
+### **Code Analysis:**
+```python
+# Defining a nested lambda function
+add = lambda x=10: lambda y: x + y
+```
+- This means:
+  - `add()` returns another lambda function: `lambda y: x + y`
+  - If `x` is not provided, it defaults to `10`.
+  - The returned lambda function takes `y` as input and returns `x + y`.
+
+---
+
+### **Execution Breakdown:**
+```python
+a = add()  # Equivalent to add(10), so x = 10
+```
+- `a` is now a lambda function: `lambda y: 10 + y`
+
+```python
+print(a(20))  
+```
+- Since `a = lambda y: 10 + y`
+- `a(20) → 10 + 20 = 30`
+- **Output:** `30`
+
+---
+
+```python
+print(add(30)(40))  
+```
+- `add(30)` means `x = 30`, so it returns `lambda y: 30 + y`
+- Calling `add(30)(40)` is like calling `lambda y: 30 + y` with `y = 40`
+- `30 + 40 = 70`
+- **Output:** `70`
+
+---
+
+### **Expected Output:**
+```
+30
+70
+```
+
+---
+
+### **Key Takeaways:**
+1. **Nested lambda functions return other functions**  
+   - `add(x)` returns `lambda y: x + y`, which is another function.
+
+2. **First call sets `x`, second call uses `y`**  
+   - `add()` defaults to `x = 10`, so `a(20)` computes `10 + 20 = 30`.
+   - `add(30)(40)` explicitly sets `x = 30`, then computes `30 + 40 = 70`.
+---------------------------------------------------------------------------------------------------------------------
+Let's analyze your code step by step, explaining how sorting works with different keys and predicting its output.
+
+---
+
+### **Code Explanation:**
+```python
+# Nested tuple 'a', containing tuples with three elements each (integer, string, float)
+a = ((10, 'Rama', 1000.0), 
+     (20, 'Sita', 2000.0), 
+     (15, 'Rajesh', 500.0), 
+     (18, 'Kiran', 2800.0), 
+     (5, 'Amar', 1300.0))
+```
+
+---
+
+### **Sorting based on the first element (Default Behavior)**
+```python
+b = sorted(a)  # Sorts tuple 'a' based on the first element of each inner tuple (default behavior)
+print(b)
+```
+- **Sorting is done on the first element (`x[0]`) of each inner tuple.**
+- **Output:**
+  ```python
+  [(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+  ```
+
+---
+
+### **Sorting in Descending Order (Reverse Sorting)**
+```python
+c = sorted(a, reverse=True)  # Sorts tuple 'a' in descending order of the first element
+print(c)
+```
+- **Output:**
+  ```python
+  [(20, 'Sita', 2000.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0)]
+  ```
+
+---
+
+### **Sorting Based on the Second Element (String)**
+```python
+d = sorted(a, key=lambda x: x[1])  # Sorts based on the second element (name)
+print(d)
+```
+- **Sorting is done alphabetically (A-Z) on the names (`x[1]`).**
+- **Output:**
+  ```python
+  [(5, 'Amar', 1300.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (20, 'Sita', 2000.0)]
+  ```
+
+---
+
+### **Sorting Based on the Third Element (Float, Salary)**
+```python
+e = sorted(a, key=lambda x: x[2])  # Sorting based on the third element (salary)
+print(e)
+```
+- **Sorting is done based on salary (`x[2]`).**
+- **Output:**
+  ```python
+  [(15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0), (20, 'Sita', 2000.0), (18, 'Kiran', 2800.0)]
+  ```
+
+---
+
+### **Sorting Based on the First Element Again**
+```python
+f = sorted(a, key=lambda x: x[0])  # Sorting based on the first element (same as default behavior)
+print(f)
+```
+- **Same as `b` since the default sorting is already done based on `x[0]`.**
+- **Output:**
+  ```python
+  [(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+  ```
+
+---
+
+### **Sorting Based on the Second Element (String) in Reverse Order**
+```python
+g = sorted(a, key=lambda x: x[1], reverse=True)  # Sorting based on names in reverse order
+print(g)
+```
+- **Sorting alphabetically in descending order.**
+- **Output:**
+  ```python
+  [(20, 'Sita', 2000.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (5, 'Amar', 1300.0)]
+  ```
+
+---
+
+### **Error in the Last Line**
+```python
+print(sorted(a, key=x[1]))  # ❌ This will raise an error
+```
+- **This line causes an error because `x[1]` is used directly instead of inside a lambda function.**
+- **Correct way:**
+  ```python
+  print(sorted(a, key=lambda x: x[1]))  # ✅ Works fine
+  ```
+- **Error Message:**
+  ```
+  NameError: name 'x' is not defined
+  ```
+
+---
+
+### **Final Expected Output:**
+```
+[(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+
+[(20, 'Sita', 2000.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0)]
+
+[(5, 'Amar', 1300.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (20, 'Sita', 2000.0)]
+
+[(15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0), (20, 'Sita', 2000.0), (18, 'Kiran', 2800.0)]
+
+[(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+
+[(20, 'Sita', 2000.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (5, 'Amar', 1300.0)]
+
+NameError: name 'x' is not defined
+'''
+Key Takeaways:
+sorted() by default sorts based on the first element
+
+Using reverse=True sorts in descending order
+
+key=lambda x: x[i] lets us sort by different columns (second element, third element, etc.)
+
+Alphabetical sorting applies when sorting strings
+
+Using key=x[1] directly causes an error—use lambda x: x[1] instead.
+```
+------------------------------------------------------------------------------------------------------------------------------
+---Let's analyze the given Python code and predict its output with detailed explanations.
+
+---
+
+### **Code:**
+```python
+a = [
+    {'Make': 'Ford', 'Model': 'Focus', 'Year': 2013},
+    {'Make': 'Tesla', 'Model': 'X', 'Year': 1999},
+    {'Make': 'Mercedes', 'Model': 'C350E', 'Year': 2008}
+]
+
+# Sorting 'a' based on the 'Year' key
+b = sorted(a, key=lambda x: x['Year'])
+print(b)
+
+# Sorting without specifying a key
+print(sorted(a))
+```
+
+---
+
+### **Explanation:**
+#### **Sorting with `key=lambda x: x['Year']`**
+```python
+b = sorted(a, key=lambda x: x['Year'])
+print(b)
+```
+- **Sorting is done based on the value of the `Year` key in ascending order**.
+- The dictionary elements are compared based on their `'Year'` values:  
+  - `{'Make': 'Ford', 'Model': 'Focus', 'Year': 2013}`
+  - `{'Make': 'Tesla', 'Model': 'X', 'Year': 1999}`
+  - `{'Make': 'Mercedes', 'Model': 'C350E', 'Year': 2008}`
+- The sorted order will be based on **Year**:
+  ```python
+  [
+      {'Make': 'Tesla', 'Model': 'X', 'Year': 1999},
+      {'Make': 'Mercedes', 'Model': 'C350E', 'Year': 2008},
+      {'Make': 'Ford', 'Model': 'Focus', 'Year': 2013}
+  ]
+  ```
+---
+#### **Sorting without `key` (`sorted(a)`)**
+```python
+print(sorted(a))
+```
+- **This line will raise an error!** ❌
+- **Why?**  
+  - `sorted()` **cannot compare dictionaries directly** since they are unordered collections.
+  - Python does not define a default way to compare entire dictionaries.
+  - You **must** provide a key to compare.
+
+- **Expected Error Message:**
+  ```
+  TypeError: '<' not supported between instances of 'dict' and 'dict'
+  ```
+
+---
+
+### **Final Output:**
+```
+[
+    {'Make': 'Tesla', 'Model': 'X', 'Year': 1999},
+    {'Make': 'Mercedes', 'Model': 'C350E', 'Year': 2008},
+    {'Make': 'Ford', 'Model': 'Focus', 'Year': 2013}
+]
+
+TypeError: '<' not supported between instances of 'dict' and 'dict'
+```
+
+---
+
+### **Key Takeaways:**
+✅ **Sorting a list of dictionaries requires a key (`lambda x: x['Year']`).**  
+❌ **Calling `sorted(a)` without a key will raise a `TypeError` because dictionaries cannot be compared directly.**  
+
+Would you like me to suggest alternative ways to sort dictionaries? 😊
+
+### **Key Takeaways:**
+1. **`sorted()` by default sorts based on the first element**  
+2. **Using `reverse=True` sorts in descending order**  
+3. **`key=lambda x: x[i]` lets us sort by different columns (second element, third element, etc.)**  
+4. **Alphabetical sorting applies when sorting strings**  
+5. **Using `key=x[1]` directly causes an error—use `lambda x: x[1]` instead.**
+---------------------------------------------------------------------------------------------------------------------------
+Let's analyze the given Python code and predict its output with detailed explanations.
+
+---
+
+### **Code:**
+```python
+a = (
+    (10, 'Rama', 1000.0),
+    (20, 'Sita', 2800.0),
+    (15, 'Vamsi', 2000.0),
+    (25, 'Kiran', 1500.0),
+    (5, 'Amar', 1300.0)
+)
+
+print(max(a, key=lambda x: x[0]))
+print(max(a, key=lambda x: x[1]))
+print(max(a, key=lambda x: x[2]))
+print(max(a))
+```
+
+---
+
+### **Explanation:**
+The tuple `a` consists of nested tuples with three elements:  
+1. **First element** - Integer  
+2. **Second element** - String  
+3. **Third element** - Float  
+
+Python's `max()` function retrieves the maximum value based on the given `key` function.
+
+---
+
+#### **1️⃣ `max(a, key=lambda x: x[0])`**
+```python
+print(max(a, key=lambda x: x[0]))
+```
+- This finds the tuple where the **first element** (integer) is the maximum.
+- The first elements in each tuple: `[10, 20, 15, 25, 5]`
+- Maximum value is `25`, so the tuple with `25` is selected.
+- **Output:**
+  ```python
+  (25, 'Kiran', 1500.0)
+  ```
+
+---
+
+#### **2️⃣ `max(a, key=lambda x: x[1])`**
+```python
+print(max(a, key=lambda x: x[1]))
+```
+- This finds the tuple where the **second element** (string) is the maximum **lexicographically** (dictionary order).
+- The second elements: `['Rama', 'Sita', 'Vamsi', 'Kiran', 'Amar']`
+- Lexicographical order: `['Amar', 'Kiran', 'Rama', 'Sita', 'Vamsi']`
+- Maximum is **'Vamsi'**, so the tuple with `'Vamsi'` is selected.
+- **Output:**
+  ```python
+  (15, 'Vamsi', 2000.0)
+  ```
+
+---
+
+#### **3️⃣ `max(a, key=lambda x: x[2])`**
+```python
+print(max(a, key=lambda x: x[2]))
+```
+- This finds the tuple where the **third element** (float) is the maximum.
+- The third elements: `[1000.0, 2800.0, 2000.0, 1500.0, 1300.0]`
+- Maximum value is `2800.0`, so the tuple with `2800.0` is selected.
+- **Output:**
+  ```python
+  (20, 'Sita', 2800.0)
+  ```
+
+---
+
+#### **4️⃣ `max(a)`**
+```python
+print(max(a))
+```
+- **What happens here?**
+- Since **no key is provided**, `max()` uses **default tuple comparison**.
+- **Tuple comparison works lexicographically**:  
+  - First, it compares **first elements**: `10, 20, 15, 25, 5` → max is `25`
+  - If there were ties, it would check the **second element (strings)**, and then the **third element (floats)**.
+- So, `max(a)` returns the tuple with `25` as its first element.
+- **Output:**
+  ```python
+  (25, 'Kiran', 1500.0)
+  ```
+
+---
+
+### **Final Output:**
+```
+(25, 'Kiran', 1500.0)
+(15, 'Vamsi', 2000.0)
+(20, 'Sita', 2800.0)
+(25, 'Kiran', 1500.0)
+```
+
+---
+
+### **Key Takeaways:**
+✅ **Using `max()` with `key=lambda x: x[index]` allows sorting by specific tuple elements.**  
+✅ **Tuple comparison follows lexicographical order: first by first element, then second, then third.**  
+✅ **Default `max(a)` compares tuples based on their first elements.** 
+---------------------------------------------------------------------------------------------------------------------------
+### **Code Analysis and Output Prediction with Comments**
+
+---
+
+#### **Code Snippet 1:**
+```python
+add = lambda x: x == 25
+print(add(10))
+```
+✅ **Explanation:**
+- This lambda function checks if `x` is equal to `25` and returns `True` or `False`.
+- `add(10)` evaluates `10 == 25`, which is `False`.
+
+✅ **Output:**
+```python
+False
+```
+
+---
+
+#### **Code Snippet 2:**
+```python
+add = lambda x=25: x == 35
+print(add())
+```
+✅ **Explanation:**
+- Here, `x` has a **default value** of `25`.
+- The function checks `x == 35`, which means evaluating `25 == 35` (False).
+
+✅ **Output:**
+```python
+False
+```
+
+---
+
+#### **Code Snippet 3:**
+```python
+add = lambda x: x = 25
+```
+❌ **Explanation:**
+- This code will cause a **SyntaxError** because **assignment (`=`) is not allowed inside lambda functions**.
+- Lambda functions must contain **only expressions, not statements**.
+- **Error:** `SyntaxError: cannot use assignment in lambda`
+
+---
+
+#### **Code Snippet 4:**
+```python
+add = lambda x: x := 25
+```
+❌ **Explanation:**
+- The **walrus operator (`:=`)** is used for inline assignments, but it **cannot be used inside lambda functions**.
+- **Error:** `SyntaxError: invalid syntax`
+
+---
+
+### **Final Output of the Code:**
+```
+False
+False
+SyntaxError: cannot use assignment in lambda
+SyntaxError: invalid syntax
+```
+
+---
+
+### **Key Takeaways:**
+✅ **Lambda functions can only contain expressions, not statements like assignment (`=`).**  
+✅ **Comparison (`==`) works correctly inside lambda functions.**  
+✅ **Using `:=` inside a lambda function is invalid syntax.**  
+--------------------------------------------------------------------------------------------------------------------------
+Let's analyze the code step by step with comments and expected outputs.
+
+---
+
+### **Code:**
+```python
+def f1():
+    print('f1 function')
+
+def f2():
+    print('f2 function')
+
+# End of the function
+f1()  # Call f1()
+f2()  # Call f2()
+print(f1 is f2)  # Check if f1 and f2 refer to the same function
+
+f2 = f1  # Assign f1 to f2 (now both point to the same function)
+f2()  # Call f2, which now actually calls f1
+print(f1 is f2)  # Check again if f1 and f2 are the same
+
+f2 = f1()  # Call f1() and assign its return value to f2
+print(f2)  # Print f2
+
+f2()  # Try calling f2 (this will cause an error)
+```
+
+---
+
+### **Step-by-step Execution and Outputs**
+#### **1st function call:**
+```python
+f1()  
+```
+- Calls `f1()`, which prints:
+  ```
+  f1 function
+  ```
+
+#### **2nd function call:**
+```python
+f2()  
+```
+- Calls `f2()`, which prints:
+  ```
+  f2 function
+  ```
+
+#### **Comparing `f1` and `f2`**
+```python
+print(f1 is f2)  
+```
+- At this point, `f1` and `f2` are **separate functions**, so this prints:
+  ```
+  False
+  ```
+
+#### **Assign `f1` to `f2`**
+```python
+f2 = f1  
+```
+- Now, `f2` is a reference to `f1`, meaning both `f1` and `f2` point to the **same function**.
+
+#### **Call `f2` (which now refers to `f1`)**
+```python
+f2()  
+```
+- Calls `f1()` (because `f2` now points to `f1`), so it prints:
+  ```
+  f1 function
+  ```
+
+#### **Compare `f1` and `f2` again**
+```python
+print(f1 is f2)  
+```
+- Since `f2` now refers to `f1`, this prints:
+  ```
+  True
+  ```
+
+#### **Assign `f1()` (function call) to `f2`**
+```python
+f2 = f1()  
+```
+- **This calls `f1()`, so it prints:**
+  ```
+  f1 function
+  ```
+- Since `f1()` **does not return anything**, `f2` is now assigned `None`.
+
+#### **Print `f2`**
+```python
+print(f2)  
+```
+- Since `f2` is now `None`, this prints:
+  ```
+  None
+  ```
+
+#### **Try calling `f2`**
+```python
+f2()  
+```
+- Since `f2` is now `None`, trying to call `None` will cause an error:
+  ```
+  TypeError: 'NoneType' object is not callable
+  ```
+
+---
+
+### **Final Output:**
+```
+f1 function
+f2 function
+False
+f1 function
+True
+f1 function
+None
+TypeError: 'NoneType' object is not callable
+```
+
+---
+
+### **Key Takeaways:**
+1. **`f1 is f2` initially prints `False`** because `f1` and `f2` are different functions.
+2. **After `f2 = f1`, they both refer to the same function, so `f1 is f2` prints `True`.**
+3. **`f2 = f1()` assigns `None` to `f2`** because `f1()` executes but does not return anything.
+4. **Calling `None` (`f2()`) results in a `TypeError`.**
+-----------------------------------------------------------------------------------------------------------------
+Let's break this problem into steps and analyze how to assign a reference (`p`) to the `print()` function, how to call it, and what happens when `print = None`.
+
+---
+
+### **Step 1: Assign `p` as a reference to `print()`**
+```python
+p = print  # Assigning the built-in print() function to reference 'p'
+```
+- This means `p` now behaves exactly like `print()`.
+
+---
+
+### **Step 2: Call `print()` using `p`**
+```python
+p('Hyderabad')
+```
+- Since `p` holds a reference to `print()`, this will output:
+  ```
+  Hyderabad
+  ```
+
+---
+
+### **Step 3: Assign `None` to `print`**
+```python
+print = None  # Overriding the built-in print() function
+```
+- This makes `print` a variable storing `None`. 
+- **Now, `print()` will not work anymore because `print` is no longer a function.**
+
+---
+
+### **Step 4: Attempt to call `print()`**
+```python
+print('Hello')
+```
+- Since `print` is now `None`, this will cause an error:
+  ```
+  TypeError: 'NoneType' object is not callable
+  ```
+
+---
+
+### **Step 5: Call `print()` through `p`**
+```python
+p('Hello')
+```
+- Since `p` was assigned to the original `print()` before it was overridden, this still works and prints:
+  ```
+  Hello
+  ```
+
+---
+
+### **Final Code and Output**
+```python
+p = print  # Step 1: Assign print() to p
+p('Hyderabad')  # Step 2: Call print() via p  -> Output: Hyderabad
+
+print = None  # Step 3: Override print with None
+# print('Hello')  # Step 4: This would cause an error
+
+p('Hello')  # Step 5: Call print() via p  -> Output: Hello
+```
+
+### **Final Output:**
+```
+Hyderabad
+Hello
+```
+
+### **Key Takeaways:**
+1. **Assigning `p = print` saves a reference to `print()`.**
+2. **Even if `print` is later overridden (`print = None`), `p` still works.**
+3. **Calling `print()` after overriding it causes a `TypeError`.**
+4. **Using `p()` still works since it retains the original reference to `print()`.**
+---------------------------------------------------------------------------------------------------------------------------
+Let's go step by step to understand how to assign references to `id()` and `len()` functions and how to use them.
+
+---
+
+### **Step 1: Assign reference `x` to `id()` function**
+```python
+x = id  # Assigning the built-in id() function to reference 'x'
+```
+- Now, `x` behaves exactly like `id()`.
+
+### **Step 2: Call `id()` using `x` for the object `25`**
+```python
+print(x(25))  # Calls id(25)
+```
+- This prints the memory address (unique identifier) of the integer `25`, which will vary every time you run it.
+
+**Example Output (memory address varies):**
+```
+9793856  # (Example memory address of 25 in Python)
+```
+
+---
+
+### **Step 3: Assign reference `p` to `len()` function**
+```python
+p = len  # Assigning the built-in len() function to reference 'p'
+```
+- Now, `p` behaves exactly like `len()`.
+
+### **Step 4: Call `len()` using `p` for the string `'Hyd'`**
+```python
+print(p('Hyd'))  # Calls len('Hyd')
+```
+- Since `'Hyd'` has 3 characters, this prints:
+```
+3
+```
+
+---
+
+### **Final Code:**
+```python
+x = id  # Step 1: Assign id() to x
+print(x(25))  # Step 2: Print id of 25
+
+p = len  # Step 3: Assign len() to p
+print(p('Hyd'))  # Step 4: Print length of 'Hyd'
+```
+
+### **Expected Output:**
+```
+9793856  # (Example memory address of 25, will vary)
+3
+```
+
+
+### **Key Takeaways:**
+1. **Assigning a reference (`x = id`) allows calling `id()` using `x`.**
+2. **Assigning a reference (`p = len`) allows calling `len()` using `p`.**
+3. **Calling `x(25)` returns the memory address of `25`.**
+4. **Calling `p('Hyd')` returns `3` (the length of `'Hyd'`).**
+-------------------------------------------------------------------------------------------------------------
+Let's analyze the given code and determine the output step by step, adding comments for clarity.
+
+---
+
+### **Code with Comments:**
+```python
+def outer():
+    print('Outer function')  # Step 2: Prints this when `outer()` is called
+    def inner():
+        print('Inner function')  # Step 4: Prints this when `inner()` is called inside `outer()`
+    # End of inner function
+    print('Hello')  # Step 3: Executes after defining `inner`
+    inner()  # Step 4: Calls `inner()`, so it prints "Inner function"
+    print('Back to outer function')  # Step 5: Executes after `inner()` is called
+
+def other():
+    inner()  # This will cause an error because `inner()` is defined inside `outer()`
+    print('Other function')  # This will never execute due to the error above
+
+# End of the function definitions
+
+print('Begin')  # Step 1: This prints first
+outer()  # Step 2: Calls `outer()`, executing its code block
+print('Hi')  # Step 6: Executes after `outer()` finishes
+inner()  # Step 7: Causes an error because `inner()` is not globally defined
+other()  # Step 8: This never executes because the script stops due to the error in step 7
+print('Bye')  # Step 9: This will not execute due to the error stopping execution
+```
+
+---
+
+### **Step-by-Step Execution:**
+1. `print('Begin')` → **Output:** `"Begin"`
+2. `outer()` is called:
+   - Prints `"Outer function"`
+   - Defines `inner()` but does **not** execute it yet
+   - Prints `"Hello"`
+   - Calls `inner()`:
+     - Prints `"Inner function"`
+   - Prints `"Back to outer function"`
+3. `print('Hi')` → **Output:** `"Hi"`
+4. `inner()` is called **directly** → **Error!**
+   - Since `inner()` is a local function inside `outer()`, it is **not defined globally**.
+   - The script **stops execution** here with a `NameError`.
+5. `other()` and `print('Bye')` **never execute** because of the error.
+
+---
+
+### **Expected Output Before the Error:**
+```
+Begin
+Outer function
+Hello
+Inner function
+Back to outer function
+Hi
+Traceback (most recent call last):
+  File "<filename>", line X, in <module>
+    inner()
+NameError: name 'inner' is not defined
+```
+
+---
+
+### **Key Learnings:**
+✅ **Functions defined inside another function are not accessible globally.**  
+✅ **An error in `inner()` call stops execution, so `other()` and `print('Bye')` never run.**  
+✅ **To use `inner()` outside `outer()`, return it from `outer()`.**  
+
+---
+### **Fix for the Error:**
+If you want `inner()` to be accessible globally, you can return it from `outer()`:
+```python
+def outer():
+    print('Outer function')
+    def inner():
+        print('Inner function')
+    print('Hello')
+    inner()
+    print('Back to outer function')
+    return inner  # Returning the inner function
+
+inner = outer()  # Assign the returned function to a global variable
+print('Hi')
+inner()  # Now it works because `inner` is defined globally
+```
+-----------------------------------------------------------------------------------------------------
+Let's analyze the given code step by step:
+
+---
+
+### **Code with Comments**
+```python
+def f1(a):  
+    def f2():  
+        return 10  # Step 3: When called, f2() returns 10  
+    # End of f2 function  
+    
+    return f2() + 20 + a  # Step 4: Calls f2(), adds 20, and adds the value of `a`
+# End of f1 function  
+
+print(f1(30))  # Step 1: Calls f1(30)
+```
+
+---
+
+### **Step-by-Step Execution**
+1. **`print(f1(30))`** → Calls `f1(30)`, passing `30` as the argument.
+2. Inside `f1(30)`, it defines the nested function `f2()`, but does not execute it yet.
+3. `f2()` is called inside `f1()`, returning `10`.
+4. The return value of `f1(a)` is calculated as:
+   ```
+   f2() + 20 + a
+   = 10 + 20 + 30
+   = 60
+   ```
+5. The `print()` function prints **`60`**.
+
+---
+
+### **Final Output**
+```
+60
+```
+
+---
+
+### **Key Learnings**
+✅ **Inner functions can be called inside their enclosing functions.**  
+✅ **`return` inside a function sends a value back to the caller.**  
+✅ **Execution follows a stepwise approach, resolving inner function calls first.**  
+----------------------------------------------------------------------------------------------------------------------
+Let's analyze the given Python code and understand its output step by step.
+
+---
+
+### **Code with Comments**
+```python
+def outer():
+    print('Outer function')  # Step 2: Prints this message when outer() is called
+    
+    def inner1():  
+        print('1st inner function')  # Defined but not executed yet
+    
+    def inner2():  
+        print('2nd inner function')  # Defined but not executed yet
+
+    print('Hi')  # Step 3: Prints 'Hi'
+    inner2()  # Step 4: Calls inner2(), which prints '2nd inner function'
+    print('Hello')  # Step 5: Prints 'Hello'
+    inner1()  # Step 6: Calls inner1(), which prints '1st inner function'
+    print('Back to outer function')  # Step 7: Prints this message
+# End of the function
+
+print('Begin')  # Step 1: Prints 'Begin'
+outer()  # Calls outer function
+print('Bye')  # Step 8: Prints 'Bye'
+```
+
+---
+
+### **Step-by-Step Execution**
+1. **`print('Begin')`** → Prints **`Begin`**.
+2. **`outer()`** is called.
+   - Prints **`Outer function`**.
+   - Defines `inner1()` and `inner2()`, but they are not executed yet.
+   - Prints **`Hi`**.
+   - Calls `inner2()`, which prints **`2nd inner function`**.
+   - Prints **`Hello`**.
+   - Calls `inner1()`, which prints **`1st inner function`**.
+   - Prints **`Back to outer function`**.
+3. **`print('Bye')`** → Prints **`Bye`**.
+
+---
+
+### **Final Output**
+```
+Begin
+Outer function
+Hi
+2nd inner function
+Hello
+1st inner function
+Back to outer function
+Bye
+```
+
+---
+
+### **Key Learnings**
+✅ **Nested functions are defined inside another function but do not execute until explicitly called.**  
+✅ **Function calls inside a function execute in the order they appear.**  
+✅ **Once a function finishes executing, control returns to the outer scope.**  
