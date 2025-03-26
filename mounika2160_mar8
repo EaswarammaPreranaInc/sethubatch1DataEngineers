@@ -1,0 +1,97 @@
+#program 1
+#Write  a  program  to  merge  two  strings  to  form  a  new  string
+
+1) Let  inputs  be    HYD   and   VAMSI
+   What  is  the  output  ?  --->   HVYADMSI
+
+a=input('enter first string:')
+b=input('enter second string:')                                                                  
+c=' '
+for i in range (max(len(a),len(b))):
+	if i<len(a):
+		c+=a[i]
+	if i<len(b):
+		c+=b[i]
+print(c)
+
+OUTPUT:
+enter first string:HYD
+enter second string:VAMSI
+ HVYADMSI
+
+#program 2
+#Write  a  program  to  remove  duplicate  characters  of  the  string  without  using  set
+
+1) Let  input  be   RAMA  RAO
+     output  --->  RAM<space>O
+ Hint:  Use  not  in   operator
+
+a=input('Enter any string:')
+b=''
+for x in a:
+	if x not in b:
+		b+=x
+print(b)
+
+OUTPUT:
+Enter any string:RAMA RAO
+RAM O
+
+Enter  any  string  :  MISSISIPI
+MISP
+
+#program 3
+# len()  function  demo  program  
+print(len('Hyd'))  #  3
+print(len('Rama Rao')) #8
+print(len('9247')) #4
+print(len('+-$')) #3
+print(len('')) #0
+print(len(' ')) #1
+print(len('A2#')) #3
+print(len(3456)) #error becoz  len 3456 is not in a sequence
+print('Sec'. len()) #error len function should be before 'Sec'
+
+#program 4
+#What  does  len(str)  do  ?  --->  Returns  number  of  characters  in  the  string
+#chr() function
+print(chr(65)) #  A   becoz  65  is  unicode  value  of  'A'
+print(chr(90))# Z
+print(chr(97))#a
+print(chr(122))#z
+print(chr(48))#0
+print(chr(57))#9
+print(chr(36))#$
+print(chr(32))#empty space
+
+#program 5
+#What  does  chr()  function  do ?  --->   Converts  unicode  value  to  character
+# ord()  function  demo  program
+print(ord('A'))  #  Unicode  value  of  'A'  i.e.  65
+print(ord('Z')) #65
+print(ord('a')) #97
+print(ord('z')) #122
+print(ord('0')) #48
+print(ord('9')) #57
+print(ord('$')) #36
+print(ord(' ')) #32
+
+#program 6
+Let  input  be  A4M3Z5D2
+ output ?  --->  AEMPZ_DF
+Hint: Use  chr()  and  ord()  functions
+
+try:
+	a=input('Enter  any  string  with  alternate  character  and  digit  :') 
+	b=''
+	for i in range(0,len(a),2):
+		b+=a[i]+chr(ord(a[i])+int(a[i+1]))
+	print(f'Result:{b}')
+except:
+	print('Pls  enter  string  with  alternate  char  and  digit')
+
+output:
+Enter  any  string  with  alternate  character  and  digit  :  M3K2$5z2
+Result  :   MPKM$)z|
+Enter  any  string  with  alternate  character  and  digit  :  hyd
+Pls  enter  string  with  alternate  char  and  digit
