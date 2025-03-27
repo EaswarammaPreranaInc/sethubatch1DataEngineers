@@ -239,17 +239,11 @@ OP-
 #------------------------------------------------------------------------------------------------------
 Q13 #Write  a  recursive  function  to  determine  gcd (or) hcf  of  2 numbers
 
-#1) gcd(12 , 15) =  gcd(15 , 12) = gcd(12 , 3) = gcd(3 , 0) = 3
-#2) gcd(4 , 7) = gcd(7 , 4) = gcd(4 , 3) = gcd(3 , 1) = gcd(1 , 0) = 1
-
 def  gcd(m , n):
 	if  n==0:
 		return  m
 	else:
 		return  gcd(n,m%n)
-
-#gcd(4 , 6)  --->2
-
 m = int(input('Enter  any  number  :  '))
 n = int(input('Enter  any  number  :  '))
 print('Gcd :  ' ,  gcd(m,n))
@@ -260,18 +254,6 @@ Enter  any  number  :  3
 Gcd :   1
 #----------------------------------------------------------------------------------------------
 Q14 #Write  a  recursive  function  to  find  sum of  the  digits  of  a  number
-
-sod(678) =  678 % 10 + sod(678 // 10)
-               =  8 + sod(67)
-               =  8 + 67 % 10 + sod(67 // 10)
-               =  8 + 7 + sod(6)
-               =  8 + 7 + 6 % 10 + sod(6 // 10)
-               =  8 + 7 + 6 + sod(0)
-               =  8 + 7 + 6 + 0
-               =  21
-
-1) How  many  function  calls  are  in  sod(678) ?  --->  4
-2) How  many  function  calls  are  in  sod(n-digit  number) ?  --->  n + 1
 
 def   sod(n):
 	if  n==0:
@@ -314,10 +296,6 @@ Fibonacci series:
 #-----------------------------------------------------------------------------------
 Q16 #Write  a  recursive  power  function
 
-1) What  is  the  formula  for  4.5 ^ 3 ?  --->  4.5 * 4.5 ^ 2
-2) What  is  the  formula  for  4.5 ^ -3 ?  --->  1/4.5 * 4.5 ^ -2
-3) What  is  4.5 ^ 0 ?  --->  1
-
 def  power(a , b):
 	if b>0:
 		return  a*power(a,b-1)
@@ -339,19 +317,6 @@ Enter  power :  2
 5.0 ^ 2 = 25.0
 #--------------------------------------------------------------------------------------
 Q17 #Write  a   recursive  function  to  reverse  a  number
-
-rev(678) =  678 % 10 * 10 ^ 2 + rev(678 // 10)
-              =  800 + rev(67)
-              =  800 + 67 % 10 * 10 ^ 1 + rev(67 // 10)
-              =  800 + 70 + rev(6)
-              =  800 + 70 + 6 % 10 * 10 ^ 0 + rev(6 // 10)
-              =  800 + 70 + 6 + rev(0)
-              =  800 + 70 + 6 + 0
-			  = 876
-
-1) How  many  function  calls  are  in  rev(678) ?  --->  4
-2) How  many  function  calls  are  in  rev(n-digit number)  ? ---> n + 1
-3) How  to  obtain  length  of a  number ?  --->  len(str(number))
 
 from math import *
 def  rev(n):
