@@ -1,0 +1,138 @@
+#program 1
+#find outputs
+print( 'green'   in   'Hyd  is  green  city') #True
+print('day'   in   'Sankar  dayal  sarma')    #True
+print('Green'   in   'Hyd  is  green  city')  #False
+print('d  is'   in   'Hyd  is  green  city') #True
+print('dis'   in   'Hyd  is  green  city')  #False
+print('iniv'   in   'Srinivas')  #True
+print('iniv'   not   in   'Srinivas') #False
+
+#program 2
+
+Slice  demo  program
+0      1       2        3      4       5        6        7
+R      a       m       a                R       a       o
+-8    -7      -6      -5      -4       -3      -2      -1
+
+a = 'Rama Rao'
+print(a [ : 7 : 2])#Rm_a --->  String  from  indexes  0  to  6 in  steps  of  2(Rama_Ra)
+print(a [ : 7])#Rama_Ra   
+print(a [2 : 4])#ma 
+print(a [2 : ])#ma Rao
+print(a [ : 4 ])#Rama 
+print(a [ : : 2])#Rm a --->  String  from  indexes  0  to  6 in  steps  of  1(Rm_a)
+print(a [-6 : -1])#ma Ra
+print(a [-6 : ])#ma Rao
+print(a [: -4 : -1])#oar
+print(a [-3 : -1])#Ra
+print(a [-3 : ])#Rao
+print(a [ : : ])#Rama Rao
+print(a [ : ])#Rama Rao
+print(a [ : : -1])#oaR amaR
+print(a [ : : -2]) #  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oRaa
+print(a [ -2 : : -2])#a mR
+print(a [2 : 8])#ma Rao
+print(a [2 : 8 : -1])# white space
+print(a [ : -6 : -1])#oaR a
+print(a [2 : -3])#ma
+print(a [1 : 6 : 2])#aaR
+print(a [ : -5 : -5])#o
+print(a [2 : -5])#m
+print(a [2 : -5 : 2])#m
+print(a [ : 0 : -1])#oaR ama
+print(a [-5 : 0 : -2])#aa
+
+#program3
+#write a program to concatenate two strings seperated by space but swap first two characters of strings
+
+a=input("enter 1st input: ")
+b=input("enter 2nd input: ")
+c=a[0:2]
+d=a[2: ]
+e=b[0:2]
+f=b[2: ]
+print('result:',e+d,c+f)
+
+output:
+enter 1st input: python
+enter 2nd input: java
+result: jathon pyva
+
+
+#program 4
+#1st  two and last two elements of string
+a=input('enter string:')
+b=a[0:2]
+length=len(a)
+c=a[length-2: length]
+if length<4:
+	pass
+else:
+	print("result:",b+c)
+
+output:
+enter string:python
+result: pyon
+
+#program 5
+#characters of string in forward and reverse order without slice
+
+a=input('enter the string :')
+print('string in forward ')
+for i in range (len(a)):
+	print(f'characters at index{i}:{a[i]}')
+print('string in reverse ')
+for i in range (-1,-len(a)-1,-1):
+	print(f'characters at index {i}:{a[i]}')
+
+output:
+enter the string :vamsi
+string in forward
+characters at index0:v
+characters at index1:a
+characters at index2:m
+characters at index3:s
+characters at index4:i
+string in reverse
+characters at index -1:i
+characters at index -2:s
+characters at index -3:m
+characters at index -4:a
+characters at index -5:v
+
+#progrm 6 
+#characters at even odd indexes without slice
+
+a=input('enter any string:')
+length=len(a)
+even=' ' 
+odd=' '
+for i in range(length):#0,1,2....7
+	if i%2==0:
+		even=even+a[i] # ''+'R'+'m'+''+'a'
+	else:
+		odd=odd+a[i] #''+'a'+'a'+'R'+'O'
+print(f'characters at even indexes :{even}')
+print(f'characters at odd indexes :{odd}')
+
+output:
+enter any string:Rama Rao
+characters at even indexes : Rm a
+characters at odd indexes : aaRo
+
+#program 7
+#character with alternate digits
+try:
+	a=input("enter any string alternate character and digit:")
+	b=' '
+	for i in range (0,len(a),2):
+		c=a[i]*int(a[i+1])
+		b=b+c
+	print(b)
+except:
+	print("please enter alternate char and didgit")
+
+OUTPUT:
+enter any string alternate character and digit:A3B4C1
+AAABBBBC
