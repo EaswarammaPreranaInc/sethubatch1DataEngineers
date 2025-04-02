@@ -1,0 +1,110 @@
+Program-1
+# Write  a  program to  determine  average  of  inputs  which  are  terminated  with  -1 (with  walrus  operator).
+try:
+	sum =  ctr = 0
+	while(x := eval(input('Enter input  (-1  to  stop)  :  '))) != -1: 
+		sum += x
+		ctr +=1
+	# End  of  while  loop
+	print('Average :  ' ,  sum / ctr)
+except  ZeroDivisionError:
+	print('Enter  at  least   one  input')
+except  (NameError , TypeError):
+	print('Input  can  not  be string')
+
+'''
+Output:
+Enter input  (-1  to  stop)  :  25
+Enter input  (-1  to  stop)  :  10.8
+Enter input  (-1  to  stop)  :  True
+Enter input  (-1  to  stop)  :  46
+Enter input  (-1  to  stop)  :  34.8
+Enter input  (-1  to  stop)  :  False
+Enter input  (-1  to  stop)  :  95
+Enter input  (-1  to  stop)  :  -1
+Average :   30.37142857142857
+'''
+
+
+Program-2
+# Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator.
+list = [10 , 20 , 15 , 12 , 18 , 15 , 19 , 14 , 15 , 14]
+x = int(input('Enter the element to be searched : '))  # Enter the element to be searched : 15
+count = 0
+for i in range(len(list)):
+	if list [i] == x:
+		print(F'{x} is Found at index {i}')
+		count += 1
+else:
+	print(F'{x} is Found {count} times')
+	
+'''
+Output:
+Enter the element to be searched : 15
+15Found at index 2
+15Found at index 5
+15Found at index 8
+15 is Found 3 times
+
+
+Program-3
+# Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator.
+from sys import argv
+try:
+	a = []
+	for x in argv[1:]:
+		a .append(eval(x))  # ['Rama' , 'Sita' , 'Rajesh' , 'Manohar' , 'Vamsi' , 'Amar']
+	print('Largest Input: ' , max(a)) # Largest Input: 'Vamsi'
+except NameError:
+	print('Input strings have to be in single or triple Quotes')
+except ValueError:
+	print('Send atleast one number')
+
+
+Program-4
+# Write  a  program  to  determine  command  line  input  is  even  number  or  odd  number.
+from sys import argv
+try:
+	x = int(argv[1])
+	if x % 2 == 0:  # 8
+		print('Even Number')  # Even number
+	else:
+		print('Odd Number')
+except:
+	print('Send an integer number')
+
+
+Program-5
+# Write  a  program  to  determine  average  of  command  line  inputs.
+from sys import argv
+try:
+	a = []
+	for x in argv[1:]:
+		a.append(eval(x))
+	else:
+		print('Average: ' , sum(a) / len(a))
+except ZeroDivisionError:
+	print('Send atleast one input')
+except (TypeError , NameError):
+	print('Pls  send  number  inputs')
+
+
+Program-6
+# Write  a  program  to  sort  command  line  inputs  in  ascending  order  and  descending  order.
+from sys import argv
+try:
+	a = []
+	for x in argv[1:]:
+		a.append(eval(x))  # ['Hyd' , 'Sec' , 'Cyb']
+	a.sort()
+	print('Ascending Order : ' , a)
+	a.sort(reverse = True)
+	print('Descending Order : ' , a)
+except NameError:
+	print('Input strings have to be in single (or) triple Quotes')
+except TypeError:
+	print('Do not send number and string')
+
+
+Program-5
+# 
