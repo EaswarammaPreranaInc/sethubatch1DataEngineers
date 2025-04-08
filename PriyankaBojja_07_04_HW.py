@@ -116,26 +116,27 @@ Q9 #Write  a  program  to  determine  area  and  perimeter  of  triangle  and  r
 import  math
 class  triangle:
 	def  get(self):
-		x.a = float(input("Enter side a: "))   #How to read three sides into object self
-		x.b = float(input("Enter side b: "))
-		x.c = float(input("Enter side c: "))  
+		self.a = float(input("Enter side a: "))   #How to read three sides into object self
+		self.b = float(input("Enter side b: "))
+		self.c = float(input("Enter side c: "))  
 	def  test(self):
-		if (x.a + x.b > x.c and x.b + x.c > x.a and x.a + x.c > x.b):
+		if (self.a + self.b > self.c and self.b + self.c > self.a and self.a + self.c > self.b):
 			pass
 		else:
 			print('Not  a  triangle')
 			exit()         #How  to  stop  execution
 	def  area(self):
-		s=(x.a+x.b+x.c)/2
-		return math.sqrt(s * (s - x.a) * (s - x.b) * (s - x.c))       #return   area  of  triangle
+		s=(self.a+self.b+self.c)/2
+		return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))       #return   area  of  triangle
 	def  peri(self):
-		return x.a + x.b + x.c                                        #return  perimeter  of  triangle
+		return self.a + self.b + self.c                                        #return  perimeter  of  triangle
 # End of the class
-x=triangle()     #How  to  create  triangle  class  object
-x.get()          #How  to  read  inputs  into  object
-x.test()         #How  to  test  whether  inputs  are  valid
-print('Area : ',   x.area())
-print('Perimeter : ',  x.peri())
+if __name__ == "__main__":
+	x=triangle()     #How  to  create  triangle  class  object
+	x.get()          #How  to  read  inputs  into  object
+	x.test()         #How  to  test  whether  inputs  are  valid
+	print('Area : ',   x.area())
+	print('Perimeter : ',  x.peri())
 
 OP-
 Enter side a: 3
