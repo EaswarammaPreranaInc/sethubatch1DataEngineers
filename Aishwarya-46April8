@@ -1,0 +1,244 @@
+#Repeat prog5a such that methods are called in another way
+#classname.method(object)
+from April7 import triangle
+t=triangle()
+triangle.get(t)
+triangle.test(t)
+print('Area: ',triangle.area(t))
+print('Perimeter: ',triangle.peri(t))
+
+#Output
+Enter the first side of the triangle:6
+Enter the second side of the triangle:4
+Enter the third side of the triangle:3
+Area:  18.472953201911167
+Perimeter:  13
+
+
+
+#Determine total, average and grade of a student
+class Student:
+	def get(self):
+		self.rno=int(input('student roll no: ')) #read rollno into object self
+		self.sname=input('student name: ') #read student name into object self
+		self.gender=input('gander: ') #read gender into object self
+		self.m=eval(input('Marks of 3 subject: ')) #read marks of 3 subjects into object self
+	def compute(self):
+		self.tot=sum(self.m) #Total marks
+		self.avg=self.tot/len(self.m) #Average
+		for x in self.m:
+			if x<40:
+				self.grade='Fail'
+				break
+			elif self.avg>=70:
+				self.grade='Distinction'
+			elif self.avg<70 and self.avg>=60:
+				self.grade='First class'
+			elif self.avg<60 and self.avg>=50:
+				self.grade='Second class'
+			else:
+				self.grade='Third class'
+	def disp(self):
+		print('Roll Number :',self.rno)
+		print('Student Name :',self.sname)
+		print('Gender :',self.gender)
+		print('Total Marks :',self.tot)
+		print('Average :',self.avg)
+		print('Grade :',self.grade)
+	def __str__(self):
+		print(self.rno,self.sname,self.gender,self.m,self.tot,self.avg,self.grade,sep='...')
+#End of class
+a=Student() #Student class object
+a.get() #To read inputs
+a.compute() #compute and store results
+a.disp() #print object
+a.__str__() #print object with __str__()
+
+#Output
+student roll no: 25
+student name: Rama Rao
+gander: m
+Marks of 3 subject: [68,45,55]
+Roll Number : 25
+Student Name : Rama Rao
+Gender : m
+Total Marks : 168
+Average : 56.0
+Grade : Second class
+25...Rama Rao...m...[68, 45, 55]...168...56.0...Second class
+
+
+
+#add, subtract, multiply and divide two rational numbers
+import math
+class Rat:
+	def get(self):
+		self.nr=int(input('nr : ')) #Read numerator into object self
+		self.dr=int(input('dr : ')) #Read denominator into object self
+		self.test()
+	def test(self):
+		if self.dr==0:
+			self.dr=int(input('Enter denominator value other than zero: '))
+	def __str__(self):
+		return F'{self.nr}/{self.dr}'
+	def add(self,a,b):
+		self.nr=(a.nr*b.dr+a.dr*b.nr)
+		self.dr=(a.dr*b.dr)
+		x=self.simplify()
+		self.nr,self.dr=self.nr//x,self.dr//x
+	def sub(self,a,b):
+		self.nr=(a.nr*b.dr-a.dr*b.nr)
+		self.dr=(a.dr*b.dr)
+		x=self.simplify()
+		self.nr,self.dr=self.nr//x,self.dr//x
+	def mul(self,a,b):
+		self.nr=(a.nr*b.nr)
+		self.dr=(a.dr*b.dr)
+		x=self.simplify()
+		self.nr,self.dr=self.nr//x,self.dr//x
+	def div(self,a,b):
+		self.nr=(a.nr*b.dr)
+		self.dr=(a.dr*b.nr)
+		x=self.simplify()
+		self.nr,self.dr=self.nr//x,self.dr//x
+	def simplify(self):
+		return math.gcd(self.nr,self.dr)
+#End of the class
+a=Rat()
+print('First rational number')
+a.get()
+print('a :',a)
+b=Rat()
+print('Second rational number')
+b.get()
+print('b :',b)
+c,d,e,f=Rat(),Rat(),Rat(),Rat()
+c.add(a,b) #add 2 rational numbers a and b
+d.sub(a,b) #subtaract rational numbers
+e.mul(a,b) #multiply 2 rational numbers
+f.div(a,b) #divide 2 rational numbers
+print(c)
+print(d)
+print(e)
+print(f)
+
+#Output
+First rational number
+nr : 2
+dr : 3
+a : 2/3
+Second rational number
+nr : 5
+dr : 9
+b : 5/9
+11/9
+1/9
+10/27
+6/5
+
+
+
+#dir() function demo program
+from April8 import Rat
+a=Rat()
+a.nr=22
+a.dr=7
+print(dir(Rat)) #list of environment variables and methods in the form of strings
+print()
+print()
+print(dir(a)) #list of environment variables, instance variables and methods in the form of strings
+
+#Output
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'add', 'div', 'get', 'mul', 'simplify', 'sub', 'test']
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'add', 'div', 'dr', 'get', 'mul', 'nr', 'simplify', 'sub', 'test']
+
+
+
+#Find outputs
+class Rat:
+	def m1():
+		pass
+a=Rat()
+a.nr=22
+print(hasattr(a,'nr')) #True
+print(hasattr(a,'dr')) #False
+print(hasattr(a,'m1')) #True
+print(hasattr(a,'m2')) #False
+print(hasattr(Rat,'m1')) #True
+print(hasattr(Rat,'m2')) #False
+print(hasattr(Rat,'nr')) #False
+
+
+
+#Find outputs
+class Cat:
+	def talk(self):
+		print('Meow Meow Meow ....')
+class Dog:
+	def bark(self):
+		print('Bhow Bhow Bhow ....')
+class Goat:
+	def talk(self):
+		print('Mehar Mehar Mehar ....')
+#End of the class
+a=[Cat(),Dog(),Goat()]
+for x in a:
+	if hasattr(x,'talk'):
+		x.talk()
+	else:
+		x.bark()
+
+#Output
+Meow Meow Meow ....
+Bhow Bhow Bhow ....
+Mehar Mehar Mehar ....
+
+
+
+#Find outputs
+class c1:
+	pass
+#End of the class
+a=c1()
+a.x=10
+varname=input('Enter variable name to be added to object : ') 
+value=eval(input('Enter value of the variable : '))
+setattr(a,varname,value)
+print(a.__dict__)
+print(a.x)
+while True:
+	try:
+		varname=input('Enter variable name whose value is to be retrived : ')
+		print(getattr(a,varname))
+	except:
+		print(F'Invalid variable name : {varname}')
+		break
+
+#Output
+Enter variable name to be added to object : y
+Enter value of the variable : 25
+{'x': 10, 'y': 25}
+10
+Enter variable name whose value is to be retrived : y
+25
+Enter variable name whose value is to be retrived : z
+Invalid variable name : z
+
+
+
+#convert a dictionary {'Empno':25, 'Ename':'Rama Rao', 'Sal':10000.0} to Emp class object
+#i.e. object should contain empno=25,ename='Rama Rao', Sal=10000.0
+class c1:
+	pass
+#End of the class
+a=c1()
+d={'Empno':25, 'Ename':'Rama Rao', 'Sal':10000.0}
+for x in d:
+	setattr(a,x,d[x])
+for x in d:
+	print(F'{x} = {getattr(a,x)}')
+
+#Output
+Empno = 25
+Ename = Rama Rao
+Sal = 10000.0
