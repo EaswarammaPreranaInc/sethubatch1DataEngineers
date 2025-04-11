@@ -7,12 +7,20 @@ Repeat  prog5a  such  that  methods  are  called  in  another  way
 2) Import  and   use  triangle  class  defined  in  prog5a  but  do  not   define  triangle  class  again
 '''
 '''
-from prog7 import triangle 
+from progtriangle import triangle 
 obj1=triangle()
-obj.get()
-obj.test()
-print('Area : ',traingle.area(obj1))
+obj1.get()
+obj1.test()
+print('Area : ',triangle.area(obj1))
 print('Perimeter: ',triangle.peri(obj1))
+'''
+'''
+OUTPUT:
+Enter side a : 3
+Enter side b : 4
+Enter side c : 5
+Area :  6.0
+Perimeter:  12
 '''
 '''
 PROGRAM_2:
