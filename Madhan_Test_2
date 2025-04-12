@@ -1,0 +1,242 @@
+#Test 2 solutions 
+
+#1. each digit to word 
+
+'''
+d={'0':'Zero','1':'One','2':'Two','3':'Three','4':'Four','5':'Five','6':'Six','7':'Seven','8':'Eight','9':'Nine'}
+n=int(input("Enter a integer number: "))
+s=str(n)
+
+for i in s:
+    print(d[i],end=" ")
+    
+'''
+
+
+#2. Number to Roman numberal 
+
+'''
+d={1000:'M',900:'CM',800:'DCCC',700:'DCC',600:'DC',500:'D',400:'CD',300:'CCC',200:'CC',
+   100:'C',90:'XC',80:'LXXX',70:'LXX',60:'LX',50:'L',40:'XL',30:'XXX',20:'XX',10:'X',
+    9:'IX',8:'VIII',7:'VII',6:'VI',5:'V',4:'IV',3:'III',2:'II',1:'I'
+  }
+  
+n=int(input("Enter a integer number: "))
+r=''
+
+while(n>0):
+    if(n>=1000):
+        m=n//1000 
+        r=r+m*d[1000]
+        n=n-m*1000
+        
+    elif(n>=100):
+        m=n//100
+        r=r+d[m*100]
+        n=n-m*100
+        
+    elif(n>=10):
+        m=n//10 
+        r=r+d[m*10]
+        n=n-m*10
+        
+    elif(n>=1):
+        m=n%10 
+        r=r+d[m]
+        n=n-m*1
+        
+print(r)
+'''
+
+#3.List operations 
+
+'''
+L=[]
+while(True):
+    n=int(input("MENU: enter 1=insert or 2=delete or 3=exit: "))
+    
+    if(n==1):
+        L.append(int(input("Enter element to be inserted: ")))
+        
+    elif(n==2):
+        L.remove(int(input("Enter valid element to be removed: ")))
+        
+    elif(n==3):
+        break 
+    
+    else:
+        print("Invalid Choice")
+        
+    L.sort()
+    print(L)
+    
+'''
+
+
+
+#4. diamond pattern 
+
+'''
+n=int(input("Enter number of rows: "))
+l=n//2 + 1 
+c=2
+for i in range(1,n+1):
+    if(i==1 or i==n):
+        print((l-1)'  ',' ',sep='')
+        
+    elif(i<=l):
+        print((l-i)'  ',c'* ')
+        c=c+2 
+        
+       
+    else:
+        if(i==l+1):
+            c=c-4 
+            
+        print((i-l)'  ',(c)'* ')
+        c=c-2
+        
+'''
+
+
+#5. nth largest number in the array 
+
+'''
+a=list(map(int,input("Enter elements of the List: ").split()))
+n=int(input("Enter n: "))
+
+def max_pop(a):
+    
+    m=a[0]
+    
+    for i in range(1,len(a)):
+        if(a[i]>m):
+            m=a[i]
+            
+    M=m 
+    a.remove(m)
+    
+    return M
+
+for i in range(1,n+1):
+    if(i==n):
+        print(max_pop(a))
+        
+    else:
+        max_pop(a)
+        
+'''
+
+#6. Largest word in the sentence 
+
+'''
+s=input("Enter a sentence: ").split()
+L=[]
+
+for i in s:
+    L.append(len(i))
+    
+m=max(L)
+
+for i in range(len(L)):
+    if(L[i]==m):
+        print(s[i])
+ 
+'''   
+
+#7. multiply 2 Matrices 
+
+'''
+r1,c1,r2,c2= map(int,input("Enter r1,c1,r2,c2: ").split())
+
+if(c1!=r2):
+    print("Matrix multiplication not possible")
+    
+else:
+    A=[]
+    for i in range(1,r1+1):
+        a=list(map(int,input(F"Enter {i}th row elements sepearted by spaces: ").split()))
+        A.append(a)
+    
+    
+    B=[]
+    for i in range(1,r2+1):
+        b=list(map(int,input(F"Enter {i}th row elements sepearted by spaces: ").split()))
+        B.append(b)
+        
+    print(F"Matrix A order {r1},{c1}")
+    for i in A:
+        print(*i)
+        
+    print(F"Matrix B order {r2},{c2}")
+    for i in B:
+        print(*i)
+    
+    C=[]
+    for i in range(r1):
+        c=[]
+        for j in range(c2):
+            s=0
+            for k in range(c1):
+                s+=A[i][k]*B[k][j]
+                
+            c.append(s)
+            
+        C.append(c)
+        
+    print(F"Matrix C order {r1},{c2}")
+    for i in C:
+        print(*i)
+    
+'''  
+
+#8. Transpose of a Matrix 
+'''
+r,c=map(int,input("Enter r c : ").split()) 
+
+A=[]
+
+print("Matrix: ")
+for i in range(1,r+1):
+    a=list(map(int,input().split()))
+    A.append(a)
+    
+B=[]
+for i in range(c): 
+    b=[]
+    for j in range(r): 
+        b.append(A[j][i])
+        
+    B.append(b)
+   
+print("Transposed Matrix")   
+for i in B:
+    print(*i)
+'''
+
+#9. Permutations
+
+'''
+from itertools import*
+l=list(map(int,input("Enter the list: ").split()))
+p=permutations(l)
+
+for i in p:
+    print(i)
+    
+'''
+
+#10. Gcd of list of numbers 
+
+'''
+a=list(map(int,input("Enter the list: ").split()))
+m=min(a)
+
+for i in range(m,0,-1):
+    for j in a:
+        if j%i!=0:
+            break 
+    else:
+        print(i)
+        break 
+'''
