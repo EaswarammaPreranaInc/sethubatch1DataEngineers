@@ -1,0 +1,365 @@
+Program-1
+# How  to  print  each  element  and  the  corresponding  index
+a = [25 , 10.8 , 'Hyd' , True]
+print('Indexed for loop')  #How  to  print  each  element  and  the  corresponding  index  with  index  based  for  loop
+for i in range(len(a)):
+	print(i, a[i])
+print('For each loop')  #How  to  print  each  element  and  the  corresponding  index  with  for  ...  each  loop (Do  not  use  2nd  variable)
+for x in a:
+    print(a.index(x) , x)	
+
+'''
+Output:
+Indexed for loop
+0 25
+1 10.8
+2 Hyd
+3 True
+For each loop
+0 25
+1 10.8
+2 Hyd
+3 True
+'''
+
+
+Program-2
+#  How  to  print  list  elements  in  reverse  order   without  slice
+a = eval(input('Enter  list  of  elements : '))
+print('Indexed for loop')  #How   to  print  each  element  of  list  in  reverse  order  with  indexed  based  for  loop
+for i in range(len(a) - 1, -1, -1):
+	print(a[i])
+print('For each loop')  # Not Possible  #How   to  print  each  element  of  list  in  reverse  order  with  for  each  loop  (Do  not  use  2nd  variable)
+
+'''
+Output:
+Enter  list  of  elements : [10, 20, 15, 18]
+Indexed for loop
+18
+15
+20
+10
+For each loop
+'''
+
+
+Program-3
+'''
+Write  a  program  to  add  two  lists  and  store  results  in  3rd  list
+Hint:  Use  append()  method
+'''
+a = eval(input('Enter  1st  list  :  '))  # Enter  1st  list  :  [10, 20, 15, 18]
+b = eval(input('Enter  2nd  list  :  '))  # Enter  2nd  list  :  [30, 40, 35, 12]
+c = []  #How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  indexed  based   for  loop
+print('Indexed for loop')
+for i in range(len(a)):
+	c.append(a[i] + b[i])
+print('3rd  list : ' , c)
+#How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  for  each  loop
+# Not possible
+
+'''
+Output:
+Enter  1st  list  :  [10, 20, 15, 18]
+Enter  2nd  list  :  [30, 40, 35, 12]
+3rd  list :  [40, 60, 50, 30]
+'''
+
+
+Program-4
+#  How  to  print  list  elements  from  indexes  2  to  4  without  slice
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Sec']
+print('Indexed for loop')  #How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  indexed  based  for  loop
+for i in range(2,5):
+	print(a[i])
+print('For each loop')  #How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop
+# Not poosible
+
+'''
+Output:
+Indexed for loop
+Hyd
+True
+(3+4j)
+For each loop
+'''
+
+
+Program-5
+#Write  a  program  to  print  first  20  even  numbers  with  while  loop
+i = 1
+print('First 20 even numbers')
+while i <= 20:
+	even_numbers = 2*i
+	print(even_numbers)
+	i+=1
+print('Bye')
+
+'''
+Output:
+First 20 even numbers
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+Bye
+'''
+
+
+Program-6
+'''
+#Write  a  program  to  print  first  20  odd  numbers  with  while  loop
+i = 1
+print('First 20 even numbers')
+while i <= 20:
+	odd_numbers = 2*i - 1
+	print(odd_numbers)
+	i+=1
+print('Bye')
+
+'''
+Output:
+First 20 even numbers
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+21
+23
+25
+27
+29
+31
+33
+35
+37
+39
+Bye
+'''
+
+
+Program-7
+#Write  a  program  to  print  natural  numbers  1 , 2 , 3 .... n  and   ask  user  to  input  value  of  'n'
+n = int(input('Enter value of n : '))
+print('Natural Numbers')
+for i in range(1, n+1):
+	print(i)
+	
+'''
+Output:
+Enter value of n : 25
+Natural Numbers
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+'''
+
+
+Program-8
+#Write  a  program  to  print  10  ,  9  ,   8  ,  ..... 1 i.e. in reverse order
+i = 1
+print('Numbers from 10 downto 1 in steps of -1')
+for i in range(10, 0, -1):
+	print(i)
+	
+'''
+Output:
+Numbers from 10 downto 1 in steps of -1
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+'''
+
+
+Program-9
+#Write  a  program  to  print  upper  and  lower  case  alphabets
+#Hint:  Use  two  for  loops
+print('Upper Case Alphabets')
+for i in range (65, 91):
+	print(chr(i), end = '   ')
+print('Lower Case Alphabets')
+for i in range (97, 123):
+	print(chr(i), end = '   ')
+	
+'''
+Output:
+Upper Case Alphabets
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z 
+Lower Case Alphabets
+a   b   c   d   e   f   g   h   i   j   k   l   m   n   o   p   q   r   s   t   u   v   w   x   y   z
+
+
+Program-10
+#Write  a  program  to  print  first  'n'  terms  of  fibonacci  series
+Hint:  Use  for  loop
+n = int(input('Enter number of terms : '))
+print('Fibonacci Series')
+a = 0
+print(a)
+if n > 1 :
+	b = 1
+	print(b)
+	c = a + b
+	for i in range (n - 2):
+		print(c)
+		a = b
+		b = c
+		c = a + b
+		
+'''
+Output:
+Enter number of terms : 10
+Fibonacci Series
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+'''
+
+
+Program-11
+#Write  a  program  to  search  for  'x'  in  fibonacci  series
+x = int(input('Enter value to be searched: '))
+if x == 0:
+	print('Found')
+else:
+	a = 0
+	b = 1
+	c = a + b
+	while c <= x :
+		if c == x:
+			   print('Found')
+			   exit()
+		a = b
+		b = c
+		c = a + b
+	print('Not Found')
+	
+'''
+Output:
+Enter value to be searched: 10
+Not Found
+Enter value to be searched: 21
+Found
+
+Enter value to be searched: 8
+Found
+Enter value to be searched: 37
+Not Found
+'''
+
+
+Program-12
+#Write  a  program  to  determine  1.1 + 2.2 + 3.3 + .... n terms
+n = int(input('Enter how many terms would you like to add : '))
+sum = 0
+for i in range(1, n + 1):
+	sum += 1.1 * i
+print('Sum : ' , sum)
+
+'''
+Output:
+Enter how many terms would you like to add : 10
+Sum :  60.50000000000001
+'''
+
+Program-13
+#Write  a  program  to  determine  sum  of  first  20  even  numbers
+n = int(input('Enter sum  of  first  20  even  numbers : '))
+sum = 0
+for i in range(1, 21):
+	sum = 2 * i
+print('sum : ' , sum)
+
+'''
+Output:
+Enter sum  of  first  20  even  numbers : 20
+sum :  420
+'''
+
+
+Program-14
+#Write  a  program  to  determine  sum  of  first  20  odd  numbers
+n = int(input(' Enter sum  of  first  20  odd  numbers : '))
+sum = 0
+for i in range(1, 21):
+	sum += 2 * i - 1
+print('sum : ' , sum)
+
+'''
+Output:
+Enter sum  of  first  20  odd  numbers : 20
+sum :  400
+'''
+
+
+Program-15
+#Write  a  program  to  determine  1 + 2 + 3 + .... + n  without  using  formula  n * (n + 1) / 2
+n = int(input('Enter how many terms would you like to add : ' ))
+sum = 0
+for i in range(1, n+1):
+	sum += i
+print('Sum : ' , sum)
+
+'''
+Output:
+Enter how many terms would you like to add : 10
+Sum :  55
+'''
