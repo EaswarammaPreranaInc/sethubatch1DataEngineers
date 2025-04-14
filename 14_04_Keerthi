@@ -1,0 +1,221 @@
+'''#  Find  outputs  (Home  work)
+import   time
+a = [ 'Empno' , 'Emp Name' , 'Salary']
+b = [ 25 , 'Rama  Rao' , 10000.0 , 'Male' , True]
+c = zip(a , b)
+while   True:
+	try:
+		print(next(c))
+		time . sleep(1)
+	except:
+		break
+findoutputs:
+('Empno', 25)
+('Emp Name', 'Rama  Rao')
+('Salary', 10000.0)'''
+
+'''#  Find  outputs  (Home  work)
+import   time
+a = ['Telangana' , 'Andhra  Pradesh' , 'Karnataka' , 'TamilNadu' , 'Maharastra']
+b = ['Hyderabad' , 'Amaravathi' , 'Banglore' , 'Chennai' , 'Mumbai']
+c = [50000000 , 40000000 , 70000000 , 60000000 , 30000000]
+for   x   in   zip(a , b , c):
+	print(x)
+	time . sleep(1)
+find outputs:
+('Telangana', 'Hyderabad', 50000000)
+('Andhra  Pradesh', 'Amaravathi', 40000000)
+('Karnataka', 'Banglore', 70000000)
+('TamilNadu', 'Chennai', 60000000)
+('Maharastra', 'Mumbai', 30000000)'''
+
+'''# Find  outputs   (Home  work)
+import   time
+a = [1 , 2 , 3]
+b = [4 , 5 , 6 , 7 , 8]
+for  x , y  in   zip(a , b):
+	print(x + y)
+	time . sleep(1)
+find outputs:5
+7
+9'''
+
+'''# Find outputs  (Home  work)
+import   time
+def   disp(z):
+	while   True:
+		try:
+			print(next(z))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = [10 , 20 ,  30]
+b = {1 : 2 , 3 : 4 , 5 : 6}
+c = zip(a , b . keys())
+disp(c)
+d = zip(a , b . values())
+disp(d)
+e = zip(a , b . items())
+disp(e)
+f = zip(a , b)
+disp(f)
+g = zip(a)
+disp(g)
+h = zip(b)
+disp(h)
+i = zip()
+disp(i)
+find outputs:
+(10, 1)
+(20, 3)
+(30, 5)
+
+(10, 2)
+(20, 4)
+(30, 6)
+
+(10, (1, 2))
+(20, (3, 4))
+(30, (5, 6))
+
+(10, 1)
+(20, 3)
+(30, 5)'''
+
+'''# Find  outputs  (Home  work)
+z = zip(range(5) , range(20 , 25))
+a = [ [x , y]  for  x , y   in   z]
+print(a)
+findoutputs:
+[[0, 20], [1, 21], [2, 22], [3, 23], [4, 24]]'''
+
+'''# Find  outputs (Home  work)
+a = 'RAMA'
+b = reversed(a)
+print(type(b))
+print(b)
+print(id(b))
+print(*b)
+#print(b[0])
+#print(b[1 : 3])
+#print(b * 2)
+#print(len(b))
+findoutputs:
+<class 'reversed'>
+<reversed object at 0x00000169E004AB60>
+1554241596256
+A M A R'''
+
+'''# Can  tuple  be  reversed ?   (Home  work)
+import   time
+a = (25 , 10.8 , 'Hyd' , True)
+b = reversed(a)
+print(type(b))
+for  x  in   b:
+	print(x)
+	time . sleep(1)
+findoutputs:
+<class 'reversed'>
+True
+Hyd
+10.8
+25'''
+
+'''import   time
+def   disp(r):
+	while  True:
+		try:
+			print(next(r))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = {10 : 'Rama' , 20 : 'Sita' , 15 : 'Kiran' , 18 : 'Amar'}
+b = reversed(a . keys())
+disp(b)
+c = reversed(a . values())
+disp(c)
+d = reversed(a . items())
+disp(d)
+e = reversed(a)
+disp(e)
+#findoutputs:18
+15
+20
+10
+
+Amar
+Kiran
+Sita
+Rama
+
+(18, 'Amar')
+(15, 'Kiran')
+(20, 'Sita')
+(10, 'Rama')
+
+18
+15
+20
+10'''
+
+'''#findoutputs:
+import time
+a = {10: 'Rama rao', 20: 'Sita', 15: 'Rajesh', 18: 'Kiran'}
+
+print('Keys in reverse order')
+for key in sorted(a.keys(), reverse=True):
+    print(key)
+    
+print('Values in reverse order')
+for key in sorted(a.keys(), reverse=True):
+    print(a[key])
+
+print('Tuples in reverse order')
+for item in sorted(a.items(), reverse=True):
+    print(item)
+
+print('Elements of each tuple in reverse order')
+for key, value in sorted(a.items(), reverse=True):
+    print((value, key))
+
+print('Keys and values in reverse order')
+for key in sorted(a.keys(), reverse=True):
+    print(f'{key}: {a[key]}')
+findoutputs:
+Keys in reverse order
+20
+18
+15
+10
+Values in reverse order
+Sita
+Kiran
+Rajesh
+Rama rao
+Tuples in reverse order
+(20, 'Sita')
+(18, 'Kiran')
+(15, 'Rajesh')
+(10, 'Rama rao')
+Elements of each tuple in reverse order
+('Sita', 20)
+('Kiran', 18)
+('Rajesh', 15)
+('Rama rao', 10)
+Keys and values in reverse order
+20: Sita
+18: Kiran
+15: Rajesh
+10: Rama rao'''
+
+# Find  outputs
+a = 25
+print(a)
+#for  x   in   a:
+	#print(x)
+#print(iter(a))
+#print(next(a))
+outputs:
+25'''
