@@ -1,0 +1,328 @@
+# isspace()  method  demo  program  (Home  work)
+'''print('\n  A\t' . isspace()) #false
+print('\n  \t' . isspace()) # true
+print('\n  7\t' . isspace()) #false
+print('\n' . isspace()) #true
+print('\n  $\t' . isspace()) #false
+print('\t' . isspace()) #true
+print('' . isspace()) #false
+print(' ' . isspace()) #true '''
+
+# Find  outputs  (Home  work)
+'''a , b , c = 25 , 10.8 , 'Hyd'
+print('a  :  {}  \t  b  :  {}  \t  c  :  {}  '  .  format(a , b , c)) # a:25	b:10.8	c:hyd
+print('a  :  {0}  \t  b  :  {1}  \t  c  :  {2}  ' . format(a , b , c)) #a:25	b:10.8	c:hyd
+print('a  :  {2}  \t  b  :  {1}  \t  c  :  {0}  ' . format(a , b , c)) #a:hyd	b:10.8	c:25
+print('a  :  {2}  \t  b  :  {2}  \t  c  :  {2}  ' . format(a , b , c)) #a:hyd	b:hyd	c:hyd
+print('a  :  {x}  \t  b  :  {y}  \t  c  :  {z}  ' . format(x = a , y = b , z = c)) #a:25	b:10.8	c:hyd
+print('a  :  {x}  \t  b  :  {y}  \t  c  :  {z}  ' . format(z = a , y = b , x = c)) #a:hyd	b:10.8	c:25
+print('a  :  {z}  \t  b  :  {z}  \t  c  :  {z}  ' . format(z = a , y = b , x = c)) #a:25	b:25	c:25 '''
+
+#Write  a  program  to  determine  user  input  is  alphabet , digit , white space  or  special  character
+'''a=input("enter any charater:")
+if (a.isalnum() and  a.isupper()):
+    print("Alphanumeric  character\nAlphabet character\nUpper case  alphabet")
+elif (a.isalnum() and  a.islower()):
+	print("Alphanumeric  character\nAlphabet character\nlower case  alphabet")
+elif (a.isalnum() and a.isdigit()):
+	print("Alphanumeric  character\ndigit  character")
+elif a.isspace():
+	print("White  space")
+
+else:
+	print("sepical charater")
+
+Output:
+enter any charater:A
+Alphanumeric  character
+Alphabet character
+Upper case  alphabet
+
+enter any charater:a
+Alphanumeric  character
+Alphabet character
+lower case  alphabet
+
+enter any charater:7
+Alphanumeric  character
+digit  character
+
+enter any charater:
+White  space 
+
+enter any charater:jhfsj23456@#$%
+sepical charater  '''
+
+#Write  a  program  to  reverse  a  string  without  slice
+'''a=input("Enter a string:")
+b=''
+for i in range(1,len(a)+1):
+	b+=a[-i]
+print(b)
+
+output:
+Enter a string:rama rao
+oar amar '''
+
+#Write  a  program  to  reverse  order  of  words  in  the  sentence  without  slice
+'''a=input("Enter a string:").split()
+b=''
+for i in range(1,len(a)+1):
+	b+=a[-i]+ " "
+print(b)
+
+output:
+Enter a string:hyd is green city
+city green is hyd '''
+
+#Write  a  program  to  reverse  each  word  of  the  sentence
+'''a=input("Enter a string:").split()
+b=''
+for i in range(len(a)):
+	b+=a[i][::-1]+ " "
+print(b) '''  
+
+'''#Write  a  program  to  sort  string  in  alphabetical  order
+a=input("Enter  any  string  :")
+b=sorted(a)
+print(''.join(b))
+
+output:
+Enter  any  string  :zyxw
+wxyz '''
+
+#Write  a  program  to  sort  string  such  that  alphabets  in  alphabetical  order  and  digits  in  ascending  order
+'''a=input("Enter  any  string  :")
+l=sorted(a)
+
+d=''
+a=''
+
+for i in l:
+    if i.isdigit():
+        d+=i 
+        
+    else:
+        a+=i 
+        
+print(a+d)
+
+output:
+Enter  any  string  :wjdklf8421
+dfjklw1248 '''
+
+# What  are  the  outputs  if  input  is   [25 , 10.8 , 'Hyd' , True]   (Home  work)
+'''a = input('Enter  list  :  ')
+print(type(a)) #<class 'strr'>
+print(a) #123
+b = eval(a)
+print(b) #123
+print(type(b)) ##<class 'list'>'''
+
+#  Find  outputs (Home  work)
+'''a = [10, 20, 15, 18]
+b = a
+print(a  is  b) #true
+print(a  ==  b) #true
+b[2] = 12  
+print(a) # [10,20,15,18]'''
+
+#  Find  outputs  (Home  work)
+'''a = [10 , 20 , 15 , 18]
+b = [100 , 200 , 150]
+print(a + b) #[10,20,15,18,100,200,150]
+print(a + 5) #error
+print(a + '5') #error
+print([10 , 20] + (30 , 40)) #error'''
+
+# Find  outputs
+'''list = [25 , 10.8 , 'Hyd' ,  True]
+a , *b , c = list  #  Unpacks  list  into  3  elements
+print('a : ' , a) #  a :  25
+print('b : ' , b)#   b : [10.8 , 'Hyd']
+print('c : ' , c) #  c : True
+print(type(b))#  <class  'list'>
+x , *y = list
+print('x : ' , x) #25
+print('y : ' , y) #[10.8,'hyd','true]
+*p , q = list
+print('p : ' , p) #[25,10.8,'hyd']
+print('q : ' , q) #true '''
+
+# Find  outputs  (Home  work)
+'''list = [25 , 10.8 , 'Hyd' , True]
+#a , b , c , d , e = list #error due to less args 
+a , b , *c , d , e = list #25,10.8,[],'hyd',true
+print('a : ' , a) #25
+print('b : ' , b) #10.8
+print('c : ' , c) #[]
+print('d : ' , d) # 'hyd'
+print('e : ' , e) #true
+#a , b , *c , d , e , f = list #error due to less args '''
+
+# Find  outputs  (Home  work)
+'''list = [25 , 10.8 , 'Hyd' , True]
+a , b , _  , d = list #25,10.8,'hyd',true
+print('a : ' , a) #25
+print('b : ' , b) #10.8
+print('_ :  ' , _) #'hyd'
+print('d : ' , d) #true '''
+
+# Find  outputs (Home  work)
+'''list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b , a , d , a = list #3+4j,10.8,true
+print('a : ' , a) #3+4j
+print('b : ' , b) #10.8
+print('d : ' , d) # true '''
+
+# Find  outputs (Home  work)
+'''list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b ,  _ , d , _  = list #25,10.8,3+4j,true,3+4j
+print('a : ' , a) #25
+print('b : ' , b) #10.8
+print('_ : ' , _)  #3+4j
+print('d : ' , d) #true
+print('_: ' , _) #3+4j '''
+
+# Identify  error (Home  work)
+'''list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , *b , c , *d , e  =  list #error due to multiple '''
+
+# Find  outputs  (Home  work)
+'''list = [[25 , 10.8] , 'Hyd' , True]
+a , b , c = list #[25,10.8],'hyd',true
+print('a :  ' , a) #[25,10.8]
+print('b :  ' , b) # 'hyd'
+print('c :  ' , c) # true '''
+
+# Find  outputs  (Home  work)
+'''list = [[25 , 10.8] , 'Hyd' , True]
+[a , b] , c , d = list #25,10.8,'hyd',true
+print('a : ' , a) #25
+print('b : ' , b) #10.8
+print('c : ' , c) # 'hyd'
+print('d : ' , d) # true 
+a , b , c , d = list #error '''
+
+# Comparing  Lists
+'''a = [10 , 20 , 15 , 18]
+b = [10 , 20 , 15 , 18]
+c = [10 , 20 , 25 , 9]
+d = [10 , 20 , 7 , 22]
+print(a == b) #true
+print(a  is   b) #false
+print(a < c) #true
+print(a > d) #true
+print(a >= c) # false
+print(a <= d) # false
+print(a != c) # true
+print(a != b) #false
+print(a == c) #false '''
+
+# Comparing  Lists  (Home  work)
+'''a = [10 , 20 , 15 , 18]
+b = [20 , 18 , 15 , 10]
+print(a == b) # false
+print(a  is   b)  #false '''
+
+#  len()  function demo   program  (Home  work)
+'''a = [ 25, 10.8, 'Hyd', True]
+print(len(a)) #4
+b = []
+print(len(b)) #0
+c = [[10 , 20] , 30 , 40]
+print(len(c)) #3 '''
+
+# sum()  function  demo  program  (Home  work)
+'''a = [25 , 10.8 , True]
+print(sum(a)) #36.8
+b= [3 + 4j , 5 + 6j]
+print(sum(b)) #(8+10j)
+c = [25 , 10.8 , True , 3 + 4j , False]
+print(sum(c)) #(39.8+4j)
+d = [10 , 20 , 15 , 18]
+print(sum(d)) #63
+e = [25 , 10.8 , 'Hyd' , True]
+print(sum(e)) #error '''
+
+#  Find  outputs
+'''a = [[10 , 20 , 15 , 18]]
+print(sum(a)) #error
+print(sum(a[0]))
+print(sum(*a)) '''
+
+# max()  and  min()  functions  demo  program  (Home  work)
+'''a = [10 , 20 , 15 , 18 , 30, 5 , 12]
+print(max(a)) #30
+print(min(a)) #5
+b = ['Rama' , 'Sita' , 'Rajesh' , 'Kiran' , 'Amar' , 'Vamsi' , 'Manohar']
+print(max(b)) #vamsi
+print(min(b)) #amar
+c = [25 , 10.8 ,  3 + 4j , True]
+print(max(c)) 
+d = [25 , '35']
+print(max(d)) #error
+print(max([])) #error
+print(min([])) #error '''
+
+# list()  function  demo  program
+'''a = (10 , 20 , 15, 18)
+b = list(a)
+print(b)#[10, 20, 15, 18]
+print(type(b)) #<class'list'>
+print(a  is  b) #false
+print(a == b) #false '''
+
+#  Find  outputs (Home  work)
+'''a = range(4 , 10 , 2)
+b = list(a)
+print(b) #[4, 6, 8]
+print(type(b)) #<class 'list'>
+a = list('Vamsi')
+print(a)#['V', 'a', 'm', 's', 'i']
+a = list()
+print(a) # []
+print(list(25))#error
+print(list(10.8))#error
+print(list(True))#error
+print(list(None))#error '''
+
+# Find  outputs (Home  work)
+'''a = ((10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90))
+print(list(a)) #[(10, 20), (30, 40, 50), (60, 70, 80, 90)]
+b = { (10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)}
+print(list(b)) #[(30, 40, 50), (60, 70, 80, 90), (10, 20)]
+c = ([10 , 20] , (30 , 40) , {50 , 60})
+print(list(c))#[[10, 20], (30, 40), {50, 60}] '''
+
+# Find  outputs  (Home  work)
+'''a = ['Rama',  'Rajesh',  'Amar',  'Sita',  'Vamsi'  ,  'Kiran'  , 'Rama  Rao']
+b = sorted(a)
+print(b)#['Amar', 'Kiran', 'Rajesh', 'Rama', 'Rama  Rao', 'Sita', 'Vamsi']
+c = sorted(a , reverse = True)
+print(c) #['Vamsi', 'Sita', 'Rama  Rao', 'Rama', 'Rajesh', 'Kiran', 'Amar']
+print(a) #['Rama', 'Rajesh', 'Amar', 'Sita', 'Vamsi', 'Kiran', 'Rama  Rao']''' 
+
+# all()  function demo  program  (Home  work)
+'''a = [12 > 10 , 5 < 20 , 30 == 30]
+print(all(a)) #true
+b = [9 >= 6 , 12 <= 9 , 6 == 6]
+print(all(b)) #false
+c = [25 , 10.8 , '' , True , 3+4j , 'Hyd']
+print(all(c)) #false
+d = [10 , 0 , 20]
+print(all(d)) #false
+e = []
+print(all(e)) #true '''
+
+# any()  function demo program  (Home  work)
+a  = [12 > 18 , 5 < 20 , 35 == 30]
+print(any(a)) #true
+b = [12 > 18 , 25 < 20 , 35 == 30]
+print(any(b)) #false
+c = [0 , 0.0 , '' , 25 , 0 + 0j , False]
+print(any(c)) #true
+d = [0 , 0.0 , '' , 0 + 0j , False]
+print(any(d)) #false
+e = []
+print(any(e)) #false
