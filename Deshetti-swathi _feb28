@@ -1,0 +1,162 @@
+x=input('Enter input:')
+print(type(x))
+print(x)
+x=int(input('Enter any integer number:'))
+print(type(x))
+print(x)
+x=eval(input('Enter any input:'))
+print(type(x))
+print(x)
+'''
+ # o/p
+  Enter input:5
+<class 'str'>
+5
+Enter any integer number:5
+<class 'int'>
+5
+Enter any input:5
+<class 'int'>
+5
+'''
+x=eval(input('Enter length of rectangle:'))
+y=eval(input('Enter breadth of rectangle:'))
+Area = x*y
+print(F'Area:{Area}')
+Perimeter=2*(x+y)
+print(F'Perimeter:{Perimeter}')
+'''
+    #o/p
+Enter length of rectangle:4
+Enter breadth of rectangle:5
+Area:20
+Perimeter:18
+    
+'''
+import math
+x=eval(input('Enter radius:'))
+Volume=4/3*(math.pi)*x**3
+print(F'Volume:{'%g'  %Volume}')
+'''
+  #o/p
+Enter radius:3.5
+Volume:179.594
+'''
+x=eval(input('Enter principle:'))
+y=eval(input('Enter time:'))
+z=eval(input('Enter rate of interest:'))
+SimpleInterest=x*y*z/100
+print(F'SimpleInterest:{'%g' %SimpleInterest}')
+CompoundInterest=x*(1+z/100)**y-z
+print(F'CompoundInterest:{'%g' %CompoundInterest}')
+'''
+  #o/p
+Enter principle:10000
+Enter time:3
+Enter rate of interest:7.5
+SimpleInterest:2250
+CompoundInterest:12415.5
+
+'''
+x=eval(input('Enter 1st input:'))
+y=eval(input('Enter 2nd input:'))
+x,y=y,x
+print(x,y)
+'''
+  #o/p
+Enter 1st input:10
+Enter 2nd input:25
+25 10
+'''
+x=eval(input('Enter 1st input:'))
+y=eval(input('Enter 2nd input:'))
+x=x+y
+y=x-y
+x=x-y
+print(x)
+print(y)
+'''
+  #o/p
+Enter 1st input:-200
+Enter 2nd input:100
+100
+-200
+'''
+x=eval(input('Enter 1st input:'))
+y=eval(input('Enter 2nd input:'))
+x=x*y
+y=x/y
+x=x/y
+print(x)
+print(y)
+'''#o/p
+Enter 1st input:25
+Enter 2nd input:10
+10.0
+25.0
+'''
+x=eval(input('Enter first complex number:'))
+y=eval(input('Enter second complex number:'))
+Sum=x+y
+Difference=x-y
+Product=x*y
+Division= x/y
+print(f'Sum:{sum}')                   
+print(f'Difference:{Difference}') 
+print(f'Product:{Product}')
+print(f'Division:{Division}') 
+'''
+  #o/p
+Enter first complex number:3+4j
+Enter second complex number:5+6j
+Sum:<built-in function sum>
+Difference:(-2-2j)
+Product:(-9+38j)
+Division:(0.6393442622950819+0.03278688524590165j)
+'''
+from builtins import pow
+import math
+x=eval(input('Enter 1st integer number:'))
+y=eval(input('Enter 2nd integer number:'))
+Sum=x+y
+Difference=x-y
+Product=x*y
+Division= x/y
+quotient=x%y
+max(10,7)
+print(f'Sum:{Sum}')                   
+print(f'Difference:{Difference}') 
+print(f'Product:{Product}')
+print(f'Division:{Division}')
+print(f'quotient:{quotient}')
+print(max(10,7))
+print(min(10,7))
+print(pow(10,7))
+print(math.sqrt(10))
+print(math.gcd(10,7))
+print(math.factorial(10))
+  #o/p
+Enter 1st integer number:10
+Enter 2nd integer number:7
+Sum:17
+Difference:3
+Product:70
+Division:1.4285714285714286
+quotient:3
+10
+7
+10000000
+3.1622776601683795
+1
+3628800
+
+
+
+
+
+
+
+
+
+
+  
