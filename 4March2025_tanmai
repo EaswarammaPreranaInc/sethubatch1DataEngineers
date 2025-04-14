@@ -1,0 +1,168 @@
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)#1,2,3,4,5,6,7,8
+	if   i % 3 == 0:
+		continue
+	else:
+		print('Sec')#Sec,Sec,Sec,Sec,Sec,Sec
+	print('Hello')#Hello,Hello,Hello,Hello,Hello,Hello
+else:
+	print('else  suite')#else suite
+# End  of  the  loop
+print('Outside  loop')# outside loop
+
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+#End   of  the  loop
+print('Outside  loop')
+
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)#1,2,3,4,5,6,7
+	if  i == 8:
+		break
+	else:
+		print('Sec')#SEc 7 times
+	print('Hello')#Hello 7 times
+else:
+	print('else  suite')# else suite not affected by break
+# End  of  the  loop
+print('Outside loop')# outside loop
+
+'''
+Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator  and
+print  Found  or  Not  Found  message  (Assume  that  there  are  no  duplicates)
+
+Note:  Do  not  use  index()  method
+
+Let  list  be   [10 , 20 , 15 , 12 , 18]
+1) What  is  the  output  if  15  is  seacrhed ?  --->  Found  at  index  2
+
+2) What  is  the  output  if  19  is  seacrhed ?  --->  Not  found
+
+3) What  action  to  be  made  if  'x'  is  not  matched  with  the  current  element  of  list ?  --->  Compare  'x'  with  next  element  of  list
+
+4) What  action  to  be  made  if  'x'  is   matched   with  list  element ?  --->  Print  found   message  along  with  index  and
+																														  don't   search  in  rest  of  the  list
+
+5) What  action  to  be  made  if  'x'  is   not  matched  with  all  the  elements  of  list ?  --->  Print  not  found   message
+
+6) Hint: Use  for  loop
+'''
+a= [10 , 20 , 15 , 12 , 18]
+x=int(input("enter a number: "))
+for i in range(len(a)):
+	if(x==a[i]):
+		print(i,'found')
+		break
+else:
+		print('not found')
+
+#  Walrus   operator (:=)  demo  program
+print(a := 25)#25
+#print(a = 25)# error a=25 will give result as nothing print(nothing ) is error 
+print(a)#25
+print(a := 6 + 7)#13
+print(a)#13
+print((a := 6) + 7) # print(6+7) #13
+print(a) # 6 bcz a is 6 not 13
+#print((a = 6) + 7) # error bcz (a=6 ) will result in nothing+7 
+
+
+
+# Find  outputs  (Home  work)
+a = 0
+if  a == 0:  
+	print('Hyd')  #Hyd
+else:
+	print('Sec')
+if  b := 0: # b=0 which means it is false 
+	print('Hyd')
+else:
+	print('Sec : ' , b)  #Sec: 0
+'''if  c = 0: #error no value of c
+	print('Hyd')
+else:
+	print('Sec')'''
+
+# Find  outputs
+b = 10
+#a = b += 5  #Error bcz b =6 , a =no result 
+#print(a)# error
+
+'''
+(Home  work)
+Write  a  program to  determine  average  of  inputs  which  are  terminated  with  -1
+(without  walrus  operator)
+
+Let  inputs  be  25 , 10.8 , True ,  46 , 34.8 , False , 95 , -1
+
+sum = 0 + 25 + 10.8 + True + 46 + 34.8 + False + 95
+
+ctr = 0  + 1 + 1 + 1 + 1 + 1 + 1 + 1
+'''
+try:
+	sum=ctr=0
+	a=eval(input("Enter -1 to stop: "))
+	while(a!=-1):
+			sum= sum+a
+			ctr=ctr+1
+			a=eval(input("Enter -1 to stop: "))		
+			
+	print("average", sum / ctr)
+except (TypeError,NameError):
+	print("Enter only numbers ")
+except ZeroDivisionError:
+	print(" 1st element can't be -1 ")
+
+#  del  operator  demo program  (Home  work)
+a = 25
+print(a)#25
+del   a #reference a is deleted
+#print(a)# error
+
+# Find  outputs  (Home  work)
+a = b = c = 25
+print(a , b , c) # 25 25 25
+del   a # ref a deleted
+print(b , c)# 25 25
+#print(a) #error
+del   b # b deelted
+print(c)#25
+#print(b)#error
+del   c # delete c
+#print(c) #error
+
+#  Can  multiple  objects  be  deleted  with  same  del  operator ?
+a , b , c = 25 , 10.8 , 'Hyd'
+print(a , b , c) # 25 10.8 Hyd
+del   a , b , c # deleted
+#print(a) # error
+#print(b)# error
+#print(c) # error
+
+# Find outputs  (Home  work)
+a = [10 , 20 , 15 , 18]
+print(a) #[10,20,15,18
+del  a[2] # 15 is deleted
+print(a) #[10,20,18
+del  a # ref is deleted
+#print(a) # error
+#print(a[0])# error
+
+# Find outputs  (Home work)
+a = (10 , 20 , 15 , 18)
+print(a) # (10,20,15,18)
+print(a[0])# 10
+#del  a[2] # error immutable
+del  a  # ref a is delted
+#print(a) #error
+#print(a[0]) # error
