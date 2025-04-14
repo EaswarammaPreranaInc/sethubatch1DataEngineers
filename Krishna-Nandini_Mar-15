@@ -1,0 +1,416 @@
+Program-1
+# Find  outputs
+a = 25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 'Hyd' , 25
+print(a)  # (25, 10.8, (3+4j), 'Hyd', True, None, 'Hyd', 25)
+print(type(a))  # <class 'tuple'>
+#a[3] = 'Sec'  # Error 
+#a[3 : 6] = 60 , 70 , 80  # Error
+
+
+Program-2
+#  What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ?
+a = input('Enter  Tuple  :  ')  # Enter  Tuple  :  (10, 20, 30, 40)
+print(a)  # (10, 20, 30, 40)
+print(type(a))  # <class 'str'>
+b = eval(a)  # converts string elements to tuple
+print(b)  # (10, 20, 30, 40)
+print(type(b))  # <class 'tuple'>
+print(len(b))  # 4
+
+
+Program-3
+# Find  outputs
+a = (10 , [20 , 30 , 40] , 50 , 60)
+a[1][0] = 70  
+print(a)  # (10, [70, 30, 40], 50, 60)
+#a[1] = [80 , 90 , 100]  # Error           
+print(a)  # (10, [70, 30, 40], 50, 60)
+
+
+Program-4
+# Find  outputs
+a = [10 , (20 , 30 , 40) , 50 , 60]
+#a[1][0] = 70
+print(a)  # [10, (20, 30, 40), 50, 60]
+a[1] = [80 , 90]
+print(a)  # [10, [80, 90], 50, 60]
+
+
+Program-5
+# Find  outputs
+a = 25
+b = 10.8
+c = 'Hyd'
+d = True
+x = a , b , c , d
+print(x)  # (25, 10.8, 'Hyd', True)
+print(type(x))  # <class 'tuple'>
+
+
+Program-6
+# Find  outputs
+x = 25 , 10.8 , 'Hyd' , True
+a , b , c , d = x
+print(a)  # 25
+print(b)  # 10.8
+print(c)  # Hyd
+print(d)  # True
+#p , q , r =  x  # Error because x contains 4 objects
+#a , b , c , d  , e = x   # Error because x contains only 4 objects
+
+
+# Find  outputs
+x = 25 , 10.8 , 'Hyd' , True
+a , *b , c = x
+print(a)  # 25
+print(b)  # [10.8, 'Hyd']
+print(c)  # True
+
+
+Program-7
+# Find  outputs
+tpl = 25 , 10.8 , 'Hyd' , True
+a , b , *c , d , e = tpl
+print(a)  # 25
+print(b)  # 10.8
+print(c)  # []
+print(d)  # Hyd
+print(e)  # True
+
+
+Program-8
+# Find  outputs
+x = 25 , 10.8 , 'Hyd' , True , 3 + 4j
+a , b , _ , d , _= x
+print(a)  # 25
+print(b)  # 10.8
+print(_)  # 3 + 4j
+print(d)  # True
+print(_)  # 3 + 4j
+
+
+Program-9
+# tuple()  function  demo  program.
+a = range(100 , 150 , 10)
+b = tuple(a)  # converts range object to tuple object
+print(b)  # (100, 110, 120, 130, 140)
+print(type(b))  # <class 'tuple'>
+c = [10 , 20 , 15, 18]
+d = tuple(c)  # converts list object to tuple object
+print(d)  # (10, 20, 15, 18)
+e = tuple('Vamsi')  # converts string object to tuple object
+print(e)  # ('V', 'a', 'm', 's', 'i')
+#print(tuple(25))  # Error because 25 is not a sequence
+print(tuple())  # Empty tuple i.e.  ()
+
+------------------- Tuple Methods--------------------
+Program-10
+#index()  and  count()  methods  demo  program.
+a = (10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25)
+#     0    1      2     3    4     5     6    7     8    9    10
+try:
+	i = a . index(15)
+	while  True:
+		print('15 is found at index : ' , i)
+		i = a . index(15 , i + 1)
+except:
+		print(F'15  is  found  {a . count(15)}  times')
+		
+'''
+Output:
+15 is found at index :  2
+15 is found at index :  5
+15 is found at index :  8
+15  is  found  3  times
+'''
+
+
+Program-11
+#  How  to  modify  an  element  of  tuple ?
+a  =  10 ,  20 ,  30 ,   40 ,  50
+#     0      1       2       3      4
+#a[2] = 35
+print(a)  # (10, 20, 30, 40, 50)
+print(id(a))  # 1586849308464
+#How  to  modify  30  in  tuple  to  35
+print(a)  # (10, 20, 30, 40, 50)
+print(id(a))  # 1586849308464
+
+
+Program-12
+# How  to  delete  an  element  of  tuple ?
+a  = 10 , 20 , 30 , 40 , 50
+#    0     1      2     3      4
+#a . remove(30)
+#del  a[2]
+#a . pop(2)
+print(a)  # (10, 20, 30, 40, 50)
+print(id(a))  # 2266722459440
+#How  to  remove  30  from  tuple  'a'
+print(a)  # (10, 20, 30, 40, 50)
+print(id(a))  # 2266722459440
+
+
+Program-13
+#  Nested   tuple
+a = ( (10 , 20)  ,  (30 , 40 , 50)  ,  (60 , 70 , 80 , 90) )
+print(a)  # ((10, 20), (30, 40, 50), (60, 70, 80, 90))
+print(type(a))  # <class 'tuple'>
+print(len(a))  # 3
+print(a[0])  # (10, 20)         # How  to  print  1st  inner  tuple
+print(a[1])  # (30, 40, 50)     # How  to  print  2nd  inner  tuple
+print(a[2])  # (60, 70, 80, 90) # How  to  print  3rd  inner  tuple
+print(a[0][1]) # 20             # How  to  print  20
+print(a[1][2]) # 50             # How  to  print  50
+print(a[2][3]) # 90             # How  to  print  90
+
+
+Program-14
+# Find  outputs
+a = ((10 , 20 , 30),)
+print(a[0])  # (10, 20, 30)      # How  to   print  inner  tuple
+for item in a:
+    print(item)  # (10, 20, 30)  # How  to   print  inner  tuple  in  another  way
+print(a[0][0]) # 10                  # How   to  print   10
+print(a[0][1]) # 20                  # How   to  print   20
+print(a[0][2]) # 30                  # How   to  print   30
+b = ((),)
+print(b[0])  # ()  # How  to   print  inner  tuple  of  tuple  'b'
+ # How  to   print  inner  tuple  of  tuple  'b'  in  another  way
+for item in b:
+	print(item)  # ()
+
+
+Program-15
+#  Find  outputs
+a = ((10 , 20 , 30))
+print(a)  # (10, 20, 30)
+print(*a)  # 10 20 30
+b = (())
+print(b)  # ()
+print(*b) # Empty
+
+
+----------------- Set Functions , Methods -----------------
+Program-16
+# What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+a = input('Enter  Set  :  ')  # Enter  Set  :  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+print(a)  # {10 , 20 , 15 , 18 , 20 , 12 , 18}
+print(type(a))  # <class 'str'>
+b = eval(a)
+print(b)  # {18, 20, 10, 12, 15} 
+print(type(b))  # <class 'set'>
+
+
+Program-17
+#  Find  outputs
+print({(10 , 20 , 30)})  # {(10, 20, 30)}
+#print({[10 , 20 , 30]})  # Error because set cannot hold mutable object
+#print({{10 , 20 , 30}})  # Error because set cannot hold a set
+print({{}})  # Error because set cannot hold a set
+
+
+Program-18
+# How  to  print  set  in  differnet ways
+a = {25 , True , 'Hyd' , 10.8}
+print('set  with  print  function')  # set  with  print  function
+print(a)  # {25, 10.8, 'Hyd', True}
+print('Iterate  elements  of  set  with  for  loop')  # Iterate  elements  of  set  with  for  loop
+#How  to  iterate  set  with  for  loop
+for element in a:
+    print(element)  # 25
+                    # Hyd
+                    # 10.8
+                    # True
+
+
+Program-19
+# Find  outputs
+a = 'Hyd'
+b = True
+c = 25
+d = 1
+e = 'Hyd'
+s = {a , b , c , d , e}
+print(s)  # {True, 'Hyd', 25}
+print(len(s))  # 3
+print(type(s))  # <class 'set'>
+
+
+Program-20
+# Find  outputs
+s = {'Hyd',  25,  True,  10.8 }
+print(s)  # {'Hyd', 10.8, 25, True}
+a , b , c , d = s
+print(a)  # Hyd
+print(b)  # 10.8
+print(c)  # 25
+print(d)  # True
+
+
+Program-21
+# Find  outputs
+s = {'Hyd',  25,  True,  10.8 }
+print(s)  # {25, 10.8, 'Hyd', True}
+a , *b = s
+print(a)  # 25
+print(b)  # [10.8, 'Hyd', True]
+print(type(b))  # <class 'list'>
+
+
+Program-22
+# Find  outputs
+s = {'Hyd',  25,  True,  10.8 }
+print(s)  # {'Hyd', 25, 10.8, True}
+a , *b , c = s
+print(a)  # Hyd
+print(b)  # [25, 10.8]
+print(c)  # True
+
+
+Program-23
+# Find  outputs
+s = {20 , 10 , 20 , 10}
+print(s)  # {10, 20}
+x , y = s
+print(x)  # 10
+print(y)  # 20
+
+
+Program-24
+# set()  function  demo  program
+a = range(100 , 151 , 10)
+b = set(a)
+print(b)  # {130, 100, 140, 110, 150, 120}
+c = [10 , 20 , 15 , 18 , 10 , 50 , 20 , 12 , 18]
+d = set(c)
+print(d)  # {10, 12, 15, 18, 50, 20}
+e = set('Rama  rAo')
+print(e)  # {'A', 'R', 'r', ' ', 'o', 'a', 'm'}
+#print(set(25))
+print(set())  # set()
+
+
+-------------- Set Methods --------------
+Program-25
+# add()  method  demo  program
+a = set()
+a . add(True)
+a . add(25)
+a . add(10.8)
+a . add(1)
+a . add('Hyd')
+a . add(25)
+a . add(None)
+a . add('Hyd')
+a . add(1.0)
+print(a)  # {None, True, 10.8, 25, 'Hyd'}
+#a . add(10 , 20 , 30)  # Error because set can take only one argument
+a . add([10,20,30])  # Error
+
+
+Program-26
+# Find  outputs
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a)  # {25, 10.8, 'Hyd', True}
+print(id(a))  # address of object 'a' i.e.  1785402529088
+a . add(tpl)  # adds tpl elements to a
+a . add('Sec')  # adds 'Sec' to 'a'
+print(a)  # {True, 10.8, (10, 20, 30), 'Hyd', 25, 'Sec'}
+print(id(a))  # Same address
+print(len(a))  # 6
+#a . add([100 , 200 , 300])
+#a . add(set())  # Error
+#a . add({ })  # Error
+
+
+Program-27
+# Find  output
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl)  # adds tpl elements to 's'
+print(s)  # {(10, 20, 15, 18)}
+print(len(s))  # 1
+
+
+Program-28
+# update()  method  demo program
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()
+s . update(tpl)
+print(len(s))  # 4
+print(s)  # {10, 18, 20, 15}
+s . update(25)  # Error because 25 is not a sequence
+
+
+Program-29
+# Find  outputs
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a , b , c)
+print(s)  # {50, 20, 70, 40, 10, 60, 30}
+print(len(s))  # 7
+s . add(a , b , c)  # Error due to excess arguments
+
+
+Program-30
+# Find  outputs
+a = set()
+a . update('Rama Rao')
+print(a)  # {' ', 'o', 'R', 'm', 'a'}
+print(len(a))  # 5
+a . update(3 + 4j , 10.8 , True)  # Error due to excess arguments
+
+
+Program-31
+# copy()  method  demo  program
+a = {10 , 20 , 15 , 18}
+print(a)  # {10, 18, 20, 15}
+b = a . copy()  # Copies elemets of object 'a' to 'b'
+print(b)  # {10, 18, 20, 15}
+print(a  is  b)  # False
+print(a  ==  b)  # True
+c = a
+print(a  is  c)  # True
+
+
+Program-32
+# remove()  method  demo  program
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)  # {25, 10.8, 'Hyd', True}
+a . remove('Hyd')
+print(a)  # {25, 10.8, True}
+a . remove('Sec')  # Error because there is no element 'Sec' to remove
+
+
+Program-33
+# discard()  method  demo  program
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)  # {25, 10.8, 'Hyd', True}
+a . discard('Hyd')
+print(a)  # {25, 10.8, True}
+a . discard('Sec')
+print(a)  # {25, 10.8, True}
+a . remove('Sec')
+
+
+Program-34
+# clear()  method  demo  program
+a = {10 , 20 , 15 , 18}
+print(a)  # {10, 18, 20, 15}
+a . clear() 
+print(a)  # set()
+print(len(a))  # 0
+
+
+Program-35
+# Find  outputs
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b))  # {40, 10, 50, 20, 60, 30}
+#print(a | b)  # Error  beacuse operands of | operator should be set only 
+#print(b . union(a))  # Error beacuse list does not have union() method
+print(a + b)  # Error because set and list cannot be concatenated
