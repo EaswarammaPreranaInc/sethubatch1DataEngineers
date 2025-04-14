@@ -1,0 +1,14 @@
+'''
+# eval()  function  demo  program
+print(eval('25'))  #  Converts  '25'  to  25
+print(eval('10.8'))  #  Converts  '10.8'  to   10.8
+print(eval('False'))# converts 'False' to False
+print(eval('3+4j')) # convert '3+4j
+print(eval("    'Hyd'   ")) #"    'Hyd'   " to 'Hyd'
+print(eval('3 + 4 * 5')) #'3 + 4 * 5' to 23 performs operation inside to print 23
+print(eval('[10 , 20 , 15 , 18]')) # [10,20,15,18]
+print(eval('{10,20,15,18,20,12,18}')) #{10,20,15,18,20,12,18}
+print(eval('(10 , 20 , 30)')) # (10 , 20 , 30)
+print(eval("{10 : 'Hyd' , 10 : 'Sec'}")) #{10 : 'Sec'}
+#print(eval(4 + 5)) # error because in proper function
+'''

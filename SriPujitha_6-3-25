@@ -1,0 +1,80 @@
+#1
+print( 'green'   in   'Hyd  is  green  city')#True
+print('day'   in   'Sankar  dayal  sarma')#True
+print('Green'   in   'Hyd  is  green  city')#False
+print('d  is'   in   'Hyd  is  green  city') #True
+print('dis'   in   'Hyd  is  green  city') #False
+print('iniv'   in   'Srinivas') #True
+print('iniv'   not   in   'Srinivas')#False
+
+#2
+a = 'Rama Rao'
+print(a [ : 7 : 2])#a[0 : -9 : -2]  --->  String  from  indexes  0  to  6  in  steps  of  2  i.e.print(a [ : 7])
+print(a [2 : 4])#a[2 : 4: ]  --->  String  from  indexes  2  to  3  in  steps  of  1  ma
+print(a [2 : ])#a[2 : : ]  --->  String  from  indexes  2  to  n-1  in  steps  of  1  ma Rao
+print(a [ : 4 ])#a[ : 4: ]  --->  String  from  indexes  2  to  4  in  steps  of  1 Rama
+print(a [ : : 2])#a[ : 4: ]  --->  String  from  indexes  2  to  4  in  steps  of  2 Rm a
+print(a [-6 : -1])#a[ -6: : -1]  --->  String  from  indexes  -6  to  4  in  steps  of  -1 ma Ra
+print(a [-6 : ])#a[-1 :  : ]  --->  String  from  indexes  -6 to  -8  in  steps  of  1 -ma Raoprint(a [: -4 : -1])
+print(a [-3 : -1])#  a[-3 :-1 : ]  --->  String  from  indexes  -3  to  -1  in  steps  of  1  i.e.  Ra
+print(a [-3 : ])#  a[-3 : : ]  --->  String  from  indexes  -3  to  -8 in  steps  of  1  i.e.  Rao
+print(a [ : : ])#  a[ : : ]  --->  String  from  indexes  -3  to  -8 in  steps  of  1  i.e.  Rama Rao
+print(a [ : ])#  a[: : ]  --->  String  from  indexes  -3  to  -8 in  steps  of  1  i.e.  Rama Rao
+print(a [ : : -1])#  a[ :  : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oaR amaR
+print(a [ : : -2]) #  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oRaa
+print(a [ -2 : : -2])#  a[-2 :  : -2]  --->  String  from  indexes  -2 to  -8  in  steps  of  -2  i.e.  a mR
+print(a [2 : 8])#  a[2 : 8 :]  --->  String  from  indexes  2  to  8  in  steps  of  -2  i.e.  ma rao
+print(a [2 : 8 : -1])#  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e. empty
+print(a [ : -6 : -1])#  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oaR a
+print(a [2 : -3])#  a[2 : -3 : ]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e. ma
+print(a [1 : 6 : 2])#  a[-1 : -9 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  aaR
+print(a [ : -5 : -5])#  a[ : -5 : -5]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  o
+print(a [2 : -5])#  a[2: -5 : -]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  m
+print(a [2 : -5 : 2])#  a[2 : -5 : 2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  m
+print(a [ : 0 : -1])#  a[ : 0 : -1]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  oaR ama
+print(a [-5 : 0 : -2])#  a[-5 : 0 : -2]  --->  String  from  indexes  -1  to  -8  in  steps  of  -2  i.e.  aa
+
+#3
+a=input("enter the first string:") #java
+b=input("enter the second string:")#Python
+c=a[0:2]
+d=a[2:]
+e=b[0:2]
+f=b[2:len(b)]
+print(e+d," ",c+f)
+
+#4
+k=input("enter the string:")
+p=k[0:2]
+x=k[-1:-3:-1]
+print(p+x)
+
+#5
+s=input("enter the string:")
+for i in range(len(s)):
+    print("Character  at  index",i,":",s[i])
+print("reversed")
+for i in range(-1,-len(s)-1,-1):
+    print("Character  at  index",i,":",s[i])
+
+#6
+k=input("enter the string:")
+odd=""
+even=""
+for i in range(len(k)):
+    if i%2==0:
+        even += k[i]
+    else:
+        odd += k[i]
+print(odd)
+print(even)
+
+#7
+k=input("enter the string with numbers:")
+l=""
+try:
+    for i in range(0,len(k),2):
+        l+=k[i]*int(k[i+1])
+    print(l)
+except IndexError:
+    print("enter one string and one number separated by spaces")
