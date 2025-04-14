@@ -1,0 +1,35 @@
+#append()
+list=[10,20,15,18]
+print(list) # [10,20,15,18]
+list.append(19)
+print(list) # [10,20,15,18,19]
+
+
+list=[]
+print(list) # Empty
+list.append(25)
+list.append(10.8)
+list.append('hyd')
+list.append(True)
+print(list) # [25,10.8,'hyd',True]
+
+
+a=[10,20,30]
+a.append('hyd')
+print(a) # [10,20,30,'hyd']
+print(len(a)) # 4
+print(how to print 4th element of list 'a') # print(a[3])
+print(how to print 'H') # print(a[3][0])
+print(how to print 'y') # print(a[3][1])
+print(how to print 'd') # print(a[3][2])
+
+
+a=[10,20,30,40]
+b=[50,60,70]
+a.insert(2,b)
+print(a) # [10,[50,60,70],20,30,40]
+print(len(a)) # 5
+print(How to print the inner list) # print(a[1])
+print(how to print 50) # print(a[1][0])
+print(how to print 60) # print(a[1][1])
+print(how to print 70) # print(a[1][2])
