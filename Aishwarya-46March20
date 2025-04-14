@@ -1,0 +1,550 @@
+#Variable number of arguments demo program
+def f1(*t):
+	print(t)
+	print(type(t))
+	print(len(t))
+	print()
+#End of the function
+f1(10,20,15,18)   #(10,20,15,18) <next line> <class 'tuple'> <next line> 4 <next line> <next line>
+f1()              #() <next line> <class 'tuple'> <next line> 0 <next line> <next line>
+f1([10,20],(30,40,50),{60,70,80,90}) #([10,20],(30,40,50),{60,70,80,90}) <next line> <class 'tuple'> <next line> 3 <next line> <next line>
+f1('Hyd')         #('Hyd',) <next line> <class 'tuple'> <next line> 1 <next line> <next line>
+tpl=(100,20,150)
+f1(tpl)           #((100,20,150),) <next line> <class 'tuple'> <next line> 1 <next line> <next line>
+#f1(t=(10,20,30)) #Error:var-arg param can not be ka
+
+
+
+#Write a function to determine average of arguments passed fro function call 
+def avg(*a):
+	try:
+		return sum(a)/len(a)
+	except ZeroDivisionError:
+		return 0
+	except TypeError:
+		return sum(a[0])/len(a[0])
+# End of the function
+print(avg(10,20,15,18)) #Average of 10,20,15 and 18
+print(avg(25,10.8,True))
+print(avg(10.8,20.6,15.2,14.9,9.8))
+print(avg())  
+print(avg(25))
+print(avg(3+4j,5+6j))
+tpl=(10,20,15,18)
+print(avg(tpl))
+
+#Outputs
+15.75
+12.266666666666666
+14.26
+25.0
+(4+5j)
+15.75
+
+
+
+#Gift
+#Function to concatenate strings passed from the function call
+def concat(*a):
+	return ' '.join(a)
+#End of the function
+print(concat('Sanskar','Dayal','Sarma')) #Sanskar Dayal Sarma
+print(concat('Hyd','Is','Green','City')) #Hyd Is Green City
+print(concat('Python','Is','A','Great','Language')) #Python Is A Great Language
+print(concat())  #''
+print(concat('Python')) #Python
+#print(concat(1,2,3)) #Error due to int
+
+
+
+#Find outputs 
+def f1(a=25,*b):	
+	print(F'a : {a} \t b : {b} ')
+# End of the function
+f1(10,20,30,40)  #a : 10 <tab> b : (20,30,40)
+f1(50,60)        #a : 50 <tab> b : (60,)
+f1(70)           #a : 70 <tab> b : ()
+f1(a=80)         #a : 80 <tab> b : ()
+#f1(b=(10,20,30),a=40) #Error due to b
+f1()             #a : 25 <tab> b : ()
+#f1(a=10,(20,30,40)) #Error due to pa after ka
+#f1(25,b=(10,20,30)) #Error due to 'b'
+#f1(25,a=(10,20,30))  #Error due to multiple values for a
+f1((10,20,30),10,20,30) #a : (10,20,30) <tab> b : (10,20,30)
+#f1(a=(10,20,30),10,20,30) #Error due to pa after ka
+
+
+
+#Find outputs
+def f1(*a,b):
+	print(F'a : {a} \t b : {b}')
+# End of the function
+f1(10,20,30,b=40) #a : (10,20,30) <tab> b : 40
+f1(50,b=60) #a : (50,) <tab> b : 60
+f1(b=70) #a : () <tab> b : 40
+f1(b=10,a=(20,30,40)) #Error due to 'a'
+f1(b=10,(20,30,40)) #Error ('b' should be keyword arg)
+f1() #Error due to b
+f1(10,20,30,(10,20,30)) #Error ('b' should be keyword arg)
+f1(10,20,30,40) #Error ('b' should be keyword arg)
+f1(25) #Error ('b' should be keyword arg)
+f1(10,20,30,b=(10,20,30)) #a : (10,20,30) <tab> b : (10,20,30)
+
+
+
+#Find outputs
+def f1(a,*b,c):
+	print(F'a : {a} \t b : {b} \t c : {c}')
+#End of the function
+f1(10,20,30,40,c=50) #a : 10 <tab> b : (20,30,40) <tab> c : 50
+f1(60,70,c=80) #a : 60 <tab> b : (70,) <tab> c : 80
+f1(90,c=100) #a : 90 <tab> b : () <tab> c : 100
+#f1(a=1,2,c=3) #Error due to ka after pa
+#f1(1,2,3) #Error due to c
+#f1(a=1,b=2,c=3) #Error due to b
+#f1(a=25,100,200,300,c=35) #Error due to pa after ka
+
+
+
+#Which of the following are valid?
+def f1(*a,*b): #Not valid (function takes only 1 var-arg parameter)
+	pass
+def f1(*a,b):  #Valid
+	pass
+def f1(a,*b):  #Valid
+	pass
+def f1(a,b):   #Valid
+	pass
+def f1(a,*b,c): #Valid
+	pass
+def f1(*,a,*b,c):  #Not valid('*' appears only once)
+	pass
+def f1(a,*b,c,/):  #Not valid ('/' must be ahead of '*')
+	pass
+
+
+
+#Find outputs
+def f1(*a):
+	print(a)       #([10,20],[30,40],[50,60])
+	print(type(a)) #<class 'tuple'>
+	for x in a:
+		print(x)   #[10,20] <next line> 
+		print(type(x)) #
+#End of the function
+f1([10,20],[30,40],[50,60])
+
+#Outputs
+([10,20],[30,40],[50,60])
+<class 'tuple'>
+[10,20]
+<class 'list'>
+[30,40]
+<class 'list'>
+[50,60]
+<class 'list'>
+
+
+
+#Variable number of keyword arguments demo program
+def disp(**a):
+	print('Results')
+	print(type(a))
+	print(a)
+	print()
+#End of the function
+disp(RollNo=10,StudName='Rama Rao') #Dictionary of 2 key:value pairs is passed to the function
+disp(EmpNo=25,EmpName='Sita',Salary=10000.0)
+disp(AcNo=30,CustName='Kiran',Balance=20000.0,Gender='m')
+disp()
+
+#Outputs
+Results
+<class 'dict'>
+{'RollNo':10,'StudName':'Rama Rao'}
+
+Results
+<class 'dict'>
+{'EmpNo':25,'EmpName':'Kiran','Salary':10000.0}
+
+Results
+<class 'dict'>
+{'AcNo':35,'CustName':'Kiran','Balance':20000.0,'Gender':'m'}
+
+Results
+<class 'dict'>
+{}
+
+
+
+
+#Find outputs
+def f1(*a):
+	print(type(a))
+	print(a)
+def f2(**a):
+	print(type(a))
+	print(a)
+#End of the function
+f1(25,10.8,'Hyd',True)
+print()
+
+#Outputs
+<class 'tuple'>
+(25,10.8,'Hyd',True)
+
+
+
+#Find outputs
+def f1(empno,ename,sal):
+	print(F'Emp Nummber : {empno} \t Emp Name : {ename} \t Salary : {sal}')
+def f2(**a):
+	print(a)
+#End of the function
+f1(empno=25,ename='Sita',sal=10000.0)
+#f1(eno=25,ename='Sita',salary=10000.0) #Error due to eno and salary
+f2(empno=25,ename='Sita',sal=10000.0)
+f2(eno=25,ename='Sita',salary=10000.0)
+
+#Outputs
+Emp Nummber : 25 <tab> Emp Name : 'Sita' <tab> Salary : 10000.0
+{'empno':25,'ename':'Sita','sal':10000.0}
+{'eno':25,'ename':'Sita','salary':10000.0}
+
+
+
+#Find outputs
+def f1(a,*b,**c):
+	print(a)
+	if b:
+		print(c)
+	if c:
+		print(c)
+#End of the function
+f1(25)
+print()
+f1('Hyd',10,20,30)
+print()
+f1(10.8,25,'Hyd',True,EmpNo=12,EmpName='Rama Rao',Salary=10000.0)
+
+#Outputs
+25
+
+Hyd
+{}
+
+10.8
+{'EmpNo':12,'EmpName':'Rama Rao','Salary':10000.0}
+
+
+
+
+
+#Find outputs
+a=10
+def f1():
+	b=40
+	print('a:',a)
+	print('b:',b)
+	print('c:',c)
+	print()
+#End of the function
+b=20
+def f2():
+	a=50
+	print('a:',a)
+	print('b:',b)
+	print('c:',c)
+#End of f2() function
+c=30
+print('a:',a)
+print('b:',b)
+print('c:',c)
+print()
+a+=1
+b+=1
+c+=1
+f1()
+a+=1
+b+=1
+c+=1
+f2()
+print('Bye')
+
+#Outputs
+a: 10
+b: 20
+c: 30
+
+a: 11
+b: 40
+c: 31
+
+a: 50
+b: 22
+c: 32
+Bye
+
+
+
+#Find outputs
+def f1():
+	a=20
+	print(a)
+	a+=1
+#End of the function
+a=10
+print(a) #10
+a+=1
+f1()  #20
+print(a) #11
+
+
+
+#Find outputs
+def f1():
+	a=20
+	print(a)
+	dict=globals()
+	print(dict['a'])
+	a=30
+	dict['a']=40
+#End of f1() function
+a=10
+print(a) #10
+a+=1
+f1()     #20 <next line> 11 <next line> 
+print(a) #40
+
+
+
+#Find outputs
+x=10
+def f1():
+	print(x)
+	print(globals()['x'])
+#End of the function
+f1()  #10 <next line> 10
+
+
+
+#Find outputs
+def f1():
+	x=20
+	print(x)
+	print(globals()['x']) #Error ('x' is already local variable)
+#End of the function
+f1() #20 <next line>
+
+
+
+#Find outputs
+def f1():
+	a=40
+	b=50
+	c=60
+	print(a,b,c)
+	dict=globals()
+	print(dict['a'],dict['b'],dict['c'])
+	dict['a']=100
+	dict['b']=200
+	dict['c']=300
+def f2():
+	print(a,b,c)
+#end of f2 function
+a=10
+b=20
+c=30
+f1()  #40 50 60 <next line> 10 20 30 <next line>
+f2()  #100 200 300
+
+
+
+#global keyword demo program
+def f1():
+	x=20
+	print(x) #20
+def f2():
+	global x
+	x=30
+	print(x) #30
+	x+=1
+def f3():
+	global y
+	y=40
+	print(y) #40
+	y+=1
+def f4():
+	x=50
+	#global x  #Error ('x' is already assigned)
+#End of the functions
+x=10
+print(x)  #10
+x+=1
+f1()      
+print(x)  #11
+f2()
+print(x)  #31
+f3()
+print(y)  #41
+f4()
+print(x)  #31
+
+
+
+#Find outputs
+def f1():
+	global a
+	a=20
+	print(a) #20
+	print(globals()['a']) #20
+	a=30
+#End of the function
+a=10
+print(a) #10
+f1() 
+print(a) #30
+
+
+
+#Find outputs
+def f1():
+	global a
+	#print(a) #Error ('a' is not defined)
+	a=10
+	print(globals()['a']) #10
+	a=20
+	print(a) #20
+	a=30
+def f2():
+	print(a) #30
+#End of f2 function
+f1()
+f2()
+print(a) #30
+
+
+
+#Find outputs
+def f1():
+	global a
+	a=10
+	print(a) #10
+	a=20
+def f2():
+	global a
+	print(a) #20
+	a=30
+def f3():
+	print(a) #30
+	globals()['a']=40
+#End of the function
+f1()
+f2()
+f3()
+print(a) #40
+
+
+
+#Find outputs
+def f1():
+	global a
+	a=10
+	print(a) #10
+	a=20
+def f2():
+	#print(a) #Error
+	a=30
+	print(a) #30
+def f3():
+	print(a) #20
+	globals()['a']=40
+#End of the function
+f1()
+f2()
+f3()
+print(a) #40
+
+
+
+#Find outputs
+def f1():
+	a=10
+	#global a #Error (as 'a' is already assigned)
+	print(a) #10
+	global b
+	b=20      
+#End of f1() function
+f1()
+print(a) #Error ('a' is not defined)
+print(b) #20
+
+
+
+#Find outputs
+def f1():
+	global a
+	print(a) #11
+	a+=1
+def f2():
+	global a
+	print(a) #13
+	a+=1
+#End of the function
+a=10
+print(a) #10
+a+=1
+f1()
+print(a) #12
+a+=1
+f2()
+print(a) #14
+
+
+
+#Find outputs
+def f1():
+	a=20
+	print(a) #20
+def f2():
+	print(a) #Error ('a' is not defined)
+	a+=1
+#End of the function
+a=10
+print(a) #10
+f1()
+a+=1     
+f2()
+print(a) #11
+
+
+
+#Find outputs
+def f1():
+	a=20
+	#global a #Error
+	print(a) #20
+	print(globals()['a']) #11
+	a=30
+	globals()['a']=40
+#End of the function
+a=10
+print(a) #10
+a+=1
+f1()
+print(a) #40
+
+
+
+#Find outputs
+def f1():
+	x=x+5 #Error
+#End of the function
+def f2():
+	x=globals()['x']+5
+	print(x) #15
+#End of f2 function
+x=10
+f1()
+f2()
+print(x) #10

@@ -1,0 +1,382 @@
+#Find outputs 
+def f1():
+	print('f1 function')
+def f2(fun):
+	print('f2 function')
+	fun()
+	print('Back to f2 function')
+#end of the function
+print('Begin')
+f2(f1)
+print('End')
+
+#Outputs
+Begin
+f2 function
+f1 function
+Back to f2 function
+End
+
+
+
+#Find outputs 
+def f1():
+	print('f1 function')
+def f2(fun):
+	print('f2 function')
+	fun()
+	print('Back to f2 function')
+#end of the function
+print('Begin')
+f2(f1())
+print('End')
+
+#Outputs
+Begin
+f1 function
+f2  function
+Error (cause fun is None which is an object not a function)
+
+
+
+#Find outputs 
+def outer():
+	print('Outer Function')
+	def inner():
+		print('Inner function')
+	return inner
+#End of the function
+fun = outer()
+print('Hello')
+fun()
+print('Bye')
+inner() #Error (inner is not visible outside outer function)
+
+#Output
+Outer Function
+Hello
+Inner Function
+Bye
+
+
+
+#Find outputs
+def outer(x):
+	print('Outer Function')
+	def  inner1():
+		print('1st inner function')
+	#End of inner1
+	def inner2():
+		print("2nd inner function")
+	#End of inner2
+	if  x == 10:
+		return inner1
+	else:
+		return inner2
+#end of the function
+f1 = outer(10)
+f2 = outer(20)
+f1()
+f2()
+
+#Output
+Outer Function
+Outer Function
+1st inner function
+2nd inner function
+
+
+
+#Find outputs
+def  outer(msg):
+	def inner():
+		print(msg)
+	return inner
+#End of the function
+hi_fun = outer('Hi')
+hello_fun = outer('Hello')
+hi_fun()
+hello_fun()
+
+#Output
+Hi
+Hello
+
+
+
+#Find outputs
+def decor(fun):  #fun is f1
+	print(fun.__name__)
+	def inner():
+		return fun() +  2
+	return inner
+@decor #f1=decor(f1) ---> f1=inner
+def f1():
+	return 10
+#End of the function
+print('End')
+
+#Output
+f1
+End
+
+
+
+#How to call f1() function when @decor tag is missing?
+def decor(fun):
+	def inner():
+		x=fun()
+		return x+2
+	return inner
+def f1():
+	return 10
+#end of the function
+f1=decor(f1)
+print(f1())
+
+#Output
+12
+
+
+
+#Find outputs
+def decor(fun):
+	def inner(x,y):
+		try:
+			return fun(x,y)
+		except:
+			return 'Division by 0 is not permitted'
+	return inner
+@decor   #div=decor(div) ---> div=inner
+def div(a,b):
+	return a/b
+print(div(10,3)) #3.3333333333333335
+print(div(10,0)) #Division by 0 is not permitted
+print(inner(10,3) #Error
+
+
+
+#Modify the following div function such that div(9,2) and div(2,9) should return 4.5 only
+def decor(fun):
+	def inner(a,b):
+		return fun(a,b) if a>b else fun(b,a)
+	return inner
+@decor   #div=decor(div) ---> div=inner
+def div(a,b):
+	return a/b
+print(div(9,2)) #4.5
+print(div(2,9)) #4.5
+
+
+
+#Find outputs
+def decor(fun):
+	def inner():
+		print(F'Decorating {fun.__name__} function')
+		fun()
+		print('Decoration is finished')
+	return inner
+@decor   #f1=decor(f1) ---> f1=inner
+def f1():
+	print('Hello')
+#End of the function
+f1()
+print('Bye')
+
+#Output
+Decorating f1 function
+Hello
+Decoration is finished
+Bye
+
+
+
+#Gift
+#Same decorator to multiple functions with different signatures
+def decor(fun):
+	print(fun . __name__)
+	def inner(*x):  #x is var-arg parameter
+		print(x)
+		fun(*x)  #Unapcks object 'x' to elements
+		print('End of decoration')
+	return inner
+@decor   #f1=decor(f1) ---> f1=inner
+def f1(x):
+	print('f1 function :', x)
+@decor   #f2=decor(f2) ---> f2=inner
+def f2(x,y):
+	print('f2 function :', x, y )
+@decor   #f3=decor(f3) ---> f3=inner
+def f3(x,y,z):
+	print('f3 function :', x, y, z)
+@decor   #f4=decor(f4) ---> f4=inner
+def f4():
+	print('f4 function')
+#end of function
+f1(10)
+f2(25, 10.8)
+f3('Hyd',True,3+4j)
+f4()
+
+#Output
+f1
+f2
+f3
+f4
+(10,)
+f1 function : 10
+End of decoration
+(25, 10.8)
+f2 function : 25 10.8
+End of decoration
+('Hyd', True, (3+4j))
+f3 function : Hyd True (3+4j)
+End of decoration
+()
+f4 function
+End of decoration
+
+
+
+#Find outputs
+def square(fun): #fun is num
+	def inner1():
+		x = fun()
+		return x * x
+	return inner1
+def double(fun): #fun is inner1
+	def inner2():
+		y = fun()
+		return 2 * y
+	return inner2
+@double   #num=double(square(num)) ---> num=inner2
+@square   
+def num():
+	return 10
+#end of the function
+print(num()) #200
+
+
+
+#Find outputs
+def bold(fun):     #fun is inner2
+	def inner1():
+		return '<b>'+fun()+'</b>'
+	return inner1
+def italic(fun):   #fun is inner3
+	def inner2():
+		return '<i>'+fun()+'</i>'
+	return inner2
+def underline(fun):#fun is f1
+	def inner3():
+		return '<u>'+fun()+'</u>'
+	return inner3
+@bold    #f1=bold(italic(underline(f1))) ---> f1=inner1
+@italic
+@underline
+def f1():
+       return 'Hello World'
+#End of the function
+print(f1()) # <b><i><u>Hello World</u></i></b>
+
+
+
+#Write a recursive function to determine gcd (or) hcf of 2 numbers
+def gcd(m,n):
+	if n==0:
+		return m
+	else:
+		return gcd(n,m%n)
+m=int(input('Enter any number: '))
+n=int(input('Enter any number: '))
+print('Gcd :',gcd(m,n))
+
+#Output
+Enter any number: 12
+Enter any number: 64
+Gcd : 4
+
+
+
+#recursive function to find sum of the digits of a number
+def sod(n):
+	if n==0:
+		return 0
+	else:
+		return n%10+sod(n//10)
+n=int(input('Enter any number: '))
+print('Sum of the digits:',sod(n))
+
+#Output
+Enter any number: 374
+Sum of the digits: 14
+
+
+
+#Recursive function for fibonacci term
+#Use the function to generate fibonacci series
+def fib(i):
+	if i==1:
+		return 0
+	elif i==2:
+		return 1
+	else:
+		return fib(i-1)+fib(i-2)
+n=int(input('How many terms: '))
+print(fib(n))
+print('Fibonacci series')
+a=0
+b=1
+if n==1:
+	print(a)
+	exit()
+print(a,b,end=' ')
+for i in range(2,n):
+	print(a+b,end=' ')
+	temp=a
+	a=b
+	b=a+temp
+
+#Output
+How many terms: 10
+34
+Fibonacci series
+0 1 1 2 3 5 8 13 21 34 
+
+
+
+#Recursive power function
+def power(a,b):
+	if b>0:
+		return a*power(a,b-1)
+	elif b<0:
+		return (1/a)*power(a,b+1)
+	else:
+		return 1
+a=float(input('Enter base: '))
+b=float(input('Enter power: '))
+print(F'{a} ^ {b} = {power(a,b)}')
+
+#Output
+Enter base: 4.5
+Enter power: 3
+4.5 ^ 3.0 = 91.125
+
+Enter base: 4.5
+Enter power: -3
+4.5 ^ -3.0 = 0.010973936899862825
+
+
+
+#Recursive function to reverse a number
+def rev(n):
+	if n>0:
+		return n%10*pow(10,len(str(n))-1)+rev(n//10)
+	else:
+		return 0
+n=int(input('Enter any number: '))
+print('Reverse Number:',rev(n))
+
+#Output
+Enter any number: 678
+Reverse Number: 876
