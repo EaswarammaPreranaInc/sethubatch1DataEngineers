@@ -1,0 +1,708 @@
+# program 1
+#Find  outputs 
+square = lambda  x = 10  :   x * x
+print(square(5)) #25  x value is 5 so it return 25
+print(square()) #100  x takes value as 10 so it return 100
+
+# program 2
+# Find  output
+#How  to  define  lambda  function   to  return  sum   of  two  arguments
+add=lambda x,y : x+y
+print(type(add)) 
+print(add(10 , 20))
+print(add(10.6 , 20.8))
+print(add('Hyder' , 'abad'))
+print(add(True , False))
+print(add(25 , 10.8))
+print(add(3 + 4j , 5 + 6j))
+#print(add(10 , '20')) #error cant add  string and int
+#print(add()#error no args to add
+print(add)# returns type and address of the function
+output:
+<class 'function'>
+30
+31.4 
+Hyderabad
+1
+35.8
+(8+10j)
+<function <lambda> at 0x000002469D773E20>
+
+
+# program 3
+
+#  Find  outputs 
+add = lambda  a = 1 , b = 2 :  a + b
+print(add(10 , 20)) #30
+print(add()) #3
+
+# program 4
+#  Find  outputs
+
+print((lambda  x , y : x + y) (10 , 20) )
+print((lambda  x , y : x + y) (10.8 , 20.6))
+print((lambda  x , y : x + y) ('Hyder' , 'abad'))
+print(lambda  x , y : x + y  ('Hyder'  ,  'abad'))#it takes whole statement as tuple so it returns 1 stmt as type and address of function 
+#print statement with defining can not be reusable so,it is defining again and again
+output:
+30
+31.400000000000002
+Hyderabad
+<function <lambda> at 0x00000267D6521440>
+
+
+# program 5
+#  Find  outputs 
+#How  to  define  lambda  to  determine  largest  of  two  arguments
+large=lambda x,y : max(x,y)
+print(large(10  ,  20)) 
+print(large(10.7  ,  5.6))
+print(large('g'  ,  's'))
+print(large('Rama'  ,  'Rajesh'))
+print(large(True  ,  False))
+output:
+20
+10.7
+s
+Rama
+True
+
+# program 6
+#Find  outputs 
+power = lambda  a = 3.5 , b = 2  :  a ** b
+print(power(2 , 3)) #8
+print(power(4.5 , 4)) #410.0625
+print(power()) #12.25
+print(power(9)) #81
+
+# program 7
+# Find  outputs
+all = lambda  a , b :  (a + b ,  a - b , a * b , a / b)
+x = all(10 , 7)
+print(type(x))
+print(x)
+p , q , r , s = all(9 , 2)
+print(p)
+print(q)
+print(r)
+print(s)
+output:
+<class 'tuple'>
+(17, 3, 70, 1.4285714285714286)
+11
+7
+18
+4.5
+
+# program 8
+#  Find  outputs
+a  =  lambda  :  'Hyd'
+print(a()) #Hyd #this is string type
+print(a) #<function <lambda> at 0x000001599F181440>
+
+
+# program 9
+# Find  outputs
+a  =  lambda  :  print('Hyd');  print('Sec')  ; print('Cyb')
+a()
+output:
+Sec
+Cyb
+Hyd
+
+
+# program 10
+# Find  outputs
+a  =  lambda  :  print('Hyd')  ;  print('Sec');  print('Cyb')
+print(a())
+output:
+Sec
+Cyb
+Hyd
+None
+
+# program 11
+# Find  outputs 
+a  =  lambda  : 'Hyd' ;  print('Sec') ;  print('Cyb')
+print(a())
+output:
+Sec
+Cyb
+Hyd
+
+# program 12
+# Find  outputs   
+a  =  lambda  :  print('Hyd')  , print('Sec')  , print('Cyb')
+print(type(a)) 
+print(a) 
+for  x  in  a:
+	print(x)
+#a() #tuple obj is not callable
+print(a[0]())
+output:
+Sec
+Cyb
+<class 'tuple'>
+(<function <lambda> at 0x000001D029D21440>, None, None)
+<function <lambda> at 0x000001D029D21440>
+None
+None
+Hyd
+None
+
+# program 13
+#  Find  outputs  )
+s = 'Hyd'
+print(lambda  s  :  print(s))
+print(lambda  x  :  print(x) (s))
+print((lambda  x  :  print(x)) (s))
+(lambda  x  :  print(x)) (s)
+output:
+<function <lambda> at 0x000001D3A6D61440>
+<function <lambda> at 0x000001D3A6D61440>
+Hyd
+None
+Hyd
+
+
+# program 14
+# Find outputs  
+x = 5
+adder1 = lambda  y , x = x  : x + y
+x = 10
+adder2 = lambda  y , x = x : x + y
+x = 20
+print(adder1(100))
+print(adder2(200))
+print(adder1(300 , 400))
+output:
+105
+210
+700
+
+# program 15
+#Find  outputs  
+a = [lambda   x  :  x * 2 , lambda   x  :  x * 3 ,  lambda   x  :  x ** 4]
+for   fun   in   a:
+        print(fun(5))
+
+output:
+10
+15
+625
+
+# program 16
+#  Find  outputs
+def   f1():
+	print('Hyd')
+def   f2():
+	print('Sec')
+a = [f1 , f2]
+for  x  in  a:
+	     x()
+#a = [def   f1():  print('Hyd') ,  def   f2():  print('Sec')] #a function cant be assigned to a object
+print(a)
+a = [f1() , f2()]
+print(a)
+
+output:
+Hyd
+Sec
+[<function f1 at 0x0000027DCE301440>, <function f2 at 0x0000027DCE523E20>]
+Hyd
+Sec
+[None, None]
+
+
+# program 17
+# Find output  
+a = {'power_2'  :  lambda   x  :  x ** 2 ,
+       'power_3'  :  lambda   x  :  x ** 3 ,
+  	   'power_4'  :  lambda   x  :  x ** 4}
+key = 'power_3'
+print(a[key])
+print(a[key](5))
+output:
+<function <lambda> at 0x0000025D47643E20>
+125
+
+
+# program 18
+# Find  outputs  
+def   f1(x):
+        return  lambda  n  :  x ** n
+lamb = f1(3)
+print(type(f1))
+print(type(lamb))
+print(lamb(2))
+print(lamb(5))
+print(lamb)
+#print(lamb()) #argument is missing
+output:
+<class 'function'>
+<class 'function'>
+9
+243
+<function f1.<locals>.<lambda> at 0x00000213DAEE3E20>
+
+# program 19
+# Find  outputs   
+def   eval(a , b , c):
+        return   lambda    x  :    a *   x **  2  +   b * x  +  c
+lam  = eval(3 , 4 , 5)
+print(lam(2))
+print(lam(2.5))
+print(lam(4))
+
+output:
+25
+33.75
+69
+
+
+# program 20
+#Nested  lambda  function  
+add  =  lambda    x = 10   :    lambda   y  :  x  +  y
+a = add()
+print(a(20)) #30
+print(add(30)(40))#70
+
+
+# program 21
+# Find  outputs
+
+a= ((10 , 'Rama' , 1000.0) , (20 , 'Sita' , 2000.0) , (15 ,'Rajesh' , 500.0) ,  (18 , 'Kiran' , 2800.0) , (5 , 'Amar' , 1300.0))   #  Nested  tuple
+b = sorted(a)  # Sorts   tuple  'a'  based  on  1st  element  of  each  inner  tuple
+print(b)  # [(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+print()
+c = sorted(a , reverse = True)  #  Sorts  tuple  'a'  in descendig  order  of   1st  element  of  inner  tuples
+print(c)  #  [(20, 'Sita', 2000.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0)]
+print()
+d = sorted(a ,  key =  lambda   x  :  x[1])  # Sorts   tuple  'a'  based  on   2nd  element  of  each  inner  tuple  due  to  x[1] ie.
+print(d) #[(5, 'Amar', 1300.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (20, 'Sita', 2000.0)]  
+
+output:
+[(5, 'Amar', 1300.0), (10, 'Rama', 1000.0), (15, 'Rajesh', 500.0), (18, 'Kiran', 2800.0), (20, 'Sita', 2000.0)]
+
+[(20, 'Sita', 2000.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (5, 'Amar', 1300.0)]
+
+[(5, 'Amar', 1300.0), (18, 'Kiran', 2800.0), (15, 'Rajesh', 500.0), (10, 'Rama', 1000.0), (20, 'Sita', 2000.0)]
+
+
+#program 22
+# Find outputs  
+a = [ {'Make' : 'Ford' , 'Model' : 'Focus' , 'Year' : 2013} ,
+        {'Make' : 'Tesla' , 'Model' : 'X' , 'Year' : 1999} ,
+        {'Make' : 'Mercedes' , 'Model' : 'C350E' , 'Year' : 2008} ]
+b = sorted(a , key = lambda  x  :  x['Year'])
+print(b)
+#print(sorted(a)) #sorted function is not supported between 2 dictonary by default it returns keys but keys have same name
+output:
+[{'Make': 'Tesla', 'Model': 'X', 'Year': 1999}, {'Make': 'Mercedes', 'Model': 'C350E', 'Year': 2008}, {'Make': 'Ford', 'Model': 'Focus', 'Year': 2013}]
+
+
+# program 23
+# Find outputs  
+a = ((10 , 'Rama' , 1000.0) , (20 , 'Sita' , 2800.0) , (15 , 'Vamsi' , 2000.0) , (25 , 'Kiran' , 1500.0) ,  (5 , 'Amar' , 1300.0))
+print(max(a , key = lambda  x  :  x[0] ))
+print(max(a , key = lambda  x  :  x[1] ))
+print(max(a , key = lambda  x  :  x[2] ))
+print(max(a))
+
+output:
+(25, 'Kiran', 1500.0)
+(15, 'Vamsi', 2000.0)
+(20, 'Sita', 2800.0)
+(25, 'Kiran', 1500.0)
+
+# program 24
+# Find  output  
+add = lambda  x  :   x == 25
+print(add(10)) 
+add = lambda  x = 25 :   x == 35
+print(add())
+#add = lambda  x  :   x = 25 #cannot assign values to lambda
+#add = lambda  x  :   x := 25 #cannot assign values to lambda
+
+output:
+compares and gives result as False
+False
+False
+
+
+# program 25
+#  Find  outputs  
+def    f1():
+        print('f1    function')
+def    f2():
+        print('f2  function')
+# End  of  the  function
+f1()
+f2()
+print(f1  is  f2)
+f2 = f1
+f2()
+print(f1  is  f2)
+f2 = f1()
+print(f2)
+f2() #None type object is not callable
+
+output:
+f1    function
+f2  function
+False
+f1    function
+True
+f1    function
+None
+
+# program 26
+# Find  outputs 
+#How  to  assign  ref  'p'  to  print()  function
+p = print
+#How  to  call  print()  function  thru  ref  'p'  and   print  'Hyderabad'
+p('Hyderabad') #Hyderabad
+print = None
+#print('Hello')#Nonetype obj is not callable
+#How  to  call  print()  function  thru  ref  'p'  and   print  'Hello'
+p('Hello') #Hello
+output:
+Hyderabad
+Hello
+
+# program 27
+# Find   outputs 
+How  to  assign  ref  'x'  to  id()  function
+How  to  call  id()  function  thru  ref  'x'  and   print  id  of  object 25
+How  to  assign  ref  'p'  to  len()  function
+How  to  call  len()  function  thru  ref  'p'  and   print  length  of  'Hyd'''
+x = id
+print(x(25))  # This will print the id of the integer object 25
+p = len
+print(p('Hyd'))  
+
+output:
+140711266617000
+3
+
+# program 28
+#  Find  outputs 
+
+def  outer():
+	print('Outer  function')
+	def  inner():
+		print('Inner  function')
+	# End  of  inner  function
+	print('Hello')
+	inner()
+	print('Back  to  outer  function')
+def  other():
+	inner()
+	print('Other  function')
+# End  of  the  function
+print('Begin')
+outer()
+print('Hi')
+#inner()
+#other()
+print('Bye')
+output:
+Begin
+Outer  function
+Hello
+Inner  function
+Back  to  outer  function
+Hi
+Bye
+
+
+# program 29
+# Find  output
+def    f1(a):
+	def   f2():
+		return  10
+	# End  of  f2  function
+	return  f2() + 20 +  a
+# End  of  f1  function
+print(f1(30)) #60
+
+# program 30
+# Find  outputs 
+def  outer():
+	print('Outer  function')
+	def  inner1():
+		print( '1st  inner  function')
+	def  inner2():
+		print('2nd  inner  function')
+	print('Hi')
+	inner2()
+	print('Hello')
+	inner1()
+	print('Back  to  outer  function')
+# End of the function
+print('Begin')
+outer()
+print('Bye')
+
+output:
+60
+Begin
+Outer  function
+Hi
+2nd  inner  function
+Hello
+1st  inner  function
+Back  to  outer  function
+Bye
+
+# program 31
+# Find  outputs  
+x = 10
+def  outer():
+	x = 20
+	def   inner():
+		x = 30
+		print(x)
+		print(globals()['x'])
+	inner()
+outer()
+print('Bye')
+output:
+30
+10
+Bye
+
+# program 32
+# Find  outputs  
+x = 10
+def  outer():
+	x = 20
+	def   inner():
+		print(x)
+		print(globals()['x'])
+	inner()
+outer()
+
+output:
+20
+10
+
+# program 33
+# Find  outputs  
+x = 10
+def  outer():
+	def   inner():
+		print(x) #10
+	inner()
+outer()
+
+
+# program 34
+# Find  outputs  
+def  outer():
+	x = 10
+	def  inner():
+		x = 20
+		print(x)
+		x +=  7
+	# End  of  inner  function
+	print(x)
+	x += 5
+	inner()
+	print(x)
+# End  of  the  function
+outer()
+print('Bye')
+output:
+10
+20
+15
+Bye
+
+# program 35
+#  Find  outputs  
+def  outer():
+	x = 10
+	def  inner():
+		nonlocal  x
+		print(x)
+		x = 20
+		print(x)
+		x += 5
+	# End  of  inner  function
+	print(x)
+	x += 5
+	inner()
+	print(x)
+# End  of  outer  function
+outer()
+#print(x)
+
+output:
+10
+15
+20
+25
+
+
+# program 36
+#  Find  outputs  
+def  outer():
+	x = 10
+	def  inner():
+		#print(x) #before declaration
+		#nonlocal  x #used before
+		x = 20
+		print(x)
+		x += 5
+	# End  of  inner  function
+	print(x)
+	x += 5
+	inner()
+	print(x)
+# End  of  outer  function
+outer()
+output:
+10
+20
+15
+
+
+# program 37
+#  Find   outputs
+def  outer():
+	x = 10
+	def  inner():
+		global   x
+		x = 20
+		print(x)
+		x += 5
+	# End  of  inner  function
+	print(x)
+	x += 5
+	inner()
+	print(x)
+# End  of  outer  function
+outer()
+print(x)
+output:
+10
+20
+15
+25
+
+# program 38
+# Find  outputs(Home  work)
+def  outer():
+	def  inner():
+		#nonlocal  x #x should be written before use
+		x = 20
+		print(x) #20
+	# End  of  inner  function
+	inner()
+	print(x)
+# End  of  the  function
+outer()
+print(x) #x is not defined
+
+
+
+# program 39
+# Find  outputs
+def  outer():
+	def  inner():
+		global   x
+		x = 20
+		print(x)
+		x = x + 5
+	# End  of  inner  function
+	inner()
+	print(x)
+# End  of  the  function
+outer()
+print(x)
+output:
+20
+25
+25
+
+
+# program 40
+#  Identify  Error
+def   f1():
+        nonlocal   x
+
+
+# program 41
+# Find  outputs 
+def  outer():
+	a = 10
+	b = 20
+	def   inner():
+		nonlocal   a
+		a = 100
+		b = 200
+		print(a , b)
+	# End  of  inner  function
+	print(a , b)
+	inner()
+	print(a , b)
+
+output:
+10 20
+100 200
+100 20
+#end of outer function
+outer()
+
+# program 42
+# Find  outputs 
+def   f1():
+	x = 'John'
+	def  f2():
+		nonlocal  x
+		x =  'Hello'
+	#end of inner function
+	f2()
+	return  x
+#  End  of  f1()  function
+print(f1()) # Hello
+
+# program 43
+# Find  output
+def  fun():
+	x = 10
+	def    gun():#
+		#x =  x +  20 #cannot access local variable 'x' where it is not associated with a value
+		print(x) #10
+	#end of inner function
+	gun()
+#end of outer function
+fun()
+
+
+
+# program 44
+#  Identify  Error
+x = 10
+def   outer():
+	x = 20
+	def  inner():
+		global   x
+		nonlocal  x
+#error is x is non local and global
+
+		
+
+# program 45 
+#  Find  outputs  
+def   f1():
+	x = 10
+	def  f2():
+		nonlocal   x
+		def  f3():
+			nonlocal   x
+			print(x) #10
+		f3()
+	f2()
+f1()
