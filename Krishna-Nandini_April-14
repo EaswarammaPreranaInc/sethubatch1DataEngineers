@@ -1,0 +1,410 @@
+-------------------- Iterators ---------------------
+Program-1
+# How  to  iterate  zip  object  in  differenet  ways?
+import   time
+a = ['Telangana' , 'Andhra Pradesh' , 'Karnataka ', 'Tamilnadu']
+b = ['Hyderabad' , 'Amaravathi' , 'Bangalore', 'Chennai']
+z = zip(a , b)
+print(type(z))  # <class 'zip'>
+print(z)        # Type and Address of 'z' i.e.  <zip object at 0x000001812D6DFE40>
+print('Iterate  zip  object  with   next()   function')  # Iterate  zip  object  with   next()   function
+#How  to   iterate  zip  object  with  next  function
+while True:
+	try:
+		print(next(z))
+		time.sleep(1)
+	except:
+		break
+print('Iterate  zip  object  with  _next_  method')  # Iterate  zip  object  with  _next_  method
+#How  to   iterate  zip  object  with  _next_  method
+z = zip(a , b)
+while True:
+	try:
+		print(z.__next__())
+		time.sleep(1)
+	except:
+		break
+print('Iterate  zip  object  with   for  loop')      # Iterate  zip  object  with   for  loop
+#How  to   iterate  zip  object  with  for  loop
+for x in zip(a , b):
+	print(x)
+	time.sleep(1)
+print('Iterate  elements  of  each  tuple  in  zip  object')  # Iterate  elements  of  each  tuple  in  zip  object
+#How  to   iterate  elements  of  each  tuple  of  zip  object  with  for  loop
+for x , y in zip(a , b):
+	print(x , y)
+	time.sleep(1)
+print('Unpacks  zip  object  with   *  operator  :  ' , *zip(a , b))     # How  to   unpack  zip  object   with  *  operator
+print()
+print('zip   object  in  the  form  of   list  :  ' , list(zip(a , b)))  # How  to  convert  zip  object  to  list
+print()
+print('zip   object  in  the  form  of   dictionary :  ' , dict(zip(a , b)))  # How  to  convert  zip  object  to  dictionary
+#  Write  all  the  outputs  here
+
+'''
+Output:
+<zip object at 0x000002AC2336FE40>
+Iterate  zip  object  with   next()   function
+('Telangana', 'Hyderabad')
+('Andhra Pradesh', 'Amaravathi')
+('Karnataka ', 'Bangalore')
+('Tamilnadu', 'Chennai')
+Iterate  zip  object  with  _next_  method
+('Telangana', 'Hyderabad')
+('Andhra Pradesh', 'Amaravathi')
+('Karnataka ', 'Bangalore')
+('Tamilnadu', 'Chennai')
+Iterate  zip  object  with   for  loop
+('Telangana', 'Hyderabad')
+('Andhra Pradesh', 'Amaravathi')
+('Karnataka ', 'Bangalore')
+('Tamilnadu', 'Chennai')
+Iterate  elements  of  each  tuple  in  zip  object
+Telangana Hyderabad
+Andhra Pradesh Amaravathi
+Karnataka  Bangalore
+Tamilnadu Chennai
+Unpacks  zip  object  with   *  operator  :   ('Telangana', 'Hyderabad') ('Andhra Pradesh', 'Amaravathi') ('Karnataka ', 'Bangalore') ('Tamilnadu', 'Chennai')
+
+zip   object  in  the  form  of   list  :   [('Telangana', 'Hyderabad'), ('Andhra Pradesh', 'Amaravathi'), ('Karnataka ', 'Bangalore'), ('Tamilnadu', 'Chennai')]
+
+zip   object  in  the  form  of   dictionary :   {'Telangana': 'Hyderabad', 'Andhra Pradesh': 'Amaravathi', 'Karnataka ': 'Bangalore', 'Tamilnadu': 'Chennai'}
+'''
+
+
+Program-2
+# Find  outputs
+import   time
+a = [ 'Empno' , 'Emp Name' , 'Salary']
+b = [ 25 , 'Rama  Rao' , 10000.0 , 'Male' , True]
+c = zip(a , b)  # Creates an empty zip object
+while   True:
+	try:
+		print(next(c))   # ('Empno', 25) <next line> ('Emp Name', 'Rama  Rao') <next line> ('Salary', 10000.0) 
+		time . sleep(1)
+	except:
+		break
+
+
+Program-3
+# Find  outputs
+import   time
+a = ['Telangana' , 'Andhra  Pradesh' , 'Karnataka' , 'TamilNadu' , 'Maharastra']
+b = ['Hyderabad' , 'Amaravathi' , 'Banglore' , 'Chennai' , 'Mumbai']
+c = [50000000 , 40000000 , 70000000 , 60000000 , 30000000]
+for   x   in   zip(a , b , c): # creates an empty zip object
+	print(x)   # Each  tuple yielded by zip iterator
+	time . sleep(1)
+
+'''
+Output:
+('Telangana', 'Hyderabad', 50000000)
+('Andhra  Pradesh', 'Amaravathi', 40000000)
+('Karnataka', 'Banglore', 70000000)
+('TamilNadu', 'Chennai', 60000000)
+('Maharastra', 'Mumbai', 30000000)
+'''
+
+
+Program-4
+# Find  outputs
+import   time
+a = [1 , 2 , 3]
+b = [4 , 5 , 6 , 7 , 8]
+for  x , y  in   zip(a , b):
+	print(x + y)  # 5 <next line> 7 <next line> 9
+	time . sleep(1)
+
+
+Program-5
+# Find outputs
+import   time
+def   disp(z):
+	while   True:
+		try:
+			print(next(z))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = [10 , 20 ,  30]
+b = {1 : 2 , 3 : 4 , 5 : 6}
+c = zip(a , b . keys())     # zips list 'a' with keys of dict 'b'
+disp(c)  # (10, 1) <next line> (20, 3) <next line> (30, 5)
+d = zip(a , b . values())   # zips list 'a' with values of dict 'b'
+disp(d)  # (10, 2) <next line> (20, 4) <next line> (30, 6)
+e = zip(a , b . items())    # zips list 'a' with tuples of list in dict_items object
+disp(e)  # (10, (1, 2)) <next line> (20, (3, 4)) <next line> (30, (5, 6))
+f = zip(a , b)  # zips list 'a' with keys of dict 'b'
+disp(f)  # (10, 1) <next line> (20, 3) <next line> (30, 5)
+g = zip(a)      # zips list 'a'
+disp(g)  # (10,) <next line> (20,) <next line> (30,)
+h = zip(b)      # zips keys of dict 'b'
+disp(h)  # (1,) <next line> (3,) <next line> (5,)
+i = zip()       # zips nothing
+disp(i)  # Nothing
+
+
+Program-6
+# Find  outputs
+z = zip(range(5) , range(20 , 25))   # Creates empty zip object
+a = [ [x , y]  for  x , y   in   z]  # creates a list with elements of each tuple yieled by zip iterator
+print(a)  # [[0, 20], [1, 21], [2, 22], [3, 23], [4, 24]]
+
+
+Program-7
+# How  to  print  reversed  object  in  different  ways
+import   time
+a = input('Enter  any  string  :  ')  #  Assume  that  input  is  HYD
+r = reversed(a)
+print(type(r))  # <class 'reversed'>
+print(r)  # Type and address of object 'r' i.e.  <reversed object at 0x000002515891B310>
+print('Iterate  reversed  object  with   next   function')  # Iterate  reversed  object  with   next   function
+#How  to  iterate  reversed  object  'r'  with  next()  function
+while True:
+	try:
+		print(next(r))  # d <next line> y <next line> H
+		time.sleep(1)
+	except:
+		break
+print('Iterate  reversed  object  with   next   method')   # Iterate  reversed  object  with   next   method
+#How  to  iterate  reversed  object   with  next()   method
+r = reversed(a)
+while True:
+	try:
+		print(r.__next__())  # d <next line> y <next line> H
+		time.sleep(1)
+	except:
+		break
+print('Iterate  reversed  object  with   for  loop')  # Iterate  reversed  object  with   for  loop
+#How  to  iterate  reversed  object   with  for  loop
+for x in reversed(a):
+	print(x)  # d <next line> y <next line> H
+	time.sleep(1)
+
+print('Unpack  reversed  object  with   *  operator :   ' , *reversed(a)) # d y H   # How  to   unpack  reversed  object   with  *  operator
+print()
+print('reversed  object  in  the  form   of  list  :  ' , list(reversed(a))) # ['d', 'y', 'H']   #  How  to  convert  reversed  object  to  list
+print('Reverse  string   :   ' , '' . join(reversed(a)))  # dyH    # How  to  convert  reversed  object  to   string
+#  Write all  the  outputs  here
+
+
+Program-8
+# Find  outputs
+a = 'RAMA'
+b = reversed(a)
+print(type(b))  # <class 'reversed'>
+print(b)  # Type and address og object 'b' i.e.  <reversed object at 0x0000019FC87DAD40>
+print(id(b))    # Address of reversed object 'b' i.e.  1785775107392
+print(*b) # Stores all the chars of reversed object in reversed arder and unpacks object'b' i.e. A <space> M <space> A <space> R
+print(b[0])     # Error beacuse iterator is not indexed
+print(b[1 : 3]) # Error because iterator is not sliced as there are no indexes
+print(b * 2)    # Error because iterator can not be repeated
+print(len(b))   # Error because 'b' is not a sequence
+
+
+Program-9
+# Can  tuple  be  reversed ?
+import   time
+a = (25 , 10.8 , 'Hyd' , True)
+b = reversed(a)  # Creates an empty reversed object
+print(type(b))   # <class 'reversed'>
+for  x  in   b:
+	print(x)  # True <next line> Hyd <next line> 10.8 <next line> 25 <next line>
+	time . sleep(1)
+
+
+Program-10
+# Can  dictionary  be  reversed  ?
+import   time
+def   disp(r):
+	while  True:
+		try:
+			print(next(r))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = {10 : 'Rama' , 20 : 'Sita' , 15 : 'Kiran' , 18 : 'Amar'}
+b = reversed(a . keys())    # keys in reverse order
+disp(b)  # 18 <next line> 15 <next line> 20 <next line> 10
+c = reversed(a . values())  # values in reverse order
+disp(c)  # Amar <next line> Kiran <next line> Sita <next line> Rama
+d = reversed(a . items())   # Tuples in reverse order
+disp(d)  # (18, 'Amar') <next line> (15, 'Kiran') <next line> (20, 'Sita') <next line> (10, 'Rama')
+e = reversed(a)  # keys in reverse order
+disp(e)  # 18 <next line> 15 <next line> 20 <next line> 10
+
+
+Program-11
+'''
+Write  a  program  to  reverse  a  dictionary ?
+
+Let  input  be  {'Empno' : 25 , 'Emp Name' : 'Rama  Rao' , 'Sal' : 10000.0}
+What  is  the  output  ?  --->  {'Sal' : 10000.0 , 'Emp  Name' :  Rama  Rao' , 'Empno' : 25}
+
+Hint:  Use  reversed  iterator
+'''
+
+a = eval(input('Enter a dictionary: '))  # Enter a dictionary: {'Empno' : 25 , 'Emp Name' : 'Rama  Rao' , 'Sal' : 10000.0}
+print('Reverse dictionary: ' , dict(reversed(a.items())))  # Reverse dictionary:  {'Sal': 10000.0, 'Emp Name': 'Rama  Rao', 'Empno': 25}
+
+
+Program-12
+# Find outputs
+import  time
+a = {10 : 'Rama rao', 20 : 'Sita', 15 : 'Rajesh', 18 : 'Kiran'}
+print('Keys  in   reverse   order')  # Keys  in   reverse   order
+#Write  for  loop  to  reverse  keys  of  dictionary
+for x in reversed(a.keys()):
+	print(x)
+	time.sleep(1)
+print('Values  in  reverse  order')  # Values  in   reverse   order
+#Write  for  loop  to  reverse  values  of  dictionary
+for x in reversed(a.values()):
+	print(x)
+	time.sleep(1)
+print('Tuples  in   reverse  order') # Tuples  in   reverse   order
+#Write  for  loop  to  reverse   tuples   of  dictionary
+for x in reversed(a.items()):
+	print(x)
+	time.sleep(1)
+print('Elements  of  each   tuple  in  reverse  order')  # Elements  of  each   tuple  in  reverse  order
+#Write  for  loop  to  reverse   elements  of   each   tuple  of  dictionary
+for x , y in reversed(a.items()):
+	print(x , y , sep = '...')
+	time.sleep(1)
+print('Keys  and  values  in   reverse   order')  # Keys  and  values  in   reverse   order
+#Write  for  loop  to  print  each   key  and   the  corresponding  value  of  dictionary  in  reverse  order
+for x in reversed(a.keys()):
+	print(x , a[x] , sep = '...')
+	time.sleep(1)
+
+'''
+Output:
+Keys  in   reverse   order
+18
+15
+20
+10
+Values  in  reverse  order
+Kiran
+Rajesh
+Sita
+Rama rao
+Tuples  in   reverse  order
+(18, 'Kiran')
+(15, 'Rajesh')
+(20, 'Sita')
+(10, 'Rama rao')
+Elements  of  each   tuple  in  reverse  order
+18...Kiran
+15...Rajesh
+20...Sita
+10...Rama rao
+Keys  and  values  in   reverse   order
+18...Kiran
+15...Rajesh
+20...Sita
+10...Rama rao
+'''
+
+
+# Program-13
+#  How  to  print  list_reverseiterator  object  in  different  ways?
+import   time
+a = [25 , 10.8 , 'Hyd' , True]
+r = reversed(a)
+print(type(r))  # <class 'list_reverseiterator'>
+print(r)  # <list_reverseiterator object at 0x0000024D389AB220>
+print('Iterate  list_reverseiterator  object  with   next()   function')  # Iterate  list_reverseiterator  object  with   next()   function
+#How  to  iterate   list_reverseiterator  object  with   next()   function
+while True:
+	try:
+		print(next(r))
+		time.sleep(1)
+	except:
+		break
+print('Iterate  list_reverseiterator  object  with   next()   method')  # Iterate  list_reverseiterator  object  with   next()   method
+#How  to  iterate   list_reverseiterator  object  with   next()  method
+while True:
+	try:
+		print(r.__next__())
+		time.sleep(1)
+	except:
+		break
+print('Iterate  list_reverseiterator  object  with   for  loop')  # Iterate  list_reverseiterator  object  with   for  loop
+#How  to  iterate   list_reverseiterator  object  with   for  loop
+for x in reversed(a):
+	print(x)
+	time.sleep(1)
+print('Unpack  list_reverseiterator  object  with     operator   :  ' , *reversed(a))  # How  to  unpack   list_reverseiterator  object   with     operator
+print()
+print('Reverse  list  :  '  ,  list(reversed(a)))  # How  to  convert  list_reverseiterator  object  to  list
+
+'''
+Output:
+<class 'list_reverseiterator'>
+<list_reverseiterator object at 0x0000024D389AB220>
+Iterate  list_reverseiterator  object  with   next()   function
+True
+Hyd
+10.8
+25
+Iterate  list_reverseiterator  object  with   next()   method
+Iterate  list_reverseiterator  object  with   for  loop
+True
+Hyd
+10.8
+25
+Unpack  list_reverseiterator  object  with     operator   :   True Hyd 10.8 25
+
+Reverse  list  :   [True, 'Hyd', 10.8, 25]
+'''
+
+
+Program-14
+# How  to  iterate   list_iterator  in  different  ways?
+import   time
+list  =  [10  ,  20  ,  15  ,  18]
+print('Iterate  list  with  for  loop')
+#How  to  iterate  list  with  for  loop
+for x in list:
+	print(x)  # 10 <next line> 20 <next line> 15 <next line> 18
+#print(next(list))  # Error because list is not an iterator
+list_itr = iter(list)
+print(type(list_itr))  # <class 'list_iterator'>
+print(list_itr)  # <list_iterator object at 0x00000292B876B4C0>
+print('Iterate  List_iterator  with  next()  function')  # Iterate  List_iterator  with  next()  function
+#How  to  iterate  list_iterator  with  next()  function
+while True:
+	try:
+		print(next(list_itr))  # 10 <next line> 20 <next line> 15 <next line> 18
+		time.sleep(1)
+	except StopIteration:
+		break
+print('Iterate  List_iterator  with   _next_()  method')  # Iterate  List_iterator  with   _next_()  method
+#How  to  iterate  list_iterator  with   _next_  method
+list_itr = iter(list)
+while True:
+	try:
+		print(list_itr.__next__())  # 10 <next line> 20 <next line> 15 <next line> 18
+		time.sleep(1)
+	except:
+		break
+print('Iterate  List_iterator  with   for    loop')  # Iterate  List_iterator  with   for    loop
+#How  to  iterate  list_iterator  with  for  loop
+for x in iter(list):
+	print(x)   # 10 <next line> 20 <next line> 15 <next line> 18
+	time.sleep(1)
+print('Unpacks  List_iterator  with  *  operator  :    ' ,  *iter(list))  #  10 20 15 18  # How  to  unpack  list_iterator
+
+
+# Program-15
+# Find  outputs
+a = 25
+print(a)
+#for  x   in   a:
+#	print(x)  # Error because 25 is not a sequence
+print(iter(a))  # Error because 25 is not a sequence
+print(next(a))  # Error because 25 is not a iterator
