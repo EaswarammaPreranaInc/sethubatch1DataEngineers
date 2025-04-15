@@ -1,0 +1,324 @@
+#  How  to  iterate  zip  object  in  differenet  ways  (Home  work)
+'''
+import   time
+a = ['Telangana' , 'Andhra Pradesh' , 'Karnataka ', 'Tamilnadu']
+b = ['Hyderabad' , 'Amaravathi' , 'Bangalore', 'Chennai']
+z = zip(a , b)
+print(type(z))
+print(z)
+print(next(z))  #Iterate  zip  object  with   next()   function')
+next(z) #How  to   iterate  zip  object  with  next  function
+print(f'State: {state}, City: {city}')  #Iterate  zip  object  with  next  method')
+next(z_iter)# How  to   iterate  zip  object  with  next  method
+print('Iterate  zip  object  with   for  loop')
+How  to   iterate  zip  object  with  for  loop
+print('Iterate  elements  of  each  tuple  in  zip  object')
+How  to   iterate  elements  of  each  tuple  of  zip  object  with  for  loop
+print('Unpacks  zip  object  with   *  operator  :  ' , How  to   unpack  zip  object   with  *  operator)
+print()
+print('zip   object  in  the  form  of   list  :  ' ,  How  to  convert  zip  object  to  list)
+print()
+print('zip   object  in  the  form  of   dictionary :  ' ,  How  to  convert  zip  object  to  dictionary)
+#  Write  all  the  outputs  here
+'''
+
+
+#  Find  outputs  (Home  work)
+'''
+import   time
+a = [ 'Empno' , 'Emp Name' , 'Salary']
+b = [ 25 , 'Rama  Rao' , 10000.0 , 'Male' , True]
+c = zip(a , b)
+while   True:
+	try:
+		print(next(c))
+		time . sleep(1)
+	except:
+		break
+
+output:
+('Empno', 25)
+('Emp Name', 'Rama  Rao')
+('Salary', 10000.0)
+'''
+
+
+#  Find  outputs  (Home  work)
+'''
+import   time
+a = ['Telangana' , 'Andhra  Pradesh' , 'Karnataka' , 'TamilNadu' , 'Maharastra']
+b = ['Hyderabad' , 'Amaravathi' , 'Banglore' , 'Chennai' , 'Mumbai']
+c = [50000000 , 40000000 , 70000000 , 60000000 , 30000000]
+for   x   in   zip(a , b , c):
+	print(x)
+	time . sleep(1)
+
+output:
+('Telangana', 'Hyderabad', 50000000)
+('Andhra  Pradesh', 'Amaravathi', 40000000)
+('Karnataka', 'Banglore', 70000000)
+('TamilNadu', 'Chennai', 60000000)
+('Maharastra', 'Mumbai', 30000000)
+'''
+
+
+# Find  outputs   (Home  work)
+'''
+import   time
+a = [1 , 2 , 3]
+b = [4 , 5 , 6 , 7 , 8]
+for  x , y  in   zip(a , b):
+	print(x + y)
+	time . sleep(1)
+
+output:
+5
+7
+9
+'''
+
+
+# Find outputs  (Home  work)
+'''
+import   time
+def   disp(z):
+	while   True:
+		try:
+			print(next(z))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = [10 , 20 ,  30]
+b = {1 : 2 , 3 : 4 , 5 : 6}
+c = zip(a , b . keys())
+disp(c)
+d = zip(a , b . values())
+disp(d)
+e = zip(a , b . items())
+disp(e)
+f = zip(a , b)
+disp(f)
+g = zip(a)
+disp(g)
+h = zip(b)
+disp(h)
+i = zip()
+disp(i)
+
+output:
+(10, 1)
+(20, 3)
+(30, 5)
+
+(10, 2)
+(20, 4)
+(30, 6)
+
+(10, (1, 2))
+(20, (3, 4))
+(30, (5, 6))
+
+(10, 1)
+(20, 3)
+(30, 5)
+
+(10,)
+(20,)
+(30,)
+
+(1,)
+(3,)
+(5,)
+
+'''
+
+
+# Find  outputs  (Home  work)
+'''
+z = zip(range(5) , range(20 , 25))
+a = [ [x , y]  for  x , y   in   z]
+print(a)
+
+output:
+[[0, 20], [1, 21], [2, 22], [3, 23], [4, 24]]
+'''
+
+
+#  How  to  print  reversed  object  in  different  ways  (Home  work)
+'''
+import   time
+a = input('Enter  any  string  :  ')  #  Assume  that  input  is  HYD
+r = reversed(a)
+print(type(r))
+print(r)
+print('Iterate  reversed  object  with   next   function')
+How  to  iterate  reversed  object  'r'  with  next()  function
+print('Iterate  reversed  object  with   next   method')
+How  to  iterate  reversed  object   with  next()   method
+print('Iterate  reversed  object  with   for  loop')
+How  to  iterate  reversed  object   with  for  loop
+print('Unpack  reversed  object  with   *  operator :   ' ,  How  to   unpack  reversed  object   with  *  operator)
+print()
+print('reversed  object  in  the  form   of  list  :  ' ,  How  to  convert  reversed  object  to  list)
+print('Reverse  string   :   ' ,  How  to  convert  reversed  object  to   string)
+#  Write all  the  outputs  here
+'''
+
+# Find  outputs (Home  work)
+'''
+a = 'RAMA'
+b = reversed(a)
+print(type(b)) # <class 'reversed'>
+print(b) #<reversed object at 0x000002314571AB60>
+print(id(b)) # 2410641730400
+print(*b) # A M A R
+#print(b[0])
+#print(b[1 : 3])
+#print(b * 2)
+#print(len(b))
+
+output:
+<class 'reversed'>
+<reversed object at 0x000002314571AB60>
+2410641730400
+A M A R
+'''
+
+
+# Can  tuple  be  reversed ?   (Home  work)
+'''
+import   time
+a = (25 , 10.8 , 'Hyd' , True)
+b = reversed(a) 
+print(type(b)) # <class 'reversed'>
+for  x  in   b:
+	print(x)
+	time . sleep(1)
+
+output:
+<class 'reversed'>
+True
+Hyd
+10.8
+25
+'''
+
+
+# Can  dictionary  be  reversed  ? (Home  work)
+'''
+import   time
+def   disp(r):
+	while  True:
+		try:
+			print(next(r))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = {10 : 'Rama' , 20 : 'Sita' , 15 : 'Kiran' , 18 : 'Amar'}
+b = reversed(a . keys())
+disp(b)
+c = reversed(a . values())
+disp(c)
+d = reversed(a . items())
+disp(d)
+e = reversed(a)
+disp(e)
+
+output:
+18
+15
+20
+10
+
+Amar
+Kiran
+Sita
+Rama
+
+(18, 'Amar')
+(15, 'Kiran')
+(20, 'Sita')
+(10, 'Rama')
+
+18
+15
+20
+10
+'''
+
+'''
+Write  a  program  to  reverse  a  dictionary ?
+
+Let  input  be  {'Empno' : 25 , 'Emp Name' : 'Rama  Rao' , 'Sal' : 10000.0}
+What  is  the  output  ?  --->  {'Sal' : 10000.0 , 'Emp  Name' :  Rama  Rao' , 'Empno' : 25}
+
+Hint:  Use  reversed  iterator
+'''
+
+
+# Find outputs
+'''
+import  time
+a = {10 : 'Rama rao', 20 : 'Sita', 15 : 'Rajesh', 18 : 'Kiran'}
+print('Keys  in   reverse   order')
+Write  for  loop  to  reverse  keys  of  dictionary
+print('Values  in  reverse  order')
+Write  for  loop  to  reverse  values  of  dictionary
+print('Tuples  in   reverse  order')
+Write  for  loop  to  reverse   tuples   of  dictionary
+print('Elements  of  each   tuple  in  reverse  order')
+Write  for  loop  to  reverse   elements  of   each   tuple  of  dictionary
+print('Keys  and  values  in   reverse   order')
+Write  for  loop  to  print  each   key  and   the  corresponding  value  of  dictionary  in  reverse  order
+#  Write  outputs  here
+'''
+
+'''
+#  How  to  print  list_reverseiterator  object  in  different  ways  (Home   work)
+import   time
+a = [25 , 10.8 , 'Hyd' , True]
+r = reversed(a)
+print(type(r))
+print(r)
+print('Iterate  list_reverseiterator  object  with   next()   function')
+How  to  iterate   list_reverseiterator  object  with   next()   function
+print('Iterate  list_reverseiterator  object  with   next()   method')
+How  to  iterate   list_reverseiterator  object  with   next()  method
+print('Iterate  list_reverseiterator  object  with   for  loop')
+How  to  iterate   list_reverseiterator  object  with   for  loop
+print('Unpack  list_reverseiterator  object  with     operator   :  ' , How  to  unpack   list_reverseiterator  object   with     operator)
+print()
+print('Reverse  list  :  '  ,  How  to  convert  list_reverseiterator  object  to  list)
+'''
+
+'''
+# How  to  iterate   list_iterator  in  different  ways
+import   time
+list  =  [10  ,  20  ,  15  ,  18]
+print('Iterate  list  with  for  loop')
+How  to  iterate  list  with  for  loop
+print(next(list))
+list_itr = iter(list)
+print(type(list_itr))
+print(list_itr)
+print('Iterate  List_iterator  with  next()  function')
+How  to  iterate  list_iterator  with  next()  function
+print('Iterate  List_iterator  with   _next_()  method')
+How  to  iterate  list_iterator  with   _next_  method
+print('Iterate  List_iterator  with   for    loop')
+How  to  iterate  list_iterator  with  for  loop
+print('Unpacks  List_iterator  with  *  operator  :    ' ,   How  to  unpack  list_iterator)
+'''
+
+
+# Find  outputs
+'''
+a = 25
+print(a) # 25
+#for  x   in   a: # a is in integer Error
+	#print(x)
+#print(iter(a)) # iter function doesn't converts into non-seq
+#print(next(a)) # only seq  can be converted but not non-seq
+'''
