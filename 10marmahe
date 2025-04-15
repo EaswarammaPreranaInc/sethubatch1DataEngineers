@@ -1,0 +1,189 @@
+#write a program to find the index numbers of 'is'
+a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+index =-1
+while  (index := a . find('is' , index + 1)) !=-1:
+	print(index)
+print('End')
+
+output...
+4
+23
+42
+46
+End
+
+
+#write a program tp find the index numbers of 'is' using index()
+try:
+	a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+	b = a . index('is')
+	while  b != -1:
+		print(b)
+		b = a . index('is' , b + 1)
+	print('End')
+except:
+	print("-1")
+
+output...
+4
+23
+42
+46
+-1
+
+
+#write a program to find the 'Hyd' using rfind method
+a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+b = a . rfind('Hyd')
+while  b != -1:
+	print(b)
+	b = a . rfind('Hyd',0 ,b+1)
+print('End')
+
+output...
+38
+19
+0
+
+
+#write a program to find the 'Hyd' using rindex method
+try:
+	a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+	b =a . rindex('Hyd')
+	while  b != -1:
+		print(b)
+		b = a . rindex('Hyd',0 ,b+1)
+	print('End')
+except:
+	print("No more Hyd")
+
+output...
+38
+19
+0
+No more Hyd
+
+#write a program to find how many times 'Hyd' is repeated using count method
+try:
+	a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+	b =a . count('Hyd')
+	print(b)
+except:
+	print("No more Hyd")
+
+output...
+3
+
+#write a program to find how many times 'Hyd' is repeated  between using count method
+try:
+	a = 'Hyd is green city. Hyd is hitec city. Hyd is his city'
+	b =a . count('Hyd',0,40)
+	print(b)
+except:
+	print("No more Hyd")
+
+output..
+2
+
+
+#write a program to replace  elements
+a=str(input("enter any string:"))
+c=a[1:]
+print (a[0]+(c.replace (a[0],'*')))
+
+output...
+enter any string:bibble
+bi**le
+
+a = 'Hyd is\tgreen\ncity.Hyd is\thitec\ncity.Hyd is\this\ncity'
+print(a . count(' '))#3
+print(a . count('\t'))#3
+print(a . count('\n'))#3
+
+#find outputs
+a = '15:36:48'
+print(a . split(':'))#['15':'36':'48']
+print(a)#'15:36:48'
+
+#Find outputs
+a = 'Hyd\nis green\tcity'
+print(a . split(' '))#['hyd\nis','green\tcity']
+print(a . split())#['Hyd','is','green','city']
+print(a . split('green'))#['\Hyd\n''\tcity']
+#print(a . split(''))#Error
+
+#Find outputs
+a = 'Hyd	is	green	city' #  There  is  tab  between  the  words
+print(a . split('\t'))#['Hyd','is','green','city']
+print(a . split())#['Hyd','is','green','city']
+print(a . split(' '))#['Hyd','','','','is','','','green']
+
+#Find outputs
+a = 'Hyd   is   green   city'  #  There   are   3  spaces  between  the  words
+print(a . split())#['Hyd','is','green','city']
+print(a . split(' '))#['Hyd','','','','is','','','','green','','','','city]
+
+#Find outputs
+a = 'www.gmail.com'
+print(a . split('.'))#['www','gmail','com']
+
+#Find outputs
+#  Find  outputs  (Home  work)
+a = ['15' , '36' , '48']
+print(':' . join(a))#'15:36:48'
+b = ('Hyd' , 'is' , 'green' , 'city')
+print(' ' . join(b))#'Hyd is green city'
+c = {'10' , '20' , '15' , '25' , '52'}
+print(',' . join(c))#'10,20,15,25,52'
+d = ['www' , 'gmail', 'com']
+print('.' . join(d))#'www.gmail.com'
+e = [15 , 36 , 48]
+print(':' . join(e))#15:36:48
+f = ['Sankar' , 'Dayal' , 'Sarma']
+print('' . join(f))#'sankardayalsarma
+g = range(5)
+#print('-' . join(g)#Error
+
+# endswith()  method  demo  progrram (Home  work)
+a = 'Hyd is green city'
+print(a . endswith('city')) #True
+print(a . endswith('town'))#false
+print(a . endswith('green' , 3 , 12))#True
+print(a . endswith('green' , 3 , 13))#False
+print(a . endswith(' ' , 3 , 13))#True
+
+
+Write  a  program  to  append  'ing'  to  input  string.
+Append  'ly'  to  the  string  if  the  string  already  ends  with  'ing'.
+Leave  the  string  unchanged  if  string  has  lessthan  three  characters
+a=str(input("enter any string:"))
+if len(a)<3:
+	print(a)
+elif (a.endswith("ing")):
+	print(a+"ly")
+
+else :
+	print(a+"ing")
+
+#output...
+enter any string:interst
+intersting
+
+enter any string:intersting
+interstingly
+
+
+#Write  a  program  to  evaluate  an  expression  which  contains  only  +  symbols
+s=input("Enter the expression:").split("+")
+try:
+    S=0
+    for i in s:
+        S+=int(i)  
+    print(S)
+except:
+    print("Enter only int  in the expression ")
+ 
+  
+output...
+Enter the expression:3+2+4+5+6+21+4+5+8+12
+70
