@@ -1,0 +1,321 @@
+#program 1
+# Identify  error  
+class   c1:
+	def  m1(self):
+		pass
+class   c2:
+        pass
+#class   c3: #c3 class must have one a method or pass function
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 2
+# Find  outputs  
+class   c1:
+	pass
+# End  of  the  class
+a = c1()
+print(id(a))  #some address of class a
+print(type(a))  #<class '__main__.c1'>
+print(a . __dict__)  #{}
+print(a) #<__main__.c1 object at 0x0000029AC26B6A50>
+del  a  #object a is deleted 
+print(a) #a is lost after object deletion
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 3
+#  Find  outputs  
+def   m1():
+		print('Function')
+class   c1:
+	def   m1(self):
+		print('1st  method')
+	def   m1(self):
+		print('2nd  method')
+	def   m1(self):
+		print('3rd  method')
+# End  of  class  c1
+a = c1()
+a . m1()
+m1()
+
+#output:
+3rd  method
+Function
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 4
+class   c1:
+	def   m1(self):
+		print('No  argument  method')
+	def   m1(self , x):
+		print('Single  argument  method : ' , x)
+	def   m1(self , x , y):
+		print('Two  argument  method : ' , x , y)
+# End  of  class  c1
+a = c1()
+a . m1(10 , 20) #Two  argument  method :  10 20
+#a . m1(30) #required 1 arg for y
+#a . m1()  #required 2 args for x and y
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 5
+#  Find  outputs
+
+class   c1:
+	def   m1(self):
+		print('No  argument  method')
+	def   m1(self , x):
+		print('Single  argument  method : ' , x)
+	def   m1(self , x = 1  , y = 2):
+		print('Two  argument  method : ' , x , y)
+# End  of  class  c1
+a = c1()
+a . m1(10 , 20)
+a . m1(30)
+a . m1()
+
+#output:
+Two  argument  method :  10 20
+Two  argument  method :  30 2
+Two  argument  method :  1 2
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 6
+# Find  outputs  (Home  work)
+class   c1:
+	def   m1(self):
+		print('Method  of  first  c1  class')
+class   c1:
+	def   m1(self):
+		print('Method  of  second  c1  class')
+class   c1:
+	def   m1(self):
+		print('Method  of  third  c1  class')
+a = c1()
+a . m1()
+
+#output:
+Method  of  third  c1  class
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 7
+# Find  outputs  
+class   c1:
+	def   m1(self):
+		print('Method  of  first  c1  class')
+class   c1:
+	def   m1(self):
+		print('Method  of  second  c1  class')
+#class   c1:
+	#pass  #becoz of pass the statemenys are not executed
+a = c1()
+a . m1()
+
+#output:
+Method  of  second  c1  class #c1 class with same name the last class is executed , the first class with  c1 name is discarded
+
+#________________________________________________________________________________________________________________________________________________
+
+
+#program 8
+#  Find  outputs 
+class  c1:
+        pass
+# End  of  class
+a = c1()
+print(a . __dict__)  #{}
+a . x = 10
+print(a . __dict__) #{'x': 10}
+a . y = 20
+print(a . __dict__) #{'x': 10, 'y': 20}
+a . x = 30
+print(a . __dict__) #{'x': 30, 'y': 20}
+a . y = 40
+print(a . __dict__) #{'x': 30, 'y': 40}
+del  a . x
+print(a . __dict__) #{'y': 40}
+del  a . y
+print(a . __dict__) #{}
+del   a				# a is deleted
+print(a . __dict__) #error as object is lost'''
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 9
+'''Write  a  program  to  determine  area  and  perimeter  of  triangle  and  represent  triangle  by  an  object
+1) What  is  the  area  of  triangle ?  --->  sqrt(s * (s - a) * (s - b) * (s - c))
+2) What  is  the  formula  for  's' ?  --->  (a + b + c) / 2
+3) What  is  the  perimeter  of  triangle ?  --->  a + b + c'''
+
+import math
+class triangle:
+    def get(self):#How  to  read  three  sides  into  object  self
+        self.a = eval(input("Enter side a: "))
+        self.b = eval(input("Enter side b: "))
+        self.c = eval(input("Enter side c: "))
+        
+    def test(self):
+        if (self.a + self.b > self.c) and (self.a + self.c > self.b) and (self.b + self.c > self.a):
+            return True
+        else:
+            print('Not a triangle')
+            return False
+            
+    def area(self):
+        s = (self.a + self.b + self.c) / 2
+        return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
+        
+    def peri(self):
+        return self.a + self.b + self.c
+t = triangle()#How  to  create  triangle  class  object
+t.get() #How  to  read  inputs  into  object
+if t.test(): #How  to  test  whether  inputs  are  valid
+    print('Area:', t.area())
+    print('Perimeter:', t.peri())
+
+#output:
+Enter side a: 2
+Enter side b: 1
+Enter side c: 0
+Not a triangle
+
+Enter side a: 3
+Enter side b: 4
+Enter side c: 5
+Area: 6.0
+Perimeter: 12
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 10
+#  Find  outputs  
+class   c1:
+	def  m1(self):
+		x = 10
+		self . x = 20
+		print(x)
+		print(self . x)
+		x += 5
+		self . x += 7
+	def   m2(self):
+		#print(x)
+		print(self . x)
+		self . x += 6
+# End  of  the  class
+a = c1()
+a . m1()
+a . m2()
+print(a . x)
+#print(self . x) #self is not defined
+#print(x)
+
+#output:
+10
+20
+27
+33
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 11
+'''Write  a  program  to  add  two  objects  where  each  object  contains  three  values  and
+store  results  in   third  object
+
+1st  object   --->  x = 10 , y = 20 , z = 30
+
+2nd  object --->  x = 40 , y = 50 , z = 60
+
+3rd  object  ---> x = 10 + 40 = 50 , y = 20 + 50 = 70 , z = 30 + 60 = 90'''
+
+class Test:
+    def get(self):
+        self.x = int(input("Enter x: "))
+        self.y = int(input("Enter y: "))
+        self.z = int(input("Enter z: "))
+        
+    def add(self, m, n):
+        self.x = m.x + n.x
+        self.y = m.y + n.y
+        self.z = m.z + n.z
+        
+    def disp(self):
+        print(f"x = {self.x}, y = {self.y}, z = {self.z}")
+# Create three Test class objects
+a = Test()
+b = Test()
+c = Test()
+print('First Object')
+a.get()
+print('Second Object')
+b.get()
+# Add objects a and b and store results in object c
+c.add(a, b)
+print('Addition results')
+c.disp()
+
+#output:
+First Object
+Enter x: 2
+Enter y: 3
+Enter z: 4
+Second Object
+Enter x: 5
+Enter y: 6
+Enter z: 7
+Addition results
+x = 7, y = 9, z = 11
+
+#________________________________________________________________________________________________________________________________________________
+
+#program 12
+#  Find  outputs 
+class  Date:
+	pass
+# End of the class
+a =  Date()
+a . dd = 15
+a . mm = 8
+a . yy = 1947
+print(a) #   <__main__.Date object at 0x0000026D7DCD6A50>
+
+#________________________________________________________________________________________________________________________________________________
+#program 13
+#  Find  outputs 
+class   c1:
+	def  __str__(self):
+			return  '25'
+class   c2:
+	def  __str__(self):
+			return   35
+class   c3:
+	def  __str__(self):
+			print('Hyd')
+class   c4:
+	def  __str__(self , x):
+			return   F'{x}'
+#end of the class
+a = c1()
+b = c2()
+c = c3()
+d = c4()
+print(a)
+#print(b) # arg must be a string
+print(c) # 
+#print(d) #arg required
+print(b . __str__())
+print(c . __str__())
+print(d . __str__(50))
+
+#output:
+25
+35
+Hyd
+None
+50
+

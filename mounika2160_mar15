@@ -1,0 +1,609 @@
+
+# program 1 
+#Find  outputs
+
+a = 25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 'Hyd' , 25
+print(a) #25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 'Hyd' , 25
+print(type(a))# <class 'tuple'>
+#a[3] = 'Sec'# Error its immutable  'tuple' object does not support item assignment
+#a[3 : 6] = 60 , 70 , 80 #Error cant be modified 
+
+#Output:
+(25, 10.8, (3+4j), 'Hyd', True, None, 'Hyd', 25)
+<class 'tuple'>
+
+# program 2 
+#What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ? 
+
+a = input('Enter  Tuple  :  ') 
+print(a)#'( <tuple>)' str of tuple
+print(type(a))# <class 'str'>
+b = eval(a)
+print(b)#tuple 
+print(type(b))# <class 'tuple'>
+print(len(b))# no .of of tuple elements ie.4 
+
+#Output:
+Enter  Tuple  :  (10 , 20 , 30 , 40)
+(10 , 20 , 30 , 40)
+<class 'str'>
+(10, 20, 30, 40)
+<class 'tuple'>
+4
+
+# program 3 
+#Find  outputs  
+a = (10 , [20 , 30 , 40] , 50 , 60)
+a[1][0] = 70 #Error
+print(a)# (10 , [70 , 30 , 40] , 50 , 60)
+#a[1] = [80 , 90 , 100] Error 
+#print(a)
+
+#Output:
+(10, [70, 30, 40], 50, 60)
+(10, [70, 30, 40], 50, 60)
+
+# program 4 
+#Find  outputs  
+
+a = [10 , (20 , 30 , 40) , 50 , 60]
+#a[1][0] = 70 # tuple is immutuble
+print(a)# [10 , (20 , 30 , 40) , 50 , 60]
+a[1] = [80 , 90]
+print(a)#[10,[80,90],50,60]
+
+#Output:
+[10, (20, 30, 40), 50, 60]
+[10, [80, 90], 50, 60]
+
+# peogram 5  
+#Find  outputs   
+a = 25
+b = 10.8
+c = 'Hyd'
+d = True
+x = a , b , c , d
+print(x)#25,10.8,'Hyd',True
+print(type(x))#<class 'tuple'>
+
+#Output:
+(25, 10.8, 'Hyd', True)
+<class 'tuple'>
+
+# program 6
+#Find  outputs 
+
+x = 25 , 10.8 , 'Hyd' , True
+a , b , c , d = x
+print(a)#25
+print(b)#10.8
+print(c)#'Hyd'
+print(d)#True
+#p , q , r =  x #error
+#a , b , c , d  , e = x #  error not enough values to unpack 
+
+#Output:
+25
+10.8
+Hyd
+True
+
+# program 7 
+#Find  outputs   
+
+x = 25 , 10.8 , 'Hyd' , True
+a , *b , c = x
+print(a)#25
+print(b)#[10.8,'Hyd']
+print(c)#True
+
+#Output:
+25
+[10.8, 'Hyd']
+True
+
+# program 8
+#Find  outputs  
+
+tpl = 25 , 10.8 , 'Hyd' , True
+a , b , *c , d , e = tpl 
+print(a) # 25
+print(b)#10.8
+print(c)#[]
+print(d)#'Hyd'
+print(e)#True 
+
+#Output:
+25
+10.8
+[]
+Hyd
+True
+
+#program 9 
+#Find  outputs   
+
+x = 25 , 10.8 , 'Hyd' , True , 3 + 4j
+a , b , _ , d , _= x
+print(a)#25
+print(b)#10.8
+print(_)#(3+4j)
+print(d)#True
+print(_)#(3+4j)
+
+#Output:
+25
+10.8
+(3+4j)
+True
+(3+4j)
+
+# program 10
+#tuple()  function  demo  program   
+
+a = range(100 , 150 , 10)
+b = tuple(a)
+print(b)#(100,110,120,130,140)
+print(type(b))#Class<'Tuple'>
+c = [10 , 20 , 15, 18]
+d = tuple(c)
+print(d)#(10,20,15,18)
+e = tuple('Vamsi')
+print(e)#('V', 'a', 'm', 's', 'i')
+#print(tuple(25))# Error 
+print(tuple())#()
+
+#Output:
+(100, 110, 120, 130, 140)
+<class 'tuple'>
+(10, 20, 15, 18)
+('V', 'a', 'm', 's', 'i')
+()
+
+# program 11
+#index()  and  count()  methods  demo  program   
+
+a = (10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25)
+#     0    1      2     3    4     5     6    7     8    9    10
+try:
+	i = a . index(15)
+	while  True:
+		print('15 is found at index : ' , i)
+		i = a . index(15 , i + 1)
+except:
+		print(F'15  is  found  {a . count(15)}  times')
+
+#Output:
+15 is found at index :  2
+15 is found at index :  5
+15 is found at index :  8
+15  is  found  3  times
+
+# program 12 
+#How  to  modify  an  element  of  tuple ?    
+
+a  =  10 ,  20 ,  30 ,   40 ,  50
+#     0      1       2       3      4
+a[2] = 35 #tuple is immutuble so can't modify
+print(a)
+print(id(a)) #Address of obj  a 
+How  to  modify  30  in  tuple  to  35 #tuple is immutuble so can't modify
+print(a)
+print(id(a))#different address points 
+
+
+#Output:
+(10, 20, 30, 40, 50)
+2732449428352
+(10, 20, 30, 40, 50)
+2732449428352
+
+# program 13
+#How  to  delete  an  element  of  tuple ?   
+
+a  = 10 , 20 , 30 , 40 , 50
+#    0     1    2     3      4
+#a . remove(30) #error  becoz  remove method in  not there tuple class
+#del  a[2] #  error brcoz can't modify tuple elements 
+#a . pop(2)#  error becoz no pop method  in tuple class
+print(a)#(10,20,30,40,50)
+print(id(a)) # address of obj  a 
+#How  to  remove  30  from  tuple  'a'
+a=a[:2]+a[3:]
+print(a) #(10,20,40,50)
+print(id(a))# a points to  new address
+
+#Output:
+(10, 20, 30, 40, 50)
+2464817574784
+(10, 20, 30, 40, 50)
+2464817574784
+
+# program 14 
+#Nested   tuple 
+
+a = ( (10 , 20)  ,  (30 , 40 , 50)  ,  (60 , 70 , 80 , 90) )
+print(a) #( (10 , 20)  ,  (30 , 40 , 50)  ,  (60 , 70 , 80 , 90) )
+print(type(a)) # <class 'tuple'>
+print(len(a))#3
+print(a[0])#(How  to  print  1st  inner  tuple)
+print(a[1])#(How  to  print  2nd  inner  tuple)
+print(a[2])#(How  to  print  3rd  inner  tuple)
+print(a[0][1])#(How  to  print  20)
+print(a[1][2])#(How  to  print  50)
+print(a[2][3])#(How  to  print  90) 
+
+
+#Output:
+((10, 20), (30, 40, 50), (60, 70, 80, 90))
+<class 'tuple'>
+3
+(10, 20)
+(30, 40, 50)
+(60, 70, 80, 90)
+20
+50
+90
+
+# program 15 
+#Find  outputs
+
+a = ((10 , 20 , 30),)# Nested tuple 
+print(a[0])#(How  to   print  inner  tuple)
+print(*a)#(How  to   print  inner  tuple  in  another  way)
+print(a[0][0])#(How   to  print   10)
+print(a[0][1])#(How   to  print   20)
+print(a[0][2])#(How   to  print   30)
+b = ((),) # Nested tuple 
+print(b[0]) #(How  to   print  inner  tuple  of  tuple  'b')
+print(*b) #(How  to   print  inner  tuple  of  tuple  'b'  in  another  way)
+
+#Output:
+(10, 20, 30)
+(10, 20, 30)
+10
+20
+30
+()
+()
+
+# program 16
+#Find  outputs 
+
+a = ((10 , 20 , 30))
+print(a)#(10 , 20 , 30)
+print(*a)#10  20  30
+b = (())#  regular tuple bcoz no comma
+print(b)#()
+print(*b)#Empty 
+
+#output:
+(10, 20, 30)
+10 20 30
+()
+
+# program 17
+#What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+
+a = input('Enter  Set  :  ')
+print(a) #'{10 , 20 , 15 , 18 , 20,12,18}'
+print(type(a))# <class 'str'>
+b = eval(a) 
+print(b) #{10 , 20 , 15 , 18 , 12}
+print(type(b)) #<class 'set'>
+
+#Output:
+Enter  Set  :  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+{10 , 20 , 15 , 18 , 20 , 12 , 18}
+<class 'str'>
+{18, 20, 10, 12, 15}
+<class 'set'>
+
+# program 18 
+#Find  outputs  
+
+print({(10 , 20 , 30)}) #{(10 , 20 , 30)}
+#print({[10 , 20 , 30]}) # Error  becoz set cant have list inside it bcoz set cant hold immutable elements 
+#print({{10 , 20 , 30}}) # Error  nested set not possible in it
+#print({{}}) # {{}}  error set containing an empty dict 
+
+#Output:
+{(10, 20, 30)}
+
+# program 19
+#How  to  print  set  in  differnet ways 
+
+a = {25 , True , 'Hyd' , 10.8}
+print (a)#('set  with  print  function')ie.set(a)
+print(a) #{25 , True , 'Hyd' , 10.8}
+#print('Iterate  elements  of  set  with  for  loop')
+#How  to  iterate  set  with  for  loop
+for x in a:
+	print(x)
+
+#Output:
+{25, 10.8, True, 'Hyd'}
+25
+10.8
+True
+Hyd
+
+# program 20 
+#Find  outputs  
+
+a = 'Hyd'
+b = True
+c = 25
+d = 1
+e = 'Hyd'
+s = {a , b , c , d , e}
+print(s)
+print(len(s)) #3
+print(type(s)) #<class 'set'>
+
+Output:
+{True, 'Hyd', 25}
+3
+<class 'set'>
+
+# program 21
+#Find  outputs 
+
+s = {'Hyd',  25,  True,  10.8 }
+print(s) # {'Hyd',  25,  True,  10.8 } in any order becoz set unordered
+a , b , c , d = s
+print(a) # 1 st element 
+print(b) # 2 element 
+print(c) # 3 rd element
+print(d) # 4 th element
+
+#Output:
+{25, 10.8, 'Hyd', True}
+25
+10.8
+Hyd
+True
+
+#program 22
+#Find  outputs  
+
+s = {'Hyd',  25,  True,  10.8 }
+print(s)
+a , *b = s
+print(a)
+print(b)
+print(type(b))
+
+#Output:
+{25, 'Hyd', 10.8, True}
+25
+['Hyd', 10.8, True]
+<class 'list'>
+
+#program 23 
+#Find  outputs  
+
+s = {'Hyd',  25,  True,  10.8 }
+print(s)
+a , *b , c = s
+print(a)
+print(b)
+print(c)
+
+#Output:
+{'Hyd', 10.8, 25, True}
+Hyd
+[10.8, 25]
+True
+
+#program 24
+#Find  outputs  
+s = {20 , 10 , 20 , 10}
+print(s)
+x , y = s
+print(x)
+print(y)
+
+#Output:
+{10, 20}
+10
+20
+
+# program 25
+#Find  outputs  
+
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a)
+print(id(a))
+a . add(tpl)
+a . add('Sec')
+print(a)
+print(id(a))
+print(len(a))
+#a . add([100 , 200 , 300])
+#a . add(set())
+#a . add({ })
+
+#Output:
+{25, 10.8, 'Hyd', True}
+1657214839360
+{True, 10.8, (10, 20, 30), 'Sec', 'Hyd', 25}
+1657214839360
+6
+
+# program 26
+#Find  outputs 
+
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl)
+print(s)
+print(len(s))
+
+Output:
+{(10, 20, 15, 18)}
+1
+
+# program 27
+#Find  outputs 
+
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a,b,c)
+print(s)
+print(len(s))
+#s . add(a , b , c)
+
+Output:
+{50, 20, 70, 40, 10, 60, 30}
+7
+
+# program 28
+#Find  outputs  
+
+a = set()
+a . update('Rama Rao')
+print(a)
+print(len(a))
+#a . update(3 + 4j , 10.8 , True)
+
+#Output:
+{'a', ' ', 'o', 'R', 'm'}
+5
+
+# program 29
+
+#Find  outputs  
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b)) # {10,20,30,40,50,60}
+#print(a | b) # error
+#print(b . union(a)) # list does not have unioin method
+#print(a + b) # error
+
+#output:
+{40, 10, 50, 20, 60, 30}
+
+# program 30
+
+#clear()  method  demo  program 
+a = {10 , 20 , 15 , 18}
+print(a)
+a . clear()
+print(a)
+print(len(a))
+
+#output:
+{10, 18, 20, 15}
+set()
+0
+
+# program 31
+#remove()  method  demo  program
+
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)
+a . remove('Hyd')
+print(a)
+#a . remove('Sec')
+
+#output:
+{25, 10.8, 'Hyd', True}
+{25, 10.8, True}
+
+#program32
+#discard()  method  demo  program 
+
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)
+a . discard('Hyd')
+print(a)
+a . discard('Sec')
+print(a)
+#a . remove('Sec')
+
+#output:
+{25, 10.8, 'Hyd', True}
+{25, 10.8, True}
+{25, 10.8, True}
+
+
+#program 33
+#copy()  method  demo  program  
+a = {10 , 20 , 15 , 18}
+print(a)
+b = a . copy()
+print(b)
+print(a  is  b)
+print(a  ==  b)
+c = a
+print(a  is  c)
+
+#output:
+{10, 18, 20, 15}
+{10, 18, 20, 15}
+False
+True
+True
+
+#program 34
+#update()  method  demo program 
+
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()
+s . update(tpl)
+print(len(s))
+print(s)
+#s . update(25)
+
+#Output:
+4
+{10, 18, 20, 15}
+
+# program 35
+#add()  method  demo  program 
+
+a = set() #empty
+a . add(True) # {True}
+a . add(25) # {True,25}
+a . add(10.8)# {True,25,10.8}
+a . add(1) # {True,25,10.8} 1 not added 
+a . add('Hyd') # # {True,25,10.8,'Hyd'}
+a . add(25)# {True,25,10.8,'Hyd'}
+a . add(None)#{True,25,10.8,'Hyd',None}
+a . add('Hyd')
+a . add(1.0)
+print(a) #{True,25,10.8,'Hyd',None}
+#a.add(10,20,30)#added  set.add() takes exactly one argument (3 given)
+a . add((10 , 20 , 30)) 
+print(a) # tuple is added 
+#a . add([10,20,30]) # errpr cant add mutable elements 
+
+#Output:
+{True, 10.8, 'Hyd', 25, None}
+{True, 10.8, (10, 20, 30), 'Hyd', 25, None} 
+
+#program 36
+#set()  function  demo  program  
+
+a = range(100 , 151 , 10)
+b = set(a)
+print(b) # {100,110,120,130,140,150}
+c = [10 , 20 , 15 , 18 , 10 , 50 , 20 , 12 , 18]
+d = set(c)
+print(d) #{10,20,15,18,50,12} in any order
+e = set('Rama  rAo')
+print(e) #{'R','a','m','r','A','o',' '}
+#print(set(25)) # Error 
+print(set()) # set()
+
+
+#Output:
+{130, 100, 140, 110, 150, 120}
+{10, 12, 15, 18, 50, 20}
+{' ', 'A', 'r', 'm', 'o', 'R', 'a'}
+#error int iterator cant be taken 
+set() 
