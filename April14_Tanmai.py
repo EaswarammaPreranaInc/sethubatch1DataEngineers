@@ -7,10 +7,21 @@ z = zip(a , b)
 print(type(z)) #class Zip
 print(z) # Type and Adress
 print('Iterate  zip  object  with   next()   function') 
-print(next(z))
+while True:
+	try:
+		print(next(z))
+		time.sleep(1)
+	except:
+		break
 #How  to   iterate  zip  object  with  next  function
 print('Iterate  zip  object  with  next  method')
-print(z.__next__())
+z = zip(a , b)
+while True:
+	try:
+		print(z.__next__())
+		time.sleep(1)
+	except:
+		break
 #How  to   iterate  zip  object  with  next  method
 print('Iterate  zip  object  with   for  loop')
 z=zip(a,b)
@@ -161,10 +172,23 @@ r = reversed(a) #  Empty object D <next line> Y<next line> H
 print(type(r)) # class Reversed
 print(r) # Type n address
 print('Iterate  reversed  object  with   next   function')
-print(next(r)) 
+while True:
+	try:
+
+		print(next(r)) 
+		sleep.time(1)
+	except:
+		break
 #How  to  iterate  reversed  object  'r'  with  next()  function
 print('Iterate  reversed  object  with   next   method')
-print(r.__next__())
+r = reversed(a)
+while True:
+	try:
+		print(r.__next__())
+		sleep.time(1)
+	except:
+		break
+
 # How  to  iterate  reversed  object   with  next()   method
 print('Iterate  reversed  object  with   for  loop')
 for x in r:
@@ -198,7 +222,7 @@ b = reversed(a) # Empty object
 print(type(b)) # class Reversed 
 print(b) # type n address
 print(id(b)) # address
-print(*b) # AMAR
+print(*b) # A M A R
 #print(b[0]) # error 
 #print(b[1 : 3]) cant be used iterators 
 #print(b * 2)
@@ -270,12 +294,8 @@ Hint:  Use  reversed  iterator
 ''' 
 
 a= eval(input("Enter a dict: "))
-print(list(a.items))
-'''
-d={}
-for x,y in reversed(list(a.items())):
-	print(d[y]=x)
-print(d) ''' 
+print( dict((reversed(a.items()))))
+
 
 # Find outputs
 import  time
@@ -298,9 +318,11 @@ for x,y in r:
 print('Elements  of  each   tuple  in  reverse  order')
 r=reversed(a.items())
 for x,y in r:
-	print(y,x)
+	print(x,y,sep='...')
 #Write  for  loop  to  reverse   elements  of   each   tuple  of  dictionary
 print('Keys  and  values  in   reverse   order')
+for x in reversed(a):
+	print(x,a[x])
 
 #Write  for  loop  to  print  each   key  and   the  corresponding  value  of  dictionary  in  reverse  order
 #  Write  outputs  here
@@ -334,11 +356,11 @@ r = reversed(a)
 print(type(r)) #list_reverseiterator
 print(r) # type n address
 print('Iterate  list_reverseiterator  object  with   next()   function')
-print(next(r))
+print(next(r)) # ccan use while loop also
 #How  to  iterate   list_reverseiterator  object  with   next()   function
 print('Iterate  list_reverseiterator  object  with   next()   method')
 #How  to  iterate   list_reverseiterator  object  with   next()  method
-print(r.__next__())
+print(r.__next__()) # ccan use while loop also
 print('Iterate  list_reverseiterator  object  with   for  loop')
 #How  to  iterate   list_reverseiterator  object  with   for  loop
 for x in r:
