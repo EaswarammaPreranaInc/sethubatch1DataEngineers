@@ -147,8 +147,8 @@ f1(3,3,3)
 5) What  action  to  be  made  if  'i'  is  a  divisor  of  input  number ?  ---> return   False
 
 6) What  action  to  be  made  if  there  are  no  divisiors  to  input  number  ? ---> return  True  outside  the  loop
-'''
-'''
+
+
 def   prime(n):
 	c=0
 	for i in range(2,n):
