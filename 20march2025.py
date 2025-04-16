@@ -487,19 +487,18 @@ print(a)# 40
 
 # Find outputs (Home  work)
 '''
-NOT UNDERSTOOD +++++++++++++++++++++++++++++++     DOUBT     +++++++++++++++++
-##############################################
+
 def  f1():
 	global   a
 	a = 10
 	print(a)
 	a = 20	
 def  f2():
-	print(a)------------------------------------
+	print(a) # error due to local varible initilized next to the print function gives highest preferance to local var 
 	a = 30
 	print(a)
 def  f3():
-	print(a)-----------------------------------
+	print(a) # here in the function their is no local var
 	globals()['a'] = 40
 # End  of  the  function
 f1()# 10
@@ -553,7 +552,7 @@ def   f1():
 	a = 20
 	print(a)# 20 local variable 
 def  f2():
-	print(a)# 11 global variable--------------------------  DOUBT  ------------
+	print(a)# 11 global variable
 	a += 1# 12
 # End of the function
 a = 10
@@ -569,7 +568,7 @@ print(a)# 12
 '''
 def  f1():
 	a = 20
-	global   a #error
+	global   a #error becz their is alredy local var 
 	print(a)
 	print(globals()['a'])
 	a = 30
