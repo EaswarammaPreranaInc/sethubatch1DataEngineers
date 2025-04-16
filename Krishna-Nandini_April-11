@@ -1,0 +1,220 @@
+Program-1
+# Public  and  Private  members  demo  program
+class  Test:
+	def  __init__(self):
+		self . x =10 #How  to  initialize  public  variable  'x'  to  10
+		self . __y=20 #How  to  initialize  private  variable  'y'  to  20
+	def  m1(self):
+		print('m1  method')
+		print('variable   x  :  ', self . x) #How  to  print   variable  'x'
+		print('private variable y:  ', self . __y) #How  to  print  private  variable  'y'
+		self . __m2()#How  to  call    private  method   m2()
+		print('Back to m1 method')
+	def  __m2(self):
+		print('__m2  method')
+		print('variable x  :  ', self . x) #How  to  print   variable  'x'
+		print('private variable y:  ', self . __y) #How  to  print  private  variable   'y'
+# End  of  the  class
+t = Test() #   Object is  initialized  with  x = 10  and  __y = 20  by  constructor
+print('Outside')
+print('variable  x  :  ', t . x) #How  to  print  variable  'x'
+print('private variable  ' , t .  _Test__y) #How  to  print   variable  'y'
+#print(t . __y) #  Error :  Not   private  variable can  not  be  used  outside the  class  as  it  is  not  visible
+print(t . __dict__) # { 'x':10 , '_Test__y':20}
+t.m1() #How  to  call  method  m1()
+t._Test__m2() #How  to  call   method  m2()
+#t . __m2()  #  Error :  private  method  can  not  be  called  outside the  class  as  it  is  not  visible
+print('End')
+
+
+Program-2
+#  Find  outputs
+class  c1:
+	def __init__(self):
+		self.x = 10  #How  to  initialize  public  variable  'x'  with  10
+		self.__x = 20 #How  to  initialize  private  variable  'x'  with  20
+		self.__x__=30 #How  to  initialize  public  dunder  variable  'x'  with  30
+	def  m1(self):
+		print('public method')
+	def  __m1(self):
+		print('private method')
+	def  __m1__(self):
+		print('public Dunder method')
+#  End  of  the  class
+a = c1()
+print(a.x) #How  to  print   variable  'x'
+print(a.__x__) #How  to  print  public  dunder  variable  'x'
+print(a._c1__x) #How  to  print   private  variable  'x'
+#print(a . __x) #  Error  :  Not  visible  outside  the  class
+a.m1() #How  to  call  public  method  m1()
+a.__m1__() #How  to  call  public  dunder  method  m1()
+a . __m1__
+a . m1
+a._c1__m1() #How  to  call  private  method  m1()
+#a . __m1() #error  :  Not  visible  outside  the  class
+
+
+------------------- Destructors --------------------
+Program-3
+# Find  outputs
+# Assume  that  addresses  of  objects   'a' , 'b' , 'c' , 'd'  and  'e'  are  1000 , 2000 , 3000 , 4000  and  5000  respectively
+
+class   c1:
+	def   __init__(self):
+		print('Object  is  created  at  address  :  ' , id(self))  # Object  is  created  at  address  :   2010064646032
+	def   __del__(self):
+		print(F'Object  at  address  {id(self)}  is  lost')  # Object  at  address  2010064646032  is  lost
+# End    of    the    class
+a = c1()  #   Object  is  created  at  address  :   2010067274960
+a = None  #   Object  at  address  2010067274960  is  lost
+b = c1()  #   Object  is  created  at  address  :   2010067274960
+del    b  #   Executes  destructor  before  object  at  address  2000  is  lost
+c = c1()  #   Object  is  created  at  address  :   2010065119104
+c = c1()  #   Object  at  address  2010067274960  is  lost
+d = c1()  #   Object  is  created  at  address  :   2010065119408
+e = c1()  #   Object  is  created  at  address  :   2010064845520
+#  Executes  destructor   thrice   before  objects  at  addresses  4000 , 5000  and   6000  are   lost i.e. 
+# Object  at  address  2010065119104  is  lost
+# Object  at  address  2010065119408  is  lost
+# Object  at  address  2010064845520  is  lost
+
+
+Program-4
+# Identify  Error
+class   c1:
+	def  __del__(self , x):
+		print('destructor : ' , x)  # destructor :  25
+a = c1()
+a . __del__(25)  #  Executes  destructor  and   x  is  25
+#  Error becoz  arg  is  not  passed  for  destructor
+
+
+Program-5
+# Find  outputs
+class   c1:
+	def  __del__(self):
+		print('destructor')
+		b = c1()  #  Executes same  class  destructor  before  object  'b'  is  lost  which  leads  to  recursion  (infinite  recursion)
+a = c1()  #  Executes  destructor before  object  'a'  is  lost
+
+
+Program-6
+# Find  outputs
+class   c1:
+	def  __del__(self):
+		print('destructor')
+		b = c1()
+    #  Executes same  class  destructor  before  object  'b'  is  lost  which  leads  to  recursion  (infinite  recursion)
+a = c1()
+#  Executes  destructor before  object  'a'  is  lost
+
+'''
+Output:
+destructor
+destructor
+destructor
+destructor
+destructor
+and so  on
+'''
+
+
+Program-7
+# Find  outputs
+class   c1:
+	def  __init__(self):
+		print('constructor')
+		del  self  #   Executes   destructor  before  object  is  deleted
+	def  __del__(self):
+		print('destructor')
+		b = c1()  # Executes  constructor
+a = c1() # Executes  constructor
+
+'''
+Output:
+constructor
+destructor
+constructor
+destructor
+constructor
+destructor
+and  so  on
+'''
+
+
+Program-8
+#  Find  outputs
+class   c1:
+	def  __del__(self):  # Discarded  due  to  another  destructor  in the  same  class
+		print('1st  destructor')
+	def  __del__(self):    # Discarded  due  to  another  destructor  in the  same  class
+		print('2nd  destructor')
+	def  __del__(self): #  Recognized  as  it  is  the  last  destructor
+		print('3rd  destructor')
+# End  of  the  class
+a = c1()  #  Executes  3rd destructor  before   object  'a'  is  lost
+
+
+Program-9
+# Find  outputs
+class   c1:
+	def   __init__(self):
+		print('Object  is  created  at  address  :  ' , id(self))
+	def   __del__(self):
+		print(F'Object  at  address  {id(self)}  is  lost  ')
+#end  of  the  class
+c = b = a = c1()  #  Executes  constructor  only  once  due  to  single   object
+del   a # Object  is  not  lost  becoz  there  are  two  more    references  to  the  object
+print('Hello')
+del   b   # Object  is  not  lost  becoz  there  is  one   more  reference  to  the  object
+print('Hi')
+del   c #  Executes  destructor before  object  is  lost
+print('Bye')
+d = c1()  #  Executes  constructor
+print('End') #  Executes  destructor before  object   'd'  is  lost
+
+'''
+Output:
+Object  is  created  at  address  :  1000
+Hello
+Hi
+Object  at  address  1000  is  lost
+Bye
+Object  is  created  at  address  :  2000
+End
+Object  at  address  2000  is  lost
+'''
+
+
+Program-10
+# Find  outputs
+class  c1:
+        def     __init__(self):
+                print('Object  is  created  at  address  :  ' , id(self))
+        def     __del__(self):
+                print(F'Object  at  address  {id(self)}  is  lost ')
+#End of the class
+list = [c1() , c1() , c1()]   # Executes  constructor  thrice  becoz  3  objects  are  created
+del  list   # Executes  destructor  thrice   before  the  3  objects  are  lost  in  reverse order
+
+'''
+Output:
+Object  is  created  at  address  : address of 1st c1 class  object
+Object  is  created  at  address  : address of 2nd c1 class  object
+Object  is  created  at  address  : address of 3rd c1 class  object
+Object  at  address  address of  3rd  c1 class  is  lost
+Object  at  address  address of 2nd c1 class  is  lost
+Object  at  address  address of 1st  c1 class  is  lost
+'''
+
+
+Program-11
+# Find  outputs
+class   c1:
+	def  __del__(self):
+		print('destructor')
+		return  25
+a = c1()
+print(a . __del__())  # destructor <next line> 25
+print('Hello')        # Hello
+del   a               #  destructor
