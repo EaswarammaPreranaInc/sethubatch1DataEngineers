@@ -13,10 +13,25 @@ What  are  the  outputs  if  input  is  10  ?  --->  Prime   numbers
 How  to  read  a  number
 How  to  print  all  prime  numbers  between  2  and  user  input
 print('Number  of  prime numbers  :  ' ,  ???)
- '''   
+  
 
+def prime(n):
+    c=0 
+    for i in range(2,n+1):
+        for j in range(2,i//2+1):
+            if(i%j==0):
+                break    
+        else:
+            print(i,end=" ")
+            c+=1             
+    return c   
+n=int(input("Enter +ve integer greater than 2: "))        
+if(n<=1):
+    print("Invalid Input")  
+else:
+    print(F'prime numbers from 2 to {n} : {prime(n)}')
 
-
+'''
 
 
 
