@@ -41,23 +41,34 @@ z = zip(a , b) # join the sequences 'a', 'b'and 'c' based on smallest sequence
 print(type(z)) # <class 'zip'>
 print(z)
 print('Iterate  zip  object  with   next()   function')
-print(next(z))
-print(next(z))# How  to   iterate  zip  object  with  next  function
+while True:
+	try:
+		print(next(z))
+		time . sleep(1)
+	except StopIteration:
+		break # How  to   iterate  zip  object  with  next  function
 print('Iterate  zip  object  with  next  method')
-print(z._next_())
-print(z._next_())# How  to   iterate  zip  object  with  next  method
+Z = zip(a, b )
+while True:
+	try:
+		print(z._next_())
+		time . sleep(1)
+	except StopIteration:
+		break # How  to   iterate  zip  object  with  next  method
 print('Iterate  zip  object  with   for  loop')
 z = zip(a, b)
-for a,b in z:
-	print(a , '->', b)#How  to   iterate  zip  object  with  for  loop
+for x in zip(a , b):
+	print(x)
+	time .sleep (1)#How  to   iterate  zip  object  with  for  loop
 print('Iterate  elements  of  each  tuple  in  zip  object')
 z = zip(a, b)
-for pair in z:
-    for item in pair:
-        print(item, end=' | ')# How  to   iterate  elements  of  each  tuple  of  zip  object  with  for  loop
+for x , y  in zip(a ,b):
+	print(x , y , sep = '....')
+	time . sleep (1)# How  to   iterate  elements  of  each  tuple  of  zip  object  with  for  loop
 
 z = zip(a, b)
 print('Unpacks  zip  object  with   *  operator :  ' , zip( *z)) # How  to   unpack  zip  object   with  *  operator
+print(*zip(a , b))
 print()
 z = zip(a, b)
 print('zip   object  in  the  form  of   list  :  ' ,list(z)) #  How  to  convert  zip  object  to  list)
@@ -69,24 +80,31 @@ print('zip   object  in  the  form  of   dictionary :  ' , dict (z)) # How  to  
 output:-
 -----------
 <class 'zip'>
-<zip object at 0x000002DC248AFE00>
+<zip object at 0x0000024D28ADFE00>
 Iterate  zip  object  with   next()   function
 ('Telangana', 'Hyderabad')
 ('Andhra Pradesh', 'Amaravathi')
-Iterate  zip  object  with  next  method
 ('Karnataka ', 'Bangalore')
 ('Tamilnadu', 'Chennai')
+Iterate  zip  object  with  next  method
 Iterate  zip  object  with   for  loop
-Telangana -> Hyderabad
-Andhra Pradesh -> Amaravathi
-Karnataka  -> Bangalore
-Tamilnadu -> Chennai
+('Telangana', 'Hyderabad')
+('Andhra Pradesh', 'Amaravathi')
+('Karnataka ', 'Bangalore')
+('Tamilnadu', 'Chennai')
 Iterate  elements  of  each  tuple  in  zip  object
-T | C | a | h | m | e | i | n | l | n | n | a | a | i | Unpacks  zip  object  with   *  operator :   <zip object at 0x000002DC248AFE00>
+Telangana....Hyderabad
+Andhra Pradesh....Amaravathi
+Karnataka ....Bangalore
+Tamilnadu....Chennai
+Unpacks  zip  object  with   *  operator :   <zip object at 0x0000024D28ADFE00>
+('Telangana', 'Hyderabad') ('Andhra Pradesh', 'Amaravathi') ('Karnataka ', 'Bangalore') ('Tamilnadu', 'Chennai')
 
-zip   object  in  the  form  of   list  :   [('T', 'C'), ('a', 'h'), ('m', 'e'), ('i', 'n'), ('l', 'n'), ('n', 'a'), ('a', 'i')]
+zip   object  in  the  form  of   list  :   [('Telangana', 'Hyderabad'), ('Andhra Pradesh', 'Amaravathi'), ('Karnataka ', 'Bangalore'), ('Tamilnadu', 'Chennai')]
 
-zip   object  in  the  form  of   dictionary :   {'T': 'C', 'a': 'i', 'm': 'e', 'i': 'n', 'l': 'n', 'n': 'a'}
+zip   object  in  the  form  of   dictionary :   {'Telangana': 'Hyderabad', 'Andhra Pradesh': 'Amaravathi', 'Karnataka ': 'Bangalore', 'Tamilnadu': 'Chennai'}
+
+
 
 #4) Find  outputs   (Home  work)
 import   time
@@ -169,21 +187,33 @@ a = input('Enter  any  string  :  ')  #  Assume  that  input  is  HYD
 r = reversed(a)
 print(type(r))
 print(next(r))
+print(next(r))
+print(next(r))
+print(next(r))
 print('Iterate  reversed  object  with   next   function')
-print(next(r))
-print(next(r))
-print(next(r))
+r = reversed(a)
+while True:
+	try:
+		print(next(r))
+		time . sleep(1)
+	except StopIteration:
+		break 
 #How  to  iterate  reversed  object  'r'  with  next()  function
 print('Iterate  reversed  object  with   next   method')
 r = reversed(a)
-print(r._next_()) 
-print(r._next_())
-print(r._next_())
-print(r._next_())# How  to  iterate  reversed  object   with  next()   method
+while True:
+	try:
+		print(r.__next__())
+		time . sleep(1)
+	except StopIteration:
+		break 
+# How  to  iterate  reversed  object   with  next()   method
 print('Iterate  reversed  object  with   for  loop')
 r = reversed(a)
 for ch in r:
     print(ch, end=' ') # How  to  iterate  reversed  object   with  for  loop
+print()
+print()
 print('Unpack  reversed  object  with   *  operator :   ' ,  end=' ') 
 r = reversed(a)
 print(*r) # How  to   unpack  reversed  object   with  *  operator)
@@ -191,16 +221,23 @@ print()
 print('reversed  object  in  the  form   of  list  :  ' ,end=' ')
 r = reversed(a)
 print(list(r)) # How  to  convert  reversed  object  to  list)
+print()
 print('Reverse  string   :   ' , end=' ')
 r = reversed(a)
 print(''.join(r)) #How  to  convert  reversed  object  to   string)
 #  Write all  the  outputs  here
+
+
 output:-
---------
+-----------
 Enter  any  string  :  DELL
 <class 'reversed'>
 L
+L
+E
+D
 Iterate  reversed  object  with   next   function
+L
 L
 E
 D
@@ -210,10 +247,15 @@ L
 E
 D
 Iterate  reversed  object  with   for  loop
-L L E D Unpack  reversed  object  with   *  operator :    L L E D
+L L E D
+
+Unpack  reversed  object  with   *  operator :    L L E D
 
 reversed  object  in  the  form   of  list  :   ['L', 'L', 'E', 'D']
+
 Reverse  string   :    LLED
+
+
 
 #8)Find  outputs (Home  work)
 a = 'RAMA'
@@ -410,20 +452,25 @@ r = reversed(a)
 print(type(r))
 print(r)
 print('Iterate  list_reverseiterator  object  with   next()   function')
-print(next(r))
-print(next(r))
-print(next(r))
-print(next(r)) # How  to  iterate   list_reverseiterator  object  with   next()   function
+while True:
+	try:
+		print(next(r))
+		time . sleep(1)
+	except StopIteration:
+		break  # How  to  iterate   list_reverseiterator  object  with   next()   function
 print('Iterate  list_reverseiterator  object  with   next()   method')
 r = reversed(a)
-print(r._next_())
-print(r._next_())
-print(r._next_())
-print(r._next_()) #How  to  iterate   list_reverseiterator  object  with   next()  method
+while True:
+	try:
+		print(r.__next__())
+		time . sleep(1)
+	except StopIteration:
+		break  #How  to  iterate   list_reverseiterator  object  with   next()  method
 print('Iterate  list_reverseiterator  object  with   for  loop')
 r = reversed(a)
 for item in r:
     print(item) # How  to  iterate   list_reverseiterator  object  with   for  loop
+print()
 print('Unpack  list_reverseiterator  object  with     operator   :  ' )
 r = reversed(a)
 print(*r)
@@ -436,7 +483,7 @@ print(list(r))
 output:-
 --------
 <class 'list_reverseiterator'>
-<list_reverseiterator object at 0x000002369E5BB220>
+<list_reverseiterator object at 0x00000209A362B2E0>
 Iterate  list_reverseiterator  object  with   next()   function
 True
 Hyd
@@ -452,12 +499,12 @@ True
 Hyd
 10.8
 25
+
 Unpack  list_reverseiterator  object  with     operator   :
 True Hyd 10.8 25
 
 Reverse  list  :
 [True, 'Hyd', 10.8, 25]
-
 
 #14) How  to  iterate   list_iterator  in  different  ways
 import   time
