@@ -1,0 +1,217 @@
+Program-1
+# Find  outputs
+import   sys
+class   c1:
+        pass
+# End  of  the  class
+a = b = c = d = c1()
+print(sys . getrefcount(b))     # 5
+print(sys . getrefcount(c1()))  # 1
+print(sys . getrefcount(25))    # 4294967295
+print(sys . getrefcount([10 , 20 , 15 , 18]))  # 1
+print(sys . getrefcount(10.8))  # 3
+print(sys . getrefcount({10 , 20 , 15 , 18}))  # 1
+print(sys . getrefcount('Hyd'))  # 3
+print(sys . getrefcount({10 : 20 , 30 : 40}))  # 1
+print(sys . getrefcount((10 , 20 , 30 , 40)))  # 3
+
+
+Program-2
+# Find  outputs
+import  sys
+class  Test:
+	def  _init_(self):
+		print('Constructor  :  ' , id(self))  
+		return    None                        
+	def  _del_(self):
+		print('Destructor  :  ' , id(self))   
+		return  25                            
+# End  of  the  class
+t = Test()
+print(t . _init_())  # Constructor  :   2182206353296 < next line> # None
+print(sys . getrefcount(t))  # 2
+print(t . _del_())   # Destructor  :   2182206353296 <next line> 25
+print(sys . getrefcount(t))  # 2
+print('Bye')  # Bye
+
+
+Program-3
+#  Gift
+# Find  outputs
+class  c1:
+	def  _init_(self):
+		print('Object  is    created')
+	def  _del_(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+	print('Function  Begin')
+	a  =  c1()
+	print(a)
+	print('Function  end')
+	return   a
+print('Program  Begin')  # Program  Begin
+b = f1()
+print(b)
+print('Program  End')  # Program  End
+
+'''
+Output:
+Program  Begin
+Function  Begin
+<__main__.c1 object at 0x00000245FFF270E0>
+Function  end
+<__main__.c1 object at 0x00000245FFF270E0>
+Program  End
+'''
+
+
+Program-4
+#  Gift
+# Find  outputs
+class  c1:
+	def  _init_(self):
+		print('Object  is    created')
+	def  _del_(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+        print('Function  begin')
+        a  =  c1()
+        print('Function  end')
+        return   a
+print('Program  Begin')  # Program  Begin
+f1()  # Function  begin <next line> Object is created <next line> Function  end <next line> Object is lost
+print('Program  End')    # Program  End
+
+'''
+Output:
+Program  Begin
+Function  begin
+Function  end
+Program  End
+'''
+
+
+Program-5
+# Find  outputs
+class  c1:
+	def  _init_(self):
+		print('Object  is    created')
+	def  _del_(self):
+		print('Object  is  lost')
+#End  of  the  class
+def    f1():
+        print('Function  begin')
+        a  =  c1()
+        print('Function  end')
+print('Program  Begin')  # Program  Begin
+b = f1()  # Function  begin <next line> Object is created <next line> Function  end <next line> Object is lost
+print(b)  # None
+print('Program  End')    # Program  End
+
+'''
+Output:
+Program  Begin
+Function  begin
+Function  end
+None
+Program  End
+'''
+
+
+Program-6
+# Most  tricky  program
+# Circular  reference
+class   c1:
+	def   _init_(self , k):   # self is object x.a and 'k' is 'x' 
+		print('c1  class  object  is  created')
+		self . b = k   # x.a.b = x
+		print('End  of  c1  class constructor')
+	def   _del_(self):
+		print('c1  class  object  is  lost')
+# End of class c1
+class  c2:
+	def  _init_(self):
+		print('c2  class  object  is  created')
+		self . a = c1(self)
+		print('End  of  c2  class constructor')
+	def  _del_(self):
+		print('c2  class  object  is  lost')
+#End of class c2
+print('Program  begin')  # Program  begin
+x = c2()  # c2 class object is created
+print('Program end')    # Program end
+
+'''
+Output:
+Program  begin
+Program end
+'''
+
+
+Program-7
+# Find  outputs
+class   c1:
+	def  _del_(self):   # self is object 'a'
+		print('Destructor')
+		global  b
+		b = self  # b = a
+a = c1()
+del  a  # Ref 'a' is deleted
+print('Hello')  # Hello  
+
+
+Program-8
+#  Can  string  be  enumerated ?
+import   time
+a = input('Enter  any  string  :  ')   #  Assume  that  input  is   HYD
+e = enumerate(a)  # Creates an empty object
+while   True:
+	try:
+		print(next(e))   # (0, 'H') <next line> (1, 'y') <next line> (2, 'd')
+		time . sleep(1)
+	except  StopIteration:
+		break
+
+
+Program-9
+# Can  dictionary  be  enumerated ?
+import   time
+def  disp(e):
+	while  True:
+		try:
+			print(next(e))
+			time . sleep(1)
+		except:
+			break
+	print()
+a = {'Empno'  :  25 , 'Emp Name'  :  'Rama Rao' , 'Sal' : 10000.0}
+b = enumerate(a . keys())     # keys are enumerated
+disp(b)  # (0, 'Empno') <next line> (1, 'Emp Name') <next line> (2, 'Sal')
+c = enumerate(a . values())   # values are enumerated
+disp(c)  # (0, 25) <next line> (1, 'Rama Rao') <next line> (2, 10000.0)
+d = enumerate(a . items())    # tuples are enumerated
+disp(d)  # (0, ('Empno', 25)) <next line> (1, ('Emp Name', 'Rama Rao')) <next line> (2, ('Sal', 10000.0))
+f = enumerate(a , start = 5)  # Keys are enumerated
+disp(f)  # (5, 'Empno') <next line> (6, 'Emp Name') <next line> (7, 'Sal')
+
+
+Program-10
+# Find  outputs
+import   time
+a = ['Telangana' , 'Andhra  Pradesh' , 'Karnataka' , 'TamilNadu' , 'Maharastra']
+b = ['Hyderabad' , 'Amaravathi' , 'Bangalore' , 'Chennai' , 'Mumbai']
+c = enumerate(a)  # Enumerating list 'a'
+for  index , element  in  c:
+	print(F'{element:15}  ... {b[index]}')
+	time . sleep(1)
+
+'''
+Output:
+Telangana        ... Hyderabad
+Andhra  Pradesh  ... Amaravathi
+Karnataka        ... Bangalore
+TamilNadu        ... Chennai
+Maharastra       ... Mumbai
+'''
