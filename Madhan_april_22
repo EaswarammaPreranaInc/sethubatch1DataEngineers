@@ -1,0 +1,385 @@
+#22/4/2025 
+
+#1. Find  outputs (Home work)
+
+'''
+class  Person:
+	def  __init__(self):
+		self . name  =  '' #1. Setter  Method
+	@property
+	def   name(self):
+		print('getter  method') 
+		return  self . _name
+	@name . setter
+	def   name(self , value):
+		print('Setter  Method')  
+		self . _name = value
+	@name . deleter
+	def  name(self):
+		print('Deleter  method ') 
+		del  self . _name
+#end  of  the  class
+p = Person()
+print(p . name)  #2. getter  method  #3. null string
+p . name = 'Vamsi' #4. Setter  Method
+print(p . name) #5. getter  method  #6. Vamsi
+del   p . name  #6. Deleter  method 
+#print(p . name) 
+del   p 
+
+'''
+
+
+'''
+#2.
+1) Write  a  program  to  validate  emp  number , emp  name  and  salary  and  also  print  them
+
+2) Emp  number  and  salary  can  not  be  -ve
+
+3) Emp  name  can  not  be  empty  string
+
+4) class  name   is  Emp
+
+5) 3  getter  and  3  setter  methods
+
+6) Constructor  initializes  empno , ename  and  sal
+
+7) Outside  the  class
+    ----------------------
+    a) Create  Emp  class  object
+    b) Print  empno , ename  and  sal
+    
+    
+Enter  employee  number :  -10
+Empno cannot be negative
+
+Enter  employee  number :  10
+Enter  employee  name :
+Emp  name cannot be empty  string
+
+Enter  employee  number :  10
+Enter  employee  name :  Rama Rao
+Enter  salary :  -10
+Salary cannot be negative
+
+
+Enter  employee  number :  10
+Enter  employee  name :  Rama  Rao
+Enter  salary :  100000
+
+
+Employee name  :  Rama  Rao
+Employee salary :   100000.0
+
+'''
+
+
+'''
+try:
+    class Emp:
+        def __init__(self):
+            self.emp_number=int(input("Enter  employee  number : "))
+            self.emp_name=input("Enter  employee  name : ")
+            self.emp_salary=float(input("Enter  salary : "))
+            
+        @property
+        def emp_number(self):
+            return self._emp_number
+            
+        @emp_number.setter
+        def emp_number(self,emp_number):
+            if(emp_number<0):
+                raise ValueError("Empno cannot be negative")
+                
+            else:
+                self._emp_number=emp_number 
+            
+            
+        @property
+        def emp_name(self):
+            return self._emp_name
+            
+        @emp_name.setter
+        def emp_name(self,emp_name):
+            if(emp_name==''):
+                raise ValueError("Emp  name cannot be empty  string")
+                
+            else:
+                self._emp_name=emp_name
+            
+            
+        @property
+        def emp_salary(self):
+            return self._emp_salary
+            
+        @emp_salary.setter
+        def emp_salary(self,emp_salary):
+            if(emp_salary<0):
+                raise ValueError("Salary cannot be negative")
+                
+            else:
+                self._emp_salary=emp_salary
+                
+    emp=Emp()
+    print("Employee name  :",emp.emp_name)
+    print("Employee Salary  :",emp.emp_salary)
+            
+except Exception as e:
+    print(e)
+    
+'''
+
+
+#3. parent  and  child  classes  have  different  Instance  methods
+
+'''
+class   parent:
+	def   m1(self):
+		print('parent   method')
+class   child(parent):
+	def   m2(self):
+		self.m1()#How  to  call  m1()  method  of  parent  class
+		super().m1() #How  to  call  m1()  method  of  parent  class  in  another  way  without  creating  another  object
+		m1() #How  to  call  function  m1()
+		#parent . m1() #Error due to no arg 
+		print('child  method')
+#end  of  the  class
+
+def   m1():
+	print('Function')
+# End  of  the  function
+p=parent()
+p.m1() #How  to  call  m1()  method  of  parent  class 
+#1. parent method
+
+c=child() 
+c.m2() #How  to  call  m2()  method  of  child  class
+#2. parent method
+#3. parent method
+#4. Function
+#5.child method
+
+#p . m2() #Error no m2 in parent class 
+c . m1() #6. parent method
+
+'''
+
+#4. parent  and  child  classes  have  same  Instance  method
+
+'''
+class  parent:
+	def   m1(self):
+		print('Parent  Method')
+class   child(parent):
+	def   m1(self):
+		super().m1() #How  to  call  m1()  method  of  parent  class #2.Parent  Method
+		m1() #How  to  call  function  m1() #3. m1 function
+		#self . m1() #Recursion Error 
+		print('Child  Method') #4. Child Method
+# End  of  the  class
+def  m1():
+	print('m1  function')
+# End of  the  function
+p=parent() 
+p.m1() #How  to  call  m1()  method  of  parent  class #1.Parent  Method
+
+c=child() 
+c.m1() #How  to  call  m1()  method  of  child  class
+
+'''
+
+
+#5. parent  and  child  classes  have  different  class  methods
+
+'''
+class  parent:
+	@classmethod
+	def   m1(cls):
+		print('parent  Method')
+class  child(parent):
+	@classmethod
+	def   m2(cls):
+		cls.m1() #How  to  call  m1()  method  of  parent  class #2. parent  Method
+		child.m1() #How  to  call  m1()  method  of  parent  class  in  another  way #3. parent  Method
+		super().m1() #How  to  call  m1()  method  of  parent  class  in  one  more  way #4. parent  Method
+		parent.m1() #How  to  call  m1()  method  of  parent  class  in  last  way #5. parent  Method
+		#self . m1() #Error no self 
+		#m1() #Error no m1() function 
+		print('child  Method') #6. child Method
+# End  of  the  class
+parent.m1()#How  to  call  m1()  method  of  parent  class #1. parent  Method
+child.m2() #How  to  call  m2()  method  of  child  class
+child . m1() #7. parent Method
+#super() . m1() #Error 
+#self . m1() #Error no self 
+
+'''
+
+
+#6. parent  and  Child  classes  have  same  class   method
+
+'''
+class   parent:
+	@classmethod
+	def   m1(cls):
+		print('parent  Method')
+class   child(parent):
+	@classmethod
+	def  m1(cls):
+		parent.m1() #How  to  call  m1()  method  of  parent  class #2. parent  Method
+		super().m1() #How  to  call  m1()  method  of  parent  class  in  another  way #3. parent  Method
+		#cls . m1() #Recursion Error
+		#self . m1() #Error no self 
+		#m1() #Error no m1() function
+		print('child  Method') #4. child Method
+# End  of  the  class
+parent.m1() #How  to  call  m1()  method  of  parent  class #1. parent  Method
+child.m1() #How  to  call  m1()  method  of  child  class
+
+'''
+
+#7. Parent  and  Child  classes  have  different  static  methods
+
+'''
+class   parent:
+	@staticmethod
+	def  m1():
+		print('parent  method')
+class   child(parent):
+	@staticmethod
+	def   m2():
+		child.m1() #How  to  call  m1()  method  of  parent  class #2.parent  method
+		parent.m1() #How  to  call  m1()  method  of  parent  class  in  another  way #3. parent  method
+		#super() . m1() #Error due to no self arg 
+		#self . m1() #Error no self 
+		#cls . m1() #Error no cls 
+		print('child  method') #4. child method
+#end of the class
+parent.m1() #How  to  call  m1()  method  of  parent  class #1. parent  method
+child.m2() #How  to  call  m2()  method  of  child  class
+child . m1() #5. parent method
+
+'''
+
+
+#8. Parent  and  Child  classes  have  same  static  method
+
+'''
+class   parent:
+	@staticmethod
+	def   m1():
+		print('parent  method')
+class   child(parent):
+	@staticmethod
+	def   m1():
+		parent.m1() #How  to  call  m1()  method  of  parent  class #2. parent method
+		p=parent()
+		p.m1() #How  to  call  m1()  method  of  parent  class in   another way #3. parent method
+		#super() . m1() #Error 1 arg req 
+		#self . m1() #Error no self 
+		#cls . m1() #Error no cls 
+		print('child  method') #4. child method
+#end of the class
+parent.m1() #How  to  call  m1()  method  of  parent  class #1. parent method
+child.m1() #How  to  call  m1()  method  of  child  class
+
+'''
+
+
+#9. Parent  and  child  classes  have   static  variables  with  different  names
+
+'''
+class   parent:
+	x = 10
+	def  m1(self):
+		print(parent.x) #How  to  print  variable  'x' #1. 10
+		print(p.x) #How  to  print  variable  'x'  in  another  way #2. 10 
+		#print(x) #Error no local x
+# End  of  parent  class
+class   child(parent):
+	y = 20
+	def  m2(self):
+		print(self.x) #How  to  print  variable  'x' #3. 10
+		print(super().x) #How  to  print  variable  'x'  in  another  way #4. 10 
+		print(child.x) #How  to  print  variable  'x' in  one  more  way #5. 10 
+		print(parent.x) #How  to  print  variable  'x' in  last  way #6. 10 
+		print(child.y) #How  to  print  variable  'y' #7. 20 
+		print(self.y) #How  to  print  variable  'y'  in  another  way #8. 10 
+		#print(super() . y) #Error no y in parent class 
+		#print(y) #Error no local y
+		
+# End  of child  class
+p=parent()
+p.m1() #How  to  call   m1()  method  of  parent  class
+c=child() #How  to  call   m2()  method  of  child  class
+c.m2()
+
+'''
+
+
+#10. Parent  and  Child  classes  have  static  variables  with  same  name
+
+'''
+class   parent:
+	x = 10
+	def  m1(self):
+		print(parent.x) #How  to  print  variable  'x'  of  parent  class #1. 10 
+		print(self.x) #How  to  print  variable  'x'  of  parent  class  in  another  way #2. 10 
+		
+class   child(parent):
+	x = 20
+	def  m1(self):
+		print(parent.x) #How  to  print  variable  'x'  of  parent  class #3. 10
+		print(super().x) #How  to  print  variable  'x'  of  parent  class  in  another  way #4. 10 
+		print(child.x) #How  to  print  variable  'x'  of  child  class #5. 20
+		print(self.x) #How  to  print  variable  'x'  of  child  class  in  another  way #6. 20 
+# End  of  the  class
+p=parent() 
+p.m1() #How  to  call  m1()  method  of  parent  class
+
+c=child() 
+c.m1() #How  to  call  m1()  method  of  child  class
+
+'''
+
+
+#11. What  are  the  outputs  if  inputs  are  10 , 20 , 30 , 40  , 50 , 60
+
+'''
+class   parent:
+	def    get(self):
+		self.a=int(input("Enter a: ")) 
+		self.b=int(input("Enter b: ")) #How  to   read  inputs  into   variables  a  and  b  of  object  self
+	def    disp(self):
+		print(self.a,self.b) #How  to  print  variables  a  and  b  of  object  self  in  same  line  separated  by  tab
+		
+# End  of  Parent  class
+class    child(parent):
+	def    get(self):
+	    self.a=int(input("Enter a: "))
+	    self.b=int(input("Enter b: ")) #How  to   read  inputs  into   variables  a  and  b  of  object  self
+	    self.c=int(input("Enter c: ")) 
+	    self.d=int(input("Enter d: ")) #How  to   read  inputs  into   variables  c  and  d  of  object  self
+	def   disp(self):
+		print(self.a,self.b) #How  to  print  variables  a  and  b  of  object  self  in  same  line  separated  by  tab
+		print(self.c,self.d) #How  to  print  variables  c  and  d  of  object  self  in  same  line  separated  by  tab
+	def  total(self):
+		return  (self.a+ self.b+self.c+self.d) #sum  of  values  in  object  self
+# End of child class
+print('parent  object') #1.parent object 
+p=parent()
+p.get() #How  to  read  inputs  into  parent  class  object  'p'
+
+print('child  object') #2. child  object
+c=child()
+c.get() #How  to  read  inputs  into  child  class  object  'c'
+
+print('parent  object  :  ' , end = '\t') #3.parent  object  : 10 20 
+p.disp() #How  to  print  object  'p'
+print()
+
+print('child  object  :  ' , end = '\t') #4. child  object  : 30 40 \n #5. 50 60 
+c.disp() #How  to  print  object  'c'
+print('Sum of  the  values  in  child  object :  ' ,c.total()) #How  to  obtain  sum of  values  of  object  'c') #6. Sum of  the  values  in  child  object : 180
+
+'''
