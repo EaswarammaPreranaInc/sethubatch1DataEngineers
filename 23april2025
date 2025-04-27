@@ -1,0 +1,177 @@
+#23/4/2025 
+
+'''
+#1.Write  a  program  to  determine  area  and  circumference  of  circle.
+Also  find  area  and  volume  of  cylinder
+
+1) What  is  the  area  of  circle ?  --->  3.14159 * r ^ 2
+
+2) What  is  the  circumference  of  circle ?  --->  2 * 3.14159 * r
+
+3) What  is  the  area  of  cylinder ?  --->  2 * 3.14159  r ^ 2 + 2 * 3.14159 * r * h
+
+4) What  is  the  volume  of  cylinder ?  --->  3.14159 * r ^ 2 *  h
+
+5) Reuse  parent  class  methods  in  child  class  but  do  not  rewrite
+'''
+
+'''
+import  math
+class   circle:
+	def   get(self):
+	    self.r=float(input("Enter radius : ")) #How  to  read  radius  into  object  self
+	    
+	def   area(self):
+		return  math.pi*self.r**2 #area  of  circle
+		
+	def   cir(self):
+		return  2*math.pi*self.r #circumference  of  circle
+		
+# End  of  circle  class
+class  cylinder(circle):
+	def   get(self):
+		self.r=float(input("Enter radius : ")) #How  to  read  radius  into  object  self
+		self.h=float(input("Enter height : ")) #How  to  read  height  into  object  self
+		
+	def  area(self):
+		return  2*math.pi*self.r*(self.r+self.h) #area  of  cylinder
+		
+	def  volume(self):
+		return    math.pi*self.r**2*self.h #volume  of  cylinder
+		
+# End of cylinder class
+
+def    menu():
+	print('1 . Circle')
+	print('2 . Cylinder')
+	print('3 . Exit')
+#end of menu function
+menu()
+
+ch = eval(input('Enter choice : '))
+while ch!=3: #Repeat  until  user  input  is  3
+	match  ch:
+		case  1:
+				c=circle()
+				c.get()#How  to  read  raidus  into  circle  object
+				print('Area  :  ' ,c.area())
+				print('Circumference :  ' ,c.cir())
+		case  2:
+		        C=cylinder()
+		        C.get() #How  to  read  raidus  and  height  into  cylinder  object
+		        print('Area : ' ,C.area())
+		        print('Volume :  ' ,C.volume())
+	#end  of  match
+	menu()
+	ch = eval(input('Enter choice : '))
+print('Bye')
+
+'''
+
+
+
+'''
+#2. Write  a  program  to  determine  area  and  perimeter  of  rectangle  and  square.
+Also  find  surface  area  and  volume  of  cube
+
+1) What  is  the  area  of  square ?  --->  a ^ 2
+    What  is  the  perimeter  of  square ?  --->  4 *  a
+
+2) What  is  the  area  of  rectangle ?  --->  a * b
+    What  is  the  perimeter  of  rectangle ?  --->  2 * (a + b)
+
+3) What  is  the  surface  area  of  cube ? --->  6 * a ^ 2
+     What  is  the  volume  of  cube  ?  ---> a ^ 3
+
+4) Reuse  parent  class  methods  in  child   classes  but  do  not  rewrite
+'''
+
+'''
+class   Square:
+	def   get(self):
+		self.a=eval(input("Enter a: "))#How  to  read  side  of  square
+	def   area(self):
+		return   self.a**2 #area  of  square
+	def   peri(self):
+		return   4*self.a #perimeter  of  square
+class   Rectangle(Square):
+	def   get(self):
+		super().get() #How  to  read  length  of  rectangle
+		self.b=eval(input("Enter b: ")) #How  to  read  breadth  of  rectangle
+	def   area(self):
+		 return   self.a*self.b #area  of  rectangle
+	def   peri(self):
+		return  2*(self.a+self.b) #perimeter  of   rectangle
+class   Cube(Square):
+	def   get(self):
+		 super().get() #How  to  read  side  of  cube
+	def   area(self):
+		return   6*super().area()#area  of  cube
+	def   volume(self):
+		return  self.a**3 #volume  of  cube
+def  menu():
+	print('1 . Square')
+	print('2 . Rectangle')
+	print('3 . Cube')
+	print('4 . Exit')
+# End  of  the  function
+menu()
+ch = int(input('Enter  choice : '))
+while  ch!=4: #repeat  until  user  input  is  4
+	match   ch:
+		case   1:
+			s=Square()
+			s.get() #How  to  read  side  into   square  object  's'
+			print('Area   :  ' ,  s.area())
+			print('Perimeter  :  ' ,  s.peri())
+		case   2:
+			r=Rectangle() 
+			r.get() #How  to  read  length  and  breadth  into   rectangle  object  'r'
+			print('Area  :  ' ,  r.area())
+			print('Perimeter  :  ' , r.peri())
+		case   3:
+			c=Cube() 
+			c.get() #How  to  read  side  into  cube  object  'c'
+			print('Area  :   ' ,  c.area())
+			print('Volume  :  ' ,  c.volume())
+	menu()
+	ch = int(input('Enter  choice : '))
+	
+'''
+
+
+#3. Find  outputs
+
+'''
+class  c1:
+	def  m1(self):
+		print('m1  method  of  class  c1')
+class  c2:
+	def  m1(self):
+		print('m1 method of class c2')
+class  c3:
+	@classmethod
+	def  m1(cls):
+		print('m1 method of  class c3')
+class  c4:
+	@staticmethod
+	def  m1():
+		print('m1 method of  class c4')
+class  c5(c1):
+	def  m1(self):
+		print('m1 method of class c5')
+	def  m2(self):
+		c3.m1() #How  to  call  m1()  method  of  class  c3
+		c4.m1() #How  to  call  m1()  method  of  class  c4
+		C2=c2() 
+		C2.m1() #How  to  call  m1()  method  of  class  c2
+		super().m1()# How  to  call  m1()  method  of  class  c1
+		self.m1() #How  to  call  m1()  method  of  class  c5
+		m1() #How  to  call  m1()  function
+# End  of  class  c5
+def  m1():
+	print('m1 function')
+# End  of  the  function
+C5=c5() 
+C5.m2() #How  to  call  m2()  method  of  class  c5
+'''
