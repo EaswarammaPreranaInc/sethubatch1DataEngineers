@@ -1,0 +1,147 @@
+program1:
+class Test:
+    def __init__(self):
+        self.x = 10  
+        self.__y = 20  
+
+    def m1(self):
+        print('m1 method')
+        print(self.x) 
+        print(self.__y)  
+        self.__m2() 
+        print('Back to m1 method')
+
+    def __m2(self):
+        print('__m2 method')
+        print(self.x)  
+        print(self.__y)  
+t = Test()
+print('Outside')
+print(t.x)  
+# print(t.__y)  
+print(t._Test__y)
+print(t.__dict__)
+t.m1()
+# t.__m2() 
+# t._Test__m2()
+print('End')
+outside:
+Outside
+10
+20
+{'x': 10, '_Test__y': 20}
+m1 method
+10
+20
+__m2 method
+10
+20
+Back to m1 method
+End
+
+program2:
+class c1:
+    def __init__(self):  
+        self.x = 10 
+        self.__x = 20  
+        
+        self.__x_public_dunder = 30  
+
+    def m1(self):
+        print('public method')
+
+    def __m1(self):
+        print('private method')
+
+    def _m1_(self):
+        print('public Dunder-like method')
+a = c1()
+print(a.x)  
+# print(a.__x)  
+print(a._c1__x)  
+# print(a.__x_public_dunder)  
+a.m1() 
+a._m1_()  
+# a.__m1()  
+a._c1__m1()  
+output:
+10
+20
+public method
+public Dunder-like method
+private method'
+
+
+program3:
+class   c1:
+	def   _init_(self):
+		print('Object  is  created  at  address  :  ' , id(self))
+	def   _del_(self):
+		print(F'Object  at  address  {id(self)}  is  lost')
+# End    of    the    class
+a = c1()
+a = None
+b = c1()
+del    b
+c = c1()
+c = c1()
+d = c1()
+e = c1()
+
+program4:
+class   c1:
+	def  _del_(self , x):
+		print('destructor')
+a = c1()
+a . _del_(25)
+output:
+destructor
+
+program5:
+class   c1:
+	def  _del_(self):
+		print('1st  destructor')
+	def  _del_(self):
+		print('2nd  destructor')
+	def  _del_(self):
+		print('3rd  destructor')
+# End  of  the  class
+a = c1()
+output:
+3rd destructor
+
+program6:
+class   c1:
+	def   _init_(self):
+		print('Object  is  created  at  address  :  ' , id(self))
+	def   _del_(self):
+		print(F'Object  at  address  {id(self)}  is  lost  ')
+#end  of  the  class
+c = b = a = c1()
+del   a
+print('Hello')
+del   b
+print('Hi')
+del   c
+print('Bye')
+d = c1()
+print('End')
+output:
+Hello
+Hi
+Bye
+End
+
+program7:
+class   c1:
+	def  _del_(self):
+		print('destructor')
+		return  25
+a = c1()
+print(a . _del_())
+print('Hello')
+del   a
+output:
+destructor
+25
+Hello'''
