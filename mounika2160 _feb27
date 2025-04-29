@@ -1,0 +1,216 @@
+# program 1
+#rectangle area and perimeter
+length=float(input("length:"))
+breadth=float(input("breadth:"))
+area=length*breadth
+perimeter=2*(length+breadth)
+print("area:",length*breadth)
+print("perimeter:",2*(length+breadth))
+print(f"area:{area:.2f}")
+print(f"perimeter:{perimeter:.2f}")
+#output 1
+a=4
+b=5
+area=4*5=20
+perimeter= 2*(4+5)=18
+
+# program 2 
+#Write  a  program  to  determine  volume  of  a  sphere
+from math import *
+radius=float(input("enter radius:"))
+volume=(4/3)*pi*pow(radius,3)
+print(f"volume:{volume:.2f}")
+
+#program 3
+#Write  a  program  to  determine  simple  interest  and  compound  interest
+from math import *
+p=float(input("enter principal amount:"))
+t=float(input("enter Time period:"))
+r=float(input("enter rate of interest:"))
+si=p*t*r/100
+ci=(p*pow((1+r/100),t))-p
+print(f" simple interest:{si:.2f}")
+print(f" compound interest:{ci:.2f}")
+#output 3
+Enter Principle: 10000
+Enter time =3
+Enter rate of Interest : 7.5
+Simple Intrest: 2250-00
+Compount Interest : 242297
+
+#program 4
+#Write  a  program  to  swap  values  of  two  objects  using  3rd   object
+x=int(input('entre the 1st input:')
+y=int(input('entre the 2nd input:')
+print(f'before swap:x={x} y{y}')
+temp=x
+x=y
+y=temp
+print(f'after swap:x={x} y{y}')
+#output 4 
+enter 1st input:5
+enter 2nd input:8
+before swap:x=5 y=8
+after swap:x=8 y=5
+
+# program 5 
+#Write  a  program  to  swap  values  of  two  objects  without  using  3rd  object
+x=int(input('entre the 1st input:')
+y=int(input('entre the 2nd input:')
+print(f'before swap:x={x} y{y}')
+temp=x
+x=y
+y=temp
+print(f'after swap:x={x} y{y}')
+#output 5
+enter 1st input:9
+enter 2nd input:3
+before swap:x=9 y=3
+after swap:x=3 y=9
+
+# program 6 
+#Write  a  program  to  add ,  subtract , multiply  and  divide  two  complex  numbers
+#Let  first  input   be  3 + 4j  and  second  input  be   5 + 6j
+a=Complex (input ('Enter first Complex number :'))
+b= Complex ( input ('Enter second Complex number:'))
+sum=a+b
+diffrence=a-b
+product=a*b
+quot=a/b 
+print('sum :',a+b)
+print('Difference :',a-b)
+print('Product :',a*b)
+print('Division:',a/b)
+#output 6
+ Enter first complex number : 3+4j
+Enter second complex number: 5+6j
+Sum : (8+10j)
+Difference : (-2-2j)
+Product: (-9+38j)
+Division : (0.6393442622950819+0.03278688524590165j)
+
+#program 7
+#Write  a  program  to  determine  sum , difference , product , quotient , largest  and  smallest  of  two  numbers.
+#Also  find  remainder,  sqrt  of  first  input , power, gcd  and  factorial  of  first  input
+a = int(input("Enter 1st  integer  number : "))
+b = int(input("Enter 2nd  integer  number : "))
+sum=a+b
+diffrence=a-b
+product=a*b
+quot=a/b
+larg=max(a,b)
+small=min(a,b)
+rem=a%b
+sqrt=math.sqrt(a)
+power=math.pow(a,b)
+gcd=math.gcd(a,b)
+fact=math.factorial(a)
+print(f"{a}+{b}={a+b}")
+print(f"{a}-{b}={a-b}")
+print(f"{a}*{b}={a*b}")
+print(f"{a}/{b}={a/b}")
+print(f"{a}//{b}={a//b}")
+print(f"{a}%{b}={a%b}")
+print(f"max({a},{b})={max(a,b)}")
+print(f"min({a},{b})={min(a,b)}")
+print(f"{a}^{b}={a**b}")
+print(f"sqrt({a} and {b})={a**0.5} and {b**0.5}")
+from math import *
+print(f"{a}^{b}={pow(a,b)}")
+print(f"sqrt({a} and {b})={sqrt(a)} and {sqrt(b)}")
+def gcd(x,y):
+    for i in range(1,min(x,y)+1):
+        gcd=1
+        if x%i==0 and y%i==0:
+            gcd=i
+    return gcd
+print(f"gcd({a},{b})={gcd(a,b)}")
+def fact(number):
+    f=1
+    for i in range(1,number+1):
+        f=f*i
+    return f
+print(f"fact({a} and {b})={fact(a), fact(b)}")
+#output 7
+Enter 1st integer Number =10
+Enter and integer Number :7
+1017=17
+10-7=3
+10×7=70
+10/7=1.428571
+10%7=3
+Mox (10,7)=10
+Min (10,7)=7
+10^7=1000000
+Sqrt(10)=3.162277.
+gcd (10,7)=1
+fact (10)=3628800
+
+# program 8 
+#Write  a  program  to  swap  values  of  any  two  objects  in  a  single  statement  without  using  3rd  object
+x=int(input('entre the 1st input:')
+y=int(input('entre the 2nd input:')
+print(f'before swap:x={x} y{y}')
+x,y=y,x
+print(f'after swap:x={x} y{y}')
+#output 8
+enter 1st input:hyd
+enter 2nd input:4
+before swap:x=hyd  y=4
+after swap:x=4 y=hyd
+
+#program 9
+#Write  a  program  to  determine  largest  of  two  inputs  without  using  max()  function
+a = (input("Enter 1st input : "))
+b = (input("Enter 2nd input : "))
+result=a if a>b else b
+print("Largest  Input :{result}")
+#output 9
+enter 1st input:10
+enter 2nd input:20
+largest input:20
+
+# program 10 
+#Write  a  program  to  determine  largest  of  three  inputs  without  using  max()  function
+a = (input("Enter 1st input : "))
+b = (input("Enter 2nd input : "))
+c = (input("Enter 3rd input : "))
+print("Largest  Input  :",a if (a>b and a>c) else (b if b>c  else c ))
+#output 10
+enter 1st input:[4,6,8,9,3]
+enter 2nd input:[2,4,5,6,8,9,3,5]
+enter 3st input:[5,3,4,9]
+largest input:[5,3,4,9]
+
+# program 11
+#Write  a  program  to  print   '>'  if  1st  input  >  2nd  input,
+#'<'  if  1st  input  <  2nd  input  and
+# '='  if  inputs  are  same use ternary
+a = (input("Enter 1st input : "))
+b = (input("Enter 2nd input : "))
+print(">" if a>b else("<" if a<b else "="))
+print(f' result:{result}')
+#output 11
+enter 1st input:10
+enter 2nd input:20
+result:- '<'
+
+# program 12 
+#Write  a  program  to  print  1  if  input  is  +ve  ,  -1    if  input  is  -ve  and  0  if  input  is  0
+a = int(input("Enter any integer : "))
+result=1 if a>0 else(-1 if a<0 else 0))
+print(f'result:{result}')
+#output 12
+enter any number:-7
+result:--1
+
+#program 13 
+#Write  a  program  to  test  input  is  even  number  or  odd  number
+a = int(input("Enter any integer : "))
+result='even number' if a%2==0 else 'odd number'
+print(f'result{result}')
+#output 13
+enter any number:-26
+even number
+
+

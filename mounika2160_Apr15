@@ -1,0 +1,600 @@
+#program1
+# Find  outputs 
+
+import  time
+a = [25 , 10.8 , 3 + 4j , 'Hyd' , False]
+f = filter(lambda   x :   True ,   a) #  Creates  an  empty  filter  object
+while  True:
+	try:
+		print(next(f))  #   25  <next  line>  10.8  <next  line>  3+4j  <next  line> Hyd  <next  line>  False  <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+25
+10.8
+(3+4j)
+Hyd
+False
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 2
+#  Find  outputs 
+
+import  time
+a = [25 , 10.8 , 3 + 4j ,  'Hyd' , True]
+f = filter(lambda  x  :  False ,  a) #  Creates  an  empty  filter  object
+while  True:
+	try:
+		print(next(f))  #   Throws  StopIteration  error  in  1st  iteration  itself
+		time . sleep(1)
+	except:
+		break
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 3
+# Find  outputs 
+
+import  time
+a = [25 , 10.8 , False ,  3 + 4j , 0 , 'Hyd' , '' , (25,)  ,  () ]
+f = filter(lambda   x   :   x   ,   a) #  Creates  an  empty  filter  object
+while  True:
+	try:
+		print(next(f))  #  25  <next  line>   10.8  <next  line>  3+4j  <next  line>  Hyd  <next  line>  (25,)  <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+25
+10.8
+(3+4j)
+Hyd
+(25,)
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 4
+# Find outputs
+
+import  time
+def  disp(f):
+	while  True:
+		try:
+			print(next(f))
+			time . sleep(1)
+		except:
+			break
+list = [10 , 0 ,  -25 , () , (25,) , 'Hyd', '' , [] , 10.8 , 0.0 , [10 , 20] , True , False]
+f1 = filter(lambda  x : None  , list)  #  Creates  an  empty  filter  object
+print('Filter  f1')
+disp(f1)  #  'f'  is  object  f1  and  result  is  nothing
+f2 = filter(None  , list)  #   Interpreted  as   f2 = filter(lambda  x : x , list)
+print('Filter  f2')
+disp(f2) #  'f'  is  object  f2  and  result  is   those  elements of  list  which  are  True  i.e.  10  <next  line>  -25  <next  line>  (25,) <next  line>   Hyd  <next  line>  10.8  <next  line>  [10,20]  <next  line>  True  <next  line>
+
+#output
+Filter  f1
+Filter  f2
+10
+-25
+(25,)
+Hyd
+10.8
+[10, 20]
+True
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 5
+# Find outputs  
+
+import  time
+a = ['Rama Rao' , 'Sita' , 'Rajesh' , 'Kiran' , 'Amar' , 'Manohar' , 'Vamsi']
+f = filter(lambda  x  :   len(x) >= 5  , a) #  Creates  an  empty  filter  object
+while   True:
+	try:
+		print(next(f))  #  Rama Rao  <next  line>  Rajesh  <next  line>  Kiran  <next  line>  Manohar  <next  line>  Vamsi <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+Rama Rao
+Rajesh
+Kiran
+Manohar
+Vamsi
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 6
+# Find  outputs 
+
+import   time
+list=[('A' , 10) , ('B' , 20) , ('C' , 15) , ('D' , 5) , ('E' , 18)]
+f = filter(lambda   x  :   x[1]  >=  12 , list) #  Creates  an  empty  filter  object
+while   True:
+	try:
+		print(next(f))  #   ('B' , 20)  <next  line>  ('C' , 15)    <next  line>  ('E' , 18)  <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+('B', 20)
+('C', 15)
+('E', 18)
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 7
+# Find  outputs 
+
+import   time
+list = [
+             {
+                'Roll Num' :  10 ,
+                'Stud Name' : 'Rama Rao' ,
+                'Marks' : 75
+              } ,
+              {
+                'Roll Num' :  20 ,
+                'Stud Name' : 'Sita' ,
+                'Marks' : 52
+              } ,
+             {
+               'Roll Num'  :  15 ,
+               'Stud Name' : 'Kiran' ,
+               'Marks' : 65
+             } ,
+             {
+               'Roll Num'  :  18 ,
+               'Stud Name' : 'Amar' ,
+               'Marks' : 48
+             } ,
+             {
+               'Roll Num' :  5 ,
+               'Stud Name' : 'Rajesh' ,
+               'Marks' : 82
+             }
+        ]  #  List  of  dictionaries
+f = filter(lambda  x :  x['Marks'] >= 60 , list) #  Creates  an  empty  filter  object
+while   True:
+	try:
+		print(next(f))  #   Those  dictionaries  where  value  of   marks  is  >= 60
+		time . sleep(1)
+	except:
+		break
+
+#output
+{ 'Roll Num' :  10 , 'Stud Name' : 'Rama Rao' ,'Marks' : 75}
+{'Roll Num'  :  15 , 'Stud Name' : 'Kiran' , 'Marks' : 65}
+{'Roll Num' :  5 , 'Stud Name' : 'Rajesh' , 'Marks' : 82}
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 8
+# Find  outputs 
+
+import  time
+def  disp(f):
+	while  True:
+		try:
+			print(next(f))
+			time . sleep(3)
+		except:
+			break
+a = [   { 'country' : 'India' , 'sale' : 150.5} ,
+          { 'country' : 'china' , 'sale' : 200.2} ,
+          { 'country' : 'USA' , 'sale' : 300.3} ,
+          { 'country' : 'UK' , 'sale' : 210.4} ] #   List  of  dictionaries
+f1 = filter (lambda  x  :   x['country'] . startswith('U') , a) #  Creates  an  empty  filter  object
+print('Filter  f1')
+disp(f1)  # Those  dictionaries  where   value  of   country  name  starts  with  'U'
+f2 = filter(lambda  x  :  x['sale']  >=  200  , a) # creates another empty filter object
+print('Filter  f2')
+disp(f2)  # Those  dictionaries  where   value  of  sale  is  >= 200
+
+#output
+Filter  f1
+{ 'country' : 'USA' , 'sale' : 300.3}
+{ 'country' : 'UK' , 'sale' : 210.4}
+Filter  f2
+{ 'country' : 'china' , 'sale' : 200.2}
+{ 'country' : 'USA' , 'sale' : 300.3}
+{ 'country' : 'UK' , 'sale' : 210.4}
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 9
+# How  to  print  fliter  object  in  different  ways ?
+
+import   time
+a = [10 , 15 , 20 , 17 , 18 , 19 , 26]
+f = filter(lambda  x  :  x  %  2  ==  0 , a)
+print('Iterate  filter  object  with   next   function')
+while  True: # How  to iterate  filter  object  with  next()  function
+	try:
+		print(next(f))   #  10  <next  line>     20  <next  line>  18  <next  line>  26  <next  line>
+		time . sleep(1)
+	except:
+		break
+print('Iterate  filter  object  with   for  loop')
+for x in filter(lambda  x  :  x  %  2  ==  0 , a) : # How  to iterate  filter  object  with  for  loop
+	print(x)   #  10  <next  line>     20  <next  line>  18  <next  line>  26  <next  line>
+	time . sleep(1)
+print('Unpacking  filter  object :  ' , *filter(lambda  x  :  x  %  2  ==  0 , a)) #  10  <space>     20  <space>  18  <space>  26  <next  line>
+print('filter  object  in  the  form  of  list  :  ' , list(filter(lambda  x  :  x  %  2  ==  0 , a)))  #    [10,20,18,26]
+
+#output
+Iterate  filter  object  with   next   function
+10
+20
+18
+26
+Iterate  filter  object  with   for  loop
+10
+20
+18
+26
+Unpacking  filter  object :   10 20 18 26
+filter  object  in  the  form  of  list  :   [10, 20, 18, 26]
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+
+#program 10
+#  Write  a  program  to  print  odd  numbers  between  1  and  20  with  filter  iterator
+
+import  time
+print('Odd  numbers  between  1  and  20')
+f = filter(lambda  x :  x % 2 ==  1 ,  range(1 , 21))  #  Creates  an  empty  filter  object
+for  y  in  f:
+	print(y) #   1  <next  line>  3  <next  line>  5 <next  line>  7  <next  line>  9  <next  line>  11<next  line>  13 <next  line>  15  <next  line>  17  <next  line>  19  <next  line>
+	time . sleep(1)
+
+#output
+Odd  numbers  between  1  and  20
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 11
+'''
+Write  a  program  to  print  distinct  vowels  of  the  string  using  filter.
+Input  is  string  and  output  is  set'''
+
+s = input('Enter  mixed  case   string  :  ') . upper()
+f = filter(lambda  ch : ch  in   'AEIOU' ,  s)
+print(set(f))
+
+#output
+Enter  mixed  case   string  :  RamA raO
+{'O', 'A'}
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 12
+# Nested  filter  i.e.  filter  on  filter
+
+import   time
+list =  [ (10 , 'Rama' , 10000.0) ,
+            (20, 'Sita' , 7000.0) ,
+            (15 , 'Rajesh' , 15000.0) ,
+            (5 , 'Amar' ,  12000.0) ,
+            (18 , 'Ramesh' , 8000.0) ]
+f = filter(lambda  x :  x[1] . startswith('R')  , filter(lambda  x :  x[2] >= 10000 , list))
+while   True:
+	try:
+		print(next(f))
+		time .  sleep(1)
+	except:
+		break
+
+#output
+(10 , 'Rama' , 10000.0)
+(15 , 'Rajesh' , 15000.0)
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 13
+# Write  a   program  to  square  each  element  of  list  with  map  iterator
+
+import  time
+a = [10 , 20 , 15 , 18 , 5]
+m = map(lambda  x :  x * x  ,  a) #  Empty  object
+print(type(m))  #  <class  'map'>
+print(m) #   Type  and  address  of   object  'm'
+while   True:
+	try:
+		print(next(m))  #  100  <next  line>  400  <next  line>  225  <next  line>  324  <next  line>   25  <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+<class 'map'>
+<map object at 0x0000021F474BAEC0>
+100
+400
+225
+324
+25
+
+#________________________________________________________________________________________________________________________________________________________________________________
+
+#program 14
+# Find  outputs 
+
+import  time
+a = [ ('A' , 10) , ('B' , 20) , ('C' , 15) , ('D' , 5) , ('E' , 18) ]
+m = map(lambda   x  :  x[1]  ,  a) #  Creates  an  empty  map  object
+while   True:
+	try:
+		print(next(m))  #   10  <next  line>  20  <next  line>  15  <next  line>  5  <next  line>  18 <next  line>
+		time . sleep(1)
+	except  StopIteration:
+		break
+#output
+10
+20
+15
+5
+18
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+#program 15
+# Find  outputs 
+
+import   time
+def  disp(m):
+	while   True:
+		try:
+			print(next(m))
+			time . sleep(1)
+		except:
+			break
+list = [    { 'country' : 'India' , 'sale' : 150.5} ,
+              { 'country' : 'China' , 'sale' : 200.2} ,
+              { 'country' : 'USA' , 'sale' : 300.3} ,
+              { 'country' : 'UK' , 'sale' : 210.4} ]  #   List  of  dictionaries
+m1 = map(lambda  x  :  x['country'] , list)  #   Creates  an  empty  map  object
+print('Map   m1')
+disp(m1)   #   India  <next  line>  China  <next  line>   USA  <next  line>   UK  <next  line>
+m2 = map(lambda  x  :  x['sale']  , list)
+print('Map   m2')
+disp(m2)   #   150.5  <next  line>  200.2  <next  line>  300.3 <next  line>  210.4  <next  line>
+
+#output
+Map   m1
+India
+China
+USA
+UK
+Map   m2
+150.5
+200.2
+300.3
+210.4
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+#program 16
+'''
+Write  a  program  to  convert  each  celsius  temperature  of  the  list  to  farenheit  temperature
+
+1) What  is  the  formula  to  convert  celsius  temperature  to  farenheit ?  ---> 1.8 * celsius  temp + 32
+
+2) Let  input  be   list  of  celsius  temperatures  such  as  [30 , 40 , 50 , 25]
+    What  is  the  output ?  --->   1.8 * 30 + 32
+							                      1.8 * 40 +32
+								                  1.8 * 50 + 32
+								                  1.8 * 25 + 32'''
+
+import time
+c = eval(input('Enter  list  of  celsius  temperatures :  '))
+m = map(lambda  x : 1.8 * x + 32 , c)
+print('Farenheit   temperatures')
+for  y  in  m:
+		print(y)
+		time . sleep(1)
+
+#output
+Enter  list  of  celsius  temperatures :  [10,20,15,18]
+Farenheit   temperatures
+50.0
+68.0
+59.0
+64.4
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+
+#program 17
+# Write  a  program  to  print  2 ^ 0 , 2 ^ 1 , 2 ^ 2 , ....... 2 ^ 9  using  map   object 
+
+import  time
+m = map(lambda  x : 2 ** x , range(10))
+print('Powers  of   2')
+for  y  in  m:
+	print(y)
+	time . sleep(1)
+
+#output
+Powers  of   2
+1
+2
+4
+8
+16
+32
+64
+128
+256
+512
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+
+#program 18
+'''
+Write  a  program  to  determine  area  of  circle  for  each  radius  in  the  list
+
+1) What  is  area  of  circle ?  ---> pi * r * r
+
+2) Let  input  be  [3.5 , 2.8 , 4.2  , 1.9]
+    What  are  the  outputs ?  --->   Area  of  radius  3.5
+						                              Area  of  radius  2.8
+						                              Area  of  radius  4.2
+						                              Area  of  radius  1.9'''
+
+import   time , math
+list = eval(input('Enter  list  of  radii  :   '))
+m = map(lambda  r :  math . pi * r ** 2 , list)
+print('Area  of  each  radius  in  the  list')
+for  x  in  m:
+	print(F'{x:.2f}')
+	time . sleep(1)
+
+#output
+Enter  list  of  radii  :   [1,2,3,4]
+Area  of  each  radius  in  the  list
+3.14
+12.57
+28.27
+50.27
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+
+#program 19
+'''
+Write  a  program  to  add  two  tuples  of  difierent  sizes  and  store  the  results  in  3rd  tuple
+
+Let  1st  tuple  be  (10 , 20 , 30 , 40)  and  2nd  tuple  be  (1 , 2 , 3 , 4 ,  5  ,  6)
+What  is  the  3rd  tuple ?  --->   (10 + 1 , 20 + 2 , 30 + 3 , 40 + 4)   and  5  and 6  are  ignored'''
+
+a = eval(input('Enter  first  tuple :  '))
+b = eval(input('Enter  second  tuple :  '))
+m = map(lambda   x ,  y  : x + y , a , b)
+print('Addition  tuple  :  ' , tuple(m))
+
+#output
+Enter  first  tuple :  (10,20,15,18)
+Enter  second  tuple :  (30,40,35,12,100,200)
+Addition  tuple  :   (40, 60, 50, 30)
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+#program 20
+'''
+Write  a  program  to  multiply  two  lists  and  store  results  in  3rd  list
+
+Let  1st  list  be  [10 , 20 , 15 , 18 , 19 , 17]  and  2nd  list  be  [1 , 5 , 3 , 2]
+What  is  the  3rd  list ?  --->  [10 * 1 , 20 * 5 , 15 * 3 , 18 * 2]  and  ignores  19  and  17
+
+Hint:  Use  map'''
+
+
+a = eval(input('Enter  first  list :  '))
+b = eval(input('Enter  second  list :  '))
+m = map(lambda  x , y : x * y , a , b)
+print('Multiplication  list :  ' , list(m))
+
+#output
+Enter  first  list :  [10,20,15,18]
+Enter  second  list :  [1,2,3,4]
+Multiplication  list :   [10, 40, 45, 72]
+
+#__________________________________________________________________________________________________________________________________________________________________
+
+#program 21
+# filter  inside  map
+
+import  time
+a = [10 , 20 , 15 , 12 , 18 , 5 , 14 , 25 , 17]
+m = map(lambda  y  :   y + y ,  filter(lambda  x  :  x >= 15 , a))
+while   True:
+	try:
+		print(next(m))  #   40  <next  line>  30 <next  line>  36 <next  line>   50 <next  line>   34 <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+40
+30
+36
+50
+34
+
+#__________________________________________________________________________________________________________________________________________________________
+
+#program 22
+# map  inside  filter
+
+import   time
+a = [10 , 20 , 15 , 12 , 18 , 5 , 14 , 25 , 17]
+f = filter(lambda  y  :   y  % 2 == 0 , map (lambda  x : x ** 2 , a))
+while   True:
+	try:
+		print(next(f))  #  100  <next  line>   400  <next  line>   144 <next  line>  324 <next  line>  196  <next  line>
+		time . sleep(1)
+	except:
+		break
+
+#output
+100
+400
+144
+324
+196
+
+#_______________________________________________________________________________________________________________________________________________________________________
+
+
+#program 23
+'''
+Write  a  program  to  determine  largest  element  of  the  list  with  reduce()  function
+
+Let  list   be  [10 , 20 , 15 , 30 , 25 , 40 , 35]
+What  is   the  largest  element  of  list ?  --->  40
+
+Hint:  Use  reduce()  function'''
+
+from  functools  import  reduce
+list = eval(input("Enter list of numbers (or) strings:"))
+ans = reduce(lambda  x , y :   max(x , y) , list)
+print('Largest  element  :   '  ,  ans)
+
+#output
+Enter list of numbers (or) strings:[10 , 20 , 15 , 30 , 25 , 40 , 35]
+Largest  element  :    40
+
+#_____________________________________________________________________________________________________________________________
+
+#program 24
+# Find  outputs 
+
+from  functools  import  reduce
+a = [ 10 , 20 , 15 , 5 , 12 , 18 , 25 , 14]
+ans = reduce( lambda  x , y  : x + y , map(lambda  y :  y ** 2 , filter(lambda  x  :  x  >= 15 , a)))
+print(ans) # 1574  
+
+#output
+1574
+
