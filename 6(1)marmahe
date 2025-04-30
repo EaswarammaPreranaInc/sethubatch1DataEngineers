@@ -1,0 +1,60 @@
+write a program to print characters of the string in forward and reverse directions without slicing
+a=eval(input("enter any string:"))
+print("string in forward")
+for i in range(len(a)):
+	print(F'character at index {i}:{a[i]}')
+print()
+print()
+for i in range(1,len(a)+1):
+	print(F'character at index {-i}:{a[-i]}')
+
+
+output...
+enter any string:'mahendra'
+string in forward
+character at index 0:m
+character at index 1:a
+character at index 2:h
+character at index 3:e
+character at index 4:n
+character at index 5:d
+character at index 6:r
+character at index 7:a
+
+
+character at index -1:a
+character at index -2:r
+character at index -3:d
+character at index -4:n
+character at index -5:e
+character at index -6:h
+character at index -7:a
+character at index -8:m
+
+
+
+#write program to concatenate two strings separated by space but swap the first two characters of each string
+a=eval(input("enter value of a:"))
+b=eval(input("enter value of b:"))
+c=b[0:2 ]+a[2: ]
+d=a[0:2 ]+b[2: ]
+print(c,d,sep=" ")
+
+output...
+enter value of a:'java'
+enter value of b:'python'
+pyva jathon
+
+
+
+#write program to print first two and last two characters of 6the string
+a=eval(input("enter any string:"))
+b=len(a)
+if b>=4:
+	print(a[0:2]+a[-2]+a[-1])
+else:
+	print("nothing")
+
+output...
+enter any string:'pythn'
+pyhn
