@@ -1,0 +1,52 @@
+#write a program t0 merge two strings to form a new string
+a=eval(input('enter first string:'))
+b=eval(input('enter second string:'))
+c=''
+i=0
+m=min(len(a),len(b))
+while i<m:
+	c+=a[i]+b[i]
+	i=i+1
+if (m==len(a)):
+	c+=b[m:]
+elif (m==len(b)):
+	c+=a[m:]
+print(c)
+
+output...
+enter first string:'hyd'
+enter second string:'vamsi'
+hvyadmsi
+
+
+#write a program to remove duplicate characters in string without using set
+a=eval(input('enter first string:'))
+print("string without duplicate elements")
+b=''
+for i in a:
+	if i not in b:
+		b+=i
+print(b)
+
+#output..
+enter first string:'hissip'
+string without duplicate elements
+hisp
+
+
+#write a program to print elements by giving numbers
+a=eval(input('enter first string:'))
+try:
+	b=''
+	for i in range (0,len(a),2):
+		b+=a[i]+chr(ord(a[i])+int(a[i+1]))
+	print(b)
+except :
+	print('enter one character and integer number alternatively')
+
+output..
+enter first string:'M3K2$5z2'
+MPKM$)z|
+
+enter first string:'jdsk'
+enter one character and integer number alternatively
