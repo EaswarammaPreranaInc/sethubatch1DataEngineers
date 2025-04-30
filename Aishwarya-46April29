@@ -33,7 +33,7 @@ class teacher(person):
 		da=0.50*self.sal #50%  of  salary
 		hra=0.20*self.sal #20%  of  salary
 		self.gpay=self.sal+da+hra #How  to  calculate  grosspay  and  store  the  result  in  object (grosspay  is  sal + da + hra)
-		pf=max(0.08*self.gpay,400) #8%  of  grosspay  but  a  max  of  400
+		pf=min(0.08*self.gpay,400) #8%  of  grosspay  but  a  max  of  400
 		tax=0.10*self.gpay if self.gpay<10000 else 0.15*self.gpay #10%  of  grosspay  if  grosspay is  < 10000  and  15%  otherwise
 		self.npay=self.gpay-pf-tax #How  to  calculate  netpay  and  store  the  result  in  object  (netpay  is  grosspay - pf - tax)
 	def disp(self):
