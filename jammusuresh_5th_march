@@ -1,0 +1,52 @@
+ #Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator
+
+list=[10,20,15,12,18,15,19,14,15,14]
+search_element=15
+count=0
+for i,element in enumerate(list):
+ if element==search_element:
+  print(f'{search_element} is found at index {i}')
+  count+=1
+  
+print(f'{search_element} is found: {count} times')
+
+'''
+input
+list=[10,20,15,12,18,15,19,14,15,14]
+search_element=15
+
+output
+
+15 is found at index 2
+15 is found at index 5
+15 is found at index 8
+15 is found: 3 times
+'''
+
+# write a program swaping of two numbers by using addition and multipication
+
+x=float(input('enter the first number:'))
+y=float(input('enter the second number:'))
+print('before swaping')
+print(f'x={x},y={y}')
+x=x*y
+y=x/y
+x=x/y
+print('after swaping')
+print(f'x={x},y={y}')
+
+'''
+input
+first number=3
+second number=4
+
+output
+
+enter the first number:3
+enter the second number:4
+before swaping
+x=3.0,y=4.0
+after swaping
+x=4.0,y=3.0
+Press any key to continue 
+'''
