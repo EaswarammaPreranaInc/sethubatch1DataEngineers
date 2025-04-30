@@ -1,0 +1,174 @@
+'''
+# Find  output (Home  work)
+#How  to  define  lambda  function   to  return  sum   of  two  arguments
+add=lambda x,y:(x+y)
+print(type(add))
+print(add(10 , 20))
+print(add(10.6 , 20.8))
+print(add('Hyder' , 'abad'))
+print(add(True , False))
+print(add(25 , 10.8))
+print(add(3 + 4j , 5 + 6j))
+#print(add(10 , '20')) error coz giving input int and str
+#print(add()) error coz need to give positional argments
+print(add)
+
+#output--->
+<class 'function'>
+30
+31.4
+Hyderabad
+1
+35.8
+(8+10j)
+<function <lambda> at 0x000001D5DDF9F060>
+'''
+#-----------------------------------------------------------------------------------
+'''
+#  Find  outputs (Home  work)
+add = lambda  a = 1 , b = 2 :  a + b
+print(add(10 , 20)) #Here arugments are taken from provided values
+print(add())  # Here arugments are taken from defaults values
+#output--->
+30
+3
+'''
+#-----------------------------------------------------------------------------
+'''
+#  Find  outputs (Home work)
+print((lambda  x , y : x + y) (10 , 20) )
+print((lambda  x , y : x + y) (10.8 , 20.6))
+print((lambda  x , y : x + y) ('Hyder' , 'abad'))
+print(lambda  x , y : x + y )#('Hyder' , 'abad')
+'''
+'''
+#output-->
+30
+31.4
+Hyderabad
+Type and address of lambda function ......
+#error coz lambda is not enclosed with brackets reason why Hyderabad is not defined
+'''
+#----------------------------------------------------------------------------------------
+'''
+#  Find  outputs (Home  work)
+#How  to  define  lambda  to  detrmine  largest  of  two  arguments
+large = lambda a,b : a if a>b else b
+print(large(10  ,  20))
+print(large(10.7  ,  5.6))
+print(large('g'  ,  's'))
+print(large('Rama'  ,  'Rajesh'))
+print(large(True  ,  False))
+
+#output--->
+20
+10.7
+s
+Rama
+True
+'''
+#-----------------------------------------------------------------------------
+'''
+#Find  outputs (Home  work)
+power = lambda  a = 3.5 , b = 2  :  a ** b
+print(power(2 , 3))
+print(power(4.5 , 4))
+print(power())
+print(power(9))
+
+#output--->
+8
+410.0625
+12.25
+81
+'''
+#-----------------------------------------------------------------------------
+'''
+# Find  outputs
+all = lambda  a , b :  (a + b ,  a - b , a * b , a / b)
+x = all(10 , 7)
+print(type(x))
+print(x)
+p , q , r , s = all(9 , 2)
+print(p)
+print(q)
+print(r)
+print(s)
+
+#output--->
+<class 'tuple'>
+17,3,70,1.5
+11
+7
+18
+4.5
+'''
+#---------------------------------------------------------------------------------
+'''
+#  Find  outputs
+a  =  lambda  :  'Hyd'
+print(a()) #here we are calling nameless arugment 
+print(a)
+
+#output--->
+#Hyd
+#<function 'lambda'>
+'''
+#-------------------------------------------------------------------------
+'''
+# Find  outputs
+a  =  lambda  :  print('Hyd');  print('Sec')  ; print('Cyb')
+a()
+
+#output--->
+Sec
+Cyb
+Hyd
+'''
+#--------------------------------------------------------------------------------------------------------------------
+'''
+# Find  outputs
+a  =  lambda  :  print('Hyd')  ;  print('Sec');  print('Cyb')
+print(a()) #Here print is printing 'Hyd' and also returning  the None and that none is printing as None
+
+#output--->
+Sec
+Cyb
+Hyd
+None
+'''
+#--------------------------------------------------------------------------------------------------------------------
+'''
+# Find  outputs (Home  work)
+a  =  lambda  : 'Hyd' ;  print('Sec') ;  print('Cyb')
+print(a()) #Here only print is printing Hyd not Returning the value
+
+#output--->
+Sec
+cyb
+Hyd
+'''
+#-----------------------------------------------------------------------------------------------------
+'''
+# Find  outputs   (Home  work)
+a  =  lambda  :  print('Hyd')  , print('Sec')  , print('Cyb')
+print(type(a)) 
+print(a) 
+for  x  in  a:
+	print(x)
+#a() 
+print(a[0]())
+
+
+#output--->
+Sec
+cyb
+<class 'tuple'>
+(type and address of the function ,None,None)
+(type and address of the function )
+None
+None
+Hyd
+None
+
+'''

@@ -1,0 +1,237 @@
+'''
+# Find  outputs  (Home  work)
+class  Cat:
+	def  talk(self):
+		print('Meow Meow Meow ....')
+class  Dog:
+	def  bark(self):
+		print('Bhow Bhow Bhow ....')
+class  Goat:
+	def  talk(self):
+		print('Mehar  Mehar  Mehar  ....')
+#end of the class
+a = [Cat() , Dog() , Goat()]
+for  x  in   a:
+	if   hasattr(x , 'talk'):
+		x . talk()
+	else:
+		x . bark()
+
+Output...
+Meow Meow Meow ....
+Bhow Bhow Bhow ....
+Mehar  Mehar  Mehar  ....
+
+
+#  Find  outputs  (Home  work)
+class    c1:
+        pass
+# End of the class
+a = c1()
+a . x = 10
+varname = input('Enter  variable  name  to  be  added  to  object  :  ')   #  Assume  that  input  is  'y'
+value = eval(input('Enter  value  of  the  variable  :  '))   #  Assume  that  input  is   20
+setattr(a , varname , value)
+print(a . __dict__) # {x:10 , y : 20}
+print(a . x) # 10
+while  True:
+	try:
+		varname = input('Enter  variable  name  whose  value  is  to  be  retrieved  :  ')
+									
+		print(getattr(a , varname))
+	except:
+		print(F'Invalid  variable   name   :  {varname}')
+		break
+Output...
+Enter  variable  name  to  be  added  to  object  :  y
+Enter  value  of  the  variable  :  20
+{'x': 10, 'y': 20}
+10
+Enter  variable  name  whose  value  is  to  be  retrieved  :  x
+10
+Enter  variable  name  whose  value  is  to  be  retrieved  :  y
+20
+Enter  variable  name  whose  value  is  to  be  retrieved  :  a
+Invalid  variable   name   :  a
+
+
+
+Write  a  program  to  determine  total , average  and  grade  of  a  student
+Inputs  are  Roll Number , Stud  Name , Marks  of  3  subjects  and  Gender
+
+class   Student:
+	def   get(self):
+		self.a = eval(input("enter the roll number:")) # How  to  read  roll  number  into  object  self
+		self.b = input("enter the student name:") #How  to  read  student  name  into  object  self
+		self.c = input("enter the gender:") #How  to  read  gender  into  object  self
+		self.d = eval(input("enter the marks of 3 subjects in list:")) #How  to  read  marks  of  3  subjects
+	def   compute(self):
+		self.total = self.d[0]+self.d[1]+self.d[2] #How  to  calculate  total  marks
+		self.avg = self.total/len(self.d) #How  to  calculate  average  marks
+		if  self.d[0]<40 or self.d[1]<40 or self.d[2]<40:
+				self.grade='Fail'
+		elif self. avg  >= 70:
+				self.grade='distinction'
+		elif  self.avg  >= 60:
+				self.grade='First  class'
+		elif  self.avg >= 50:
+				self.grade='Second  class'
+		else:
+				self.grade='Third  class'
+	def  disp(self):
+		print('Average  :  ' ,self.avg)
+		print('Grade  :  ' ,self.grade)
+	def   _str_(self):
+		print(a.studentname)
+#End  of  the  class
+a=Student() # How  to  create  Student  class  object
+a.get() #How  to  read  inputs  into  object
+a.compute() #How  to  store  results  in  object
+a.disp() #How  to  print  object  with  disp()  method
+#a. __str__() #How  to  print  object  with  _str_()  method
+
+'''
+Write  a  program  to  add , subtract , multiply  and  divide  two  rational  numbers
+
+1) 1st  rational  number  --->  2 / 3
+    2nd  rational  number  --->   5 / 9
+    What  is  the  sum  ?  --->  2 / 3 + 5 / 9 = (18 + 15) / 27 =  33 / 27 =  11 / 9
+    What  is  the  difference  ?  --->  2 / 3 - 5 / 9 =  (18 - 15) / 27 =  3 / 27 =  1 / 9
+    What  is  the  product  ?  --->	2 / 3 * 5 / 9 =  10 / 27  =  10 / 27
+    What  is   the  division  ?  --->  2 / 3 /  5 / 9 =  2 / 3 * 9 / 5 =  18 / 15 =  6 / 5  --->  Succesful  division
+
+2) 1st  rational  number  --->  2 / 3
+    2nd  rational  number  --->   0 / 9
+    What  is  the  sum  ?  --->  2 / 3 + 0 / 9 =  (18 + 0) / 27 =  18 / 27 =  2 / 3
+    What  is  the  difference  ?  --->  2 / 3 - 0 / 9 =  (18 - 0) / 27 =  18 / 27 = 2 / 3
+    What  is  the  product  ?  --->  2 / 3 * 0 / 9 =  0 / 27  --->  Simplification  is  not  required  becoz  numerator  is  0
+    What  is   the  division  ?  --->  2 / 3 /  0 / 9 =  2 / 3 * 9 / 0 =  18 / 0  ---> Division  is  not   permitted
+
+3) When  is  simplification  required ?  --->  When  numerator  is  non-zero
+'''
+import  math
+class  rat:
+	def  get(self):
+		self.numerator=eval(input("enter numerator:")) #How  to  read  numerator  into  object  self
+		self.denominator=eval(input("enter denominator:")) #How  to  read  denominator  into  object  self
+		self.test() #How  to  call  test()  method
+	def  test(self):
+		while self.denominator==0:
+			self.denominator=eval(input("enter denominator:")) #Ask  user  to  reenter  denom  when  denom  is  zero
+	def    __str__(self):
+			 return F'{self.numerator}/{self.denominator}'  #values  of  object  in  the  form  of  rational  number  such   as  '2 / 3'
+			 
+	def   add(self , a , b):
+		self.numerator=a.numerator * b.denominator + a.denominator * b.numerator  #How  to  add  objects  'a'  and  'b' and  store  results  in  object  self
+		self.denominator=a.denominator*b.denominator
+		self.simplify()  #How  to  simplify  object  self
+	'''
+	c . add(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  c  --->  2 / 3 + 5 / 9 = (2 * 9 + 5 * 3) / (5 * 9) = 33 / 27 = 11 / 9
+	'''
+	def   sub(self , a , b):
+		self.numerator=a.numerator * b.denominator - a.denominator * b.numerator  #How  to  subtract  objects  'a'  and  'b' and  store  results  in  object  self
+		self.denominator=a.denominator*b.denominator
+		self.simplify()  #How  to  simplify  object  self
+	'''
+	d . sub(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  d  --->  2 / 3 - 5 / 9 = (2 * 9 - 5 * 3) / (5 * 9) = 3 / 27 = 1 / 9
+	'''
+	def   mul(self , a , b):
+		self.numerator=a.numerator*b.numerator  #How  to  multiply  objects  'a'  and  'b' and  store  results  in  object  self
+		self.denominator=a.denominator*b.denominator  #How  to  simplify  object  self
+		self.simplify()
+	'''
+	e . mul(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  e  --->  2 / 3 * 5 / 9 = (2 * 5) / (3 * 9) = 10 / 27
+	'''
+	def    div(self , a , b):
+		self.numerator=a.numerator*b.denominator  #How  to  divide  objects  'a'  and  'b' and  store  results  in  object  self
+		self.denominator=a.denominator*b.numerator  #How  to  simplify  object  self
+		self.simplify()
+	'''
+	f . div(a , b)
+	object  a  --->  2 / 3
+	object  b  --->  5 / 9
+	object  f  --->  2 / 3 / 5 / 9 = 2 / 3 * 9 / 5 = (2 * 9) / (3 * 5) = 18 / 15 = 6 / 5
+	'''
+	def   simplify(self):
+		if self.numerator==self.numerator !=0:
+			ans=math.gcd(self.numerator,self.denominator) #How  to  find  gcd  of  numerator  and   denominator
+			self.numerator=self.numerator//ans  #How  to  simplify  rational  number  in  object  self  i.e.  12 / 15  should  be  simplified  to  4 / 5
+			self.denominator=self.denominator//ans
+	'''
+	c . simplify()
+	1)  12 / 15  --->  4 / 5
+	2) 10 / 27   --->  10 / 27
+	3) 0 / 27  --->   0 / 27
+	'''
+# End  of the class
+if __name__=='__main__':
+	a=rat()
+	b=rat()
+	c=rat()
+	d=rat()
+	e=rat()
+	f=rat() #How  to  create  6  objects  a , b , c , d , e , f
+	a.get() #How  to  read  rational  number  into  object  'a'
+	b.get() #How to  read  rational  number  into  object  'b'
+	c.add(a,b) #How  to  add  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'c'
+	d.sub(a,b) #How  to  subtract  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'd'
+	e.mul(a,b) #How  to multiply  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'e'
+	f.div(a,b) #How  to  divide  rational  numbers  in  objects  a  and  b  and  store  results  in  object  'f'
+	print('sum:',c) #How  to  print  object   'c'
+	print('sub:',d) #How  to  print  object   'd'
+	print('mul:',e) #How  to  print  object   'e'
+	if  b.numerator!=0:
+		print('div:',f)
+	else:
+		print('Division  is  not  permitted')
+
+output...
+enter numerator:2
+enter denominator:3
+enter numerator:5
+enter denominator:9
+sum: 11/9
+sub: 1/9
+mul: 10/27
+div: 6/5
+
+#  dir()  function  demo  program  (Home  work)
+from  proga   import  rat
+a = rat()
+a . numerator= 22
+a . denominator = 7
+print(dir(rat))
+print()
+print()
+print(dir(a))
+
+output...
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__firstlineno__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', 'add', 'div', 'get', 'mul', 'simplify', 'sub', 'test']
+
+
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__firstlineno__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', 'add', 'denominator', 'div', 'get', 'mul', 'numerator', 'simplify', 'sub', 'test']
+
+
+#  Find  outputs  (Home  work)
+class      Rat:
+	def    m1():
+		pass
+# End  of  the  class
+a = Rat()
+a . nr = 22
+print(hasattr(a , 'nr')) # True
+print(hasattr(a , 'dr')) # False
+print(hasattr(a , 'm1')) # True
+print(hasattr(a , 'm2')) # False
+print(hasattr(Rat , 'm1')) # True
+print(hasattr(Rat , 'm2')) # False
+print(hasattr(Rat , 'nr')) # False
