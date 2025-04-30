@@ -1,0 +1,540 @@
+'''#1
+# How  to  print  each  element  and  the  corresponding  index
+a = [25 , 10.8 , 'Hyd' , True]
+print('Indexed for loop')
+How  to  print  each  element  and  the  corresponding  index  with  index  based  for  loop
+print('For each loop')
+How  to  print  each  element  and  the  corresponding  index  with  for  ...  each  loop (Do  not  use  2nd  variable)
+'''
+'''
+a=[25,10.8,'hyd',True]
+print("indexed for loop:")
+for i in range(len(a)):
+    print(i,a[i],sep='...')
+print("For each loop:")
+
+for i in a:
+    print(a.index(i),i,sep=':')
+
+Output:
+indexed for loop
+0...25
+1...10.8
+2...hyd
+3...True
+For each loop
+0:25
+1:10.8
+2:hyd
+3:True
+'''
+'''
+#2
+#  How  to  print  list  elements  in  reverse  order   without  slice
+a = eval(input('Enter  list  of  elements : '))#[10, 20, 15, 18, 10, 18]
+print('Indexed for loop')
+How   to  print  each  element  of  list  in  reverse  order  with  indexed  based  for  loop--->not possible
+How   to  print  each  element  of  list  in  reverse  order  with  for  each  loop  (Do  not  use  2nd  variable)
+'''
+'''
+a =eval(input('Enter  list  of  elements : '))
+print("Indexed for loop:")
+for i in range(1,len(a)+1):
+    print(a[-i])
+#for each...loop can iterate sequence from left to right but not from right to left(i.e reverse order)
+
+Output:
+Indexed for loop:
+18
+10
+18
+15
+20
+10
+'''
+
+'''#3
+Write  a  program  to  add  two  lists  and  store  results  in  3rd  list
+
+1st  list  --->  [10 , 20 , 15 , 18]
+
+2nd  list  --->  [30 , 40 , 35 , 12]
+
+3rd  list ?  --->  [10 + 30 , 20 + 40 , 15 + 35 , 18 + 12]  =  [40 , 60 , 50 , 30]
+
+Hint:  Use  append()  method
+
+a = eval(input('Enter  1st  list  :  '))
+b = eval(input('Enter  2nd  list  :  '))
+c = []
+How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  indexed  based   for  loop
+print('3rd  list : ' , c)
+How  to  add  lists  'a'  and  'b'  and  store  results  in  list  'c'  with  for  each  loop--->Not possible
+'''
+
+'''
+a =  eval(input('Enter 1st list : '))
+b =  eval(input('Enter 2st list : '))
+c = []
+for i in range(len(a)):
+	c.append(a[i]+b[i])
+print('3rd list : ',c)
+
+Output:
+Enter 1st list : [10 , 20 , 15 , 18]
+Enter 2st list : [30 , 40 , 35 , 12]
+3rd list :  [40, 60, 50, 30]
+'''
+
+'''#4
+#  How  to  print  list  elements  from  indexes  2  to  4  without  slice
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Sec']
+print('Indexed for loop')
+How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  indexed  based  for  loop
+How  to  print  elements  from  indexes  2  to  4  of  list  'a'  with  for  each  loop--->not possible
+'''
+'''
+a = [25 , 10.8 , 'Hyd' , True , 3 + 4j , None , 'Sec']
+print("Indexed for loop:")
+for i in a[2:5]:
+    print(i)
+#for...loop can iteerate whole sequence but not a part of the sequence
+
+Output:
+Indexed for loop:
+Hyd
+True
+(3+4j)
+'''
+
+'''
+#5 
+#Gift
+a = [10 , 20 , 15 , 18]
+for  i  in  range(len(a)):
+	a[i] +=  1    #increment each element of list 'a' by 1
+print('a :  ' , a) #a :   [11, 21, 16, 19]
+b = [10 , 20 , 15 , 18]
+for  x  in   b:
+	x += 1         #increment 'x' but not elements of list 'b'
+print('b :  ' ,  b)#b :   [10, 20, 15, 18]
+
+Output:
+a :   [11, 21, 16, 19]
+b :   [10, 20, 15, 18]
+'''
+
+'''
+#6
+num = int(input("Enter first 20 even numbers : "))
+count = 0
+i = 2
+while count < num:
+    print(count,i)
+    i += 2
+    count += 1
+print("Bye") 
+
+Output:
+Enter first 20 even numbers : 20
+0 2
+1 4
+2 6
+3 8
+4 10
+5 12
+6 14
+7 16
+8 18
+9 20
+10 22
+11 24
+12 26
+13 28
+14 30
+15 32
+16 34
+17 36
+18 38
+19 40
+Bye
+
+#(or)
+print("\n")
+print("First 20 even numbers")
+i=1
+while i<=20:
+    print(2*i)
+    i+=1
+print('Bye')
+
+Output:
+First 20 even numbers
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+Bye
+'''
+
+'''
+#7
+num = int(input("Enter the number of odd numbers to print: "))
+count = 0
+i = 1
+while count < num:
+    print(count,i)
+    i += 2
+    count += 1
+'''
+
+'''
+#8
+n= int(input("Enter the number : "))
+i=1
+for i in range(1,n):
+    print(i)
+    i+=1
+
+Output:
+Enter the number of odd numbers to print: 21
+0 1
+1 3
+2 5
+3 7
+4 9
+5 11
+6 13
+7 15
+8 17
+9 19
+10 21
+11 23
+12 25
+13 27
+14 29
+15 31
+16 33
+17 35
+18 37
+19 39
+20 41
+'''
+
+'''
+#9
+n=int(input("enter the number:"))
+for i in range(n,0,-1):
+    print(i)
+
+Output:
+enter the number:10
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+'''
+
+
+'''
+#10
+for i in range(65,91):
+    print(chr(i),end=" ")
+    i+=1
+print("")
+for i in range(97,123):
+    print(chr(i),end=" ")
+    i+=1
+
+Output:
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+'''
+
+'''
+#11
+n=int(input("enter the number :"))
+print("Fibonacci Series")
+a, b = 0, 1
+for i in range(n):
+    print(a)
+    c=a+b
+    a=b
+    b=c
+
+
+Output:
+enter the number :6
+Fibonacci Series
+0
+1
+1
+2
+3
+5
+
+enter the number :10
+Fibonacci Series
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+'''
+
+'''
+#12
+a=int(input('Enter value to be searched:'))
+b=0
+c=1
+d=b+c
+mylist=[0,1]
+for i in range(100):
+    d=b+c
+    b=c
+    c=d
+    mylist.append(d)
+if a in mylist:
+    print('Found')
+else:
+    print("Not Found")
+
+Output:
+Enter value to be searched:10
+Not Found
+
+Enter value to be searched:21
+Found
+'''
+
+'''
+#13
+n=int(input("How many terms would you like to add:"))
+sum=0
+for i in range(0,n+1):
+	sum+=i*1.1
+print(f'sum :{sum:.2f}')
+
+Output:
+How many terms would you like to add:5
+sum :16.50
+'''
+'''
+#14
+n=int(input("enter the even number :"))
+sum=0
+i=1
+while i<=n:
+    sum=sum+2*i
+    i = i + 1
+print('numbers:',sum)
+
+Output:
+enter the even number :20
+numbers: 420
+'''
+
+
+'''
+#15
+n=int(input("enter the odd number :"))
+sum=0
+i=1
+while i<=n:
+    sum=sum+2*i-1
+    i = i + 1
+print('numbers:',sum)
+
+Output:
+enter the odd number :20
+numbers: 400
+'''
+'''
+#16
+n=int(input("How many times would you like to add :"))
+sum=0
+i=1
+while i<=n:
+    sum=sum+i
+    i = i + 1
+print('Sum:',sum)
+
+Output:
+How many times would you like to add :10
+Sum: 55
+'''
+'''
+#17
+for  i   in   range(1 , 8):
+	print(i)
+	if  i % 3  == 0:
+			continue
+	else:
+			print('Sec')
+	print('Hello')
+# End of loop
+print('Outside loop')
+
+Output:
+1
+sec
+hello
+2
+sec
+hello
+3
+4
+sec
+hello
+5
+sec
+hello
+6
+7
+sec
+hello
+outside loop
+'''
+
+'''
+#18
+if ():
+	print('Hyd')
+	#continue #Error cz there is no loop
+	print('Sec')
+    
+# What are the outputs when continue is omitted? nothing cz empty tuple is false
+'''
+
+
+'''	
+hyd
+sec
+'''
+"""'continue' not properly in loop"""
+
+'''
+#19
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+'''
+
+
+'''
+1
+sec
+hello
+2
+sec
+hello
+3
+outside loop
+'''
+'''
+#20
+if(10 , 20 , 30):
+	print('Hyd')
+	#break   # Error cz loop is misisng
+	print('Sec')
+
+outputs:
+Hyd
+Sec
+
+#'break' outside loop
+'''
+'''
+#21
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		pass
+		print('Hyd')
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+
+Output:
+1
+sec
+hello
+2
+sec
+hello
+3
+hyd
+hello
+4
+sec
+hello
+5
+sec
+hello
+6
+hyd
+hello
+7
+sec
+hello
+outside loop
+'''
+'''
+#22
+for  i   in   range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		exit()
+	else:
+		print('Sec')
+	print('Hello')
+# End  of  the  loop
+print('Outside loop')
+
+Output:
+1
+sec
+hello
+2
+sec
+hello
+3
+
+outside loop
+'''
