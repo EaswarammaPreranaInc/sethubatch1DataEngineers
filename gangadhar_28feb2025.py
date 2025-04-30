@@ -7,21 +7,21 @@ z=int(input("enter  third number : "))
 max=x
 min=y
 #condition for max
-if y>max:
-    max=y
+if y>max: #if y is greater than current max
+    max=y # max is y
     
-elif z>max:
-    max=z
+elif z>max: #if z is greater than current max
+    max=z # max is z
     
 else:
-    max=x
+    max=x # maximum is X
 # condition for min    
-if x<min:
-    min=x
-elif z<min:
-    min=z
+if x<min:#if x is less than current min
+    min=x #min is x
+elif z<min: #if z is less than current min
+    min=z  # min is z
 else:
-    min=y
+    min=y  # min is y
 # finding middle   
 middle=(x+y+z)-(max+min)
 #printing outputs
