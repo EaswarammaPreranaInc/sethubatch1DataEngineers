@@ -1,0 +1,222 @@
+Program-1
+# Find  outputs
+import  time
+class   c3:
+	def  __iter__(self):
+		print('_iter_  method ')   # _iter_  method
+		return  reversed([10 , 20 , 15 , 18])
+# End  of  the  class
+itr = c3()
+for  x  in   itr:
+	print(x)  # 18 <next line> 15 <next line> 20 <next line> 10
+	time . sleep(1)
+print(next(itr))  # Error because next() function demands iterator
+
+
+Program-2
+# Identify  Error
+class   c4:
+	def  __iter__(self):
+		print('_iter_  method ')  # _iter_  method
+		return   self    # Error because 'self' is not an iterator
+# End  of  the  class
+itr = c4()
+for  x  in   itr:
+	print(x)
+
+
+Program-3
+# Identify  Error
+class   c5:
+	def  __iter__(self):
+		print('_iter_  method ')  # _iter_  method
+# End  of  the  class
+itr = c5()
+for  x  in   itr:  # Error because there is no return statement in c5 class
+	print(x)
+
+
+Program-4
+# Identify  Error
+class   c6:
+        def   iter(self):
+                return   reversed([10 , 20 , 15 , 18])
+        def  next(self):
+                print('next  method')
+# End  of  the  class
+a  =  c6()        # Empty object is created
+print(dir(c6))    # All the methods of c6() class
+for  x  in  a:    # Error because for loop can iterate only iterable objects
+        print(x)
+while  True:
+	print(next(a))  # Error because next() function demands iterator
+a . next()  # next method
+
+'''
+Output:
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__firstlineno__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__',
+'__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
+'__sizeof__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', 'iter', 'next']
+'''
+
+
+Program-5
+# Find  outputs
+class   c1:
+	def   __init__(self):
+		self . x =  1
+	def   __iter__(self):
+		print('__iter__    method')
+		return  self
+	def   __next__(self):
+		value =  self . x
+		self . x  +=  1
+		return  value
+# End  of  the  class
+a = c1()
+print('Elements  of  iterator  with  for  loop')
+for   element   in   a:
+	print(element)
+	if  element  ==  5:
+               break
+print('Elements  of  iterator  with  next()  function')
+while    True:
+	element = next(a)
+	print(element)
+	if  element  ==  10:
+		break
+#end  of  while  loop
+print('Elements  of  iterator  with  for  loop')
+for   element   in    a:
+	print(element)
+	if  element  ==  15:
+		break
+
+'''
+Output:
+Elements  of  iterator  with  for  loop
+__iter__    method
+1
+2
+3
+4
+5
+Elements  of  iterator  with  next()  function
+6
+7
+8
+9
+10
+Elements  of  iterator  with  for  loop
+__iter__    method
+11
+12
+13
+14
+15
+'''
+
+
+Program-6
+# Find  outputs
+import   time
+class  Remote:
+	def    __init__(self):
+		self . list = ['Tv 9' , 'Espn' , 'Zee Tv' , 'ETV']
+		self . index = -1
+	def   __iter__(self):
+		return  self
+	def   __next__(self):
+		self . index += 1
+		if   self . index  ==  len(self . list):
+			raise  StopIteration
+		return    self . list[self . index]
+# End  of  the  class
+r = Remote()
+for   x    in    r:
+	print(x)    # Tv 9 <next line> Espn <next line> Zee Tv <next line> ETV
+	time . sleep(1)
+
+
+Program-7
+# Write  an  iterator  which  yields  10 , 11 , 12 , 13 , ...... 20
+# Hint: Use  for  loop
+
+import  time
+class   c1:
+	def   __init__(self , begin1 , end1):
+		self . begin = begin1
+		self . end = end1
+	def   __iter__(self):
+		print('__iter__  method')
+		return  self
+	def    __next__(self):
+		if  self . begin  <=  self . end:
+			value = self . begin
+			self . begin += 1
+			return  value
+		raise  StopIteration
+# End  of  the  class
+if  __name__  ==  '__main__':
+	a = c1(10 , 20)   #  Object  is  initialized  with  begin = 10 , end = 20   by  constructor
+	for  x   in   a:  # 'x'  is  each  element  returned  by  __next__()  method  of  class  c1
+		print(x)  #   10  <next  line>   11   <next  line>  12   <next  line>  ...   20   <next  line>
+		time . sleep(1)
+	print('End')  #   End
+
+'''
+Output:
+__iter__  method
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+End
+'''
+
+
+Program-8
+# Design  an  iterator  which  yields  powers  of  two   i.e.  2 ^ 0 , 2 ^ 1 , 2 ^ 2 , ........ 2 ^ 7
+# Use  for  loop
+
+import   time
+class   Power:
+	def  __init__(self , begin , end):
+		self . begin =begin
+		self . end  = end
+	def  __iter__(self):
+		print('Iterator  for  Powers  of  2')
+		return  self
+	def  __next__(self):
+			if  self . begin  <=  self . end:
+				result  =  2  **  self . begin
+				self . begin  +=  1
+				return  result
+			raise  StopIteration
+#End  of  the  class
+p = Power(0 , 7)  #  Object  is  initialized  with  begin = 0 , end = 7  by  constructor
+for  x   in   p:  #  'x'  is  each  element  returned  by  __next__()  method  of  class  Power
+	print(x)  #  1  <next line>  2  <next line>  4  <next line>  8  <next line>  16  <next line>  32  <next line>  64  <next line>  128  <next line>
+	time . sleep(1)
+print('End')
+
+'''
+Output:
+Iterator  for  Powers  of  2
+1
+2
+4
+8
+16
+32
+64
+128
+End
+'''

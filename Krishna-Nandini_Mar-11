@@ -1,0 +1,379 @@
+Program-1
+# isspace()  method  Program.
+print('\n  A\t' . isspace())  # False
+print('\n  \t' . isspace())  # True
+print('\n  7\t' . isspace())  # False
+print('\n' . isspace())  # True
+print('\n  $\t' . isspace())  # False
+print('\t' . isspace())  # True
+print('' . isspace())  # False
+print(' ' . isspace())  # True
+
+
+Program-2
+# format() method Find  outputs . 
+a , b , c = 25 , 10.8 , 'Hyd'
+print('a  :  {}  \t  b  :  {}  \t  c  :  {}  '  .  format(a , b , c))    # a  :  25      b  :  10.8       c  :  Hyd
+print('a  :  {0}  \t  b  :  {1}  \t  c  :  {2}  ' . format(a , b , c))   # a  :  25      b  :  10.8       c  :  Hyd
+print('a  :  {2}  \t  b  :  {1}  \t  c  :  {0}  ' . format(a , b , c))   # a  :  Hyd     b  :  10.8       c  :  25
+print('a  :  {2}  \t  b  :  {2}  \t  c  :  {2}  ' . format(a , b , c))   # a  :  Hyd     b  :  Hyd        c  :  Hyd
+print('a  :  {x}  \t  b  :  {y}  \t  c  :  {z}  ' . format(x = a , y = b , z = c))   # a  :  25       b  :  10.8      c  :  Hyd
+print('a  :  {x}  \t  b  :  {y}  \t  c  :  {z}  ' . format(z = a , y = b , x = c))   # a  :  Hyd      b  :  10.8      c  :  25
+print('a  :  {z}  \t  b  :  {z}  \t  c  :  {z}  ' . format(z = a , y = b , x = c))   # a  :  25       b  :  25        c  :  25
+
+
+Program-3
+# Write  a  program  to  determine  user  input  is  alphabet , digit , white space  or  special  character.
+a = input('Enter any Character: ')
+if a.isalnum():
+	print('Alpha  Numeric  Character')
+	if a.isalpha():
+		print('Alphabet  Character')
+		if a.isupper():
+			print('Upper  case  Alphabet')
+		else:
+			print('Lower  case  Alphabet')
+	else:
+		print('Digit  Character')
+elif a.isspace() or a == '':
+	print('White Space Character')
+else:
+	print('Special Character')
+	
+'''
+Output:
+Enter any Character: A
+Alpha  Numeric  Character
+Alphabet  Character
+Upper  case  Alphabet
+
+Enter any Character: 4
+Alpha  Numeric  Character
+Digit  Character
+
+Enter any Character: b
+Alpha  Numeric  Character
+Alphabet  Character
+Lower  case  Alphabet
+
+Enter any Character: $
+Special Character
+
+Enter any Character:
+White Space Character
+'''
+
+
+Program-4
+#Write  a  program  to  reverse  a  string  without  slice.
+a = input('Enter  any  string : ')  # Enter  any  string : Krishna
+b = ''
+for i in range(1, len(a) + 1):
+	b += a[-i]
+print('Reverse String: ' ,b)  # Reverse String:  anhsirK
+
+
+Program-5
+# Write  a  program  to  reverse  order  of  words  in  the  sentence  without  slice.
+a = input('Enter  any  sententce: ')  # Enter  any  sententce: Hyd  is  green  city
+b = a.split()
+c = ''
+for i in range(1, len(b) + 1):
+	c += b[-i] + ' '
+print('Reverse order of words: ' , c)  # Reverse order of words:  city green is Hyd
+
+
+Program-6
+# Write  a  program  to  reverse  each  word  of  the  sentence.
+a = input('Enter  any  sententce: ')  # Enter  any  sententce: Hyd  is  green  city
+b = a.split()
+c = ''
+for x in b:
+	c += x[::-1] + ' ' 
+print('Reverse of each word: ' , c)  # Reverse of each word:  dyH si neerg ytic
+
+
+Program-7
+# Write  a  program  to  sort  string  in  alphabetical  order.
+a = input('Enter any string: ')  # Enter any string: KRISHNA
+b = sorted(a)
+c = '' . join(b)
+print('Sorted String: ' , c)  # Sorted String:  AHIKNRS
+
+
+Program-8
+# Write  a  program  to  sort  string  such  that  alphabets  in  alphabetical  order  and  digits  in  ascending  order.
+a = input('Enter string with alphabets and digits: ')  # Enter string with alphabets and digits: K4R3I6S9H2N5A1
+b = sorted(a)
+alpha = digit = ''
+for x in b:
+	if x.isalpha():
+		alpha += x
+	elif x.isdigit():
+		digit += x
+print('Result: ' , alpha + digit) #  Result:  AHIKNRS1234569
+
+
+Program-9
+# What  are  the  outputs  if  input  is   [25 , 10.8 , 'Hyd' , True] .
+a = input('Enter  list  :  ')  # Enter  list  :  [25 , 10.8 , 'Hyd' , True]
+print(type(a))  # <class 'str'> because input function reads string list
+print(a)  # [25 , 10.8 , 'Hyd' , True]
+b = eval(a)  
+print(b)  # [25, 10.8, 'Hyd', True]
+print(type(b))  # <class 'list'>
+
+
+Program-10
+#  Find  outputs.
+a = [10, 20, 15, 18]  # Ref 'b' points to 'a'
+b = a
+print(a  is  b)	 # True
+print(a  ==  b)	 # True
+b[2] = 12
+print(a)  # [10, 20, 12, 18]
+
+
+Program-11
+#  Find  outputs.
+a = [10 , 20 , 15 , 18]
+b = [100 , 200 , 150]
+print(a + b)  # [10, 20, 15, 18, 100, 200, 150]
+#print(a + 5)  # Error beacause list and integer cannot be concatenated
+#print(a + '5')  # Error beacause list and string cannot be concatenated
+#print([10 , 20] + (30 , 40))  # Error beacause list and tuple cannot be concatenated
+
+
+Program-12
+# Find  outputs.
+list = [25 , 10.8 , 'Hyd' ,  True]
+a , *b , c = list  #  Unpacks  list  into  3  elements
+print('a : ' , a) #  a :  25
+print('b : ' , b)#   b : [10.8 , 'Hyd']
+print('c : ' , c) #  c : True
+print(type(b))#  <class  'list'>
+x , *y = list  # Unpacks  list  into  2  elements
+print('x : ' , x)  # x : 25
+print('y : ' , y)  # y : [10.8 , 'Hyd' ,  True]
+*p , q = list  # Unpacks  list  into  2  elements
+print('p : ' , p)  #  p : [25 , 10.8 , 'Hyd']
+print('q : ' , q)  #  q : True
+
+
+Program13
+# Find  outputs.
+list = [25 , 10.8 , 'Hyd' , True]
+a , b , c , d , e = list  # Error due to few elements in the list
+a , b , *c , d , e = list
+print('a : ' , a)  # a :  25
+print('b : ' , b)  # b :  10.8
+print('c : ' , c)  # c :  []
+print('d : ' , d)  # d :  Hyd
+print('e : ' , e)  # e :  True
+a , b , *c , d , e , f = list  # Error due to few elements in the list
+
+
+Program-14
+# Find  outputs.
+list = [25 , 10.8 , 'Hyd' , True]
+a , b , _  , d = list  # unpacks list into 4 elements
+print('a : ' , a)  # a :  25
+print('b : ' , b)  # b :  10.8
+print('_ :  ' , _)  #  _ :   Hyd
+print('d : ' , d)  # d :  True
+
+
+Program-15
+# Find  outputs.
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b , a , d , a = list
+print('a : ' , a)  # a :  3+4j
+print('b : ' , b)  # b :  10.8
+print('d : ' , d)  # d :  True
+
+
+Program-16
+# Find  outputs.
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , b ,  _ , d , _  = list
+print('a : ' , a)  # a :  25
+print('b : ' , b)  # b :  10.8
+print('_ : ' , _)  # _ :  3+4j
+print('d : ' , d)  # d :  True
+print('_: ' , _)   # _ :  3+4j
+
+
+Program-17
+# Identify  error.
+list = [25 , 10.8 , 'Hyd' , True , 3 + 4j]
+a , *b , c , *d , e  = list  # Error due to more than one * operator on left side
+
+
+Program-18
+# Find  outputs.
+list = [[25 , 10.8] , 'Hyd' , True]  # Nested list
+a , b , c = list
+print('a :  ' , a)  # a :   [25, 10.8]
+print('b :  ' , b)  #  b :   Hyd
+print('c :  ' , c)  #  c :   True
+
+
+Program-19
+# Find  outputs.
+list = [[25 , 10.8] , 'Hyd' , True]
+[a , b] , c , d = list
+print('a : ' , a)  # a :  25
+print('b : ' , b)  # b :  10.8
+print('c : ' , c)  # c :  Hyd
+print('d : ' , d)  # d :  True
+a , b , c , d = list  # Error due to excess elements on the left
+
+
+Program-20
+# Comparing  Lists
+a = [10 , 20 , 15 , 18]
+b = [10 , 20 , 15 , 18]
+c = [10 , 20 , 25 , 9]
+d = [10 , 20 , 7 , 22]
+print(a == b)  # True because list 'a' and 'b' has same elements
+print(a  is   b)  #False because 'a' and 'b' points to different lists
+print(a < c)  # True
+print(a > d)  # False
+print(a >= c)  # False
+print(a <= d)  # False
+print(a != c)  # True
+print(a != b)  # False
+print(a == c)  # False
+
+
+Program-21
+# Comparing  Lists
+a = [10 , 20 , 15 , 18]
+b = [20 , 18 , 15 , 10]
+print(a == b)  # False beacause 10 is not = 20
+print(a  is   b)  # False because 'a' and 'b' points to different lists
+
+
+***** List Functions *****
+Program-22
+#  len()  function
+a = [ 25, 10.8, 'Hyd', True]
+print(len(a))  # 4
+b = []
+print(len(b))  # 0
+c = [[10 , 20] , 30 , 40]
+print(len(c))  # 3
+
+
+Program-23
+# sum()  function
+a = [25 , 10.8 , True]
+print(sum(a))  # 25 + 10.8 + 1  i.e.  36.8
+b= [3 + 4j , 5 + 6j]
+print(sum(b))  # 3 + 4j + 5 + 6j  i.e.  8+10j
+c = [25 , 10.8 , True , 3 + 4j , False]
+print(sum(c)) # 25 + 10.8 + 1 + 3 + 4j + 0  i.e.  39.8 + 4j
+d = [10 , 20 , 15 , 18]
+print(sum(d))  # 10 + 20 + 15 + 18  i.e.   63
+e = [25 , 10.8 , 'Hyd' , True]
+print(sum(e))  Error because number and string cannot be concatented
+
+
+Program-24
+#  Find  outputs
+a = [[10 , 20 , 15 , 18]]
+#print(sum(a))
+#How  to  determine  sum  of  inner  list  elements
+print(sum(a[0]))  # 63  
+#How  to  determine  sum  of  inner  list  elements  in  another  way
+print(sum(*a)) # 63
+
+
+Program-25
+# max()  and  min()  functions
+a = [10 , 20 , 15 , 18 , 30, 5 , 12]
+print(max(a))  # 30
+print(min(a))  # 5
+b = ['Rama' , 'Sita' , 'Rajesh' , 'Kiran' , 'Amar' , 'Vamsi' , 'Manohar']
+print(max(b))  # Vamsi
+print(min(b))  # Amar
+c = [25 , 10.8 ,  3 + 4j , True]
+print(max(c))  # Error due to complex number
+d = [25 , '35']
+print(max(d))  # Error  due to string
+print(max([]))  # Error due to empty list
+print(min([]))  # Error due to empty list
+
+
+Program-26
+# list()  function 
+a = (10 , 20 , 15, 18)
+b = list(a)  # converts tuple to list
+print(b)  # [10 , 20 , 15, 18]
+print(type(b))  # <class 'list'>
+print(a  is  b)  # False because 'a' and 'b' are pointing to different lists
+print(a == b)  # False because 'a' and 'b' are pointing to different lists
+
+
+Program-27
+#  Find  outputs
+a = range(4 , 10 , 2)
+b = list(a)  # converts range ogject to list
+print(b)  # [4, 6, 8]
+print(type(b))  # <class 'list'>
+a = list('Vamsi')  # converts string to list
+print(a)  # ['V', 'a', 'm', 's', 'i']
+a = list()  # Returns an empty list
+print(a)  # []
+print(list(25))  # Error because 25 is not a sequence
+print(list(10.8))  # Error because 10.8 is not a sequence
+print(list(True))  # Error because True is not a sequence
+print(list(None))  # Error because None is not a sequence
+
+
+Program-28
+# Find  outputs
+a = ((10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90))  # Nested Tuple
+print(list(a))  # [(10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)]
+b = { (10 , 20) , (30 , 40 , 50) , (60 , 70 , 80 , 90)}  # Set of Tuples
+print(list(b))  # [(30, 40, 50), (60, 70, 80, 90), (10, 20)]
+c = ([10 , 20] , (30 , 40) , {50 , 60})  # Nested Sequences
+print(list(c))  # [[10, 20], (30, 40), {50, 60}]
+
+
+Program-29
+# Find  outputs
+a = ['Rama',  'Rajesh',  'Amar',  'Sita',  'Vamsi'  ,  'Kiran'  , 'Rama  Rao']
+b = sorted(a)  # eturns a sorted list
+print(b)  # ['Amar' , 'Kiran' , 'Rajesh' , 'Rama' , 'Rama Rao' , 'Sita' , 'Vamsi']
+c = sorted(a , reverse = True)
+print(c)  # ['Vamsi', 'Sita', 'Rama  Rao', 'Rama', 'Rajesh', 'Kiran', 'Amar']
+print(a)  # ['Rama', 'Rajesh', 'Amar', 'Sita', 'Vamsi', 'Kiran', 'Rama  Rao']
+
+
+Program-30
+# all()  function
+a = [12 > 10 , 5 < 20 , 30 == 30]
+print(all(a))  # True
+b = [9 >= 6 , 12 <= 9 , 6 == 6]
+print(all(b))  # False
+c = [25 , 10.8 , '' , True , 3+4j , 'Hyd']
+print(all(c))  # False
+d = [10 , 0 , 20]
+print(all(d))  # False
+e = []
+print(all(e))  # True
+
+
+Program-31
+# any()  function
+a  = [12 > 18 , 5 < 20 , 35 == 30]
+print(any(a))  # True
+b = [12 > 18 , 25 < 20 , 35 == 30]
+print(any(b))  # False
+c = [0 , 0.0 , '' , 25 , 0 + 0j , False]
+print(any(c))  # True
+d = [0 , 0.0 , '' , 0 + 0j , False]
+print(any(d))  # False
+e = []
+print(any(e))  # False
