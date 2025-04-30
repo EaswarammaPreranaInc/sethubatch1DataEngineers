@@ -31,7 +31,7 @@ class  teacher(person):
 		self.hra = self.sal*0.2         #20%  of  salary
 		self.grosspay=self.sal+self.da+self.hra  #How  to  calculate  grosspay  and  store  the  result  in  object (grosspay  is  sal + da + hra)
 		self.pf = min(0.08 * self.grosspay, 400)               #8%  of  grosspay  but  a  max  of  400
-		self.tax = 0.10 * self.grosspay if self.grosspay < 10000 else 0.15 * self.grosspay      #tax = 10%  of  grosspay  if  grosspay is  < 10000  and  15%  otherwise
+		self.tax = 0.10 * self.grosspay if self.grosspay < 10000 else (0.10*self.grosspay)+(0.15*self.grosspay)     #tax = 10%  of  grosspay  if  grosspay is  < 10000  and  15%  otherwise
 		self.netpay=self.grosspay-self.pf-self.tax          #How  to  calculate  netpay  and  store  the  result  in  object  (netpay  is  grosspay - pf - tax)
 	def   disp(self):
 		super() . disp() # How  to  print  number , name , age , gender
