@@ -1,0 +1,34 @@
+"""                                    
+#Simple interest and compound interest 
+p=eval(input("principle :"))           
+t=eval(input("time :"))                
+r=eval(input("rate of interest:"))     
+print("simple interest :" ,p*t*r/100)  
+print("compound interest :", p*(1+r/100)**t-p)
+"""                                    
+"""
+Write  a  program  to  swap  values  of  two  objects  using  3rd   object
+
+Let  x = 10  and  y = 25
+What  are  the  values  of  x  and  y  after  swap ?  --->  x = 25  and   y = 10
+
+a=int(input("Enter 1st input"))
+b=int(input("Enter 2nd input"))
+print("before swapping","a:",a,"b:",b)
+c=a
+a=b
+b=c
+print("after swapping","a:",a,"b:",b)
+"""
+#Write  a  program  to  add ,  subtract , multiply  and  divide  two  complex  numbers
+f=complex(input("Enter first complex :"))                                             
+s=complex(input("Enter second complex :"))                                            
+sum=complex(f+s)                                                                      
+diff=complex(f-s)                                                                     
+prod=complex(f*s)                                                                     
+div=complex(f/s)                                                                      
+print("sum :-",sum)                                                                   
+print("diff :-",diff)                                                                 
+print("prod :-",prod)                                                                 
+print("div :-",div)                                                                   
+"""                                                                                   
