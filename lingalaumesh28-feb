@@ -1,0 +1,313 @@
+# Write a program to determine a number is even or odd with if statement
+try:
+    a=int(input("Enter any number:"))
+    if a%2==0:
+        print("Even Number")
+    else:
+        print("Odd Numer")
+except:
+    print("Enter valid input")
+
+Output:
+Enter any number: 2
+Even Number
+
+
+## Write a program to print month name for input month number by using if and elif(Home  work)
+try:
+    a=int(input("Enter month number(1-12):"))
+    if a<12:
+        if a==1:
+            print("January")
+        elif a==2:
+            print("February")
+        elif a==3:
+            print("March")
+        elif a==4:
+            print("April")
+        elif a==5:
+            print("May")
+        elif a==6:
+            print("June")
+        elif a==7:
+            print("July")
+        elif a==8:
+            print("August")
+        elif a==9:
+            print("September")
+        elif a==10:
+            print("October")
+        elif a==11:
+            print("November")
+        elif a==12:
+            print("December")
+    else:
+        print("Enter the number in between 1-12 only")
+except:
+    print("Enter the valid input")
+Output:
+Enter month number(1-12): 8
+August
+
+#Write a  program to test year is leap year or not(Divisible  by  4  but  not  by  100   (or)  divisble  by  400)
+try:
+    a=int(input("Enter 4 digit number:"))
+    if (a%4==0 and a%100!=0) or a%400==0:
+        print("Leap Year")
+    else:
+        print("not a leap year")
+except:
+    print("Enter a valid input")
+Output:
+Enter 4 digit number: 23
+not a leap year
+
+
+#Write  a  program  to  determine  largest  of  three  numbers  with  if  and  else
+try:
+    a=eval(input("Enter 1st input"))
+    b=eval(input("Enter 2st input"))
+    c=eval(input("Enter 3st input"))
+    if a>b>c:
+        print(f"latgest number {a}")
+    elif b>c>a:
+        print(f"latgest number {b}")
+    else:
+        print(f"latgest number {c}")
+except:
+    print("Enter a valid input")
+
+Output:
+Enter 1st input 9
+Enter 2st input 90
+Enter 3st input 900
+latgest number 900
+
+#Write  a  program  to  convert  celsius  temperature  to  farenheit  and  vice-versa
+try:
+    a=int(input("Enter 1 to convert celsius to farenheit and 2 to convert fahrenheit to celsius:2 Enter fahrenheit temperature"))
+    if a==1:
+        temp=int(input("Enter celsius temperature :"))
+        print(f"Fahrenheit  Equivalent {1.8 * temp + 32}")
+    elif a==2:
+        temp=int(input("Enter fahrenheir temperature :"))
+        print(f"celsius  Equivalent {(temp - 32) / 1.8}")
+    else:
+        print("Enter 1 or 2 only")
+except:
+    print("Enter valid input")
+
+Output:
+Enter 1 to convert celsius to farenheit and 2 to convert fahrenheit to celsius:2 Enter fahrenheit temperature 2
+Enter fahrenheir temperature : 90
+celsius  Equivalent 32.22222222222222
+
+#Write a program to test a point(x , y) lies in 1st quadrant,2nd quadrant,3rd quadrant,4th quadrant,x - axis,y - axis or origin
+try:
+    x=int(input("Enter value x co-ordinate : "))
+    y=int(input("Enter value y co-ordinate : "))
+    if x>0 and y>0:
+        print("1st Quadrant")
+    elif x<0 and y>0:
+        print("2st Quadrant")
+    elif x<0 and y<0:
+        print("3st Quadrant")
+    elif x>0 and y<0:
+        print("4 st Quadrant")
+    elif x!=0 and y==0:
+        print("on x -axis")
+    elif x==0 and y!=0:
+        print("on  y - axis")
+    else:
+        print("origin")
+except:
+    print("Enter valid input")
+
+Output:
+Enter value x co-ordinate :  23
+Enter value y co-ordinate :  2
+1st Quadrant
+
+
+#Write  a  program  to  determine  largest , smallest  and  middle  of  three  numbers
+a=int(input("Enter 1st input"))
+b=int(input("Enter 2nt input"))
+c=int(input("Enter 3rd input"))
+if a>b>c:
+    max=a
+    print(f"largest : {max}")
+elif b>a>c:
+    max=b
+    print(f"largest : {max}")
+else:
+    max=c
+    print(f"largest : {max}")
+Output:
+Enter 1st input 1
+Enter 2st input 2
+Enter 3st input 1
+largest : 1            
+
+
+#Write  a  program  to  determine  three  sides  form  a  triangle  or  not
+import math
+a=float(input("Enter 1st input"))
+b=float(input("Enter 2nd input"))
+c=float(input("Enter 3rd input"))
+if a+b>c:   
+    if a==b==c:
+        print("Equilateral  triangle")
+        print(f"Area : {(math.sqrt(3) / 4 )* (a ** 2)}")
+    elif (a==b) or (b==c) or (c==a):
+        print("isosceles  triangle")
+        print(f"perimeter : {a+b+c}")
+    elif a!=b!=c:
+        print("scalene  triangle")
+        s=(a+b+c)/2
+        print(f"area : {math.sqrt(s*(s-a)*(s-b)*(s-c))}")
+        print(f"perimeter : {a+b+c}")
+else:
+    print("Not a triange")
+
+Output:
+Enter 1st input 4
+Enter 2nd input 5
+Enter 3rd input 10
+Not a triange
+
+#Write a program to determine a point(x , y) lies inside,outside or on the circle.Center is origin and radius is 'r'
+import math
+x=int(input("Enter x value : "))
+y=int(input("Enter y value : "))
+radius=int(input("Enter radius : "))
+distance=math.sqrt(x**2 + y**2)
+if distance>radius:
+    print("Out side the circle")
+elif distance < radius:
+    print("Inside the circle")
+else:
+    print("On the circle")
+    
+Output:
+Enter x value :  3
+Enter y value :  4
+Enter radius :  5
+on the circle
+
+
+#### Write  a   program  to  print  day  of  the  week Use  match ... case
+try:
+    x=int(input("Enter the number between (1-9) : "))
+    match x:
+        case 1:
+            print("Monday")
+        case 2:
+            print("Tuesday")
+        case 3:
+            print("Wednesday")
+        case 4:
+            print("Thursday")
+        case 5:
+             print("Friday")
+        case 6:
+            print("Saturday")
+        case 7:
+            print("sunday")
+        case _:
+            print("Enter the number between 1 and 7 only")
+except:
+    print("Enter valid input")
+Output:
+Enter the number between (1-9) :  4
+Thursday
+
+#Write  a  program  to  print  digit in  words
+#### Write  a   program  to  print  day  of  the  week Use  match ... case
+try:
+    x=int(input("Enter the number between (0-9) : "))
+    match x:
+        case 0:
+            print("Zero")
+        case 1:
+            print("One")
+        case 2:
+            print("Two")
+        case 3:
+            print("Three")
+        case 4:
+             print("Four")
+        case 5:
+            print("Five")
+        case 6:
+            print("Six")
+        case 7:
+            print("Seven")
+        case 8:
+            print("Eight")
+        case 9:
+            print("Nine")
+        case _:
+            print("Enter the number between 0 and 9 only")
+except:
+    print("Enter valid input")
+
+Output:
+Enter the number between (0-9) :  2
+Two
+
+#Write  a  program  to  determine  bill  amount  and  input  is  units
+a=int(input("Enter the units:"))
+if a<100:
+    b=0
+elif a>=100 and a<200:
+    b=1
+elif a>=200 and a<400:
+    b=2
+elif a>=400 and a<700:
+    b=3
+else:
+    b=4
+
+match b:
+    case 0:
+        cost=a*3.00
+    case 1:
+        cost=100*3.00+(a-100)*3.50
+    case 2:
+        cost=100*3.00+100*3.50+(a-200)*4.00
+    case 3:
+        cost=100*3.00+100*3.50+200*4.00+(a-400)*4.50
+    case 4:
+        cost=100*3.00+100*3.50+200*4.00+400*4.50+(a-700)*5.00
+        
+print(f"Bill ammount : {cost}")      
+
+Output:
+Enter the units: 900
+Bill ammount : 4250.0
+
+
+#fibonacci series less than the n
+n=int(input("Enter any number :"))
+a=0
+b=1
+c=0
+while c<n:
+    a=b
+    b=c
+    print(c)
+    c=a+b
+Output:
+
+Enter any number : 50
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+
