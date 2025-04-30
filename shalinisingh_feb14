@@ -1,5 +1,4 @@
 #program 1
-
 # int()  function  demo  program
 print(int(10.8)) #  Converts  10.8  to  10
 print(int(True))  #  Converts  True  to  1
@@ -12,9 +11,9 @@ print(int(0O6247))  # Converts 0O6247 to 3239
 print(0O6247)  # 0O6247 to 3239 
 print(int(0XA7B9))  # Converts  0XA7B9 to 42937
 print(0XA7B9)  # 0XA7B9 to 42937
-print(int(3 + 4j))  # error complex not be converted to integer
-print(int('25.4'))  # error due to string float
-print(int('Ten'))  # error becoz string 'Ten' can't be converted to integer 
+print(int(3 + 4j))  # error
+print(int('25.4'))  # error 
+print(int('Ten'))  # error 
 
 #program 2
 # float()  function  demo  program
