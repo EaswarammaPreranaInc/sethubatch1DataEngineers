@@ -386,5 +386,8 @@ print(any(d)) # False
 e = []
 print(any(e)) # False
 
+12march class work
+------------------
 
+#1)
 

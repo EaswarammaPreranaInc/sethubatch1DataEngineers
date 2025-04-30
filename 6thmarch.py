@@ -223,6 +223,16 @@ for i in range(len(a)):
 for i in range(1,len(a)+1):
 	print(f'Character at index {-i} : {a[-i]}')
 
+                               (or)
+a=input ('Enter the String:')
+print('String in forward:')
+for i in range(len(a)):
+	print(F' Charecter at index{i}:{a[i]}"
+for i in range (1,len(a)+1):
+	print(F' Charecter at index{-i}:{a[-1]})
+
+	                   
+
 #Write  a  program  to  print  characters  at  even  and  odd  indexes  without  slice
 
 
@@ -248,8 +258,8 @@ for i in range(len(a)):
 	
 	else:
 		odd+=a[i]
-print(even)
-print(odd)
+print('Charecters at even indexes:', even)
+print('Charecters at odd indexes:'odd)
 
 
 #Let  input  be    A   4   B   3   C   2   $   5
@@ -281,10 +291,400 @@ for i in range(0,len(a),2):
 		r+=val*num
 	
 print(r)
+                or
+
+try:
+	a= input ('Enter any string with alternate charecter and digit:')
+	s =' '
+	for i in range(0,len(a),2):
+		s+= a[i]*int(a[i+1])
+		print('Result:', s)
+except:
+	print('String should have alternate charecter and digit')
+
+
+#write a prgm to determine 1.1 +2.2+3.3+.....+n terms
+
+n= int(input('How many terms would you like to add:'))
+sum = 0
+for i in range(1, n+1):
+	sum += 1.1*i
+print('sum : ', sum)
+
+
+#write a prgm to determine sum of first 20 even numbers
+
+
+sum = 0
+for i in range(1, 21):
+	sum += 2*i
+print('sum of first 20 even numbers : ', sum)
+
+#write a prgm to determine sum of first 20 odd number
+sum = 0
+for i in range(1, 21):
+	sum += 2*i - 1
+print('sum of first 20 odd numbers : ', sum)
+
+#write a prgm to determine 1+2+3+4+.......+n without using formula n*(n+1)/2
+
+n= int(input('How many terms would you like to add:'))
+sum = 0
+for i in range(1, n+1):
+	sum += i
+print('sum : ', sum)
+
+
+# How to print list elements in reverse order without slice
+
+a= eval(input('Enter list of elements:'))
+print('Indexed for loop')
+for i in range(1,len(a)+1):
+	print(a[-i])
+
+
+# write a prgm to add two lists and store result in 3rd list
+
+
+a= eval(input('Enter list1 of elements:'))
+b= eval(input('Enter list2 of elements:'))
+c=[]
+for i in range(len(a)):
+	c.append(a[i]+b[i])
+	print('3rd list:',c)
+
+
+# How to print list elements  from indexes 2 to 4 without slice
+
+a=[25,10.8, 'Hyd', True, 3+4j, None, 'Sec']
+print('Indexed for loop')
+for i in range(2,5):
+   print(a[i])
+
+
+a=[10,20,15,18]
+for i in range(len(a)):
+	a[i] += 1 #increments each element of list 'a' by 1
+	print('a:', a) #[11,21,16,19]
+b=[10,20,15,18]
+for i in range (len(b)): || for x in b:
+	a[i] +=1             ||    x+= 1  # increment 'x' but not the elements of list 'b'
+	print('b:', b)       || print('b:', b) #[10,20,15,18]
+
+#
+for i in range (1,8):
+	print(i)
+    if i % 3 ==0:
+		 continue
+    else:
+	   print('sec')
+ print('Hello')
+
+#
+for i in range (1,8):
+	print(i)
+	if i %3==0:
+		break
+
+	else:
+		print('Sec')
+print('Hello')
+
+
+#
+
+for i in range (1,8):
+	print(i)
+	if i %3==0:
+		pass
+
+	else:
+		print('Sec')
+print('Hello')
+
+
+#
+for i in range (1,8):          
+	print(i)
+	if i %3==0:
+		exit
+
+	else:
+		print('Sec')
+print('Hello')
+
+outputs
+
+1
+Sec
+2
+Sec
+3
+4
+Sec
+5
+Sec
+6
+7
+Sec
+Hello
+
+#
+for i in range (1,8):          
+	print(i)
+	if i %3==0:
+		exit()
+
+	else:
+		print('Sec')
+print('Hello')
+
+outputs
+
+1
+Sec
+2
+Sec
+3
+
+#
+for i in range (1,8):          
+	print(i)
+	if i %3==0:
+		continue
+	else:
+		print('sce')
+		print('hello')
+else:
+	print('else suite')
+
+#
+if(): #Empty tuple is False
+	print('Hyd')
+	continue #Error due to there is no loop
+	print('Sec')
+
+#
+if(10,20,30): # prints Hyd <next line> Sec due to non Empty tuple is True
+	print('Hyd')
+	#break # Error due to no loop
+	print('Sec')
+	
+for i in range(1,8):
+	print(i)
+	if i ==8:
+		break
+	else:
+
+		print('sec')
+        print('Hello')
+else:
+	print('else suite')
+print('outside loop')
+
+#Nested loop demo
+for i in range(1,4):
+	for j in range (1,5):
+		print(i,j)
+	print('Hello')
+print('Bye')
+
+#index() demo
+a=[25,10.8,'Hyd',True]
+print(a.index('Hyd'))
+print(a.index(25))
+#print(a.index('Sec')) # Error due to Sec not in list
+print(a.index(True))
+print(a.index(10.8))
+
+#write a prgm to print each element and the corresponding index
+
+a=[25, 10.8,'Hyd',True]
+print('Index for loop')
+for i in range(len(a)):
+	print(i,a[i], sep ='...')
+print('For each loop')
+for x in a:
+	print(a.index(x),x, sep=':')
+
+# write a progm to determine command line input is even or odd number
+
+from sys import argv
+try:
+	x= int(argv[1])
+	if x%2==0:
+		print('Even number')
+	else:
+		print('Odd number')
+except:
+	print('Send an integer number')
+
+# write a progm to determine average command line input 
+
+from sys import argv
+try:
+	a=[]
+	for x in argv[1:]:
+		a.append(eval(x))
+	 else:
+		print('Average :',sum(a)/len(a))
+except ZeroDivision Error:
+	print('Send at least one input')
+except(Type Error, Name Error):
+	print('Do not send String')
+	
+
+# write a progm to sort command line inputs in ascending order and decending order
+
+from sys import argv
+try:
+	a = []
+	for x in argv[1:]:
+		a.append(eval(x))
+		a.sort()
+		print('Ascending order:',a)
+		a.sort(reverse = True)
+		print('Decending order:',a)
+except TypeError:
+	print('Do not send number and string')
+except NameError:
+	print('String has to be in single or triple quote')
+	
+# write a progm to print employee data passed from command line
+
+from sys import argv
+class emp:
+	def init(self):
+		self. empno = int(argv[1])
+		self. ename = argv[2]
+		self. sal = float(argv[3])
+		self. gender =argv[4]
+		self. married = eval(argv[5])
+	def disp(x):
+		print('Emp number :', x.empno)
+		print('Emp name :', x.ename)
+		print('Emp salary :', x.sal)
+		print('Emp Gender :', x.gender)
+		print('Emp Married :', x.married)
+try:
+	e =emp()
+	e . init()
+	e . disp()
+except IndexError:
+	print('Send inputs in the order empno, emp name, salary, gender and marital status')
+except Valueerror:
+	print('Emp name should be in double quotes or send inputs in the order empno, empname, salary, gender and marital status')
+
+
+#write a prgm to determine largest command line input
+
+
+
+from sys import argv
+try:
+   a = []
+   for x in argv[1:]:
+	   a.append(eval(x))
+	   print('Largest input :', max(a))
+except ValueError:
+	print('Send at least one number')
+except NameError:
+	print('Input string have to be in single or triple quotes')
+except TypeError:
+	print('Send number input or string input but not both')
+
+# write a prgm to concatenate two strings seperated by space but swap the first two charecters of each string. Assume that each string contains a minimum of two charecters
+
+a=input('Enter 1st string:')
+b=input ('Enter 2nd string:')
+if len(a)<2 or len(b)<2:
+	print('Input should be a min of two charecter string')
+else:
+	print('Result:',b[:2]+a[2:] +' '+a[:2]+b[2:])
+
+
+# write a prgm to print first and last two charecters of the string and print an empty string if string contains less than four charecters
+a=input('Enter any string:')
+b=' '
+if len(a)>=4: #print an empty string if string contains less than four charecters
+	b= a[:2]+a[-2:]
+	print('Result:', b)
+
+	A4B3C2$6.....> output
+try:
+	a= input ('Enter any string with alternate charecter and digit:')
+	b= input ('Enter any string with alternate charecter and digit:')
+	s =' '
+	for i in range(0,len(a,b),2):
+		s+= (a[i]*int(a[i+1]) + b[i]*int(b[i+1]))
+		print('Result:', s)
+except:
+	print('String should have alternate charecter and digit')
+
+not grtting
+
+a=input ('Enter the String:')
+print('String in forward:')
+for i in range(len(a)):
+	print(F' Charecter at index{i}:{a[i]}"
+print('String in reverse :')
+for i in range (1,len(a)+1):
+	print(F' Charecter at index{-i}:{a[-1]})
+
+	
+# write a prgm to modify following prgm with walrus operator
+
+try:
+	sum = ctr = 0
+	while(x:= eval(input('Enter any number(ctrl+z to stop):'))) != -1:
+		sum += x
+		ctr += 1
+	#end of whileloop:
+		print('Average:', sum/ctr)
+
+
+except( NameError , TypeError):
+	print('Input can not be string')
+except ZeroDivisionError:
+	print('Enter at least one input')
+
+
+# Sorted function demo 
+
+a=' RAJESH'
+b=sorted(a)
+print(type(b))
+print(b)
+c=sorted(a, reverse = True)
+print(c)
+print(a)
+
+
+try:
+	a= input ('Enter any string with alternate charecter and digit:')
+	b= input ('Enter any string with alternate charecter and digit:')
+	c =' '
+	while range(0,len(a),2):
+	     while range(0,len(b),2):
+		c+= (a[i]*int(a[i+1])+b[i]*int(b[i+1])
+print('Result:', c)
+except:
+	print('String should have alternate charecter and digit')
+
+
+def remove_duplicates(input_string):
+	result = ""
+for char in input_string:
+     if char not in result:
+         result += char
+         print(' result:')
+		 
+
+input_string = "aabbccddeeff"
+output_string = notrepeat.(input_string)
+print("Original String:", input_string)
+print("String without duplicates:", output_string)
 
 '''
-
-
-
 
 
