@@ -1,0 +1,152 @@
+#search for an element in the list without using in operator and index() method
+a=eval(input('Enter a list:'))
+n=int(input('Enter the value to search:'))
+c=0
+for i in range(len(a)):
+	if(a[i]==n):
+		print(F'{n} is found at index {i}')
+		c+=1
+if c!=0:
+	print(f'{n} is found {c} times')
+else:
+	print('Not Found')
+'''
+#Outputs
+Enter a list:[10,20,15,12,18,15,19,14,15,14]
+Enter the value to search:15
+15 is found at index 2
+15 is found at index 5
+15 is found at index 8
+15 is found 3 times
+
+Enter a list:[10,20,15,12,18,15]
+Enter the value to search:25
+Not Found
+'''
+
+#Modify the program with walrus operator
+try:
+	sum=ctr=0
+	while(x:=eval(input('Enter input (-1 to stop) :')))!=-1:
+		sum+=x
+		ctr+=1
+	print('Average:',sum/ctr)
+except ZeroDivisionError:
+	print('Enter at least one input')
+except (NameError, TypeError):
+	print('Input can not be string')
+'''
+#Output
+Enter input (-1 to stop) :25
+Enter input (-1 to stop) :10.8
+Enter input (-1 to stop) :True
+Enter input (-1 to stop) :46.2
+Enter input (-1 to stop) :False
+Enter input (-1 to stop) :92
+Enter input (-1 to stop) :-1
+Average: 29.166666666666668
+'''
+
+#program to determine largest command line input
+try:
+	from sys import argv
+	print(argv)
+	a=list()
+	for i in range(1,len(argv)):
+		a.append(eval(argv[i]))
+	print(max(a))
+except ValueError:
+	print('Please send inputs')
+except TypeError:
+	print('Inputs cannot be number and string')
+'''
+#Output
+C:\SSSSDP>py March5.py 25 15
+['March5.py', '25', '15']
+25
+
+C:\SSSSDP>py March5.py
+['March5.py']
+Give atleast one input
+
+C:\SSSSDP>py March5.py 'Rama' 'Sita' 'Rajesh' 'Manohar' 'Vamsi' 'Amar'
+['March5.py', "'Rama'", "'Sita'", "'Rajesh'", "'Manohar'", "'Vamsi'", "'Amar'"]
+Vamsi
+
+C:\SSSSDP>py March5.py 'amar' 10
+['March5.py', "'amar'", '10']
+Inputs cannot be number and string
+'''
+
+#determine command line input is even number or odd number
+try:
+	from sys import argv
+	n=int(argv[1])
+	if(n%2==0):
+		print('Even number')
+	else:
+		print('Odd number')
+except (IndexError,TypeError):
+	print('Please send an integer input')
+'''
+#Output
+C:\SSSSDP>py March5.py 25
+Odd number
+
+C:\SSSSDP>py March5.py
+Please send an integer input
+
+C:\SSSSDP>py March5.py 10.8
+Please send an integer input
+'''
+
+#determine average of command line inputs
+try:
+	from sys import argv
+	a=[]
+	for i in range(1,len(argv)):
+		a.append(eval(argv[i]))
+	print('Average:',sum(a)/len(a))
+except ZeroDivisionError:
+	print('division by zero')
+except TypeError:
+	print('Give integer input')
+'''
+#Output
+C:\SSSSDP>py March5.py 25 10.8 True 15 False
+Average: 10.36
+
+C:\SSSSDP>py March5.py
+division by zero
+
+C:\SSSSDP>py March5.py 25 'Ten'
+Give integer input
+'''
+
+#sort command line inputs in ascending and descending order
+try:
+	from sys import argv
+	print('argv:',argv)
+	a=[]
+	for i in range(1,len(argv)):
+		a.append(eval(argv[i]))
+	print('a:',a)
+	a.sort()
+	print('Ascending order:',a)
+	a.sort(reverse=True)
+	print('Descending order:',a)
+except TypeError:
+	print("Don't send number and string inputs together")
+'''
+#Outputs
+C:\SSSSDP>py March5.py 25 10 15 10.8
+argv: ['March5.py', '25', '10', '15', '10.8']
+a: [25, 10, 15, 10.8]
+Ascending order: [10, 10.8, 15, 25]
+Descending order: [25, 15, 10.8, 10]
+
+C:\SSSSDP>py March5.py 10 'Ten'
+argv: ['March5.py', '10', "'Ten'"]
+a: [10, 'Ten']
+Don't send number and string inputs together
+'''

@@ -1,0 +1,126 @@
+#Write a program to determine total and average of student and gross pay and net pay of teacher
+from abc import *
+class person(ABC):
+	def get(self):
+		self.number=int(input('Enter number : ')) #How  to   read  number
+		self.name=input('Enter name : ') #How  to   read  name
+		self.age=int(input('Enter age : ')) #How  to   read   age
+		self.gender=input('Enter gender : ') #How  to   read   gender
+	def disp(self):
+		print(self.number, self.name, self.age, self.gender, sep='\t', end='\t') #How to print number, name, age, gender in same line separated by tab
+	@abstractmethod
+	def compute(self):
+		pass
+class student(person):
+	def get(self):
+		super().get() #How  to  read   number , name , age , gender
+		#How  to  read  marks  of  3  subjects  into  list
+		self.list=[]
+		for i in range(3):
+			self.list.append(int(input(F'Enter marks of subject {i+1} : ')))
+	def compute(self):
+		self.tot=sum(self.list) #How  to  calculate  total  marks
+		self.avg=self.tot/3 #How  to  calculate  average  marks
+	def disp(self):
+		super().disp() #How  to  print  number , name , age , gender
+		print(self.tot,self.avg,sep='\t') #How  to  print  total  and  average  in  same  line separated  by  tab
+class teacher(person):
+	def get(self):
+		super().get() #How  to  read  number , name , age  and  gender
+		self.sub=input('Enter subject : ') #How  to  read   subject
+		self.sal=float(input('Enter salary : ')) #How  to  read   salary
+	def compute(self):
+		da=0.50*self.sal #50%  of  salary
+		hra=0.20*self.sal #20%  of  salary
+		self.gpay=self.sal+da+hra #How  to  calculate  grosspay  and  store  the  result  in  object (grosspay  is  sal + da + hra)
+		pf=max(0.08*self.gpay,400) #8%  of  grosspay  but  a  max  of  400
+		tax=0.10*self.gpay if self.gpay<10000 else 0.15*self.gpay #10%  of  grosspay  if  grosspay is  < 10000  and  15%  otherwise
+		self.npay=self.gpay-pf-tax #How  to  calculate  netpay  and  store  the  result  in  object  (netpay  is  grosspay - pf - tax)
+	def disp(self):
+		super().disp() # How  to  print  number , name , age , gender
+		print(self.sub,self.sal,self.gpay,self.npay,sep='\t') # How  to  print  subject , salary , grosspay , netpay  in  same  line   separated  by  tab
+def menu():
+	print('1. Teacher')
+	print('2. Student')
+	print('3. Exit')
+a=[]
+i=0
+menu()
+ch=eval(input('Enter choice : '))
+while ch<3: #Repeat  until  input  is  3
+	if ch==1:
+		a.append(teacher()) #How  to  append  teacher  object  to  list  'a'
+	else:
+		a.append(student()) #How  to  append  student  object  to  list  'a'
+	a[i].get() #How  to  read  inputs  into  object
+	a[i].compute() #How  to  store   results  in  object
+	i+=1 #How  to  move  to  next  index
+	menu()
+	ch=eval(input('Enter choice : '))
+print('Teachers')
+#How  to  print  all  teacher  objects
+for x in a:
+	if isinstance(x,teacher):
+		x.disp()
+print()
+print('Students')
+#How  to  print  all  student  objects
+for x in a:
+	if isinstance(x,student):
+		x.disp()
+print('Good Bye')
+
+#Outputs
+1. Teacher
+2. Student
+3. Exit
+Enter choice : 1
+Enter number : 10
+Enter name : Sita
+Enter age : 35
+Enter gender : F
+Enter subject : Python
+Enter salary : 15000.0
+1. Teacher
+2. Student
+3. Exit
+Enter choice : 2
+Enter number : 1
+Enter name : Hari
+Enter age : 18
+Enter gender : M
+Enter marks of subject 1 : 45
+Enter marks of subject 2 : 50
+Enter marks of subject 3 : 55
+1. Teacher
+2. Student
+3. Exit
+Enter choice : 1
+Enter number : 20
+Enter name : Ram
+Enter age : 35
+Enter gender : M
+Enter subject : Java
+Enter salary : 15500
+1. Teacher
+2. Student
+3. Exit
+Enter choice : 2
+Enter number : 2
+Enter name : Maya
+Enter age : 18
+Enter gender : F
+Enter marks of subject 1 : 50
+Enter marks of subject 2 : 55
+Enter marks of subject 3 : 40
+1. Teacher
+2. Student
+3. Exit
+Enter choice : 3
+Teachers
+10      Sita    35      F       Python  15000.0 25500.0 19635.0
+20      Ram     35      M       Java    15500.0 26350.0 20289.5
+
+Students
+1       Hari    18      M       150     50.0
+2       Maya    18      F       145     48.333333333333336
