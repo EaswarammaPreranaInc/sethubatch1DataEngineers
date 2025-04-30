@@ -1,0 +1,575 @@
+# Find  outputs   (Home  work)
+a = 25 , 10.8 , 3 + 4j , 'Hyd' , True , None , 'Hyd' , 25
+print(a)
+print(type(a))
+#a[3] = 'Sec'
+#a[3 : 6] = 60 , 70 , 80
+
+
+"""
+Output:
+25 , 10.8 , (3 + 4j) , 'Hyd' , True , None , 'Hyd' , 2
+<class tuple>
+Error
+Error
+"""
+
+#  What   are  the  outputs  if  input  is  (10 , 20 , 30 , 40) ?   (Home  work)
+a = input('Enter  Tuple  :  ')
+print(a) 
+print(type(a))
+b = eval(a)
+print(b)
+print(type(b))
+print(len(b))
+
+"""
+output:
+(10 , 20 , 30 , 40)
+<class str>
+(10 , 20 , 30 , 40)
+<class tuple>
+4
+"""
+
+# Find  outputs  (Home  work)
+a = (10 , [20 , 30 , 40] , 50 , 60)
+a[1][0] = 70
+print(a)
+#a[1] = [80 , 90 , 100]
+#print(a)
+"""
+Output:
+(10,[70,30,40],50,60)
+"""
+
+# Find  outputs  (Home  work)
+a = [10 , (20 , 30 , 40) , 50 , 60]
+#a[1][0] = 70
+print(a)
+a[1] = [80 , 90]
+print(a)
+"""
+Output:
+line48:Error
+[10 , (20 , 30 , 40) , 50 , 60]
+[10,[80,90],50,60]
+"""
+
+# Find  outputs   (Home  work)
+a = 25
+b = 10.8
+c = 'Hyd'
+d = True
+x = a , b , c , d
+print(x)
+print(type(x))
+"""
+Output:
+(25,10.8,'Hyd',True)
+<class tuple>
+"""
+
+# Find  outputs   (Home  work)
+x = 25 , 10.8 , 'Hyd' , True
+a , b , c , d = x
+print(a)
+print(b)
+print(c)
+print(d)
+#p , q , r =  x
+#a , b , c , d  , e = x
+"""
+Output:
+25
+10.8
+'Hyd'
+True
+Error
+"""
+
+# Find  outputs   (Home  work)
+x = 25 , 10.8 , 'Hyd' , True
+a , *b , c = x
+print(a)
+print(b)
+print(c)
+"""
+Output:
+25
+[10.8,'Hyd']
+True
+"""
+
+# Find  outputs   (Home  work)
+tpl = 25 , 10.8 , 'Hyd' , True
+a , b , *c , d , e = tpl
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+"""
+Output:
+25
+10.8
+[]
+'Hyd'
+True
+"""
+
+# Find  outputs   (Home  work)
+x = 25 , 10.8 , 'Hyd' , True , 3 + 4j
+a , b , _ , d , _= x
+print(a)
+print(b)
+print(_)
+print(d)
+print(_)
+"""
+Output:
+25
+10.89
+3+4j
+True
+3+4j
+"""
+
+# tuple()  function  demo  program   (Home  work)
+a = range(100 , 150 , 10)
+b = tuple(a)
+print(b)
+print(type(b))
+c = [10 , 20 , 15, 18]
+d = tuple(c)
+print(d)
+e = tuple('Vamsi')
+print(e)
+#print(tuple(25))
+print(tuple())
+"""
+Output:
+100,110,120,130,140
+<class tuple>
+(10 , 20 , 15, 18)
+1('V','a','m','s','i')
+()s
+"""
+
+#index()  and  count()  methods  demo  program   (Home  work)
+a = (10 , 20 , 15 , 12 , 14 , 15 , 18 , 19 , 15 , 12 , 25)
+#     0    1    2   3     4    5    6    7    8   9    10
+try:
+	i = a . index(15)
+	while  True:
+		print('15 is found at index : ' , i)
+		i = a . index(15 , i + 1)
+except:
+		print(F'15  is  found  {a . count(15)}  times')
+
+"""
+Output:
+15 is found at index :  2
+15 is found at index :  5
+15 is found at index :  8
+15  is  found  3  times
+"""
+
+#  How  to  modify  an  element  of  tuple ?    (Home  work)
+a  =  10 ,  20 ,  30 ,   40 ,  50
+#     0      1     2      3     4
+#a[2] = 35
+print(a)
+print(id(a))
+#How  to  modify  30  in  tuple  to  35
+a=list(a)
+a[2]=35
+a=tuple(a)
+print(a)
+print(id(a))
+"""
+Output:
+(10, 20, 30, 40, 50)
+1874403169984
+(10, 20, 35, 40, 50)
+1874403373312
+"""
+
+# How  to  delete  an  element  of  tuple ?   (Home  work)
+a  = 10 , 20 , 30 , 40 , 50
+#    0     1    2   3     4
+#a . remove(30)
+#del  a[2]
+#a . pop(2)
+print(a)
+print(id(a))
+#How  to  remove  30  from  tuple  'a'
+a=a[:2]+a[2:]
+print(a)
+print(id(a))
+"""
+Output:
+(10, 20, 30, 40, 50)
+1476509537984
+(10, 20, 30, 40, 50)
+1476509741472
+"""
+
+#  Nested   tuple  (Home  work)
+a = ( (10 , 20)  ,  (30 , 40 , 50)  ,  (60 , 70 , 80 , 90) )
+print(a)
+print(type(a))
+print(len(a))
+print(a[0])
+print(a[1])
+print(a[2])
+print(a[0][1])
+print(a[1][-1])
+print(a[2][-1])
+"""
+Output:
+((10, 20), (30, 40, 50), (60, 70, 80, 90))
+<class 'tuple'>
+3
+(10, 20)
+(30, 40, 50)
+(60, 70, 80, 90)
+20
+50
+90
+"""
+
+# Find  outputs  (Home  work)
+a = ((10 , 20 , 30),)
+print(a[0])
+print(*a)
+print(a[0][0])
+print(a[0][1])
+print(a[0][2])
+b = ((),)
+print(b[0])
+print(*b)
+"""
+Output:
+(10, 20, 30)
+(10, 20, 30)
+10
+20
+30
+()
+()
+"""
+
+#  Find  outputs (Home  work)
+a = ((10 , 20 , 30))
+print(a)
+print(*a)
+b = (())
+print(b)
+print(*b)
+"""
+Output:
+(10, 20, 30)
+10 20 30
+()
+
+"""
+
+# What  are  the  outputs  if  input  is  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+a = input('Enter  Set  :  ')
+print(a)
+print(type(a))
+b = eval(a)
+print(b)
+print(type(b))
+"""
+Output:
+Enter  Set  :  {10 , 20 , 15 , 18 , 20 , 12 , 18}
+{10 , 20 , 15 , 18 , 20 , 12 , 18}
+<class 'str'>
+{18, 20, 10, 12, 15}
+<class 'set'>
+"""
+
+#  Find  outputs  (Home  work)
+print({(10 , 20 , 30)})
+#print({[10 , 20 , 30]})
+#print({{10 , 20 , 30}})
+#print({{}})
+"""
+Output:
+{(10, 20, 30)}
+"""
+
+# How  to  print  set  in  differnet ways  (Home  work)
+a = {25 , True , 'Hyd' , 10.8}
+print('set  with  print  function')
+print(a)
+print('Iterate  elements  of  set  with  for  loop')
+#How  to  iterate  set  with  for  loop
+for i in a:
+	print(i)
+"""
+Output:
+set  with  print  function
+{25, 10.8, 'Hyd', True}
+Iterate  elements  of  set  with  for  loop
+25
+10.8
+Hyd
+True
+"""
+
+# Find  outputs  (Home  work)
+a = 'Hyd'
+b = True
+c = 25
+d = 1
+e = 'Hyd'
+s = {a , b , c , d , e}
+print(s)
+print(len(s))
+print(type(s))
+"""
+Output:
+{True, 'Hyd', 25}
+3
+<class 'set'>
+"""
+
+# Find  outputs  (Home  work)
+s = {'Hyd',  25,  True,  10.8 }
+print(s)
+a , b , c , d = s
+print(a)
+print(b)
+print(c)
+print(d)
+"""
+Output:
+{25, 'Hyd', 10.8, True}
+25
+Hyd
+10.8
+True
+"""
+
+# Find  outputs  (Home  work)
+s = {'Hyd',  25,  True,  10.8 }
+print(s)
+a , *b = s
+print(a)
+print(b)
+print(type(b))
+"""
+Output:
+{25, 10.8, 'Hyd', True}
+25
+[10.8, 'Hyd', True]
+<class 'list'>
+"""
+
+# Find  outputs  (Home  work)
+s = {'Hyd',  25,  True,  10.8 }
+print(s)
+a , *b , c = s
+print(a)
+print(b)
+print(c)
+"""
+Output:
+{25, 10.8, 'Hyd', True}
+25
+[10.8, 'Hyd']
+True
+"""
+
+# Find  outputs  (Home  work)
+s = {20 , 10 , 20 , 10}
+print(s)
+x , y = s
+print(x)
+print(y)
+"""
+Output:
+{10, 20}
+10
+20
+"""
+
+# set()  function  demo  program  (Home  work)
+a = range(100 , 151 , 10)
+b = set(a)
+print(b)
+c = [10 , 20 , 15 , 18 , 10 , 50 , 20 , 12 , 18]
+d = set(c)
+print(d)
+e = set('Rama  rAo')
+print(e)
+#print(set(25))
+print(set())
+"""
+Output:
+{130, 100, 140, 110, 150, 120}
+{10, 12, 15, 18, 50, 20}
+{'o', 'r', ' ', 'A', 'R', 'a', 'm'}
+set()
+"""
+
+# add()  method  demo  program  (Home  work)
+a = set()
+a . add(True)
+a . add(25)
+a . add(10.8)
+a . add(1)
+a . add('Hyd')
+a . add(25)
+a . add(None)
+a . add('Hyd')
+a . add(1.0)
+print(a)
+#a . add(10 , 20 , 30)
+#a . add([10,20,30])
+"""
+Output:
+{None, True, 10.8, 25, 'Hyd'}
+"""
+
+# Find  outputs  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+tpl = (10 , 20 , 30)
+print(a)
+print(id(a))
+a . add(tpl)
+a . add('Sec')
+print(a)
+print(id(a))
+print(len(a))
+#a . add([100 , 200 , 300])
+#a . add(set())
+#a . add({ })
+"""
+Output:
+{25, 10.8, 'Hyd', True}
+1647230780128
+{True, 'Hyd', 10.8, (10, 20, 30), 25, 'Sec'}
+1647230780128
+6
+"""
+
+# Find  outputs (Home  work)
+s = set()
+tpl = (10 , 20 , 15 , 18)
+s . add(tpl)
+print(s)
+print(len(s))
+"""
+Output:
+{(10, 20, 15, 18)}
+1
+"""
+
+# update()  method  demo program  (Home  work)
+tpl = (10 , 20 , 15, 18 , 10 , 20)
+s = set()
+s . update(tpl)
+print(len(s))
+print(s)
+#s . update(25)
+"""
+Output:
+	4
+{10, 18, 20, 15}
+"""
+
+# Find  outputs  (Home  work)
+a = [10 , 20 , 30]
+b = {30 , 40,50 }
+c = (50 , 60 , 70)
+s = set()
+s . update(a , b , c)
+print(s)
+print(len(s))
+#s . add(a , b , c)
+"""
+Output:
+{50, 20, 70, 40, 10, 60, 30}
+7
+"""
+
+# Find  outputs  (Home  work)
+a = set()
+a . update('Rama Rao')
+print(a)
+print(len(a))
+#a . update(3 + 4j , 10.8 , True)
+"""
+Output:
+{'R', ' ', 'o', 'm', 'a'}
+5
+"""
+# copy()  method  demo  program  (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)
+b = a . copy()
+print(b)
+print(a  is  b)
+print(a  ==  b)
+c = a
+print(a  is  c)
+"""
+Output:
+{'R', ' ', 'o', 'm', 'a'}
+5
+{10, 18, 20, 15}
+{10, 18, 20, 15}
+False
+True
+True
+"""
+# remove()  method  demo  program  (Home  work)
+a = {25 , 10.8 , 'Hyd' , True}
+print(a)
+a . remove('Hyd')
+print(a)
+#a . remove('Sec')
+
+"""
+Output:
+{'m', 'a', 'o', 'R', ' '}
+5
+{10, 18, 20, 15}
+{10, 18, 20, 15}
+False
+True
+True
+{25, 10.8, 'Hyd', True}
+{25, 10.8, True}
+"""
+
+# clear()  method  demo  program (Home  work)
+a = {10 , 20 , 15 , 18}
+print(a)
+a . clear()
+print(a)
+print(len(a))
+"""
+Output:
+{10, 18, 20, 15}
+set()
+0
+"""
+# Find  outputs  (Home work)
+a = {10 , 20 , 30 , 40}
+b = [30 , 40 , 50 , 60]
+print(a . union(b))
+#print(a | b)
+#print(b . union(a))
+#print(a + b)
+"""
+Output:
+{10, 18, 20, 15}
+set()
+0
+{40, 10, 50, 20, 60, 30}
+"""
