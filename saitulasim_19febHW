@@ -1,0 +1,219 @@
+1st PROGRAM
+
+# How  to  print  dictionary  in  different  ways
+a  =  {10 : 'Ramesh' ,  20 : 'Kiran' , 15 : 'Amar' , 18 : 'Sita'}
+print('Dictionary  with  print  function')
+print(a) # {10:''Ramesh', 20:'Kiran', 15: 'Amar', 18:'Sita'}
+print('Keys  of  dictionary')
+#  to  print  each  key of  dictionary  with  for  loop
+for x in a.keys():
+	print(x) # 10
+           #20
+           #15
+           #18
+print('Values  of  dictionary')
+#How  to  print  each  value  of  dictionary  with  for  loop
+for x in a.values():
+	print(x)  # Ramesh
+            # kiran
+            # Amar
+            # Sita
+print('All  the  tuples  of  dict_items   object')
+#How  to  print  each  tuple  of  dictionary  with  for  loop
+for x in a.items():
+	print(x)  # (10, 'Ramesh')
+            # (20,'Kiran')
+            # (15,'Amar')
+            # (18,'Sita')
+	print('Elements  of  each   tuple')
+#How  to  print  elements  of  tuple   in  dictionary  with  for  loop
+for x,y in a.items():
+	print(x,y) # 10 Ramesh
+             # 20 Kiran
+             # 15 Amar
+             # 18 Sita
+print('Keys  and  values  of  dictionary')
+#How  to  print  each  key of  dictionary  with  for  loop  along   with  corresponding  value
+for x in a.keys():
+	print(x,a[x])
+ print(*a.values()) # Ramesh Kiran Amar Sita
+
+
+2nd PROGRAM
+
+# print returns None
+a = {
+		print('Hyd') ,  #Hyd
+		print('Sec') , # Sec
+		print('Cyb') # Cyb
+     }
+print(type(a))  # <class "set'>
+print(a)   #None 
+print(len(a)) # 1
+
+3rd   PROGRAM
+#  Anonymous  object  demo  program
+_ = 25 #Anonymus object points to int 25
+print(_) # 25
+print(type(_)) #<class 'int'>
+a , _ , c = 10 , 20 , 30 # 
+print(a) #  10
+print(_) #20
+print(c) #30
+for _ in range(5):
+	print(_,"Hello",sep =',') #0,Hello
+					#1,Hello
+					#2,Hello
+					#3,Hello
+					#4,Hello
+
+4 PROGRAM
+# int object references
+a = 25 #ref a ponts to int 25
+print(id(a)) #address of 25(12345)
+a = 35 # ref a modifies to another object 35
+print(id(a)) #address of object 35(63472)
+
+5 PROGRAM
+#float obj references
+a = 25.7 #a points to float object 25.7 
+print(id(a))	#address of object a(764135)
+print(a) #25.7
+a = 35.6 #ref a is modified to float obj 35.6
+print(id(a)) # address of another obj 35.6 (632868)
+print(a)	#35.6
+b = True	#b points to True
+print(id(b))	# address of obj True
+b = False	# b is modified and points to False
+print(id(b))	# adress of obj False
+c = None		#c points to None
+print(id(c))		#adress of None (1000)
+c = None		# c points to same obj None
+print(id(c))		#adress of same obj None(1000)
+
+6 PROGRAM
+#  string_tuple_range example
+a = 'Hyd' # a points to string 'hyd'
+print(id(a))	#adress of obj a 'Hyd'(1000)
+# Str_tuple_range object example
+#a[1] = 'e'		# error (due to str obj is immutable)
+a = 'Sec'		# ref a is modified to another obj is 'Sec')
+print(id(a))		# address of another obj 'Sec'(2000)
+b = (10 , 20 , 15 , 18)		# b points obj tuple
+print(id(b))		#adress of obj b(2345)
+#a[2] = 19		#error tuple is immutable 
+b = (30 , 40 , 35 , 32)	#b points to another obj tuple
+print(id(b))		#adress of another obj b(7653)
+c = range(5)		# c points to range obj 
+print(id(c))		# adress of range obj (33168)
+#c[3] = 10			#error b'coz range obj is immutable
+c = range(5)		#ref c points to another range obj
+print(id(c))		# adress of another obj c(87642)
+
+7 PROGRAM
+#list_dict_tuple ex
+a = [10 , 20 , 15 , 18]		# a points to list obj
+b = [10 , 20 , 15 , 18]		# b points to another list obj (list is mutable and not reusable)
+print(a  is  b)		#False b'coz a and b are different lists
+
+c =  {10 : 20, 30 : 40}		# c points dict obj
+d =  {10 : 20, 30 : 40}		# d points to another obj dict
+print(g  is  h)             #	False
+
+g = {10 , 20 , 15 , 18}		# g points to set obj
+h = {10 , 20 , 15 , 18}		# h points to another set obj
+print(c  is  d)				#False
+
+e = (10 , 20 , 15 , 18)		# e points to tuple oj
+f = (10 , 20 , 15 , 18)		# f points to same tuple obj (tuple is immutable and reusable)
+print(e  is  f)				#True
+
+AITHMETIC OPERATOR
+8 PROGRAM
+# Arithmetic Operator
+#Addition
+print(10 + 20)		# 30
+print(10.8 + 20.6)		# 31.4
+print(3 + 4j + 5 + 6j)		# 8+10j
+print(True + False)			#1+0 = 1
+print('Hyder' + 'abad')			# Hyderbad
+print('Sankar' + 'Dayal' + 'Sarma')    #SankarDayalSarma
+print('10' + '20')				# 1020
+print([10 , 20 , 30] + [1 , 2 , 3])			#[10,20,30,1,2,3] list objects can concatinated
+print((25 , 10.8 , 'Hyd') + (3 + 4j , True , None))			# (25,10.8,'Hyd',3+4j,True,false)
+print({10 , 20} + {30 , 40})		# error b'coz set objects can concatinated with pipe ||
+print({10 : 'Hyd'} + {20 : 'Sec'})  # error b'coz dict objects can concatinated with pipe ||
+print(range(4) + range(5))	# range objects cannot concatinated
+print(10 + '20')		# error int and string objects 
+print([10 , 20 , 30] + 5)		# error list and int can't concatinated
+print([10 , 20 , 30] + (40 , 50 , 60))		# error list and tuple can't be concatinated
+
+9 PROGRAM
+MULTIPLICATION EXAMPLE
+# multiplication operator
+print(25 * 3)		# 75
+print(10.8 * 25.6)		#  276.48
+print(True * False)			#  1*0 = 0
+print((3 + 4j) * (5 + 6j))		# 15+18j+20j-24 = -9+38j
+print(3 + 4j * 5 + 6j)		# 3+20j+6j =3+26j
+print('25' * 3)			#252525
+print(3 * '25')			# 252525
+print('Hyd' * 4)		#HydHydHydHyd
+print([10 , 20 , 15] * 2)		#[10,20,15,10,20,15]
+print((25, 10.8, 'Hyd', True) * 3)	#(25,10.8,'Hyd',True,25,10.8,'Hyd',True,25,10.8,'Hyd',True)
+print([10 , 20 , 15] * 3.0)				# error b'coz float 
+print({10 , 20 , 15} * 2)		# error b'coz set can't be repeated
+print({10 : 20 , 30 : 40} * 2)		# error dict can't be reaped
+print([10] * [20])		# error b'coz of 2 lists 
+
+10 PROGRAM
+DIVISON BY ZERO
+# division operator
+print(7 / 0) #  error div by zero throws an error
+print(7//0) # error
+print(7 % 0) # error
+
+11 PROGRAM
+# ** Exponential  operator demo program
+print(3 ** 4)   #  3 ^ 4 = 81
+print(10 ** -2)		# 10^-2 = 0.01
+print(4 ** 3 ** 2)		# **priority is right to left 4**9 = 262144
+print(3 + 4 * 5 - 32 / 2 ** 3) # 3+4*5-32/8 ..> 3+20-32/8..> 3+20-4.0..>19.0
+
+12 PROGRAM
+#  Relational  operators 
+print(9 >= 5)  #  True  becoz  >  is  satisfied
+print(9 >= 9)   #  True  becoz  =  is  satisfied
+print(9 >= 12)   #  False  becoz    both  are  not  satisfied
+print(6 <= 8)		#True < is satisfied
+print(6 <= 6)		#True = is satisfied
+print(6 <= 4)		# False <= both are not satisfied
+print(9 != 7)		#True!= is satisfied
+print(6 == 8)		#false == both are not satisfied
+print(True  >  False)		#true > is satisfied
+print(3 + 4j == 3 + 4j)		# True 
+print(3 + 4j == 5 + 6j)		#False
+print(3 + 4j != 5 + 6j)		#true
+print(10 == 10.0)		#true
+print(3 + 4j >  3 + 4j)	# error b'coz complex numbers campared with ==,!=
+
+13 PROGRAM
+# string comparison
+print('Rama'   >  'Rajesh')   #   True  becoz  'm' > 'j'
+print('Rama'  <  'Sita')		# True R<S
+print('Hyd'  ==  'Hyd')		# True
+print('Rama'  <=   'Ramana')		#True ( <=n)
+print('Rama  Rao'  >=  'Rama')	#True (R>= )
+print('Hyd'  != 'Sec')		#True
+print('HYD'  <   'hyd')	# True (capital alphabet ASCII values are < small alphabet values)
+
+14 PROGRAM 
+# Chaining  relational  opeartors 
+print(10 < 20 < 30)    #   True  becoz  both  are  satisfied
+print(10 >= 20 < 30)   #  False  becoz  1st  cond  is  not  satisfied
+print(10 < 20 > 30)   # False
+print(1 < 2 < 3 < 4) # True
+print(1 < 2 > 3 > 1)	#False
+print(4 > 3 >= 3 > 2)	# True
+
+
