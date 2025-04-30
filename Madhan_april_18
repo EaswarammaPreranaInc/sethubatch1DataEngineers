@@ -1,0 +1,29 @@
+#18/4/2025 
+
+'''
+1.Write  an  iterator  which  yields  10 , 11 , 12 , 13 , ...... 20
+with  next()  function
+'''
+
+'''
+class c1:
+    def __init__(self):
+        self.a=9
+        
+        
+    def __next__(self):
+        self.a+=1 
+        if(self.a<=20):
+            return self.a 
+            
+        raise StopIteration
+        
+a=c1()
+         
+while(True):
+    try:
+        print(next(a))
+        
+    except:
+        break 
+'''
