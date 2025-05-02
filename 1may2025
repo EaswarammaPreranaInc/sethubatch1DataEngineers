@@ -1,0 +1,479 @@
+'''
+1.Repeat   prog7b  such  that
+1) If  input  is   number ,   number  class  objects  should  be  added
+2) If  input  is  string  ,  string  class  objects  should  be  joined
+
+
+Enter  number / string / exit : number
+Enter  any  number  :  10
+Enter  any  number  :  20
+Sum :   30
+Enter  number / string / exit : string
+Enter  any  string :  Hyder
+Enter  any  string :  abad
+Join :   Hyderabad
+Enter  number / string / exit : exit
+
+'''
+
+'''
+from  abc  import  abstractmethod , ABC
+class   datatype(ABC):
+	@abstractmethod
+	def  get(self):
+		pass
+	@abstractmethod
+	def  add(self , m ,  n):
+		pass
+	@abstractmethod
+	def  display(self):
+		pass
+class   number(datatype):
+	def  get(self):
+			self.x=int(input("Enter number: ")) #How  to  read  number  into  variable  'x' of  object  self
+	def  add(self , m , n):
+			self.x=m.x+n.x #How  to  add  objects  m  and  n  and  store  result  in  object  self
+	def  display(self):
+			print(self.x) #How  to  print  sum  result
+class   string(datatype):
+	def  get(self):
+			self.x=input("Enter string: ") #How  to  read  string  into  variable  'x' of  object  self
+	def  add(self , m , n):
+			self.x=m.x+n.x #How  to  join  objects  m  and  n  and  store  result  in  object  self
+	def  display(self):
+			print(self.x) #How  to  print  the   join  result
+
+
+while  True:#repeat   until  user  input  is  exit
+    ch = eval(input('Enter  number / string / exit: '))
+    L=[] 
+    if   ch==number:
+	    for i in range(3):
+	        L.append(number()) #How  to  create  list  of  3  number  class  objects
+    elif ch==string:
+        for i in range(3):
+            L.append(string()) #How  to  create  list  of  3  string  class  objects
+    elif ch==exit:
+        exit()
+        
+    L[0].get() #How  to  read  input  into  first  object
+    L[1].get() #How  to  read  input  into  2nd  object
+    L[2].add(L[0],L[1]) #How  to  add  (or)  join  the  two  objects  and  store  the  result  in  3rd  object
+    L[2].display() #How  to  print  3rd  object
+    
+    
+# end of  while  loop
+print('Good  Bye')
+
+'''
+
+#2.Which  of  the  following  statements  throw  ZeroDivisionError ?  (Home  work)
+
+'''
+#print(7 / 0) # ZeroDivisionError
+#print(7 / 0.0) # ZeroDivisionError
+#print(0 / 0) # ZeroDivisionError
+#print(0.0 / 0.0) # ZeroDivisionError
+#print(7 // 0) # ZeroDivisionError
+#print(7 % 0)# ZeroDivisionError
+
+'''
+
+
+#3.Which  of  the  following  statements  throw  ValueError ?  (Home  work)
+
+'''
+import  math
+#print(int('10.8')) #ValueError
+#print(float('Ten')) #ValueError
+#print(complex('Ten')) #ValueError
+print(bool('Ten')) #True
+print(bool('')) #False
+print(float('10.8')) #10.8
+print(float('25')) #25.0
+print(int(10.8)) #10
+#print(math . sqrt(-25)) #ValueError
+
+'''
+
+
+#4.Which  of  the  following  statements  throw  NameError ?  (Home  work)
+
+'''
+a = 25
+print(a) #25
+del  a
+#print(a) #NameError
+print(eval("   'Ten'   ")) #Ten
+#print(eval('Ten')) #NameError
+
+'''
+
+
+#5. Which  of  the  following  statements  throw  IndexError ?  (Home  work)
+
+'''
+print('Hyd'[0]) #H
+print('Hyd'[1]) #y
+print('Hyd'[2]) #d
+#print('Hyd'[3]) #IndexError
+list = [10 , 20 , 15 , 18]
+print(list[0]) #10
+print(list[3]) #18
+#print(list[4]) #IndexError
+print(list[-1]) #18
+print(list[-4]) #10
+#print(list[-5]) #IndexError
+tpl = (10 , 20 , 30)
+#print(tpl[3]) #IndexError
+r = range(10)
+#print(r[10]) #IndexError
+s = {10 , 20 , 15 , 18}
+#print(s[4]) #TypeError
+d = {10 : 'Hyd' , 20 : 'Sec'}
+#print(d[0]) #KeyError
+
+'''
+
+
+
+#6. Which  of  the  following  statements  throw  TypeError ?  (Home  work)
+
+'''
+print(10 + 20) #30
+print('10' + '20') #1020
+#print(10 + '20') #TypeError
+print(len('25')) #2
+#print(len(25)) #TypeError
+s = {10 , 20 , 15 , 18}
+#print(s[0]) #TypeError
+#b = { [10 , 20] : [30 , 40] } #TypeError
+#print(int(3+4j)) #TypeError
+#print(int([10,20,30])) #TypeError
+#print(float(None)) #TypeError
+
+'''
+
+
+#7. Which  of  the  following  statements  throw  KeyError ?  (Home  work)
+
+'''
+a = {'R' : 'Red' , 'G' : 'Green' , 'B'  : 'Blue'}
+print(a['G']) #Green
+#print(a['Y']) #KeyError
+
+'''
+
+
+#8. Find  outputs  (Home  work)
+
+'''
+try:
+	print(7 / 0)
+	print('Hello')
+except    ZeroDivisionError:
+	print('ZDE  1') #ZDE 1
+except    ZeroDivisionError:
+	print('ZDE  2')
+print('Bye') #Bye
+
+
+'''
+
+
+#9. Find  outputs  (Home  work)
+
+'''
+try:
+	print(7 / 0)
+	print('Hello')
+except    ZeroDivisionError:
+	print('ZDE  1') #ZDE 1
+	#print(8 / 0) #ZeroDivisionError 
+except    ZeroDivisionError:
+	print('ZDE  2') 
+print('Bye') #Bye
+
+'''
+
+
+#10. Find  outputs
+
+'''
+try:
+	print(7 / 0)
+	print('Hello')
+except  ZeroDivisionError:
+	print('ZDE  1') #ZDE 1
+	try:
+		print(8 / 0)
+	except  ZeroDivisionError:
+		print('ZDE   2') #ZDE 2
+	print('Bye') #Bye 
+except  ZeroDivisionError:
+	print('ZDE  3')
+print('End') #End
+
+'''
+
+
+'''
+#11. Find  outputs  (Home  work)
+
+Hint: ArithemeticError  is  parent  class  to  ZeroDivisionError
+'''
+
+'''
+try:
+	print(7 / 0)
+except   ArithmeticError:
+	print('Arithmetic Error') #1. Arithmetic Error 
+except   ZeroDivisionError:
+	print('Zero Division  Error')
+print('End') #End
+
+'''
+
+
+#12. Find  outputs  (Home  work)
+
+'''
+def  f1():
+	try:
+		print('f1  function') #2. f1 function
+		print(7 / 0) #ZeroDivisionError 
+	except  ValueError:
+		print('Hello')
+	try:
+		print(int('Ten'))
+	except ZeroDivisionError:
+		print('Bye')
+	print('End  of  f1  function')  
+# End of f1  function
+try:
+	print('Begin') #1. Begin
+	f1()
+	print('Hi') 
+except  ZeroDivisionError:
+	print('ZDE  is  caught  outside') #3. ZDE  is  caught  outside
+except:
+	print('Bye')
+print('End') #4. End
+
+
+'''
+
+
+#13. Find  outputs  (Home  work)
+
+'''
+def  f1():
+	try:
+		print('f1  function') #2. f1 function
+		print(7 / 0)
+	except  ValueError:
+		print('Hello')
+	except  ZeroDivisionError:
+		print('ZDE  is  caught  by  f1  function') #3. ZDE  is  caught  by  f1  function
+	print('End  of  f1  function') #4. End  of  f1  function
+#end of the  function
+try:
+	print('Begin') #1. Begin
+	f1()
+	print('Hello') #5. Hello
+except  ZeroDivisionError:
+ 	print("Hi")
+except  ValueError:
+	print("Bye")
+print('End') #6. End
+
+'''
+
+
+'''
+#14.
+What  are   the  outputs  if  input  is  1 ?  ---> Invalid  index
+
+What  are   the  outputs  if  input  is  2 ?  ---> Invalid  index
+
+What  are   the  outputs  if  input  is  3 ?  ---> No  result
+
+What  are   the  outputs  if  input  is  4 ?  ---> Invalid   argument (or)  operand
+
+What  are   the  outputs  if  input  is  5 ?  ---> Object  does  not  exist
+
+What  are   the  outputs  if  input  is  6 ?  ---> Div by 0 is not allowed
+
+What  are   the  outputs  if  input  is  7 ?  ---> Invalid   argument (or)  operand
+
+What  are   the  outputs  if  input  is  8 ?  ---> Invalid dict key
+'''
+
+'''
+
+ch = eval(input('Enter  choice (9-exit) : '))
+while  ch  <  9:
+	try:
+		match  ch:
+			case  1:
+				list = [10 , 20 , 15 , 12 , 18]
+				print(list[5]) #IndexError #Invalid  index
+			case  2:
+				s = 'Hyd'
+				print(s[3]) #IndexError #Invalid  index
+			case  3:
+				print(int('Two')) #ValueError #No  result
+			case  4:
+				a = 25
+				print(len(a)) #TypeError #Invalid   argument (or)  operand
+			case  5:
+				print(eval('Hyd')) #NameError # Object  does  not  exist
+			case  6:
+				print(7 / 0) #ZeroDivisionError #Div by 0 is not allowed
+			case  7:
+				print(10 + '20') #TypeError #Invalid   argument (or)  operand
+			case   _:
+				d = {10 : 'Hyd' , 20 : 'Sec' , 15 : 'Cyb'}
+				print(d[18]) #KeyError # Invalid dict key
+	except   ZeroDivisionError:
+		print('Div by 0 is not allowed')
+	except  ValueError:
+		print('No  result')
+	except  IndexError:
+		print('Invalid  index')
+	except  TypeError:
+		print('Invalid   argument (or)  operand')
+	except  KeyError:
+		print('Invalid dict key')
+	except  NameError:
+		print('Object  does  not  exist')
+	except:
+		print('A new error')
+	ch = eval(input('Enter  choice(9 - Exit) : '))
+# End of while loop
+print('Bye')
+
+
+'''
+
+
+#15. Find  outputs  (Home  work)
+
+'''
+def  f1(a):
+	print('f1  function') #2. f1 function 
+	if   a == 20:
+		raise  ArithmeticError()
+	elif   a == 0:
+		raise  IndexError()
+	elif  a == 10:
+		raise  TypeError(25)
+	raise ValueError()
+# end of  the function
+try:
+	print('Begin') #1. Begin
+	f1(10)
+	f1(20)
+	f1(30)
+	f1(0)
+except  ArithmeticError:
+	print('Hyd');
+except  IndexError:
+	print('Sec')
+except  TypeError  as   msg:
+	print('Caught  TypeError  outside  the  function :  '  , msg) #3. Caught  TypeError  outside  the  function : 25
+except  ValueError:
+	print('Hello')
+except:
+	print('some error')
+print('End') #4. End
+
+'''
+
+
+
+#16. Find  outputs  (Home  work)
+
+'''
+def  f1(a):
+	try:
+		if   a == 10:
+			raise  ValueError(25)
+		elif   a == 20:
+			raise  NameError(10.8)
+		elif   a == 30:
+			raise  IndexError('Hyd')
+		raise  EOFError(True)
+	except  IndexError  as  msg:
+		print('Caught  IndexError  :  ' , msg)
+	except ValueError  as  msg:
+		print('Caught  ValueError  :  ' , msg)  
+	except  NameError  as  msg:
+		print('Caught   NameError  :  ' , msg)
+	except  EOFError  as  msg:
+		print('Caught   EOFError  :  '  , msg)
+	print('End  of  f1  function') # 
+#outside the function
+f1(10) #1. Caught  ValueError  : 25    #2.End  of  f1  function
+f1(20) #3. Caught   NameError  : 10.8  #4.End  of  f1  function
+f1(30) #5.Caught  IndexError  : Hyd    #6.End  of  f1  function
+f1(0)  #7.Caught   EOFError  :  True   #8.End  of  f1  function
+print('End of the program') #9. End of the program
+
+'''
+
+
+#17. Find  outputs  (Home  work)
+
+'''
+def f1():
+	try:
+		print('f1 function') #2. f1 function
+		raise  ValueError(25)
+		print('Hi')
+	except  ValueError  as  msg:
+		print('Caught  by  f1 function  : ' , msg)  #3. Caught  by  f1 function  : 25
+		raise   ValueError(msg)
+	except:
+		print('Hello')
+	print('End  of  f1  function')
+# End  of  f1()  function
+try:
+	print('Begin') #1. Begin
+	f1()
+	print('Hyd')
+except  ValueError  as  x:
+	print('Recaught ValueError  :  ' , x) #4. Recaught ValueError  : 25
+except:
+	print('Some other error')
+print('End of the program') #5. End of the program
+
+'''
+
+
+#18. Find  outputs  (Home   work)
+
+'''
+def f1():
+	try:
+		print('f1 function') #2. f1 function 
+		raise  ValueError(25)
+		print('Hi')
+	except  ValueError  as  msg:
+		print('Caught  by  f1 function  :  ' , msg) #3. Caught  by  f1 function  :  25
+		raise  NameError(msg)
+	except:
+		print('Hello')
+	print('End of f1 function')
+#outside the function
+try:
+	print('Begin') #1. Begin 
+	f1()
+	print('Hyd')
+except  ValueError  as  x:
+	print('Recaught ValueError : ' , x)
+except:
+	print('Some other error') #4.Some other error
+print('End of the program') #5. End of the program
+
+'''
