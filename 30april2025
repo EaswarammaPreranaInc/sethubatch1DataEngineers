@@ -1,0 +1,133 @@
+
+
+
+#1. Write  a  progran  to  add  num  class  objects  and  join  str  class  objects
+
+'''
+from  abc  import  abstractmethod , ABC
+class   datatype(ABC):
+	@abstractmethod
+	def  get(self):
+		pass
+	@abstractmethod
+	def  add(self , m ,  n):
+		pass
+	@abstractmethod
+	def  display(self):
+		pass
+class   number(datatype):
+	def  get(self):
+			self.x=int(input("Enter number: ")) #How  to  read  number  into  variable  'x' of  object  self
+	def  add(self , m , n):
+			self.x=m.x+n.x #How  to  add  objects  m  and  n  and  store  result  in  object  self
+	def  display(self):
+			print(self.x) #How  to  print  sum  result
+class   string(datatype):
+	def  get(self):
+			self.x=input("Enter string: ") #How  to  read  string  into  variable  'x' of  object  self
+	def  add(self , m , n):
+			self.x=m.x+n.x #How  to  join  objects  m  and  n  and  store  result  in  object  self
+	def  display(self):
+			print(self.x) #How  to  print  the   join  result
+def   menu():
+	print('1. Add  numbers')
+	print('2. Join  Strings')
+	print('3. Exit')
+# End  of  the  function
+menu()
+ch =  eval(input('Enter choice : '))
+
+while  ch<3:#repeat   until  user  input  is  3
+    L=[] 
+    if   ch == 1:
+	    for i in range(3):
+	        L.append(number()) #How  to  create  list  of  3  number  class  objects
+    else:
+        for i in range(3):
+            L.append(string()) #How  to  create  list  of  3  string  class  objects
+    L[0].get() #How  to  read  input  into  first  object
+    L[1].get() #How  to  read  input  into  2nd  object
+    L[2].add(L[0],L[1]) #How  to  add  (or)  join  the  two  objects  and  store  the  result  in  3rd  object
+    L[2].display() #How  to  print  3rd  object
+    menu()
+    ch = eval(input('Enter  choice : '))
+# end of  while  loop
+print('Good  Bye')
+
+'''
+
+
+#2.Identify  Error  (Home  work)
+
+'''
+try: 
+	print('Hyd')
+	print('Sec')
+	print('Cyb') #Error no except/ finally
+	
+'''
+
+#3.Find  outputs  (Home  work)
+
+'''
+#print(7 / 0) #ZeroDivisionError
+try:
+	print(7 / 0)
+except  ZeroDivisionError:
+	print('Division  by  zero  is  not  permitted') #1. Division  by  zero  is  not  permitted
+#print(7 / 0) #ZeroDivisionError
+print('Bye') #2.Bye
+
+'''
+
+
+#4. Identify  error  (Home  work)
+
+'''
+#Error no try 
+except:
+    print('Hyd')
+    print('Sec')
+    print('Cyb')
+'''
+
+
+#5.Find  outputs (Home  work)
+'''
+try:
+    print('One') #1. One
+    print('Two') #2. Two
+    print('Three') #3. Three
+#print('Four') #Error
+except:
+	print('Five')
+	print('Six') 
+	print('Seven') 
+print('Eight') #4. Eight
+
+'''
+
+#6.Identify  error  (Home  work)
+
+'''
+try:
+	print('try suite') #1. try suite 
+except: #Error default except at the last
+	print('default  except')
+except NameError: 
+	print('Name  Error')
+	
+'''
+
+
+#7. Identify  error  (Home  work)
+
+'''
+try:
+	print('try suite') #1. try suite
+except: 
+	print('1st  default  except') #Error except suite at the last 
+except: 
+	print('2nd  default  except')
+	
+'''
