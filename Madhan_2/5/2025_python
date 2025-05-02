@@ -1,0 +1,210 @@
+#2/5/2025 
+
+
+'''
+#1. Find  outputs  (Home  work)
+def  f1():
+	try:
+		print('f1  function') #2. f1 function
+		raise  ValueError('Hyd')
+		print('Hi')
+	finally:
+		print("f1's  finally") #3. f1's finally  
+	print('End  of  f1  function')
+def  f2():
+	try:
+		print('f2  function')
+		return 
+		print('Hello')
+	finally:
+		print("f2's  finally")
+	print('End  of  f2  function')
+def  f3():
+	try:
+		print('f3  function')
+		raise   KeyError(25)
+		print('Hello')
+	except KeyError as  msg:
+		print('Caught  by  f3  function :  ' , msg)
+	finally:
+		print("f3's  finally")
+	print('End of f3 function')
+def  f4():
+	try:
+		print('f4 function')
+		exit()
+	finally:
+		print("f4's  finally")
+	print('End of f4 function')
+# End  of  all  the  functions
+try:
+	print('Begin') #1. Begin
+	f1()
+	print('Hello')
+except  ValueError  as  msg:
+	print('ValueError  is  caught  outside :  ' , msg) #4. ValueError  is  caught  outside : Hyd
+f2() #4. f2  function #5. f2's  finally
+f3() #6. f3  function #7. Caught  by  f3  function : 25 #8. f3's  finally #8. End of f3 function
+try:
+	f4() #9. f4 function #10. f4's  finally 
+finally:
+		print('Outside  finally') #11. Outside  finally
+print('End  of  the  program')
+
+'''
+
+
+#2. Find  outputs  (Home  work)
+
+'''
+import sys
+def  f1():
+	try:
+		print('f1  function') 
+		raise  ValueError('Hyd')
+		print('Hi')
+	finally:
+		print("f1's  finally")
+	print('End  of  f1  function')
+def  f2():
+	try:
+		print('f2  function')
+		return
+		print('Hello')
+	finally:
+		print("f2's  finally")
+	print('End  of  f2  function')
+def  f3():
+	try:
+		print('f3  function')
+		raise   KeyError(25)
+		print('Hello')
+	except  KeyError  as  msg:
+		print('Caught  by  f3  function : ' , msg)
+	finally:
+		print("f3's  finally")
+	print('End  of  f3  function')
+def  f4():
+	try:
+		print("f4  function")
+		sys . exit()
+	finally:
+		print("f4's  finally")
+	print('End  of  f4  function')
+#End  of  all  the  functions
+try:
+	print('Begin') #1. Begin 
+	f1() #2. f1 function #3.f1's  finally 
+	f2()
+	f3()
+	f4()
+	print('Hello')
+except  ValueError  as  msg:
+	print('ValueError  is  caught  outside :  ' , msg) 
+	#4. ValueError  is  caught  outside : 25
+print('End  of  the  program') #5. End  of  the  program
+
+'''
+
+
+'''
+#3.
+Find  outputs (Home  work)
+
+Hint:  Exception  is  parent  to  all  error  classes
+'''
+
+'''
+def  f1():
+	try:
+		print('f1  function')
+		raise  KeyError()
+		print('Hyd')
+	except  KeyError:
+		print('Caught  KeyError')
+		raise  Exception()
+	except:
+		print('Sec')
+	finally:
+		print("f1's  finally")
+	print('End  of  f1  function')
+#End  of  the  function
+try:
+	print('Begin') #1. Begin
+	f1() #2. f1  function #3. Caught  KeyError #4. f1's  finally  
+	print('Hello')
+except  ValueError:
+	print('Hello')
+except  Exception:
+	print('Recaught  Exception') #5. Recaught  Exception
+finally:
+	print('Outside  finally') #6. Outside  finally
+print('End  of  the  program') #7. End  of  the  program
+
+'''
+
+
+#4. Find outputs (Home  work)
+
+'''
+def  f1():
+	try:
+		print('f1  function')
+		raise  KeyError()
+		print('Hyd')
+	except  KeyError:
+		print('Caught  KeyError')
+		raise  NameError()
+	except  NameError:
+		print('Sec')
+	finally:
+		print('f1 finally')
+	print('End  of  f1 function')
+#outside function
+try:
+	print('Begin') #1. Begin
+	f1() #2. f1  function #3. Caught  KeyError  #4.f1 finally
+	print('Hello')
+except ValueError:
+	print('Hello')
+except   Exception:
+	print('Recaught  Exception') #5. Recaught  Exception
+except  NameError:
+	print('Caught  Name Error  outside') 
+finally:
+	print('Outside  finally') #6. Outside  finally
+print('End of the program') #7. End of the program
+
+'''
+
+
+#5.Find  outputs  (Home   work)
+
+'''
+def  f1():
+	try:
+		print('f1  function')
+		raise  KeyError()
+		print('Hyd')
+	except  KeyError:
+		print('Caught  KeyError')
+		raise   NameError()
+	except  NameError:
+		print('Sec')
+	finally:
+		print('f1 finally')
+	print('End  of  f1 function')
+#outside function
+try:
+	print('Begin') #1. Begin
+	f1() #2. f1  function #3. Caught  KeyError #4. f1 finally 
+	print('Hello') 
+except  ValueError:
+	print('Hello')
+except   KeyError:
+	print('Recaught  KeyError')
+finally:
+	print('Outside  finally') #5. Outside  finally #6.NameError reported
+print('End of the program')  
+
+'''
