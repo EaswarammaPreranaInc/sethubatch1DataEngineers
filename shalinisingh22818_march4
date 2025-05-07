@@ -1,0 +1,245 @@
+#program 1
+# Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if   i % 3 == 0:
+		continue
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+# End  of  the  loop
+print('Outside  loop')
+
+#output:
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+7
+Sec
+Hello
+else  suite
+Outside  loop
+
+#program 2
+#Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i % 3 == 0:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+#End   of  the  loop
+print('Outside  loop')
+
+output:
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Outside  loop
+
+#program 3
+#Find  outputs  (Home  work)
+for  i  in  range(1 , 8):
+	print(i)
+	if  i == 8:
+		break
+	else:
+		print('Sec')
+	print('Hello')
+else:
+	print('else  suite')
+# End  of  the  loop
+print('Outside loop')
+
+output:
+1
+Sec
+Hello
+2
+Sec
+Hello
+3
+Sec
+Hello
+4
+Sec
+Hello
+5
+Sec
+Hello
+6
+Sec
+Hello
+7
+Sec
+Hello
+else  suite
+Outside loop
+
+#program 4
+
+Write  a  program  to  search  for  an  element  in  the  list  without  using  in  operator  and
+print  Found  or  Not  Found  message  (Assume  that  there  are  no  duplicates)
+
+Note:  Do  not  use  index()  method
+
+
+list = [10, 20, 15, 12, 18]
+x = int(input('Enter the element to be searched : '))
+for i in range(len(list)):
+	if list [i] == x:
+		print(F'Found at index {i}')
+		break
+else:
+	print('Not Found')
+	
+	
+
+Output:
+Enter the element to be searched : 15
+Found at index 2
+
+Enter the element to be searched : 19
+Not Found
+
+
+
+#program 5
+#Walrus   operator (:=)  demo  program
+print(a := 25)    #25
+print(a = 25)     #error
+print(a)          #25
+print(a := 6 + 7) #13
+print(a)          #13
+print((a := 6) + 7) #13
+print(a)           #6
+print((a = 6) + 7)#error give '==' instead
+
+#program 6
+# Find  outputs  (Home  work)
+a = 0
+if  a == 0:  
+	print('Hyd')  
+else:
+	print('Sec')
+if  b := 0: 
+	print('Hyd')
+else:
+	print('Sec : ' , b)  
+if  c = 0: 
+	print('Hyd')   #error give '==' or ':=' instead of '='
+else:
+	print('Sec')
+
+output:
+Hyd
+Sec  :  0
+
+#program 7
+#Find  outputs
+b = 10
+a = b += 5  # Syntax error
+print(a)
+
+#program 8
+Write  a  program to  determine  average  of  inputs  which  are  terminated  with  -1
+(without  walrus  operator)
+
+Let  inputs  be  25 , 10.8 , True ,  46 , 34.8 , False , 95 , -1
+
+sum = 0 + 25 + 10.8 + True + 46 + 34.8 + False + 95
+
+ctr = 0  + 1 + 1 + 1 + 1 + 1 + 1 + 1
+
+try:
+	sum=count=0
+	while(x:=eval(input('enter input (-1 to stop):')))!=-1:
+		sum+=x
+		count+=1
+	print('Average:',sum/count)
+except ZeroDivisionError:
+	print('enter atleast one input')
+except (NameError,TypeError):
+	print('Input cannot be string')
+
+output:
+enter input (-1 to stop):25
+enter input (-1 to stop):10.8
+enter input (-1 to stop):True
+enter input (-1 to stop):46.2
+enter input (-1 to stop):False
+enter input (-1 to stop):92
+enter input (-1 to stop):-1
+Average: 29.166666666666668
+
+
+#program 9
+#del  operator  demo program  (Home  work)
+a = 25
+print(a)  #25
+del   a
+print(a)  # a is not defined
+
+#program 10
+# Find  outputs  
+a = b = c = 25
+print(a , b , c)  # 25 25 25
+del   a           # a is deleted
+print(b , c)      # 25 25
+print(a)          #error a undefined
+del   b           # b is deleted
+print(c)          #25
+print(b)          # error b undefined
+del   c           # c is deleted 
+print(c)          # error c is undefined
+
+#program 11 
+# Can  multiple  objects  be  deleted  with  same  del  operator ?
+a , b , c = 25 , 10.8 , 'Hyd'
+print(a , b , c)   #25 , 10.8 , 'Hyd'
+del   a , b , c    # a,b,c are deleted 
+print(a)
+print(b)
+print(c)
+
+#yes we can delete mutiple operators at a time 
+
+#program 12
+# Find outputs  (Home  work)
+a = [10 , 20 , 15 , 18]
+print(a)  # [10 , 20 , 15 , 18]
+del  a[2] # a[2] is deleted in list
+print(a)  #  [10 , 20 , 18]
+del  a    
+print(a)  # error
+print(a[0]) # error
+
+#program 13
+#Find outputs  (Home work)
+a = (10 , 20 , 15 , 18)
+print(a)  # (10 , 20 , 15 , 18)
+print(a[0]) # 10
+del  a[2]   #error tuple doesn't delete item deletion
+del  a     # a is deleted 
+print(a)   #  error
+print(a[0])  #error 

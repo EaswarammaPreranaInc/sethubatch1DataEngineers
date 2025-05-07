@@ -1,0 +1,622 @@
+
+MAY 3
+#program 1
+# Find  outputs  (Home  work)
+try:
+	print('try')
+	print(7 / 0)
+except:
+	print('except')
+else:
+	print('else')
+finally:
+	print('finally')
+print('End')
+
+output
+try
+except
+finally
+End
+
+
+#program 2
+# Find  outputs  (Home  work)
+try:
+	print('try')
+except:
+	print('except')
+else:
+	print('else')
+finally:
+	print('finally')
+print('End')
+
+output
+try
+else
+finally
+End
+
+
+#program 3
+# Identify   error   (Home  work)
+try:
+	print('try')
+else:     #else is expecting except suite
+    print('else')
+finally:
+    print('finally')
+print('End')
+
+
+#program 4
+# Identify  error   (Home  work)
+try:
+	print('try')
+except:
+	print('except')
+else:
+	print('else1')
+else:
+	print('else2')
+finally:
+	print('finally')
+print('end')
+
+#multiple else cant be written 
+
+
+#program 5
+# Identify  error   (Home  work)
+try:
+	print('try')
+else:
+	print('else')
+except:
+	print('except')
+finally:
+	print('finally')
+print('end')
+
+#the order should follow :- try-except-else-finally
+
+
+
+#program 6
+# Find  outputs   (Home  work)
+try:
+	print('try')
+except:
+	print('except')
+if   10 > 20:
+	print('if')
+else:
+	print('else')
+
+output
+try
+else
+
+
+#program 7
+# Find  outputs
+def   f1():
+	try:
+		return  10  #the statement is true
+	except:
+		return  20
+	else:
+		return  30
+print(f1())  #10 
+
+
+#program 8
+# Find  outputs
+def   f1():
+	try:
+		return  10 + '20'  #error
+	except:
+		return  20
+	else:
+		return  30
+print(f1()) #20
+
+
+#program 9
+# Find  outputs
+# Find  outputs
+def   f1():
+	try:
+		pass    #in try there is no error so else is executed
+	except:
+		return  20
+	else:
+		return  30   
+print(f1())  #30 
+
+
+#program 10
+# Find  outputs
+def   f1():
+	try:
+		return  10
+	except:
+		return   20
+	else:
+		return  30
+	finally:
+		return  40
+print(f1())   #40 
+
+
+#program 11
+1) What  is  the  output  if  input  is  24 ?  --->
+2) What  is  the  output  if  input  is  25 ?  --->
+
+try:
+	x = eval(input('Enter  any  number  :  '))
+	assert    x >= 25 ,  'Hyd'
+	print('Sec')
+except  AssertionError  as   msg:
+	print(msg)
+print('End')
+
+output
+Enter  any  number  :  24  (24<25 so Hyd is printed)
+Hyd
+End
+
+Enter  any  number  :  25
+Sec
+End
+
+
+
+#program 12
+
+1) What  is  the  output  when  input  is  24 ?  --->
+2) What  is  the  output  when  input  is  25 ?  --->
+
+try:
+	x = eval(input('Enter  any  number  :  '))
+	assert   x >= 25
+	print('Sec')
+except  AssertionError   as    msg:
+	print(msg)
+print('End')
+
+
+output
+Enter  any  number  :  24
+<empty space>
+End
+
+Enter  any  number  :  25
+Sec
+End
+
+
+#program 13
+# Find  outputs   (Home  work)
+try:
+	print('Outer   try')
+	try:
+		print('Inner    try')
+		print(7 / 0)
+		int('Hyd')
+		'Hyd'[5]
+		eval('Hyd')
+	except   ZeroDivisionError:
+		print('ZDE   of   inner   try')
+		int('Ten')
+	except  ValueError:
+		print('ValueError  of  inner  try')
+	finally:
+		print('Inner  try  finally')
+	print('End  of  inner  try')
+except   ValueError:
+	print('ValueError  of  outer  try')
+except   IndexError:
+	print('IndexError  of  outer  try')
+except:
+	print('default  except  of  outer  try')
+finally:
+	print('Outer  try  finally')
+print('End  of  outer  try')
+
+
+output
+Outer   try
+Inner    try
+ZDE   of   inner   try
+Inner  try  finally
+ValueError  of  outer  try
+Outer  try  finally
+End  of  outer  try
+
+
+#program 14
+#  Find outputs   (Home  work)
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		int('Hyd')
+		'Hyd'[5]
+		eval('Hyd')
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except  ValueError:
+		print('ValueError  of  inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End  of  inner  try')
+except  ValueError:
+	print('ValueError  of  outer try')
+except  IndexError:
+	print('IndexError of outer try')
+except:
+	print('default except of outer try')
+finally:
+	print('Outer try finally')
+print('End of outer try')
+
+output
+Outer  try
+Inner  try
+ValueError  of  inner  try
+Inner  try  finally
+End  of  inner  try
+Outer try finally
+End of outer try
+
+
+#program 15
+#  Find outputs   (Home  work)
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		'Hyd'[3]
+		eval('Hyd')
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except  ValueError:
+		print('ValueError  of  inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End  of  inner  try')
+except  ValueError:
+	print('ValueError  of  outer  try')
+except  IndexError:
+	print('IndexError  of  outer  try')
+except:
+	print('default except of outer try')
+finally:
+	print('Outer try finally')
+print('End  of  outer  try')
+
+output
+Outer  try
+Inner  try
+Inner  try  finally
+IndexError  of  outer  try
+Outer try finally
+End  of  outer  try
+
+
+#program 16
+#  Find  outputs (Home  work)
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		eval('Hyd')
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except ValueError:
+		print('ValueError  of   inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End of inner try')
+except  ValueError:
+	print('ValueError  of  outer try')
+except  IndexError:
+	print('IndexError of outer try')
+except:
+	print('default  except  of  outer  try')
+finally:
+	print('Outer  try  finally')
+print('End  of  outer  try')
+
+
+output
+Outer  try
+Inner  try
+Inner  try  finally
+default  except  of  outer  try
+Outer  try  finally
+End  of  outer  try
+
+
+#program 17
+#  Find  outputs (Home  work)
+try:
+	print('Outer  try')
+	try:
+		print('Inner  try')
+		#print(10 + '20')    #int and str cant be added
+	except  ZeroDivisionError:
+		print('ZDE  of  inner  try')
+		int('Ten')
+	except ValueError:
+		print('ValueError  of   inner  try ')
+	finally:
+		print('Inner  try  finally')
+	print('End of inner try')
+except  ValueError:
+	print('ValueError  of  outer try')
+except  IndexError:
+	print('IndexError of outer try')
+finally:
+	print('Outer  try  finally')
+print('End  of  outer  try')
+
+output
+Outer  try
+Inner  try
+Inner  try  finally
+End of inner try
+Outer  try  finally
+End  of  outer  try
+
+
+#program 18
+# Find  outputs   (Home  work)
+class   MyError(BaseException):
+	def    _init_(self , y):
+		self . a = y
+		print('Constructor')
+# End of  the class
+def  compute(x):
+	print(x)
+	if  x > 20:
+		raise   MyError(x)
+	print('Hello')
+# End of  the functrion
+try:
+	compute(10)
+	compute(30)
+except  MyError  as  msg:
+	print('Caught  MyError  outside  :  ' ,  msg)
+print('End')
+
+output
+10
+Hello
+30
+Caught  MyError  outside  :   30
+End
+
+
+#program 19
+# Find  outputs   (Home  work)
+class   MyError(NameError):
+	def    _init_(self):
+		self . a =  25
+		print('Constructor')
+# End of  the class
+def  compute(x):
+	print(x)
+	if  x > 20:
+		raise   MyError()
+	print('Hello')
+#end of  the functrion
+try:
+	compute(30)
+	compute(10)
+except  MyError  as  msg:
+	print('Caught  MyError  outside  :  ' ,  msg)
+print('End')
+
+output
+30
+Caught  MyError  outside  :
+End
+
+
+#program 20
+# Find  outputs (Home  work)
+try:
+	print(1)
+	print(2)
+	print(3)
+except:
+	print(4)
+else:
+	print(5)
+finally:
+	print(6)
+print(7)
+
+output
+1
+2
+3
+5
+6
+7
+
+
+#program 21
+# Find  outputs   (Home  work)
+try:
+	print(1)
+	print(7 / 0)
+	print(3)
+except:
+	print(4)
+else:
+	print(5)
+finally:
+	print(6)
+print(7)
+
+output
+1
+4
+6
+7
+
+
+#program 22
+# Find  outputs   (Home  work)
+try:
+	print(1)
+	#print(7 / 0)
+	print(3)
+except:
+	int('Two')
+else:
+        print(5)
+finally:
+        print(6)
+print(7)
+
+output
+1
+3
+5
+6
+7
+
+
+#program 23
+#  Find  outputs (Home  work)
+from  threading  import  Thread
+def    f1():
+	for  i  in  range(10):
+		print('child  thread')
+child = Thread(target = f1)
+f1()
+for  i  in  range(10):
+        print('main  thread')
+
+output
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+
+#program 24
+#  Find  outputs  (Home  work)
+from  threading  import   Thread
+def  f1():
+        for  i  in  range(10) :
+                print('child  thread')
+child = Thread(target =  f1())
+child . start()
+for  i  in  range(10):
+        print('main  thread')
+
+output
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+
+
+#program 25
+# Find  outputs  (Home  work)
+from  threading  import  *
+def   f1():
+        for  i  in  range(10):
+                print('child  thread')
+child = Thread()
+child . start()
+for  i   in   range(10):
+        print('main  thread')
+
+output
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+
+
+
+#program 26
+# Find  outputs (Home  work)
+from  threading  import  Thread
+def    f1():
+        for  i  in  range(10):
+                print('Child  Thread')
+child = Thread(target = f1)
+child . start()
+for  i  in  range(10):
+        print('Main  Thread')
+#child . start()
+
+output
+Child  Thread
+Main  Thread
+Child  Thread
+Main  Thread
+Child  Thread
+Main  Thread
+Main  Thread
+Main  Thread
+Child  Thread
+Main  Thread
+Child  Thread
+Main  Thread
+Main  Thread
+Main  Thread
+Child  Thread
+Main  Thread
+Child  Thread
+Child  Thread
+Child  Thread
+Child  Thread

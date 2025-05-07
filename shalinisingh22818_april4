@@ -1,0 +1,367 @@
+#program 1
+# Write  a  program  to  print  random  character  of  the  string  10  times (Home  work)
+import random
+try:
+	a=input("enter any string : ")
+	for x in range(10):
+		print(random.choice(a))
+except:
+	print("enter atleast one character")
+output:
+enter any string : shalini
+s
+h
+h
+l
+s
+s
+n
+i
+a
+h
+
+#program 2 
+  (Home  work)
+Write  a  program to  generate  10  passwords  each  of  6 character  length  where
+1st , 3rd , 5th  characters  are  alphabets  and  2nd , 4th , 6th  characters   are  digits
+
+from random import randint
+def digit():
+	return randint(0,9)
+def alpha():
+	return chr(randint(65,90))
+for i in range(10):
+	print(alpha(),digit(),alpha(),digit(),alpha(),digit(),sep='')
+
+output:
+J2R3W9
+G2Y2M0
+R6C5V5
+N2B7V4
+R7S2J8
+Y6A8T9
+I9Z7O9
+W8J4W3
+I4L1N7
+L0C9M9
+
+
+#program 3
+# Write  a  program  to  print  random  element  of  the  list  ten  times   (Home  work)
+import random
+try:
+	a = eval(input('Enter a List : '))
+	for x in range(10):
+		print(random.choice(a))
+except:
+	print('Enter atleast one element')
+
+output:
+Enter a List : [25,10.8,'Hyd',True,None,3+4j]
+10.8
+Hyd
+None
+True
+Hyd
+True
+10.8
+True
+25
+25
+
+
+#program 4
+# Write  a  program  to  generate  ten  six-digit  OTP's  (Home  work)
+import random
+for x in range(10):
+	print(random.randint(100000 , 999999))
+
+output:
+633342
+221003
+149171
+579495
+448744
+812210
+300101
+846769
+136032
+864931
+
+#program 5
+
+Write  a  program to  open  any  website  from  gmail ,  google ,  rediff ,  ...   with  a  time  gap  of  5  to  20   sec
+1) What  does  open('http://google.com')  do ?  --->  Opens  google.com  website
+2) Where  is  open()  function  defined  ?  --->  webbrowser  module
+3) list = ['google.com' , 'rediff.com' , 'gmail.com' , 'amazon.com' , 'netflix.com']
+4) Provide  a  time  gap  of  5  to  20 sec  between  the  websites
+from  random  import  *
+import  webbrowser
+import    time
+list = ['google.com' , 'youtube.com' , 'gmail.com' , 'rediff.com' , 'amazon.com' , 'bing.com' ,  'flipkart.com' ]
+while   True:
+	site = choice(list)
+	webbrowser . open(F'http://{site}') 
+	sec = randint(5 , 20)  
+	time . sleep(sec)
+
+#program 6
+(Home  work)
+Write  a  program  to  implement  Rock , paper  and  scissors  game  between  user  and  computer
+1) What  is  the  result  if  user  input  and  computer  random  number  are  same  ?  --->  Draw
+2) What  is  the  result  if  computer  selects  paper  and  user  input  is  rock ?  --->  Computer  wins  becoz  parer  dominates  rock
+3) What  is  the  result  if  computer  selects  scissors  and  user  input  is  paper ?  ---> Computer  wins  becoz  scissors  dominates  paper
+4) What  is  the  result  computer  selects  rock  and  user  input  is  scissors ?  --->  Computer  wins  becoz  rock  dominates  scissors
+5) What  is  the  result  in  all  other  cases  ?  --->  User  wins
+
+from    random    import    choice
+list = ['Rock' , 'Paper' , 'Scissors']
+while  True:
+	ch = int(input('What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  '))
+	if  ch  <  0  or  ch  >  2:
+		print('Invalid  Input')
+	else:
+		user = list[ch]
+		comp = choice(list)
+		print('User  :  ' ,  user)
+		print('Computer  :  ' , comp)
+		if  user  ==  comp:
+			print('Draw')
+		elif  (comp  ==  'Paper'  and  user  ==  'Rock')   or  (comp  ==  'Rock'  and  user  ==  'Scissors')   or  (comp  ==  'Scissors'  and  user  ==  'Paper'):
+			print('Computer  wins')
+		else:
+			print('User  wins')
+		option = input('Continue  (  y / n)  ?  ')
+		if  option  ==  'n'  or  option  ==  'N':
+			break
+# End  of  while  loop
+print('End  of  the  game')
+
+output:
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  0
+User  :   Rock
+Computer  :   Paper
+Computer  wins
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  1
+User  :   Paper
+Computer  :   Paper
+Draw
+Continue  (  y / n)  ?  y
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  3
+Invalid  Input
+What  do  you  want  to  select  (0 - Rock , 1 - Paper , 2 - Scissors)  :  2
+User  :   Scissors
+Computer  :   Paper
+User  wins
+Continue  (  y / n)  ?  n
+End  of  the  game
+
+#program 7
+#  Save  in  any  file  of  cwd
+from p1.mod1 import *  # How  to  import  members  of  mod1  in  package  p1  with  from  statement
+print(x) # How  to  print  variable  'x'  of   mod1  in  package  p1
+f1() # How  to  call  function  f1()  of   mod1  in  package  p1
+a = c1()
+a . m1()  # How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+from p1.mod2 import *  # How  to  import   members  of  mod2   in  package  p1  with  from  statement
+print(x) # How  to  print  variable  'x'  of   mod2  in  package  p1
+f1() # How  to  call  function  f1()  of   mod2  in  package  p1
+a = c1()
+a . m1()  # How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+#print(p1 . mod1 . x) #  Error :  package  p1 is not imported
+#print(mod1 . x) #  Error  :  mod1 is not imported
+#from  p1   import  mod1 . *   #  Error  :  '.'  can  not  be  used   in import clause
+
+
+output
+10
+p1  --->  mod1   --->  f1  function
+p1  ---> mod1  ---> c1  ---> m1 method
+20
+p1  ---> mod2  ---> f1
+p1  ---> mod2 ---> c1 ---> m1
+
+
+#program 8
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+from  p1 . mod1    import    *
+from  p1 . mod2    import    *
+print(x) #   Variable  'x'   of  p1 . mod2
+f1() #   Function  of  p1 . mod2  is  executed
+a = c1()  # Creates  p1 . mod2 .  c1  class  object
+a . m1() #  Executes p1 . mod2 . c1 . m1()  method
+
+output
+20
+p1  ---> mod2  ---> f1
+p1  ---> mod2 ---> c1 ---> m1
+
+
+
+#program 9
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+from  p1 . mod2    import   *
+from  p1 . mod1    import   *
+print(x) #  variable  'x'  of  p1 . mod1
+f1() #  Executes  function  of   p1 . mod1
+a = c1()  #  Creates  p1 . mod1 . c1  class  object
+a . m1()    #  Executes   method  of   p1 . mod1 . c1  class
+
+output
+10
+p1  --->  mod1   --->  f1  function
+p1  ---> mod1  ---> c1  ---> m1 method
+
+
+
+#program 10
+Save  the  following  code  in    any  file  of  cwd
+Find  outputs
+
+from  p1 . mod1    import    *
+from  p1 . mod2    import    *
+x = 30
+def   f1():
+	print('Function  of  same  module')
+class  c1:
+	def  m1(self):
+		print('Method  of  class  c1  in same  module')
+print(x) #   Variable  of  same  module  i.e.  30
+f1() #   Executes  function  of  same  module
+a = c1()  #  Creates  c1  class   object  of  same  module
+a . m1() #  Executes  method  of  class  c1  in same  module
+
+output
+30
+Function  of  same  module
+Method  of  class  c1  in same  module
+
+
+#program 11
+Save  the  following  code  in  any  file  of  cwd
+How  to  use  members  of  both  the  modules
+
+from p1.mod1 import *  # How  to  import   members  of  mod1   in  package  p1  with  from  statement
+from p1.mod2  import x as x2 , f1 as f12 , c1 as c12 # How  to  import   members  of  mod2   in  package  p1  with  from  statement
+print(x) # How  to  print  variable  'x'  of   mod1  in  package  p1
+f1() # How  to  call  function  f1()  of   mod1  in  package  p1
+a = c1()
+a . m1()  #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+print(x2) # How  to  print  variable  'x'  of   mod2  in  package  p1
+f12() # How  to  call  function  f1()  of   mod2  in  package  p1
+a = c12()
+a . m1()  # How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+
+output
+10
+p1  --->  mod1   --->  f1  function
+p1  ---> mod1  ---> c1  ---> m1 method
+20
+p1  ---> mod2  ---> f1
+p1  ---> mod2 ---> c1 ---> m1
+
+#program 12
+# Save  in  any  file  of  cwd
+from p1 import mod1  #How  to  import  mod1  of  package  p1  with  from  statement
+print(mod1.x)# How  to  print  variable  'x'  of   mod1  in  package  p1
+mod1.f1() # How  to  call  function  f1()  of   mod1  in  package  p1
+a = mod1.c1()
+a.m1()  #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+#print(p1 . mod1 . x) # Error :   package  p1 is not imported
+print()
+print()
+from p1.p2 import mod2  #How  to  import  mod2  of  sub-package  p2  in  package  p1  with  from  statement
+print(mod2.x) # How  to  print  variable  'x'  of   mod2  in  sub-package  p2  of  package  p1
+mod2.f1() # How  to  call  function  f1()  of   mod2  in  sub-package  p2  of  package  p1
+a = mod2.c1()
+a.m1()  # How  to  call  method  m1()  of  class   c1   in  mod2  of  sub-package  p2  in  package  p1
+#print(p1 . p2 . mod2 . x) #  Error :  package  p1  is not imported
+#from  p1  import   p2 . mod2  #  Error  :   '.'  can  not  be  used   in import clause
+#from  p2  import  mod2 #  Error :  No  package  p2  in   cwd
+
+output
+10
+p1  --->  mod1  --->  f1 function
+p1 ---> mod1 ---> c1 ---> m1 method
+20
+p1 ---> p2 ---> mod2 ---> f1 function
+p1 ---> p2 ---> mod2 ---> c1 ---> m1 method
+
+
+#program 13
+# Save  in  any  file  of  cwd
+from p1 import mod1  #How  to  import  mod1  of  package  p1  with  from  statement
+print(mod1.x)# How  to  print  variable  'x'  of   mod1  in  package  p1
+mod1.f1() # How  to  call  function  f1()  of   mod1  in  package  p1
+a = mod1.c1()
+a.m1()  #How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+#print(p1 . mod1 . x) # Error :   package  p1 is not imported
+print()
+print()
+from p1.p2 import mod2  #How  to  import  mod2  of  sub-package  p2  in  package  p1  with  from  statement
+print(mod2.x) # How  to  print  variable  'x'  of   mod2  in  sub-package  p2  of  package  p1
+mod2.f1() # How  to  call  function  f1()  of   mod2  in  sub-package  p2  of  package  p1
+a = mod2.c1()
+a.m1()  # How  to  call  method  m1()  of  class   c1   in  mod2  of  sub-package  p2  in  package  p1
+#print(p1 . p2 . mod2 . x) #  Error :  package  p1  is not imported
+#from  p1  import   p2 . mod2  #  Error  :   '.'  can  not  be  used   in import clause
+#from  p2  import  mod2 #  Error :  No  package  p2  in   cwd
+
+output
+10
+p1  --->  mod1  --->  f1 function
+p1 ---> mod1 ---> c1 ---> m1 method
+20
+p1 ---> p2 ---> mod2 ---> f1 function
+p1 ---> p2 ---> mod2 ---> c1 ---> m1 method
+
+
+#program 14
+#  Save  in  any  file  of  cwd
+from p1.mod1 import *  # How  to  import  members  of  mod1  in  package  p1  with  from  statement
+print(x) # How  to  print  variable  'x'  of   mod1  in  package  p1
+f1() # How  to  call  function  f1()  of   mod1  in  package  p1
+a = c1()
+a . m1()  # How  to  call  method  m1()  of   class  c1  in  mod1  of  package  p1
+print()
+print()
+from p1.mod2 import *  # How  to  import   members  of  mod2   in  package  p1  with  from  statement
+print(x) # How  to  print  variable  'x'  of   mod2  in  package  p1
+f1() # How  to  call  function  f1()  of   mod2  in  package  p1
+a = c1()
+a . m1()  # How  to  call  method  m1()  of   class  c1  in  mod2  of  package  p1
+#print(p1 . mod1 . x) #  Error :  package  p1 is not imported
+#print(mod1 . x) #  Error  :  mod1 is not imported
+#from  p1   import  mod1 . *   #  Error  :  '.'  can  not  be  used   in import clause
+
+
+output
+10
+p1  --->  mod1   --->  f1  function
+p1  ---> mod1  ---> c1  ---> m1 method
+20
+p1  ---> mod2  ---> f1
+p1  ---> mod2 ---> c1 ---> m1
+
+
