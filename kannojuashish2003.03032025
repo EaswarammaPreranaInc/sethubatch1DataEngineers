@@ -1,0 +1,5 @@
+'''
+'''
+for i in [10,20,15,18]:
+  print(i,end=" ")
+  print()
