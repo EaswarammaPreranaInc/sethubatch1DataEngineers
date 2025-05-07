@@ -1,0 +1,382 @@
+5/5/2025 
+
+# 1.Find  outputs  (Home  work)
+
+'''
+from  threading  import  *
+class  c1:
+	def  m1(self):
+		for  i  in  range(10):
+			print('child  thread')
+a = c1()
+child  = Thread(target = a . m1)
+a . m1() #1. child thread 10 times 
+for  i  in  range(10):
+	print('main  thread') #2. main thread 10 times
+	
+'''
+
+
+#2.Find  outputs (Home  work)
+
+'''
+from  threading  import   *
+class   c1:
+	def  m1(self):
+		for  i  in  range(10):
+			print('child  thread')
+a = c1()
+child = Thread(target =  a . m1())
+child . start() #1. child  thread 10 times and returns None 
+for  i  in  range(10):
+        print('main  thread') #2. main thread 10 times 
+        
+'''
+
+
+#3. Find  outputs  (Home  work)
+
+'''
+from  threading  import  *
+class  c1:
+	@classmethod
+	def  m1(cls):
+		for  i   in  range(1 , 11):
+			print('Child  Thread  :  ' , i)
+child = Thread(target = c1 . m1)
+child . start() #1. Child  Thread  :  i(1-10)
+for  i  in  range(1 , 11):
+        print('Main  Thread  :  ' , i) #Main  Thread  : i(1-10) parallely
+        
+        
+'''
+
+
+#4. Identify  error  (Home  work)
+
+'''
+from  threading  import  Thread
+class   Thread:
+    def   run(self):
+        for  i  in  range(10):
+            print('Child  Thread')
+# End of the class
+t = Thread()
+t . start() #AttributeError No start method 
+for  i  in  range(10):
+        print('main  thread')
+        
+'''
+
+
+#5.Find  outputs  (Home  work)
+
+'''
+class   Thread:
+    def   run(self):
+        for  i  in  range(10):
+            print('Child  Thread')
+            
+from  threading  import  Thread
+t = Thread()
+t . start()
+for  i  in  range(10):
+        print('Main  Thread') #Main  Thread 10 times 
+        
+'''
+
+
+#6. Find  outputs  (Home  work)
+
+'''
+from threading import *
+class   MyThread(Thread):
+    def   run(self):
+        for  i  in  range(10):
+            print('child  thread')
+#end of the class
+child = MyThread()
+child . run() #1. child  thread 10 times
+for  i  in  range(10):
+        print('main  thread') #2. main thread 10 times
+        
+'''
+
+
+#7.Find  outputs (Home  work)
+
+'''
+from  threading  import *
+class    MyThread(Thread):
+	def  walk(self):
+		for  i  in  range(10):
+			print('Child  Thread')
+child = MyThread()
+child . start()
+for  i  in  range(10):
+	print('Main  Thread') #1. Main Thread 10 times 
+	
+'''
+
+
+#8. Find  outputs
+
+'''
+from  threading  import  *
+class   MyThread(Thread):
+	def   run(self):
+		print('run  method')
+def  f1():
+	print('f1  function')
+child = MyThread(target = f1)
+child . start() #1. run  method
+print('Main  Thread') #2. Main Thread
+
+'''
+
+
+#9.Find  outputs
+
+'''
+from  threading  import  *
+class   MyThread(Thread):
+	pass
+def  f1():
+	for  i  in   range(1 , 11):
+		print('f1  function : ' , i)
+child = MyThread(target = f1)
+child . start() #1. f1 function : i(1,10)
+for  i  in  range(1 , 11):
+	print('Main  Thread : ' , i) #2. Main Thread : i(1,10) parallely
+	
+'''
+
+
+#10.Find  outputs
+'''
+from  threading  import  *
+class   MyThread(Thread):
+	pass
+child = MyThread()
+child . start()
+print('Main  Thread') #1. Main Thread
+'''
+
+
+'''
+
+#11. 
+
+1) What  are  the  outputs  for  t1 . start() ?  ---> f1  function 10 times 
+
+2) What  are  the  outputs  for  t2 . start() ?  ---> m1  method  of  class  c1 10 times
+
+3) What  are  the  outputs  for  t3 . start() ?  ---> empty run method of Thread class do nothing
+
+4) What  are  the  outputs  for  t4 . start() ?  ---> run   method  of  MyThread  class 10 times
+
+5) What  are  the  outputs  for  t5 . start() ?  ---> run   method  of  MyThread  class 10 times 
+
+6) What  are  the  outputs  for  t6 . start() ?  ---> f1  function 10 times 
+
+7) What  are  the  outputs  for  t7 . start() ?  ---> empty run method of Thread class do nothing 
+
+8) What  are  the  outputs  for  t8 . start() ?  ---> run   method  of  MyThread  class 10 times 
+
+9) What  are  the  outputs  for  t9 . start() ?  ---> m1  method  of  class  c1 10 times 
+
+10) What  are  the  outputs  for  t10 . start() ?  ---> run   method  of  MyThread  class 10 times
+
+11) What  are  the  outputs  for  t11 . start() ?  ---> empty run method of Thread class do nothing
+
+12) What  are  the  outputs  for  t12 . start() ?  ---> m1  method  of  MyThread  class 10 times
+
+13) What  are  the  outputs  for  t13 . start() ?  ---> f1  method  of  class  c1 10 times
+
+'''
+
+'''
+
+from  threading  import *
+class  MyThread(Thread):
+    def  run(self):
+        for  i  in  range(10):
+            print('run   method  of  MyThread  class')
+    def  m1(self):
+        for  i  in  range(10):
+            print('m1  method  of  MyThread  class')
+class  c1(Thread):
+    def  m1(self):
+        for  i  in  range(10):
+            print('m1  method  of  class  c1')
+    def   f1(self):
+        for  i  in  range(10):
+            print('f1  method  of  class  c1')
+                
+# end of class
+def   f1():
+    for  i  in  range(10):
+        print('f1  function')
+#end of f1 function
+
+t1 = Thread(target = f1)
+t2 = Thread(target = c1() . m1)
+t3 = Thread()
+t4 = MyThread()
+t5 = MyThread(target = f1)
+t6 = c1(target =  f1)
+t7 = c1()
+t8 = MyThread(target = c1() . m1)
+t9 = c1(target = c1() . m1)
+t10 = MyThread(target = t4 . run)
+t11 = c1(target = t7 . run)
+t12 = c1(target = t4 . m1)
+t13 = c1(target = t7 . f1)
+
+# Run  with  any  one  of  the  following  stmts
+#t1 . start()
+#t2 . start()
+#t3 . start()
+#t4 . start()
+#t5 . start()
+#t6 . start()
+#t7 . start()
+#t8 . start()
+#t9 . start()
+#t10 . start()
+#t11 . start()
+#t12 . start()
+t13 . start()
+
+'''
+
+
+# 12.What  are  the  outputs  when  start()  method  is  overridden  ?  (Home  work)
+
+'''
+from  threading  import  *
+class  MyThread(Thread):
+	def   start(self):
+		super() . start()  
+		print('Start Method') #2. Start Method
+	def   run(self):
+		print('Run Method') #1. Run Method
+#  main  thread  executes  following  statements
+child = MyThread()
+child . start()
+print('Main  Thread') #3. Main Thread
+
+'''
+
+
+#13. Find  outputs (Home  work)
+
+'''
+from threading import *
+print(main_thread().name) #How  to  print  name  of  main  thread
+main_thread().name='Hyd' #How  to  modify  name  of  main  thread  to   'Hyd'
+print(main_thread().name) #How  to  print  new  name  of  main  thread
+child= Thread(name='Sec') #How  to  create  a  new  child  thread  with  name  "Sec"
+print(child.name) #How  to  print  name  of  child  thread
+child.name='Cyb' #How  to  modify  name  of  child  thread  to   'Cyb'
+print(child.name) #How  to  print  new  name  of  child  thread
+print(active_count()) #How  to  print  number  of  threads  under  execution
+
+'''
+
+
+#14. Find  outputs (Home  work)
+
+'''
+from threading import *
+t1=Thread() 
+t2=Thread()
+t3=Thread() #How  to  create  three  new  threads  t1 , t2 , t3
+print('Names of Threads')
+print(F't1 : {t1.name}') #How  to  print  name  of  each  thread
+print(F't2 : {t2.name}')
+print(F't3 : {t3.name}')
+#How  to  modify  name  of  each  thread  to  "One" , "Two"   and  "Three"
+t1.name="One"
+t2.name="Two"
+t3.name="Three"
+print('New Names of Threads')
+print(t1.name,t2.name,t3.name) #How  to  print  new  name  of  each  thread
+print(active_count()) #How  to  print  number  of  threads  under  execution
+
+'''
+
+
+#15. Find  outputs (Home  work)
+
+'''
+from  threading  import  *
+def  f1():
+	print(current_thread().name) #How  to  print  name  of  child  thread
+t=Thread(target=f1,name="Child") #How  to  create  a  new  thread  with  name  "Child"  and  target  f1
+t.start() #How  to  start  the  new  thread
+print(main_thread().name) #How  to  print  name  of   main  thread
+
+'''
+
+
+#16. Find  outputs (Home  work)
+
+'''
+from  threading  import  *
+t1=Thread(name="Hyd") #How  to  create  a  thread  t1  with  name  'Hyd'
+t2=Thread() #How  to  create  another  thread  t2  without  a  name
+print(main_thread().name) #How  to  print  name  of  main  thread
+print(t1.name) #How  to  print  name  of  thread  t1
+print(t2.name) #How  to  print  name  of  thread  t2
+main_thread().name="India" #How  to  modify  name  of  main  thread  to  'India'
+t1.name="Sec" #How  to  modify  name  of  thread  t1  to  'Sec'
+t2.name="Cyb" #How  to  modify  name  of  thread  t2  to  'Cyb'
+print(main_thread().name) #How  to  print  name  of  main  thread
+print(t1.name) #How  to  print  name  of  thread  t1
+print(t2.name) #How  to  print  name  of  thread  t2
+print(active_count()) #How  to  print  number  of  threads  under  execution
+
+'''
+
+
+#17. Find  outputs  (Home  work)
+
+'''
+from  threading  import  *
+def   f1(x):
+	s = current_thread() . name
+	while   True:
+		print(s , ' : ' , x) 
+t1 = Thread(target = f1 , name = 'Hyd' , args = (10,))
+t2 = Thread(target = f1 , name = 'Sec' , args = [20])
+t1 . start() #  t1  executes  f1(10) #Hyd : 10
+t2 . start()   #  t2  executes  f1(20) #Sec : 20
+print(active_count()) #1
+print('Press  ctrl + break  or  Fn + b  to  stop ') 
+
+'''
+
+
+#18. Find  outputs (Home  work)
+
+'''
+from  threading  import  Thread , current_thread
+from  random  import  randint
+def   f1(n):
+	ctr = 0
+	s = current_thread() . name #Rama
+	while  True:
+		x = randint(1 , 100) #1
+		ctr += 1 
+		print(F'{s}  guess  {x}   in  attempt  :  {ctr}') #Rama  guess  7   in  attempt  : 1
+		if   x ==  n:
+			break
+	#end of while loop
+	print(F'{s}  finish  in  {ctr}  attempts')
+t1 = Thread(target = f1 , args = [75] , name = 'Rama')
+t2 = Thread(target = f1 , args = [50] , name = 'Sita')
+t1 . start()
+t2 . start()
+
+'''
