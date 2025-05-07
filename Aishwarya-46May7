@@ -1,0 +1,204 @@
+#Modify following program such that child thread should wait for main thread expiry
+from threading import *
+def disp():
+	for i in range(10):
+		print('child thread')
+child=Thread(target=disp)
+child.start()
+for i in range(10):
+	print('main thread')
+
+#Output (vary from run to run)
+child thread (10 times)
+main thread  (10 times)
+
+
+
+#Find outputs
+from threading import *
+main=main_thread()
+name=main.name
+print(name,'is started') #MainThread is started
+main.join() #Error : only 1 thread (can't join)
+print(name,'is ended')
+
+
+
+#Find outputs
+from threading import *
+import time
+def double():
+	for i in range(1,7):
+		print('Double :',2*i)
+		time.sleep(1)
+def square():
+	for i in range(1,7):
+		print('Square :',i*i)
+		time.sleep(1)
+start=time.time() #time
+double()
+square()
+end=time.time()
+print('Execution time of 2 functions :',end-start)
+
+#Output
+Double : 2
+Double : 4
+Double : 6
+Double : 8
+Double : 10
+Double : 12
+Square : 1
+Square : 4
+Square : 9
+Square : 16
+Square : 25
+Square : 36
+Execution time of 2 functions : 12.014151573181152
+
+
+
+#Find outputs
+from threading import *
+import time
+def display():
+	name=current_thread().name
+	print(name,'is started')
+	time.sleep(3)
+	print(name,'is ended')
+print(active_count())
+t1=Thread(target=display,name='Child Thread 1')
+t2=Thread(target=display,name='Child Thread 2')
+t3=Thread(target=display,name='Child Thread 3')
+print(active_count())
+t1.start()
+t2.start()
+t3.start()
+print(active_count())
+t1.join()
+t2.join()
+t3.join()
+print(active_count())
+
+#Output
+1
+1
+Child Thread 1 is started
+Child Thread 2 is started
+Child Thread 3 is started
+4
+ending order may vary
+1
+
+
+
+#is_alive() method demo program
+from threading import *
+import time
+def disp():
+	name=current_thread().name
+	print(name,'is started')
+	time.sleep(3)
+	print(name,'is ended')
+t1=Thread(target=disp,name='One')
+t2=Thread(target=disp,name='Two')
+t3=Thread(target=disp,name='Three')
+t1.start()
+t2.start()
+t3.start()
+print(t1.is_alive())
+print(t2.is_alive())
+print(t3.is_alive())
+t1.join()
+t2.join()
+t3.join()
+print(t1.is_alive())
+print(t2.is_alive())
+print(t3.is_alive())
+
+#Output
+Starting order one, two, three
+True
+True
+True
+Ending order may vary
+False
+False
+False
+
+
+
+#Find outputs
+from threading import *
+import time
+def disp(s):
+	print('[',s,end='')
+	time.sleep(3)
+	print(']')
+t1=Thread(target=disp,args=('Hyd',))
+t2=Thread(target=disp,args=('Sec',))
+t3=Thread(target=disp,args=('Cyb',))
+t1.start()
+t2.start()
+t3.start()
+
+#Output
+[ Hyd[ Sec[ Cyb]
+]
+]
+
+
+
+#Find outputs
+from threading import *
+import time
+class Account:
+	def __init__(self,acno1,bal1):
+		self.acno=acno1
+		self.bal=bal1
+	def credit(self,amt):
+		s=current_thread().name
+		print(F'{s} is depositing Rs.{amt} into account {self.acno}')
+		x=self.bal
+		time.sleep(1)
+		self.bal=x+amt
+ac=Account(25,1000.0)
+print('Initial Balance :',ac.bal)
+t1=Thread(target=ac.credit,args=[100],name='Rama')
+t2=Thread(target=ac.credit,args=(200,),name='Sita')
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print('Final Balance :',ac.bal) #100 or 200 based on which thread is executed 
+
+
+
+#Find outputs
+from threading import RLock
+r=RLock()
+r.acquire()
+print('Locked') #Locked
+r.acquire()
+print('Locked') #Locked
+r.release()
+print('Unlocked') #Unlocked
+r.release()
+print('Unlocked') #Unlocked
+r.release()     #Error : no release without acquire
+print('End')
+
+
+
+#Find outputs
+from threading import *
+l=Lock()
+l.acquire()
+print('Locked') #Locked 
+l.acquire()     #Error : cannot lock an already locked object
+print('Locked')
+l.release()
+print('Unlocked')
+l.release()
+print('Unlocked')
+print('End')
