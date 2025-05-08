@@ -1,0 +1,71 @@
+#program 1
+# Find  outputs (Home  work)
+from threading import *
+def   disp():
+	for  i  in  range(10):
+		print('child  thread')
+child = Thread(target = disp)
+child . start()
+child . join()
+for  i  in  range(10):
+	print('main  thread')
+
+output
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+
+
+#program 2
+#  Find  outputs (Home  work)
+from  threading  import *
+import  time
+def   disp():
+	for  i  in  range(10):
+		print('child  thread')
+		time . sleep(2)
+child = Thread(target = disp)
+child . start()
+child . join(10)
+for  i  in  range(10):
+	print('main  thread')
+
+
+output
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+main  thread
+child  thread
+child  thread
+child  thread
+child  thread
+child  thread
