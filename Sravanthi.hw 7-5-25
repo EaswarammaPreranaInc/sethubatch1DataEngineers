@@ -1,0 +1,165 @@
+------1
+# Find  outputs (Home work)
+from  threading  import  *
+main = main_thread()
+name  =  main . name
+print(name , ' is started')
+#main . join()
+print(name , 'is ended')
+output:
+MainThread  is started
+MainThread is ended
+-------2
+# Find  outputs (Home  work)
+from threading import *
+import time
+def   double():
+	for   i  in  range(1 , 7):
+		print('Double : ' , 2 * i)
+		time . sleep(1)
+def   square():
+	for   i  in   range(1 , 7):
+		print('Square : ' , i * i)
+		time . sleep(1)
+start = time . time()
+double() # 6 seconds
+square() # 6 seconds
+end = time . time()
+print('Execution  time  of  2 functions : ' , end - start)
+output:
+Double :  2
+Double :  4
+Double :  6
+Double :  8
+Double :  10
+Double :  12
+Square :  1
+Square :  4
+Square :  9
+Square :  16
+Square :  25
+Square :  36
+Execution  time  of  2 functions :  12.011867761611938
+------3
+# Find  outputs  (Home  work)
+from  threading  import  *
+import  time
+def   display():
+        name = current_thread() . name
+        print(name , ' is  started')
+        time . sleep(3)
+        print(name , ' is  ended')
+print(active_count())
+t1 = Thread(target = display , name = 'Child Thread 1')
+t2 = Thread(target = display , name = 'Child Thread 2')
+t3 = Thread(target = display , name = 'Child Thread 3')
+print(active_count())
+t1 . start()
+t2 . start()
+t3 . start()
+print(active_count())
+t1 . join()
+t2 . join()
+t3 . join()
+print(active_count())
+output:
+1
+1
+Child Thread 1  is  started
+Child Thread 2  is  started
+Child Thread 3  is  started
+4
+Child Thread 1  is  ended
+Child Thread 2  is  ended
+Child Thread 3  is  ended
+1
+------4
+# is_alive()  method   demo  program
+from  threading  import *
+import  time
+def   disp():
+	name =  current_thread() . name
+	print(name , 'is   started')
+	time . sleep(3)
+	print(name , '   is    ended')
+t1 = Thread(target = disp , name = 'One')
+t2 = Thread(target = disp , name = 'Two')
+t3 = Thread(target = disp , name = 'Three')
+t1 . start()
+t2 . start()
+t3 . start()
+print(t1 . is_alive())
+print(t2 . is_alive())
+print(t3 . is_alive())
+t1 . join()
+t2 . join()
+t3 . join()
+print(t1 . is_alive())
+print(t2 . is_alive())
+print(t3 . is_alive())
+output:
+One is   started
+Two is   started
+Three is   started
+True
+True
+True
+One    is    ended
+Two    is    ended
+Three    is    ended
+False
+False
+False
+--------5
+# Find  outputs (Home  work)
+from  threading  import *
+import  time
+def   disp(s):
+	print('[' , s , end = '')
+	time . sleep(3)
+	print(']')
+t1 = Thread(target = disp , args = ('Hyd',))
+t2 = Thread(target = disp , args = ('Sec',))
+t3 = Thread(target = disp , args = ('Cyb',))
+t1 . start()
+t2 . start()
+t3 . start()
+output:
+[ Hyd[ Sec[ Cyb]
+]
+]
+---------6
+#  Find  outputs  (Home  work)
+from  threading  import  RLock
+r = RLock()
+r . acquire()
+print('Locked')
+r . acquire()
+print('Locked')
+r . release()
+print('Unlocked')
+r . release()
+print('Unlocked')
+r . release()
+print('End')
+output:
+Locked
+Locked
+Unlocked
+Unlocked
+End
+------7
+# Find  outputs  (Home  work)
+from threading import *
+l = Lock()
+l . acquire()
+print('Locked')
+l . acquire()
+print('Locked')
+l . release()
+print('Unlocked')
+l . release()
+print('Unlocked')
+print('End')
+output:
+Locked
