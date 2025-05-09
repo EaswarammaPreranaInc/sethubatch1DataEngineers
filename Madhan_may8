@@ -1,0 +1,192 @@
+#7/5/2025 
+
+
+#1.Modify  following  program  such  that  child  thread  should  wait  for  main  thread  expiry
+
+
+'''
+from threading import *
+def   disp():
+    main_thread().join()
+    for  i  in  range(10):
+        print('child  thread')
+child = Thread(target = disp)
+child . start()
+for  i  in  range(10):
+	print('main  thread')
+	
+'''
+
+#2.Find  outputs (Home work)
+
+'''
+from  threading  import  *
+main = main_thread()
+name  =  main . name
+print(name , ' is started') #MainThread is started
+#main . join() 
+print(name , 'is ended') #MainThread is ended 
+
+'''
+
+
+#3.Find  outputs (Home  work)
+
+'''
+from threading import *
+import time
+def   double():
+	for   i  in  range(1 , 7):
+		print('Double : ' , 2 * i) #1. Double : 2 4 6 8 10 12
+		time . sleep(1)
+def   square():
+	for   i  in   range(1 , 7):
+		print('Square : ' , i * i) #2. Square : 1 4 9 16 25 36 
+		time . sleep(1)
+start = time . time()
+double() # 6 seconds
+square() # 6 seconds
+end = time . time()
+print('Execution  time  of  2 functions : ' , end - start) #12.02 
+
+'''
+
+
+#4. Find  outputs  (Home  work)
+
+'''
+from  threading  import  *
+import  time
+def   display():
+        name = current_thread() . name
+        print(name , ' is  started') 
+        time . sleep(3)
+        print(name , ' is  ended')
+print(active_count()) #1. 1
+t1 = Thread(target = display , name = 'Child Thread 1')
+t2 = Thread(target = display , name = 'Child Thread 2')
+t3 = Thread(target = display , name = 'Child Thread 3')
+print(active_count()) #2. 1
+t1 . start() #3. Child Thread 1 is started 
+t2 . start() #4. Child Thread 2 is started 
+t3 . start() #5. Child Thread 3 is started 
+print(active_count()) #6. 4
+t1 . join()  #7. Child Thread 1 is ended (may be)
+t2 . join() #8. Child Thread 2 is ended  (may be)
+t3 . join() #9. Child Thread 3  is ended (may be)
+print(active_count()) #10. 1
+
+'''
+
+
+#5. is_alive()  method   demo  program
+
+'''
+from  threading  import *
+import  time
+def   disp():
+	name =  current_thread() . name
+	print(name , 'is   started')
+	time . sleep(3)
+	print(name , '   is    ended')
+t1 = Thread(target = disp , name = 'One')
+t2 = Thread(target = disp , name = 'Two')
+t3 = Thread(target = disp , name = 'Three')
+t1 . start() #1. One is started
+t2 . start() #2. Two is started
+t3 . start() #1. Three is started
+print(t1 . is_alive()) #4. True
+print(t2 . is_alive()) #5. True
+print(t3 . is_alive()) #6. True
+t1 . join() #7. One is ended 
+t2 . join() #8. Two is ended 
+t3 . join() #9. Three is ended 
+print(t1 . is_alive()) #10. False
+print(t2 . is_alive()) #11. False
+print(t3 . is_alive()) #12. False
+
+'''
+
+
+#6. Find  outputs (Home  work)
+
+'''
+from  threading  import *
+import  time
+def   disp(s):
+	print('[' , s , end = '')
+	time . sleep(3)
+	print(']')
+t1 = Thread(target = disp , args = ('Hyd',))
+t2 = Thread(target = disp , args = ('Sec',))
+t3 = Thread(target = disp , args = ('Cyb',))
+t1 . start() # [ Hyd [Sec [Cyb ] \n ] \n ]
+t2 . start()
+t3 . start()
+
+'''
+
+
+#7. Find  outputs (Home  work)
+
+'''
+from  threading  import *
+import  time
+class   Account:
+	def    __init__(self , acno1 , bal1):
+		self . acno = acno1
+		self . bal = bal1
+	def    credit(self , amt):
+		s = current_thread() . name
+		print(F'{s}  is  depositing  Rs. {amt}  into account   {self . acno}')
+		x = self . bal
+		time . sleep(1)
+		self . bal  =  x  +  amt
+ac = Account(25 , 1000.0)
+print('Initial  Balance :  ' , ac . bal) #1. Initial Balance : 1000.0
+t1 = Thread(target = ac . credit ,  args = [100] ,  name = 'Rama')
+t2 = Thread(target = ac  . credit , args = (200,) , name = 'Sita')
+t1 . start() #2. Rama is depositing Rs. 1000.0 into account 25
+t2 . start() #3. Sita is depositing Rs. 1000.0 into account 25
+t1 . join()
+t2 . join()
+print('Final  Balance  :   ' , ac . bal) #4. Final Balance : 1100 or 1200
+
+'''
+
+
+#8.Find  outputs  (Home  work)
+
+'''
+from  threading  import  RLock
+r = RLock()
+r . acquire()
+print('Locked') #1. Locked
+r . acquire()
+print('Locked') #2. Locked
+r . release()
+print('Unlocked') #3. Unlocked
+r . release()
+print('Unlocked') #4. Unlocked
+#r . release() #RuntimeError
+print('End') #5.End
+
+'''
+
+
+#9. Find  outputs  (Home  work)
+
+'''
+from threading import *
+l = Lock()
+l . acquire()
+print('Locked') #1. Locked
+l . acquire()
+print('Locked') #wait
+l . release()
+print('Unlocked')
+l . release()
+print('Unlocked')
+print('End')
+
+'''
