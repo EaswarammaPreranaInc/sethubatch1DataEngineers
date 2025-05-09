@@ -1,0 +1,288 @@
+#8/5/2025 
+
+#1.Find   outputs (Home  work)
+
+'''
+from threading import *
+import  time
+def    disp():
+	main_thread() . join(10)
+	for  i  in  range(10):
+		print('child  thread') #2. 10 times child thread or 1 time main thread 
+child = Thread(target = disp)
+child . start()
+for  i  in  range(10):
+	print('main  thread') #1. main thread 5 times  #3. 4 times main thread 
+	time . sleep(2)
+	
+'''
+
+
+#2.Find  outputs  (Home  work)
+
+'''
+from threading import *
+import time
+def  disp():
+	main_thread() . join()
+	for  i  in  range(10):
+		print('child  thread')
+child = Thread(target = disp)
+child . start()
+child . join()
+for  i  in  range(10):
+	  print('main  thread') #No ops dead lock
+	
+'''
+
+'''
+#3. Modify  following  program  such  that   t1  should  execute  double()  function  and
+t2  should  execute  square()  function
+'''
+
+
+'''
+from threading import *
+import time
+def   double():
+	for   i  in  range(1 , 7):
+		print('Double : ' , 2 * i) #1. Double : 2 4 6 8 10 12
+		time . sleep(1)
+def   square():
+	for   i  in   range(1 , 7):
+		print('Square : ' , i * i) #2. Square : 1 4 9 16 25 36 
+		time . sleep(1)
+start = time . time()
+t1=Thread(target=double)
+t2=Thread(target=square)
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+end = time . time()
+print('Execution  time  of  2 functions : ' , end - start) # Execution  time  of  2 functions : 6.02 
+
+'''
+
+
+#4. Modify  following  program  such  that  final  balance  should  be  1300
+
+'''
+from  threading  import  *
+import  time
+L = Lock()
+class   Account:
+	def  __init__(self , acno1 , bal1):
+		self . acno = acno1
+		self . bal = bal1
+	def  credit(self , amt):
+	    L.acquire()
+	    s = current_thread().name
+	    print(F'{s}  is  depositing  Rs. {amt}   into  account   {ac . acno}')
+	    x = self . bal
+	    time . sleep(1)
+	    self . bal = x + amt
+	    L.release()
+ac = Account( 25 , 1000.0)
+print('Initial  Balance :  ' , ac . bal ) #1. Initial Balance : 1000.0
+t1 = Thread(target = ac . credit , name = 'Rama' , args = (100,))
+t2 = Thread(target = ac . credit , name = 'Sita' , args = (200,))
+t1 . start() #2. Rama is depositing Rs.100 into account 25
+t2 . start() #3. Sita is depositing Rs.200 into account 25
+t1 . join()
+t2 . join()
+print('Final balance :  ' , ac . bal) #4. Final balance : 1300
+
+'''
+
+
+#5. Find  outputs (Home  work)
+'''
+from threading import *
+import time
+def   f1():
+        sem . acquire()
+        name = current_thread() . name
+        print(name , 'is   under   execution')
+        time . sleep(1)
+        print(name , 'finished  execution')
+        sem . release()
+sem = Semaphore(3)
+t1 = Thread(target = f1 , name = 'One') 
+t2 = Thread(target = f1 , name = 'Two')
+t3 = Thread(target = f1 , name = 'Three')
+t4 = Thread(target = f1 , name = 'Four')
+t5 = Thread(target = f1 , name = 'Five')
+t6 = Thread(target = f1 , name = 'Six')
+t7 = Thread(target = f1 , name = 'Seven')
+t8 = Thread(target = f1 , name = 'Eight')
+t9 = Thread(target = f1 , name = 'Nine')
+t1 . start() #1. One is   under   execution
+t2 . start() #2. Two is   under   execution
+t3 . start() #3. Three is   under   execution
+#4. One finished  execution
+#5. Four is   under   execution
+#6. Two finished  execution
+#7. Five is   under   execution
+#8. Three finished  execution
+#9. Six  is   under   execution
+t4 . start() 
+t5 . start() 
+t6 . start() 
+#10.Four finished  execution
+#11. Seven is   under   execution
+#12.Five finished  execution
+#13. Eight is   under   execution
+#14.Six finished  execution
+#15. Nine  is   under   execution
+t7 . start() 
+t8 . start() 
+t9 . start() 
+#16.Seven finished  execution
+#17.Eight finished  execution
+#18.Nine finished  execution
+
+'''
+
+#6. Find  outputs
+'''
+from  threading  import *
+import  time
+def    fact(n):
+	sem . acquire()  
+	if   n  >  0:
+		x = n * fact(n - 1)
+	else:
+		x = 1
+	sem . release()
+	return   x
+#end of the function
+def    disp(n):
+	print(n , ' != ' , fact(n))
+sem = Semaphore(8)
+t1 = Thread(target = disp , args = (4,))
+t2 = Thread(target = disp , args = (7,))
+t1 . start()  #4 != 24
+t2 . start()  #7 != 5040
+
+'''
+
+
+#7. Find  outputs  (Home  work)
+
+'''
+from   queue   import  Queue
+from  threading  import  *
+q = Queue()
+q.put(10)
+q.put(20) 
+q.put(30)
+q.put(40)
+q.put(50) #How  to  insert  10 , 20 , 30 , 40 , 50  into  object  'q'  with  for  loop
+print('Deleted  elements')
+while(not q.empty()):
+    print(q.get(),end=" ") #How  to  remove  each  element  of  object  'q'  until  it  is  empty
+print()
+print(active_count()) #1
+#print(q . get()) #wait
+print('End') #End 
+
+'''
+
+#8. Find  outputs  (Home  work)
+
+'''
+from   queue  import  LifoQueue
+s = LifoQueue()
+s.put(10)
+s.put(20)
+s.put(30)
+s.put(40)
+s.put(50) #How  to  insert  10 , 20 , 30 , 40 , 50  into  stack  object  with  for  loop
+print('Deleted  elements')
+while(not s.empty()):
+    print(s.get(),end=" ") #How  to  remove  each  element  of   stack  object   until  it  is  empty
+print()
+#print(s.get()) #wait
+print('End') #End
+
+'''
+
+#9. Find  outputs  (Home  work)
+
+'''
+from   queue   import  PriorityQueue
+pq = PriorityQueue()
+for i in range(10,51,10):
+    pq.put(i) #How  to  insert  10 , 20 , 30 , 40 , 50  into  object  pq  with  for  loop
+print('Deleted  elements')
+while(not pq.empty()):
+    print(pq.get()) #How  to  remove  each  element  of  object  pq  until  it  is  empty
+#print(pq . get()) #wait
+print('End') #End
+
+'''
+
+
+#10. Find  outputs  (Home  work)
+
+'''
+from  queue  import  Queue
+q = Queue()
+q . put(('Hyd' , 10))
+q . put(('Delhi' , 20))
+q . put(('Chennai' , 15))
+q . put(('Pune' , 5))
+q . put(('Mumbai' , 12))
+while(not q.empty()):
+    print(q.get()) #How  to  remove  each  tuple  of  object  'q'  until  it  is  empty
+    
+'''
+
+
+#11. Find  outputs  (Home  work)
+
+'''
+from  queue  import   LifoQueue
+stack = LifoQueue()
+stack . put(('Hyd' , 10))
+stack . put(('Delhi' , 20))
+stack . put(('Chennai' , 15))
+stack . put(('Pune' , 5))
+stack . put(('Mumbai' , 12))
+while(not stack.empty()):
+    print(stack.get()) #How  to  remove  each  tuple  of  stack  object  until  it  is  empty
+    
+'''
+
+# 12.Find  outputs
+
+'''
+from  queue  import   PriorityQueue
+pq = PriorityQueue()
+pq . put(('Hyd' , 10))
+pq . put(('Delhi' , 20))
+pq . put(('Chennai' , 15))
+pq . put(('Pune' , 5))
+pq . put(('Mumbai' , 12))
+while(not pq.empty()):
+    print(pq.get()) #How  to  remove  each  tuple  of  object  pq  until  it  is  empty
+    
+'''
+
+
+#13. Find  outputs
+
+'''
+from  queue  import   PriorityQueue
+pq = PriorityQueue()
+pq . put(('Hyd' , 10))
+pq . put(('Hyd' , 20))
+pq . put(('Hyd' , 15))
+pq . put(('Hyd' , 5))
+pq . put(('Hyd' , 12))
+print('Deleted tuples')
+while(not pq.empty()):
+    print(pq.get()) #How  to  remove  each  tuple  of  object  pq  until  it  is  empty
+    
+'''
