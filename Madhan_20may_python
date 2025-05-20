@@ -1,0 +1,346 @@
+#20/5/2025 
+
+'''
+#1.Write  a  program  to  copy  contents  of  a  file  to  a  different  file
+
+1) 1st    file   ---------->    str   object     -------->   2nd   file
+                        read()                                write()
+
+2) What  is  the  mode  in  which  is  1st  file  opened ?  --->  'r'  mode
+    What  is  the  mode  in  which  is  2nd  file  opened ?  --->  'w'   mode
+
+3) What  action  to  be  made  when  1st  file  does  not  exist ?  --->  Print  a  message
+
+4) What  action  to  be  made  when  2nd  file  does  not  exist ?  --->  Copy  1st  file  to  2nd  file
+
+5) What  action  to  be  made  when  both  the  files  are  existing ? --->
+								Copy  file  when  user  input  is  yes  and  print  a  message  when  user  input  is  no
+
+6) Hint:  Use  isfile()  function  to  verify  file  is  existing  or  not
+'''
+
+'''
+def  copy(f1 , f2):
+	f2.write(f1.read()) #How  to  copy  1st  file  to  2nd  file
+try:
+	file1=input('Enter file1 name: ') #How  to  read  1st  filename
+	f1=open(file1,'r') #How  to  open  1st  file
+	file2=input('Enter file2 name: ') #How  to  read  2nd  filename
+	if  isfile(file2): #2nd  file  is  existing:
+		ch = input(F'{file2}  already  exists , overwrite (y/n) ? :  ')
+		if  ch == 'y'  or  ch == 'Y':
+			f2=open(file2,'w') #How  to  open  2nd  file
+			copy(f1,f2) #How  to  call  copy()   function
+			print(F'Contents  of  file  {file1}  is  copied  to  {file2}')
+			f2.close() #How  to  close  2nd  file
+		else:
+			print('Program  terminates  without  copy')
+	else:
+		f2=open(file2,'w') #How  to  open  2nd  file
+		copy(f1,f2) #How  to  call  copy()   function
+		print(F'Contents  of  file  {file1}  is  copied  to  {file2}')
+		f2.close() #How  to  close  2nd  file
+	f1.close() #How  to  close  1st   file
+except:
+	print(F'File  {file1}  does  not  exist')
+	
+'''
+
+
+'''
+#2.Write  a  program  to  append  contents  of  a  file  to  another  file
+
+1) What  is  the  mode  in  which  can  1st  file  be  opened ?  --->  'r'   mode
+    What  is  the  mode  in  which  is  2nd  file  opened ?  ---> 	'a'  mode
+
+2) Where  does  file  handle  points  to  when  file  is  opened  in  append  mode ?  --->  End  of  the  file
+    Where  does  file  handle  points  to  when  file  is  opened  in  read  or  write  mode ? ---> Begining  of  the  file
+
+3) What  action  to  be  made  when  1st  file  does  not  exist ?  --->  Print  a  message
+
+4) What  action  to  be  made  when  2nd  file  does  not  exist ?  --->  Copy  1st  file  to  2nd  file
+
+5) What  action  to  be  made  when  both  the  files  are  existing ? --->  Append  1st  file  contents  to  2nd  file
+'''
+
+'''
+try:
+	file1=input('Enter file1 name: ') #How  to  read  1st  file  name
+	f1=open(file1,'r') #How  to  open  1st  file
+	file2=input('Enter file2 name: ') #How   to  read   2nd  file  name
+	f2=open(file2,'a') #How  to  open  2nd  file
+	s=f1.read() #How  to  read  1st  file  data
+	f2.write(s) #How  to  append  the  data  to  2nd  file
+	print(F'Contents  of  file  {file1}  is  appended  or  copied  to  file  {file2}')
+	f1.close()
+	f2.close() #How  to  close  both  the  files
+except:
+	print(F'File  {file1} does  not  exist')
+	
+'''
+
+
+'''
+#3. Write  a  function  to  return  average  of  numbers  in  the  file
+
+Let  file  contain
+10
+20.8
+True
+15
+18.4
+eof
+
+sum = 0 + 10 + 20.8 + True + 15 + 18.4
+ctr = 0 + 1 + 1 + 1 + 1 + 1
+'''
+
+'''
+def   avg(f):
+    s=c=0 
+	for i in f:
+	    s+=eval(i)
+	    c+=1 
+	return s/c #How  to   return  average  of  numbers  in  the  file
+#  End  of  the  function
+try:
+	fname=input('Enter file name: ') #How  to  read  filename
+	f=open(fname,'r') #How  to  open  the  file
+	print(avg(f)) #How  to  print  the  average  of  numbers  in  the  file
+	f.close() #How  to  close  the  file
+except:
+	print('File  does  not  exist')
+	
+'''
+
+
+'''
+#4. Write  a  program  to  merge  two  files  to  form  a  new  file
+
+1) Let  1st  file  contain  10  lines  and   2nd  file  contain  7  lines
+    What  does  3rd  file  contain ?  ---> 10 + 7 = 17  lines
+
+2) What  action  to  be  made  when  both  the  files  are  existing ?  --->  Merge  them  to  form  a  new  file
+
+3) What  action  to  be  made  when  2nd  file  is  not  existing ?  --->  Copy  1st  file  to  3rd  file
+
+4) What  action  to  be  made  when  1st  file  is  not  existing ?  --->  Copy  2nd  file  to  3rd  file
+
+5) What  action  to  be  made  when  both  the  files  are  not  existing ?  --->  Print  a  message
+'''
+
+'''
+import  os
+def   copy(file1 , file2):
+	file2.write(file1) #How  to  copy  1st  file  data  to  2nd  file
+#  End  of  the  function
+file1=input('Enter file1 name: ') 
+file2=input('Enter file2 name: ')
+file3=input('Enter file3 name: ') #How  to  read  all  the 3  filenames
+if  isfile(file1) and isfile(file2): #both  the  files  are  existing
+	f1=open(file1,'r')
+	f2=open(file2,'a')
+	f3=open(file3,'a') #open  all  the  3  files
+	copy(f1,f2)
+	copy(f2,f3) #merge  the  two  files  to  form  3rd  file
+	f1.close()
+	f2.close()
+	f3.close() #close  all  the  3  files
+	print(F'{file1} and {file2}  are  copied to {file3}')
+elif  isfile(file1) and not isfile(file2): #1st  file  is  existing  but  not  2nd  file
+	f1=open(file1,'r')
+	f3=open(file3,'w') #open  1st  and  3rd  files
+	copy(f1,f3) #copy  1st  file  data  to  3rd  file
+	f1.close()
+	f2.close() #close  1st  and  3rd  files
+	print(F'{file1} copied to {file3}')
+elif  not isfile(file1) and isfile(file2): #2nd  file  is  existing  but  not  1st  file
+	f2=open(file2,'r') 
+	f3=open(file3,'w') #open  2nd  and  3rd  files
+	copy(f2,f3) #copy  2nd  file  data  to  3rd  file
+	f2.close()
+	f3.close() #close  2nd  and  3rd  files
+	print(F'{file2} copied to {file3}')
+else:
+	print('Both  files  are  not  existing')
+	del f3 #delete  3rd  file
+	
+'''
+
+
+'''
+#5.Write   a  program  to  count  number  of   lines , characters , words , vowels , consonants ,  spaces , tabs  and   sentences  in  a  file
+
+Let  file  contain
+
+Rama Rao
+9247<tab>Sita
++-$ Hyd
+
+str  object   --->  'Rama Rao\n9247<tab>Sita\n+-$ Hyd\n'
+
+List 1  --->  ['Rama Rao' , '9247<tab>Sita' , '+-$ Hyd']   --->  Split  on  '\n'
+
+List 2--->  ['Rama' ,  'Rao' , '9247' , 'Sita' , '+-$' ,  'Hyd']   ---->  Split  on  white  space
+
+vowel = 0 + 1 + 1
+
+consonant = 0 + 1 + 1 + 1
+
+                           0		 1             2           3              4             5                  6             7
+List  'a'  --->   [   3       ....            6           2              1             0                  ...              ...]
+                      Lines    Chars     Words   Spaces     Tabs     Sentences    Vowels     Consonants
+
+Hint:  Use  count()  method  of  Str  class
+'''
+
+'''
+def  all(f):
+    b=[]
+    s=f.read()
+    l=len(s.count('\n'))
+    c=len(s)
+    w=s.count(' ')
+    t=s.count('\t')
+    S=s.count('.')
+    
+    V=C=0 
+    for i in s:
+        if i.isalpha():
+            if i in "aeiouAEIOU":
+                V+=1 
+                
+            else:
+                C+=1 
+                
+    b.extend([l,c,w,t,S,V,C])
+    
+    return b #Create  list , store  results  in  the  list  and  return  the  list
+#  End  of   function
+try:
+	fname=input('Enter file name: ') #Read  filename
+	f=open(fname,'r') #open  the  file
+	all(f) #call  all()  function
+	b=f.close() #close  the  file
+	#b = ['Lines' , 'Chars' , 'Words' , 'Spaces' , 'Tabs' , 'Sentences' , 'Vowels' , 'Consonants']
+	print(F'Lines:{b[0]},Chars:{b[1]},Words:{b[2]},Spaces:{b[3]},Tabs:b[4],Sentences:b[5],Vowels:b[6],Consonants:b[7]')  
+	#each  result  and  the  corresponding  msg
+except:
+	print('File  does  not  exist')
+	
+'''
+
+
+'''
+#6.Write  a  function  to  search  for  a  word  in  the  file  and   return  number  of  times  it  is  found
+
+Let  file  contain
+Hyd  is  green  city.
+Hyd  is  hitec  city.
+Hyd  is  beautiful  city.
+
+str  object  --->  Hyd  is  green  city.\nHyd  is  hitec  city.\nHyd  is  beautiful  city.]n
+
+What  is  the  result  when  'Hyd'  is  searched  in  the  file ?  --->
+'''
+
+'''
+def   search(f , s):
+	S=f.read()
+	if s in S:
+	    return S.count(s) #fnumber  of  times  's'  is   found  in  the  file
+	    
+	else:
+	    return F"No {s} in the file"
+#End of  the  function
+try:
+	fname=input("Enter file name: ') #Read  the  filename
+	f=open(fname,'r') #open   the  file
+	s=input('Enter word to be searched: ') #Read  the  word  to  be  searched  in  the  file
+	print(search(f,s)) #print  number  of  times  word  is  found  in  the  file
+	f.close() #close  the   file
+except:
+	print('File  does  not  exist')
+	
+'''
+
+
+'''
+#7.Write  a  program  to  write  0! ,  1! , 2!, ...... n!  to  the  file
+
+Hint:  Use  math . factorial()  function
+'''
+
+'''
+from math import *
+def  fact(f , n):
+	for i in range(1,n+1):
+	    f.write(str(factorial(i))+'\n') #write  0! , 1! , 2! , .... n!  into  the  file
+# End  of  the  function
+fname=input('Enter file name: ')Read  the  filename
+f=open(fname,'w') #open  the  file
+n=int(input('Enter number: ')) #Read  value  of  'n'
+fact(f,n) #call  fact()  function
+f.close() #close  the  file
+print(F'View   {fname}  for  results')
+
+'''
+
+
+#8.Find  outputs  (Home  work)
+
+'''
+f = open('a.txt' , 'w+')
+f . write('Hyd is green city.')
+f . seek(0)
+f . write('Sec') 
+f . seek(0)
+print(f . read()) #SecHyd is green city
+f . seek(7)
+print(f . read(5)) #is gr 
+f . seek(0 , 2)
+f . write('Hyd is Hitec city.') 
+f . seek(0)
+print(f . read()) #SecHyd is green cityHyd is Hitec city.
+f . seek(7) 
+f . write('red') 
+f . seek(0)
+print(f . read()) #SecHyd redis green cityHyd is Hitec city.
+
+'''
+
+
+#9.Find  outputs (Home  work)
+
+'''
+f = open('a.txt' , 'w+')
+print(f . tell()) #0
+f . write('Hyd is green city')
+print(f . tell()) #16
+f . seek(7)
+print(f . read(5)) #green 
+print(f . tell()) #13 
+
+'''
+
+
+'''
+#10.Write  a   program  to  remove  all  the   comments  in  a  python  file
+
+1) Remove  all  single  line  comments  only  but  not   multi-line  comments
+
+2) Do  not  remove  lines  which  starts  with  #
+     #statement  --->  Do  not  delete
+
+3) Input  is  filename
+'''
+
+'''
+fname=input('Enter file name: ')
+f=open(fname,'r')
+
+for i in f:
+    L=i.split('#')
+    print(L[0],end='')
+    
+'''
