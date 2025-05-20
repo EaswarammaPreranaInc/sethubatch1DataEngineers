@@ -1,0 +1,190 @@
+#  Modify  following  program  with  'with'  statement
+#19/5/2025
+
+'''
+#1.
+def   create(f):
+	try:
+		print('Type  text  terminated  by  ctrl+z')
+		while  line :=  input():  #  How  to  read  each  line  from  keyboard  and  write  to  the  file  until  user  strikes  ctrl+z
+				f . write(line + '\n')
+	except  EOFError:
+		print(F'File  {f . name}  is  created')
+#  End  of  the  function
+fname = input('Enter  filename :  ')  #  How  to  read  the  filename  --->  a.txt
+with open(fname,'w') as f:
+	create(f)
+	
+'''
+
+'''
+Repeat  prog5b(File-Create)  with  writelines()  method
+
+1) Let  input  be
+    Rama  Rao
+    9247
+    +-$
+    Hyd is green city
+    ctr+z
+
+2) Keyboard   ------------->   str  object  ----------------->  list  ------------------->   File
+                          input()                                 append()                      writelines()
+'''
+
+'''
+#2.
+def  create(f):
+	print('Enter  text  terminated  by  ctrl + z')
+	try:
+		L=[]
+		while(s:=input("Enter text:")):
+			L.append(s+'\n')
+	except:
+		f.writelines(L)
+		print(F'File  {fname}  is  created')
+#  End  of  the  function
+fname=input('Enter file name: ') #How  to  read  the  filename
+f=open(fname,'w') #How  to  open  file
+create(f) #How  to  call  create()  function
+f.close() #How  to  close  the  file
+
+'''
+
+
+'''
+Write  a  program  to  print  contents  of  the  file
+
+ File ------------>  str  obj    -------------> monitor
+            read()                           print()
+'''
+
+'''
+#3.
+def  disp(f):
+	s=f.read() #How  to  read  the  whole  file
+	print(F'Contents of  {f.name}')
+	print(s) #How  to  print  the  file
+# End  of  the  function
+try:
+	fname=input('Enter file name: ') #How  to  read  the  filename
+	f=open(fname,'r') #How  to  open  the  file
+	disp(f) #How  to  call  disp()  function
+	f.close() #How  to  close  the  file
+except:
+	print('File  {How  to  print  filename  here}  does  not  exist')
+	
+'''
+
+'''
+#4.
+Repeat  prog8c(File-page-wise)   with  readline()  method
+
+1) Let  file  contain
+    Rama  Rao
+    9247
+    +-$
+    Hyd is green city
+
+2) File  a.txt   ----------> str  obj  ------------> monitor
+                        readline()                    print()
+
+3) Hint:  Use   while  loop  and  :=  walrus  operator
+'''
+
+'''
+import  os
+def  disp(f):
+	print(F'Contents  of   the   file  {f.name}')
+	ctr=1
+	try:
+		while s:=f.readline():
+			print(s) #How  to  print  each  line  of  the  file  and  pause  execution  for  every  20  lines
+			ctr+=1
+			if(ctr%20==0):
+				os.system('pause')
+				os.system('cls')
+				
+	except:
+		pass
+			
+#  End  of  the  function
+try:
+	fname=input('Enter file name: ') #How  to  read  filename
+	f=open(fname,'r') #How  to  open  the  file
+	disp(f) #How  to  call  disp()  function
+	f.close() #How  to  close  the  file
+except:
+	print(f'File  {fname}  does  not  exist')
+	
+'''
+
+
+'''
+#5.Repeat  prog8c(File-page-wise)  with  for  loop
+
+Let  file  contain
+Rama  Rao
+9247
++-$
+Hyd is green city
+
+File  ----------> str  obj  ------------> monitor
+          for  loop                    print()
+'''
+
+'''
+import  os
+def  disp(f):
+	print(F'Contents  of   the   file  {fname}')
+	ctr=1
+	for i in f:
+		print(i) #How  to  print  each  line  of  the  file  and  pause  execution  for  every  20  lines
+		ctr+=1
+		if(ctr%20==0):
+			os.system('pause')
+			os.system('cls')
+		
+			
+# End  of  the  function
+try:
+	fname=input('Enter file name: ') #How  to  read  filename
+	f=open(fname,'r') #How  to  open  the  file
+	disp(f) #How  to  call  disp()  function
+	f.close() #How  to  close  the  file
+except :
+	print(f'File  {fanme}  does  not  exist')
+	
+'''
+
+'''
+#6.
+Repeat  prog8c(File-page-wise)  with  readlines()  method
+
+
+ File   ----------------->   list   --------------->    monitor
+              readlines()                    for  loop
+
+'''
+
+'''
+import  os
+def  disp(f):
+	print(F'Contents  of   the   file  {fname}')
+	l=f.readlines()
+	ctr=1
+	for i in l:
+		print(i)
+		ctr+=1 
+		if(ctr%20==0):
+			os.system('pause')
+			os.system('cls') 
+# End  of  the  function
+try:
+	fname=input("Enter file name: ") #How  to  read  filename
+	f=open(fname,'r') #How  to  open  the  file
+	disp(f) #How  to  call  disp()  function
+	f.close() #How  to  close  the  file
+except:
+	print(f'File  {fname}  does  not  exist')
+	
+'''
